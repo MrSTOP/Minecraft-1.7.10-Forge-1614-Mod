@@ -1,0 +1,1279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7c7afa00-d452-46fd-8b0d-d65a150beccd" name="默认" comment="" />
+    <ignored path="$PROJECT_DIR$/.gradle/" />
+    <ignored path="$PROJECT_DIR$/build/" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+    <option name="REVERSE_PATCH" value="false" />
+  </component>
+  <component name="DebuggerManager">
+    <breakpoint_any converted="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <breakpoint_rules converted="true" />
+    <ui_properties converted="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="BlockColorCrops.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockColorCrops.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1197#1198#0" expanded="true" />
+                <element signature="e#1245#1246#0" expanded="true" />
+                <element signature="method#incrementGrowStage#0;class#BlockColorCrops#0" />
+                <element signature="e#1864#1865#0" expanded="true" />
+                <element signature="e#1888#1889#0" expanded="true" />
+                <element signature="e#1986#1987#0" expanded="true" />
+                <element signature="e#2025#2026#0" expanded="true" />
+                <element signature="e#2313#2314#0" expanded="true" />
+                <element signature="e#2340#2341#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EntityGoldenChicken.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/entity/EntityGoldenChicken.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#285#286#0" expanded="true" />
+                <element signature="e#315#316#0" expanded="true" />
+                <element signature="e#369#370#0" expanded="true" />
+                <element signature="e#407#408#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TileEntityMetalFurnace.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityMetalFurnace.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BlockMetalFurnace.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockMetalFurnace.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#374#375#0" expanded="true" />
+                <element signature="e#424#425#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TileEntityFurnace.java" pinned="false" current-in-tab="true">
+        <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/stable/12/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/tileentity/TileEntityFurnace.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-5526">
+              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BlockContainer.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/stable/12/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/block/BlockContainer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="6" column="67" selection-start-line="6" selection-start-column="67" selection-end-line="6" selection-end-column="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ITileEntityProvider.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/stable/12/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/block/ITileEntityProvider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="10" column="34" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TileEntityLoader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityLoader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="10" column="55" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommonProxy.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/common/CommonProxy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="57" column="36" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BlockCrops.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/stable/12/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/block/BlockCrops.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="37" selection-start-line="37" selection-end-line="40" selection-end-column="5" />
+              <folding>
+                <element signature="e#1192#1193#0" expanded="true" />
+                <element signature="e#1240#1241#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>unlocalizedName</find>
+      <find>textur</find>
+      <find>getStillIcon</find>
+      <find>registerBlock</find>
+      <find>getic</find>
+      <find>icon</find>
+      <find>generate</find>
+      <find>x</find>
+      <find>z</find>
+      <find>get</find>
+      <find>reci</find>
+      <find>remote</find>
+      <find>worldObj</find>
+      <find>active</find>
+      <find>onblo</find>
+      <find>name</find>
+      <find>size</find>
+      <find>addShapelessRecipe</find>
+      <find>gets</find>
+      <find>key</find>
+      <find>grassBlock</find>
+      <find>getIt</find>
+      <find>boolean</find>
+      <find>canf</find>
+      <find>canF</find>
+      <find>can</find>
+      <find>shouldFertilize</find>
+      <find>text</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/item/ItemGoldenEgg.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/fluid/FluidMercury.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockFluidMercury.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/worldgen/GenTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/worldgen/WorldGeneratorChromiteOre.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/item/ItemBucketMercury.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockGrassBlock.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/worldgen/WorldGeneratorLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/enchantment/EnchantmentFireBurn.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/potion/PotionLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/item/ItemBestSword.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/potion/PotionFallProtection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/ClientProxy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/KeyLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/common/Log.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/common/ConfigLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/creativetab/CreativeTabsLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/fluid/FluidLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/common/OreDictionaryLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/enchantment/EnchantmentLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/achievement.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/achievement/AchievementLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/common/EventLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/entity/EntityGoldenChicken.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/tconstruct/achievements/AchievementEvents.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/entity/EntityLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockChromiteBlock.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/item/ItemColor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/item/ItemLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/crafting/CraftingLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockColorCrops.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityMetalFurnace.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/common/CommonProxy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockMetalFurnace.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ModuleEditorState">
+    <option name="LAST_EDITED_MODULE_NAME" />
+    <option name="LAST_EDITED_TAB_NAME" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="475" />
+    <option name="y" value="92" />
+    <option name="width" value="1288" />
+    <option name="height" value="918" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state />
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="mrstop" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="mrstop" type="462c0819:PsiDirectoryNode" />
+              <item name="stdemo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="mrstop" type="462c0819:PsiDirectoryNode" />
+              <item name="stdemo" type="462c0819:PsiDirectoryNode" />
+              <item name="block" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="mrstop" type="462c0819:PsiDirectoryNode" />
+              <item name="stdemo" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="mrstop" type="462c0819:PsiDirectoryNode" />
+              <item name="stdemo" type="462c0819:PsiDirectoryNode" />
+              <item name="crafting" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="mrstop" type="462c0819:PsiDirectoryNode" />
+              <item name="stdemo" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="mrstop" type="462c0819:PsiDirectoryNode" />
+              <item name="stdemo" type="462c0819:PsiDirectoryNode" />
+              <item name="tileentity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="外部库" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="外部库" type="cb654da1:ExternalLibrariesNode" />
+              <item name="forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="外部库" type="cb654da1:ExternalLibrariesNode" />
+              <item name="forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="net" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="外部库" type="cb654da1:ExternalLibrariesNode" />
+              <item name="forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="net" type="462c0819:PsiDirectoryNode" />
+              <item name="minecraft" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="外部库" type="cb654da1:ExternalLibrariesNode" />
+              <item name="forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="net" type="462c0819:PsiDirectoryNode" />
+              <item name="minecraft" type="462c0819:PsiDirectoryNode" />
+              <item name="block" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Minecraft Client">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method>
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Minecraft Client" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="GradleStart" />
+      <module name="forge-1.7.10-10.13.4.1614-1.7.10-src" />
+      <option name="VM_PARAMETERS" value="-Xincgc -Xmx1024M -Xms1024M" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../forge-1.7.10-10.13.4.1614-1.7.10-src\eclipse" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method>
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="false" factoryName="Application" name="Minecraft Client" type="Application">
+      <extension enabled="false" name="coverage" runner="idea" sample_coverage="true" />
+      <option name="MAIN_CLASS_NAME" value="GradleStart" />
+      <option name="VM_PARAMETERS" value="-Xincgc -Xmx1024M -Xms1024M" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../forge-1.7.10-10.13.4.1614-1.7.10-src\eclipse" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="forge-1.7.10-10.13.4.1614-1.7.10-src" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration name="Minecraft Server" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="GradleStartServer" />
+      <module name="forge-1.7.10-10.13.4.1614-1.7.10-src" />
+      <option name="VM_PARAMETERS" value="-Xincgc -Dfml.ignoreInvalidMinecraftCertificates=true" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../forge-1.7.10-10.13.4.1614-1.7.10-src\eclipse" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method>
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="false" factoryName="Application" name="Minecraft Server" type="Application">
+      <extension enabled="false" name="coverage" runner="idea" sample_coverage="true" />
+      <option name="MAIN_CLASS_NAME" value="GradleStartServer" />
+      <option name="VM_PARAMETERS" value="-Xincgc -Dfml.ignoreInvalidMinecraftCertificates=true" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../forge-1.7.10-10.13.4.1614-1.7.10-src\eclipse" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="forge-1.7.10-10.13.4.1614-1.7.10-src" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method>
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <patterns />
+      <method>
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" factoryName="Remote" type="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method>
+        <option enabled="false" name="BuildArtifacts" />
+      </method>
+    </configuration>
+    <configuration default="true" name="&lt;template&gt;" selected="false" type="WebApp">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Minecraft Client" />
+      <item itemvalue="Application.Minecraft Server" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7c7afa00-d452-46fd-8b0d-d65a150beccd" name="默认" comment="" />
+      <created>1524388776265</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1524388776265</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Init">
+      <created>1524646938858</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1524646938859</updated>
+    </task>
+    <task id="LOCAL-00002" summary="尝试添加药水效果失败">
+      <created>1524652051169</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1524652051171</updated>
+    </task>
+    <task id="LOCAL-00003" summary="尝试添加药水效果失败">
+      <created>1524652104546</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1524652104546</updated>
+    </task>
+    <task id="LOCAL-00004" summary="尝试添加热键失败">
+      <created>1524803293016</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1524803293016</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add Crops">
+      <created>1524840506912</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1524840506912</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add Crops">
+      <created>1524840600373</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1524840600374</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add Crops">
+      <created>1524840659599</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1524840659599</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="475" y="92" width="1288" height="918" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="调试" order="11" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49842766" weight="0.23316708" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info id="Image Layers" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="9" sideWeight="0.5031447" side_tool="true" visible="true" weight="0.2543641" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49685535" weight="0.2543641" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="right" id="调色板" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25943395" />
+      <window_info id="设计器" order="2" />
+      <window_info anchor="right" id="Gradle" order="5" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="right" id="Palette " order="6" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/../ModGithub" />
+    </ignored-roots>
+    <MESSAGE value="Init" />
+    <MESSAGE value="尝试添加药水效果失败" />
+    <MESSAGE value="尝试添加热键失败" />
+    <MESSAGE value="Add Crops" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Crops" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/ClientProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#505#506#0" expanded="true" />
+            <element signature="e#538#539#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/stable/12/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraftforge/common/AchievementPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/achievement/AchievementLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="14" column="110" selection-start-line="14" selection-start-column="110" selection-end-line="14" selection-end-column="110" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/stable/12/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/item/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="94" column="42" selection-start-line="94" selection-start-column="42" selection-end-line="94" selection-end-column="42" />
+          <folding>
+            <element signature="e#3856#3857#0" expanded="true" />
+            <element signature="e#3924#3925#0" expanded="true" />
+            <element signature="e#3990#3991#0" expanded="true" />
+            <element signature="e#4059#4060#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/stable/12/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/util/RegistryNamespaced.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="68" column="18" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/stable/12/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/cpw/mods/fml/common/registry/EntityRegistry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main1/java/com/mod/tuto/entity/EntityTuto.java" />
+    <entry file="file://$PROJECT_DIR$/src/main1/java/com/mod/tuto/init/RenderMod.java" />
+    <entry file="file://$PROJECT_DIR$/src/main1/java/com/mod/tuto/ModTuto.java" />
+    <entry file="file://$PROJECT_DIR$/src/main1/java/com/mod/tuto/entity/EntityTuto2.java" />
+    <entry file="file://$PROJECT_DIR$/src/main1/java/com/mod/tuto/init/EntityMod.java" />
+    <entry file="file://$PROJECT_DIR$/src/main1/java/com/mod/tuto/handlers/EntityHandler.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/common/EventLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="186" column="10" selection-start-line="186" selection-start-column="10" selection-end-line="186" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#onPlayerClickGrassBlock#0;class#EventLoader#0" />
+            <element signature="method#onEntityInteract#0;class#EventLoader#0" />
+            <element signature="method#onBlockHarvestDrops#0;class#EventLoader#0" />
+            <element signature="method#onLivingDeath#0;class#EventLoader#0" />
+            <element signature="class#PlayerRightClickGrassBlockEvent#0;class#EventLoader#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/src/main/java/cofh/thermalexpansion/ThermalExpansion.java" />
+    <entry file="file://$PROJECT_DIR$/src/src/main/java/cofh/thermalexpansion/block/BlockTEBase.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/STDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#874#875#0" expanded="true" />
+            <element signature="e#910#911#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/tconstruct/achievements/AchievementEvents.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/tconstruct/TConstruct.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/tconstruct/blocks/TConstructBlock.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/buildcraft/energy/TileEngineStone.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/buildcraft/core/lib/engines/TileEngineWithInventory.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/stable/12/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/entity/passive/EntityChicken.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-150">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/stable/12/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/entity/EntityLivingBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="1091" column="19" selection-start-line="1091" selection-start-column="19" selection-end-line="1091" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/stable/12/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/entity/EntityList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="120" column="20" selection-start-line="120" selection-start-column="20" selection-end-line="120" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/src.zip!/java/util/HashMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17160">
+          <caret line="618" column="25" selection-start-line="618" selection-start-column="25" selection-end-line="618" selection-end-column="25" />
+          <folding>
+            <element signature="e#24329#24330#0" expanded="true" />
+            <element signature="e#24394#24395#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/stable/12/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraftforge/common/IPlantable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/stable/12/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/block/IGrowable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="11" column="70" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/entity/EntityLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockChromiteBlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/stable/12/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/client/renderer/EntityRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33150">
+          <caret line="1167" selection-start-line="1167" selection-end-line="1167" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/stable/12/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/block/Block.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18480">
+          <caret line="2126" column="76" selection-start-line="2126" selection-start-column="76" selection-end-line="2126" selection-end-column="76" />
+          <folding>
+            <element signature="e#2426#2452#0" />
+            <element signature="e#2554#2582#0" />
+            <element signature="class#3043:3338" />
+            <element signature="class#3695:3899" />
+            <element signature="class#3962:4264" />
+            <element signature="e#4303#4367#0" />
+            <element signature="e#4439#4469#0" />
+            <element signature="e#4504#4581#0" />
+            <element signature="e#4631#4688#0" />
+            <element signature="e#4860#5083#0" />
+            <element signature="e#5127#5174#0" />
+            <element signature="e#5381#5418#0" />
+            <element signature="e#5544#5627#0" />
+            <element signature="e#6138#6297#0" />
+            <element signature="e#6427#6891#0" />
+            <element signature="e#7238#7319#0" />
+            <element signature="e#7426#7468#0" />
+            <element signature="e#7667#40076#0" />
+            <element signature="e#40082#40512#0" />
+            <element signature="e#40518#40627#0" />
+            <element signature="e#40518#40745#0" />
+            <element signature="e#40751#40878#0" />
+            <element signature="e#40751#40994#0" />
+            <element signature="e#41000#41143#0" />
+            <element signature="e#41000#41268#0" />
+            <element signature="e#41274#41390#0" />
+            <element signature="e#41274#41522#0" />
+            <element signature="e#41528#41599#0" />
+            <element signature="e#41765#41909#0" />
+            <element signature="e#41990#42123#0" />
+            <element signature="e#42129#42205#0" />
+            <element signature="e#42272#42336#0" />
+            <element signature="e#42272#42579#0" />
+            <element signature="e#42585#42685#0" />
+            <element signature="e#42809#42889#0" />
+            <element signature="e#42809#43018#0" />
+            <element signature="e#43024#43270#0" />
+            <element signature="e#43500#43820#0" />
+            <element signature="e#43826#43938#0" />
+            <element signature="e#43826#44512#0" />
+            <element signature="e#44518#44698#0" />
+            <element signature="e#44518#45132#0" />
+            <element signature="e#45138#45296#0" />
+            <element signature="e#45302#45484#0" />
+            <element signature="e#45490#45551#0" />
+            <element signature="e#45672#46032#0" />
+            <element signature="e#46038#46196#0" />
+            <element signature="e#46038#46484#0" />
+            <element signature="e#46490#46581#0" />
+            <element signature="e#46721#46806#0" />
+            <element signature="e#46721#47120#0" />
+            <element signature="e#47194#47297#0" />
+            <element signature="e#47419#47508#0" />
+            <element signature="e#47581#47638#0" />
+            <element signature="e#47725#47831#0" />
+            <element signature="e#48137#48191#0" />
+            <element signature="e#48336#48572#0" />
+            <element signature="e#48578#48656#0" />
+            <element signature="e#48864#49049#0" />
+            <element signature="e#49055#49105#0" />
+            <element signature="e#49055#49293#0" />
+            <element signature="e#49299#49395#0" />
+            <element signature="e#49299#50129#0" />
+            <element signature="e#50135#50236#0" />
+            <element signature="e#50135#51218#0" />
+            <element signature="e#51224#51639#0" />
+            <element signature="e#51645#51738#0" />
+            <element signature="e#51813#51908#0" />
+            <element signature="e#52027#55148#0" />
+            <element signature="e#55154#55234#0" />
+            <element signature="e#55154#55451#0" />
+            <element signature="e#55457#55537#0" />
+            <element signature="e#55457#55754#0" />
+            <element signature="e#55760#55840#0" />
+            <element signature="e#55760#56057#0" />
+            <element signature="e#56063#56135#0" />
+            <element signature="e#56247#56413#0" />
+            <element signature="e#56419#56519#0" />
+            <element signature="e#56618#56738#0" />
+            <element signature="e#56618#56890#0" />
+            <element signature="e#56896#57048#0" />
+            <element signature="e#57054#57256#0" />
+            <element signature="e#57054#57429#0" />
+            <element signature="e#57524#57673#0" />
+            <element signature="e#57679#57763#0" />
+            <element signature="e#58059#58117#0" />
+            <element signature="e#58206#58264#0" />
+            <element signature="e#58353#58411#0" />
+            <element signature="e#58500#58558#0" />
+            <element signature="e#58647#58705#0" />
+            <element signature="e#58794#58852#0" />
+            <element signature="e#59037#59120#0" />
+            <element signature="e#59230#59404#0" />
+            <element signature="e#59668#59782#0" />
+            <element signature="e#60080#60150#0" />
+            <element signature="e#60205#61267#0" />
+            <element signature="e#61273#61456#0" />
+            <element signature="e#61462#61709#0" />
+            <element signature="e#61462#61979#0" />
+            <element signature="e#61985#62089#0" />
+            <element signature="e#62221#62344#0" />
+            <element signature="e#62451#62515#0" />
+            <element signature="e#62635#62684#0" />
+            <element signature="e#62773#62887#0" />
+            <element signature="e#62893#62980#0" />
+            <element signature="e#63119#63215#0" />
+            <element signature="e#63319#63452#0" />
+            <element signature="e#63458#63568#0" />
+            <element signature="e#63655#63752#0" />
+            <element signature="e#63861#63946#0" />
+            <element signature="e#64095#64165#0" />
+            <element signature="e#64276#64359#0" />
+            <element signature="e#64508#64582#0" />
+            <element signature="e#64508#64730#0" />
+            <element signature="e#64736#64844#0" />
+            <element signature="e#65007#65126#0" />
+            <element signature="e#65132#65201#0" />
+            <element signature="e#65310#65383#0" />
+            <element signature="e#65606#65696#0" />
+            <element signature="e#65770#65828#0" />
+            <element signature="e#65999#66071#0" />
+            <element signature="e#66266#66457#0" />
+            <element signature="e#66665#66785#0" />
+            <element signature="e#66791#66999#0" />
+            <element signature="e#67290#67390#0" />
+            <element signature="e#67768#68040#0" />
+            <element signature="e#67768#68304#0" />
+            <element signature="e#68310#68657#0" />
+            <element signature="e#68791#69133#0" />
+            <element signature="e#68791#69365#0" />
+            <element signature="e#69371#69697#0" />
+            <element signature="e#69371#70653#0" />
+            <element signature="e#70659#71028#0" />
+            <element signature="e#71166#71472#0" />
+            <element signature="e#71582#72013#0" />
+            <element signature="e#71582#72196#0" />
+            <element signature="e#72202#72477#0" />
+            <element signature="e#72202#72618#0" />
+            <element signature="e#72624#73482#0" />
+            <element signature="e#72624#73661#0" />
+            <element signature="e#73667#73825#0" />
+            <element signature="e#73831#74283#0" />
+            <element signature="e#73831#74438#0" />
+            <element signature="e#74444#74819#0" />
+            <element signature="e#74444#74982#0" />
+            <element signature="e#74988#75450#0" />
+            <element signature="e#74988#75609#0" />
+            <element signature="e#75615#76174#0" />
+            <element signature="e#75615#76536#0" />
+            <element signature="e#76616#77082#0" />
+            <element signature="e#77178#77581#0" />
+            <element signature="e#77178#77813#0" />
+            <element signature="e#77819#78125#0" />
+            <element signature="e#77819#78385#0" />
+            <element signature="e#78391#78748#0" />
+            <element signature="e#78391#79276#0" />
+            <element signature="e#79282#79704#0" />
+            <element signature="e#79282#79959#0" />
+            <element signature="e#79965#80386#0" />
+            <element signature="e#79965#80818#0" />
+            <element signature="e#80824#81274#0" />
+            <element signature="e#80824#81412#0" />
+            <element signature="e#81418#81764#0" />
+            <element signature="e#81418#82018#0" />
+            <element signature="e#82024#82403#0" />
+            <element signature="e#82024#82633#0" />
+            <element signature="e#82639#82905#0" />
+            <element signature="e#82639#83061#0" />
+            <element signature="e#83067#83340#0" />
+            <element signature="e#83067#83498#0" />
+            <element signature="e#83504#83699#0" />
+            <element signature="e#83774#84074#0" />
+            <element signature="e#84191#84496#0" />
+            <element signature="e#84191#84685#0" />
+            <element signature="e#84691#84991#0" />
+            <element signature="e#85122#85308#0" />
+            <element signature="e#85416#85871#0" />
+            <element signature="e#86007#86476#0" />
+            <element signature="e#86007#86801#0" />
+            <element signature="e#86807#87202#0" />
+            <element signature="e#86807#87403#0" />
+            <element signature="e#87409#87924#0" />
+            <element signature="e#87409#88204#0" />
+            <element signature="e#88210#88558#0" />
+            <element signature="e#88210#88902#0" />
+            <element signature="e#88908#89056#0" />
+            <element signature="e#89164#89414#0" />
+            <element signature="e#89164#89597#0" />
+            <element signature="e#89602#90022#0" />
+            <element signature="e#90028#90244#0" />
+            <element signature="e#90354#90913#0" />
+            <element signature="e#90354#91083#0" />
+            <element signature="e#91089#91778#0" />
+            <element signature="e#91089#91951#0" />
+            <element signature="e#91957#92783#0" />
+            <element signature="e#94533#95305#0" />
+            <element signature="e#94533#95555#0" />
+            <element signature="e#95561#95968#0" />
+            <element signature="e#95561#96179#0" />
+            <element signature="e#96185#96792#0" />
+            <element signature="e#96916#97216#0" />
+            <element signature="e#96916#97712#0" />
+            <element signature="e#97718#98127#0" />
+            <element signature="e#97718#98389#0" />
+            <element signature="e#98395#99110#0" />
+            <element signature="e#98395#99292#0" />
+            <element signature="e#99298#99718#0" />
+            <element signature="e#99298#99880#0" />
+            <element signature="e#99886#100171#0" />
+            <element signature="e#100310#100615#0" />
+            <element signature="e#100310#101017#0" />
+            <element signature="e#101023#101235#0" />
+            <element signature="e#101344#101820#0" />
+            <element signature="e#101344#101939#0" />
+            <element signature="e#101945#102480#0" />
+            <element signature="e#102620#102996#0" />
+            <element signature="e#103270#103537#0" />
+            <element signature="e#103270#103717#0" />
+            <element signature="e#103723#104042#0" />
+            <element signature="e#103723#104222#0" />
+            <element signature="e#104228#104424#0" />
+            <element signature="e#104527#104800#0" />
+            <element signature="e#104902#105089#0" />
+            <element signature="e#104902#105428#0" />
+            <element signature="e#105867#106183#0" />
+            <element signature="e#106289#107324#0" />
+            <element signature="e#106531#106740#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockGrassBlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1290">
+          <caret line="73" column="35" lean-forward="true" selection-start-line="73" selection-start-column="35" selection-end-line="73" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/stable/12/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/block/BlockBush.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="40" column="50" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="50" />
+          <folding>
+            <element signature="method#BlockBush#0;class#BlockBush#0" />
+            <element signature="method#canPlaceBlockAt#0;class#BlockBush#0" />
+            <element signature="docComment;method#canPlaceBlockOn#0;class#BlockBush#0" />
+            <element signature="method#onNeighborBlockChange#0;class#BlockBush#0" />
+            <element signature="docComment;method#updateTick#0;class#BlockBush#0" />
+            <element signature="method#updateTick#0;class#BlockBush#0" />
+            <element signature="docComment;method#checkAndDropBlock#0;class#BlockBush#0" />
+            <element signature="method#checkAndDropBlock#0;class#BlockBush#0" />
+            <element signature="docComment;method#canBlockStay#0;class#BlockBush#0" />
+            <element signature="method#canBlockStay#0;class#BlockBush#0" />
+            <element signature="docComment;method#getCollisionBoundingBoxFromPool#0;class#BlockBush#0" />
+            <element signature="docComment;method#getRenderType#0;class#BlockBush#0" />
+            <element signature="method#getPlantType#0;class#BlockBush#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/item/ItemBestSword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/item/ItemChromiteIngot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="14" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/item/ItemBucketMercury.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="29" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/item/ItemLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/item/ItemColor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-52">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/stable/12/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/init/Blocks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="94" column="33" selection-start-line="94" selection-start-column="33" selection-end-line="94" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/crafting/CraftingLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="88" column="65" selection-start-line="88" selection-start-column="65" selection-end-line="88" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/stable/12/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/block/BlockCrops.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="37" selection-start-line="37" selection-end-line="40" selection-end-column="5" />
+          <folding>
+            <element signature="e#1192#1193#0" expanded="true" />
+            <element signature="e#1240#1241#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockColorCrops.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1197#1198#0" expanded="true" />
+            <element signature="e#1245#1246#0" expanded="true" />
+            <element signature="method#incrementGrowStage#0;class#BlockColorCrops#0" />
+            <element signature="e#1864#1865#0" expanded="true" />
+            <element signature="e#1888#1889#0" expanded="true" />
+            <element signature="e#1986#1987#0" expanded="true" />
+            <element signature="e#2025#2026#0" expanded="true" />
+            <element signature="e#2313#2314#0" expanded="true" />
+            <element signature="e#2340#2341#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/entity/EntityGoldenChicken.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#285#286#0" expanded="true" />
+            <element signature="e#315#316#0" expanded="true" />
+            <element signature="e#369#370#0" expanded="true" />
+            <element signature="e#407#408#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="55" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/common/CommonProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="57" column="36" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityMetalFurnace.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/stable/12/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/block/BlockContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="67" selection-start-line="6" selection-start-column="67" selection-end-line="6" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/stable/12/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/block/ITileEntityProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="34" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockMetalFurnace.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#374#375#0" expanded="true" />
+            <element signature="e#424#425#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/stable/12/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/tileentity/TileEntityFurnace.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5526">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
