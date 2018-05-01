@@ -17,52 +17,56 @@ Tasks to be executed: [task ':compileApiJava', task ':processApiResources', task
 :compileApiJava
 Skipping task ':compileApiJava' as it has no source files.
 :compileApiJava UP-TO-DATE
-:compileApiJava (Thread[main,5,main]) completed. Took 0.029 secs.
+:compileApiJava (Thread[main,5,main]) completed. Took 0.1 secs.
 :processApiResources (Thread[main,5,main]) started.
 :processApiResources
 Skipping task ':processApiResources' as it has no source files.
 :processApiResources UP-TO-DATE
-:processApiResources (Thread[main,5,main]) completed. Took 0.001 secs.
+:processApiResources (Thread[main,5,main]) completed. Took 0.005 secs.
 :apiClasses (Thread[main,5,main]) started.
 :apiClasses
 Skipping task ':apiClasses' as it has no actions.
 :apiClasses UP-TO-DATE
-:apiClasses (Thread[main,5,main]) completed. Took 0.001 secs.
+:apiClasses (Thread[main,5,main]) completed. Took 0.007 secs.
 :sourceMainJava (Thread[main,5,main]) started.
 :sourceMainJava
-Executing task ':sourceMainJava' (up-to-date check took 0.334 secs) due to:
-  Input file D:\McModDev\forge-1.7.10-10.13.4.1614-1.7.10-src\src\main\java\com\github\mrstop\stdemo\crafting\CraftingLoader.java has changed.
-:sourceMainJava (Thread[main,5,main]) completed. Took 1.024 secs.
+Executing task ':sourceMainJava' (up-to-date check took 1.96 secs) due to:
+  Input file D:\McModDev\forge-1.7.10-10.13.4.1614-1.7.10-src\src\main\java\com\thegrovesyproject\main\CraftingManager.java has been added.
+  Input file D:\McModDev\forge-1.7.10-10.13.4.1614-1.7.10-src\src\main\java\com\mod\tuto\init\BlockMod.java has been added.
+  Input file D:\McModDev\forge-1.7.10-10.13.4.1614-1.7.10-src\src\main\java\com\mod\tuto\blocks\BlockBasic.java has been added.
+:sourceMainJava (Thread[main,5,main]) completed. Took 5.084 secs.
 :compileJava (Thread[main,5,main]) started.
 :compileJava
-Executing task ':compileJava' (up-to-date check took 1.333 secs) due to:
-  Input file D:\McModDev\forge-1.7.10-10.13.4.1614-1.7.10-src\build\sources\java\com\github\mrstop\stdemo\crafting\CraftingLoader.java has changed.
+Executing task ':compileJava' (up-to-date check took 1.835 secs) due to:
+  Input file D:\McModDev\forge-1.7.10-10.13.4.1614-1.7.10-src\build\sources\java\com\thegrovesyproject\model\ModelTutMob.java has been added.
+  Input file D:\McModDev\forge-1.7.10-10.13.4.1614-1.7.10-src\build\sources\java\com\thegrovesyproject\handler\CraftingManager.java has been added.
+  Input file D:\McModDev\forge-1.7.10-10.13.4.1614-1.7.10-src\build\sources\java\com\thegrovesyproject\creativetabs\TutCreativeTabMisc.java has been added.
 Compiling with JDK Java compiler API.
-:compileJava (Thread[main,5,main]) completed. Took 4.169 secs.
+:compileJava (Thread[main,5,main]) completed. Took 9.352 secs.
 :processResources (Thread[main,5,main]) started.
 :processResources
-Skipping task ':processResources' as it is up-to-date (took 0.117 secs).
+Skipping task ':processResources' as it is up-to-date (took 0.204 secs).
 :processResources UP-TO-DATE
-:processResources (Thread[main,5,main]) completed. Took 0.149 secs.
+:processResources (Thread[main,5,main]) completed. Took 0.208 secs.
 :classes (Thread[main,5,main]) started.
 :classes
 Skipping task ':classes' as it has no actions.
 :classes (Thread[main,5,main]) completed. Took 0.0 secs.
 :jar (Thread[main,5,main]) started.
 :jar
-Executing task ':jar' (up-to-date check took 0.087 secs) due to:
+Executing task ':jar' (up-to-date check took 0.117 secs) due to:
   Output file D:\McModDev\forge-1.7.10-10.13.4.1614-1.7.10-src\build\libs\stdome-1.0.0.000.jar has changed.
-:jar (Thread[main,5,main]) completed. Took 1.777 secs.
+:jar (Thread[main,5,main]) completed. Took 0.895 secs.
 :compileTestJava (Thread[main,5,main]) started.
 :compileTestJava
 Skipping task ':compileTestJava' as it has no source files.
 :compileTestJava UP-TO-DATE
-:compileTestJava (Thread[main,5,main]) completed. Took 0.002 secs.
+:compileTestJava (Thread[main,5,main]) completed. Took 0.001 secs.
 :processTestResources (Thread[main,5,main]) started.
 :processTestResources
 Skipping task ':processTestResources' as it has no source files.
 :processTestResources UP-TO-DATE
-:processTestResources (Thread[main,5,main]) completed. Took 0.002 secs.
+:processTestResources (Thread[main,5,main]) completed. Took 0.0 secs.
 :testClasses (Thread[main,5,main]) started.
 :testClasses
 Skipping task ':testClasses' as it has no actions.
@@ -73,32 +77,32 @@ Skipping task ':testClasses' as it has no actions.
 file or directory 'D:\McModDev\forge-1.7.10-10.13.4.1614-1.7.10-src\build\classes\test', not found
 Skipping task ':test' as it has no source files.
 :test UP-TO-DATE
-:test (Thread[main,5,main]) completed. Took 0.012 secs.
+:test (Thread[main,5,main]) completed. Took 0.001 secs.
 :extractMcpData (Thread[main,5,main]) started.
 :extractMcpData
-Skipping task ':extractMcpData' as it is up-to-date (took 0.068 secs).
+Skipping task ':extractMcpData' as it is up-to-date (took 0.057 secs).
 :extractMcpData UP-TO-DATE
-:extractMcpData (Thread[main,5,main]) completed. Took 0.074 secs.
+:extractMcpData (Thread[main,5,main]) completed. Took 0.06 secs.
 :getVersionJson (Thread[main,5,main]) started.
 :getVersionJson
-Executing task ':getVersionJson' (up-to-date check took 0.002 secs) due to:
+Executing task ':getVersionJson' (up-to-date check took 0.001 secs) due to:
   Task has not declared any outputs.
-:getVersionJson (Thread[main,5,main]) completed. Took 0.916 secs.
+:getVersionJson (Thread[main,5,main]) completed. Took 1.525 secs.
 :extractUserDev (Thread[main,5,main]) started.
 :extractUserDev
-Skipping task ':extractUserDev' as it is up-to-date (took 0.521 secs).
+Skipping task ':extractUserDev' as it is up-to-date (took 0.522 secs).
 :extractUserDev UP-TO-DATE
-:extractUserDev (Thread[main,5,main]) completed. Took 0.523 secs.
+:extractUserDev (Thread[main,5,main]) completed. Took 0.524 secs.
 :genSrgs (Thread[main,5,main]) started.
 :genSrgs
 Skipping task ':genSrgs' as task onlyIf is false.
 :genSrgs SKIPPED
-:genSrgs (Thread[main,5,main]) completed. Took 0.457 secs.
+:genSrgs (Thread[main,5,main]) completed. Took 0.402 secs.
 :reobf (Thread[main,5,main]) started.
 :reobf
-Executing task ':reobf' (up-to-date check took 0.015 secs) due to:
+Executing task ':reobf' (up-to-date check took 0.04 secs) due to:
   Output file D:\McModDev\forge-1.7.10-10.13.4.1614-1.7.10-src\build\libs\stdome-1.0.0.000.jar has changed.
-:reobf (Thread[main,5,main]) completed. Took 2.346 secs.
+:reobf (Thread[main,5,main]) completed. Took 2.117 secs.
 :assemble (Thread[main,5,main]) started.
 :assemble
 Skipping task ':assemble' as it has no actions.
@@ -115,5 +119,5 @@ Skipping task ':build' as it has no actions.
 
 BUILD SUCCESSFUL
 
-Total time: 27.529 secs
+Total time: 36.65 secs
 Stopped 0 compiler daemon(s).
