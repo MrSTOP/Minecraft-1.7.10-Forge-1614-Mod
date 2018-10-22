@@ -19,6 +19,7 @@ public class BlockChromiteBlock extends Block {
         this.setHarvestLevel("pickaxe", 1);
         this.setCreativeTab(CreativeTabsLoader.tabSTDemo);
     }
+
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister BlockIcon)

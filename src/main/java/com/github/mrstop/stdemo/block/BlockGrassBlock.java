@@ -2,6 +2,7 @@ package com.github.mrstop.stdemo.block;
 
 
 import com.github.mrstop.stdemo.common.EventLoader;
+import com.github.mrstop.stdemo.creativetab.CreativeTabsLoader;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -9,7 +10,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.IIcon;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.world.World;
 
 
@@ -29,7 +29,7 @@ public class BlockGrassBlock extends Block {
         this.setUnlocalizedName("grassBlock");//设置国际化名称
         this.setHardness(0.5F);//硬度
         this.setStepSound(soundTypeGrass);//踩上去的声音
-        this.setCreativeTab(CreativeTabs.tabBlock);
+        this.setCreativeTab(CreativeTabsLoader.tabSTDemo);
         this.setResistance(600000F);
         //this.setBlockUnbreakable();
         //this.setBlockBounds(0.95F, 0.05F,0.25F, 0.75F, 0.75F,0.75F);
@@ -37,29 +37,29 @@ public class BlockGrassBlock extends Block {
 
     @Override
     @SideOnly(Side.CLIENT)
-    public IIcon getIcon(int number, int face)
+    public IIcon getIcon(int side, int meta)
     {
-        if(number == 0)
+        if(side == 0)
         {
             return icon1;
         }
-        else if(number == 1)
+        else if(side == 1)
         {
             return icon2;
         }
-        else if(number == 2)
+        else if(side == 2)
         {
             return icon3;
         }
-        else if(number == 3)
+        else if(side == 3)
         {
             return icon4;
         }
-        else if(number == 4)
+        else if(side == 4)
         {
             return icon5;
         }
-        else if(number == 5)
+        else if(side == 5)
         {
             return icon6;
         }

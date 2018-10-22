@@ -10,6 +10,9 @@ public class BlockLoader {
     public static Block grassBlock = new BlockGrassBlock();//实例化方块
     public static Block chromiteBlock = new BlockChromiteBlock();
     public static Block fluidMercuryBlock = new BlockFluidMercury();
+    public static Block colorBlock = new BlockColorCrops();
+    public static Block metalFunaceActive = new BlockMetalFurnace(true);
+    public static Block metalFunaceInactive = new BlockMetalFurnace(false);
 
 
     public  BlockLoader(FMLPreInitializationEvent event)//构造方法
@@ -17,6 +20,9 @@ public class BlockLoader {
         register(grassBlock,"grass_block");//注册草块
         register(chromiteBlock, "chromite_block");
         register(fluidMercuryBlock, "fluidMercury_block");
+        register(colorBlock, "color_block");
+        register(metalFunaceActive, "metal_furnace_active");
+        register(metalFunaceInactive, "metal_furnace_inactive");
     }
 
     private static void register(Block block,String name)//注册方块的方法

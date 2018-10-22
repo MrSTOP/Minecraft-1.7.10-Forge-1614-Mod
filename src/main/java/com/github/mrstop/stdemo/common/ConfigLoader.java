@@ -42,14 +42,10 @@ public class ConfigLoader
         EnchantmentFireBurn = config.get(Configuration.CATEGORY_GENERAL, "EnchantmentFireBurn", 36, comment).getInt();
 
         comment = "en_US:\nzh_CN:跌落保护编号";
-        PotionFallProtection = config.get(Configuration.CATEGORY_GENERAL, "potionFallProtection", 36, comment).getInt();
+        PotionFallProtection = config.get(Configuration.CATEGORY_GENERAL, "potionFallProtection", 50, comment).getInt();
 
         config.save();
         Log.Log.info("Finished loading STDemo's Config.");
     }
 
-    public static Logger logger()
-    {
-        return Log.Log;
-    }
 }

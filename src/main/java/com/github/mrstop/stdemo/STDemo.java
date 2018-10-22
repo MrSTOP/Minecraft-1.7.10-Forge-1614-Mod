@@ -2,6 +2,7 @@ package com.github.mrstop.stdemo;
 
 import com.github.mrstop.stdemo.common.CommonProxy;
 
+
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -20,7 +21,9 @@ public class STDemo {
     public static final String MODID = "stdemo";
     public static final String NAME = "STDemo";
     public static final String VERSION = "1.0.0";
-
+    public static final float PI = 3.1415923F;
+    public static final int GUIIDMetalFurnace = 1;
+    public static final int GUIIDDemo = 2;
 
     @Instance(STDemo.MODID)
     public static STDemo instance;
@@ -43,7 +46,6 @@ public class STDemo {
         proxy.postInit(event);
     }
 
-    @SidedProxy(clientSide = "com.github.mrstop.stdemo.client.ClientProxy",
-    serverSide = "com.github.mrstop.stdemo.common.CommonProxy")
+    @SidedProxy(clientSide = "com.github.mrstop.stdemo.client.ClientProxy", serverSide = "com.github.mrstop.stdemo.common.CommonProxy")
     public static CommonProxy proxy;
 }

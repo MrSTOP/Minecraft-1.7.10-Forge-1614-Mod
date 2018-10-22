@@ -1,5 +1,6 @@
 package com.github.mrstop.stdemo.client;
 
+import com.github.mrstop.stdemo.client.entity.render.EntityRenderLoader;
 import com.github.mrstop.stdemo.common.CommonProxy;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -12,16 +13,20 @@ public class ClientProxy extends CommonProxy {
     public void preInit(FMLPreInitializationEvent event)
     {
         super.preInit(event);
+        new EntityRenderLoader();
+        //RenderingRegistry.registerEntityRenderingHandler(EntityGoldenChicken.class, new RenderGolderChicken(new Model));
     }
 
     @Override
     public void init(FMLInitializationEvent event)
     {
         super.init(event);
+        new KeyLoader();
     }
 
     @Override
     public void postInit(FMLPostInitializationEvent event)
+
     {
         super.postInit(event);
     }
