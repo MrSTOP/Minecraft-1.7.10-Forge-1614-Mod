@@ -18,6 +18,7 @@
 *.zip
 *.tar.gz
 *.rar
+/out/
 /eclipse/
 /src/main/java/com/mod
 /src/main/java/com/thegrovesyproject
