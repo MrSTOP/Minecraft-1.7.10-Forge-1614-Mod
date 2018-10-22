@@ -1,0 +1,33 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "ICI",
+        "GLG",
+        "IPI"
+    ],
+    "key": {
+        "I": {
+            "type": "forge:ore_dict",
+            "ore": "stem_ingot_blusteel"
+        },
+        "C": {
+            "type": "forge:ore_dict",
+            "ore": "stem_energy_circuit"
+        },
+        "G": {
+            "type": "forge:ore_dict",
+            "ore": "ingotGold"
+        },
+        "L": {
+            "item": "minecraft:redstone_lamp"
+        },
+        "P": {
+            "type": "forge:ore_dict",
+            "ore": "gemPrismarine"
+        }
+    },
+    "result": {
+        "item": "stem:basic",
+        "data": 8
+    }
+}

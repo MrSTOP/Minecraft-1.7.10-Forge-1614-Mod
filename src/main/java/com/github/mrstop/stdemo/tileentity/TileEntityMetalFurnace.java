@@ -1,8 +1,8 @@
 package com.github.mrstop.stdemo.tileentity;
 
 import com.github.mrstop.stdemo.block.BlockMetalFurnace;
-import com.github.mrstop.stdemo.common.Log;
 import com.github.mrstop.stdemo.crafting.MetalFurnaceRecipes;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
@@ -26,18 +26,20 @@ import net.minecraftforge.common.util.ForgeDirection;
 @Optional.Interface(iface =  "ic2.api.energy.tile.IEnergySink", modid = "IC2")
 public class TileEntityMetalFurnace extends TileEntity implements ISidedInventory, IEnergySink {
 
+    private static final int processTime = 100;
+
     private static final int[] slotTop = new int[]{0};
     private static final int[] slotSide = new int[]{2, 1};
     private static final int[] slotBottom = new int[]{1};
     private ItemStack[] metalFurnaceItemStack = new ItemStack[3];
     ///////////////IC2///////////////////////
     private boolean update = false;
-    protected double receivedEnergyUnit = 0;
+    private double receivedEnergyUnit = 0;
     ///////////////IC2///////////////////////
     public int metalFurnaceBurnTime;
     public int currentItemBurnTime;
     public int metalFurnaceCookTime;
-    private String metalFurnaceCustomName = "container.metalFurnace";
+    private String metalFurnaceCustomName = null;
 
     //物品栏个数
     @Override
@@ -54,38 +56,33 @@ public class TileEntityMetalFurnace extends TileEntity implements ISidedInventor
     //从库存槽（第一个参数）删除指定数量（第二个参数）的项目，并将它们返回到新栈中。
     @Override
     public ItemStack decrStackSize(int index, int count) {
+        ItemStack itemstack = null;                                                //临时ItemStack变量
         if (this.metalFurnaceItemStack[index] != null) {
-            ItemStack itemstack;                                                   //临时ItemStack变量
-
-            if (this.metalFurnaceItemStack[index].stackSize <= count)              //判断物品栈数量，若小于指定数量则设当前物品栈为空，并将当前物品栈返回
-            {
+            if (this.metalFurnaceItemStack[index].stackSize <= count){             //判断物品栈数量，若小于指定数量则设当前物品栈为空，并将当前物品栈返回
                 itemstack = this.metalFurnaceItemStack[index];
                 this.metalFurnaceItemStack[index] = null;                          //设当前物品栈为空，
-                return itemstack;                                                  //将当前物品栈返回。
-            } else                                                                   //否则从当前物品栈中间减去指定数量
-            {
+            }
+            else {                                                                 //否则从当前物品栈中间减去指定数量
                 itemstack = this.metalFurnaceItemStack[index].splitStack(count);   //从当前物品栈中间减去指定数量
-                if (this.metalFurnaceItemStack[index].stackSize == 0)              //判断当前物品栈是否为0
-                {
+                if (this.metalFurnaceItemStack[index].stackSize == 0){              //判断当前物品栈是否为0
                     this.metalFurnaceItemStack[index] = null;                      //为0则将当前物品栈设为null
                 }
-                return itemstack;                                                  //返回临时ItemStack
             }
-        } else {
-            return null;
         }
+        return itemstack;                                                          //返回临时ItemStack
     }
 
     //当一些容器被关闭时，在每个槽上调用，抛出返回的EntityItem，就像关闭工作台GUI一样。
     @Override
     public ItemStack getStackInSlotOnClosing(int index) {
-        if (this.metalFurnaceItemStack[index] != null) {
-            ItemStack itemstack = this.metalFurnaceItemStack[index];
-            this.metalFurnaceItemStack[index] = null;
-            return itemstack;
-        } else {
-            return null;
-        }
+//        if (this.metalFurnaceItemStack[index] != null) {
+//            ItemStack itemstack = this.metalFurnaceItemStack[index];
+//            this.metalFurnaceItemStack[index] = null;
+//            return itemstack;
+//        } else {
+//            return null;
+//        }
+        return null;
     }
 
     //将给定物品栈设置为清单中的指定插槽（可以是合成或装甲部分）。
@@ -101,7 +98,7 @@ public class TileEntityMetalFurnace extends TileEntity implements ISidedInventor
     //是否有名称
     @Override
     public boolean isCustomInventoryName() {
-        return true;
+        return this.metalFurnaceCustomName != null && this.metalFurnaceCustomName.length() > 0;
     }
 
     @Override
@@ -130,8 +127,7 @@ public class TileEntityMetalFurnace extends TileEntity implements ISidedInventor
     }
 
     @Override
-    public void writeToNBT(NBTTagCompound compound)
-    {
+    public void writeToNBT(NBTTagCompound compound) {
         super.writeToNBT(compound);
         compound.setDouble("ReceivedEnergy", this.receivedEnergyUnit);
         compound.setShort("BurnTime", (short) this.metalFurnaceBurnTime);
@@ -168,7 +164,7 @@ public class TileEntityMetalFurnace extends TileEntity implements ISidedInventor
     @SideOnly(Side.CLIENT)
     public int getCookProgressScaled(int time)
     {
-        return this.metalFurnaceCookTime * time / 200;
+        return this.metalFurnaceCookTime * time / processTime;
     }
 
     //返回一个介于0和传递的值之间的整数值，表示当前燃料物品剩余燃烧时间，其中0表示该物品已耗尽，并且传递的值表示该项目为新的
@@ -196,6 +192,11 @@ public class TileEntityMetalFurnace extends TileEntity implements ISidedInventor
         if (!this.worldObj.isRemote)                                                                                                            //判断是否为服务器端
         {
 
+            if (!this.update && Loader.isModLoaded("IC2"))
+            {
+                this.onIC2MachineLoaded();
+                this.update = true;
+            }
             if (this.metalFurnaceBurnTime > 0)                                                                                                      //判断燃烧时间是否大于0
             {
                 --this.metalFurnaceBurnTime;                                                                                                        //减少燃烧时间
@@ -226,7 +227,7 @@ public class TileEntityMetalFurnace extends TileEntity implements ISidedInventor
                 {
                     ++this.metalFurnaceCookTime;                                                                                                //增加metalFurnaceCookTime
 
-                    if (this.metalFurnaceCookTime == 200)                                                                                       //判断metalFurnaceCookTime是否等于200
+                    if (this.metalFurnaceCookTime == processTime)                                                                                       //判断metalFurnaceCookTime是否等于200
                     {
                         this.metalFurnaceCookTime = 0;                                                                                          //将metalFurnaceCookTime设为0
                         this.smeltItem();                                                                                                       //熔炼物品
@@ -236,6 +237,23 @@ public class TileEntityMetalFurnace extends TileEntity implements ISidedInventor
                 else
                 {
                     this.metalFurnaceCookTime = 0;                                                                                              //将metalFurnaceCookTime设为0
+                }
+            }
+
+            if (this.metalFurnaceItemStack[1] == null && this.metalFurnaceItemStack[0] != null)               //燃烧时间不为0或燃料槽不为空且原料槽不为空
+            {
+                double requireEnergyPerTick = this.getRequiredEnergyPerTick();
+                if (this.receivedEnergyUnit >= requireEnergyPerTick)
+                {
+                    ++this.metalFurnaceCookTime;
+                    this.receivedEnergyUnit -= requireEnergyPerTick;
+                    if (++this.metalFurnaceCookTime >= processTime)
+                    {
+                        this.metalFurnaceBurnTime = 0;
+                        this.smeltItem();
+                        this.markDirty();
+                        this.metalFurnaceBurnTime = 1;
+                    }
                 }
             }
 
@@ -362,7 +380,12 @@ public class TileEntityMetalFurnace extends TileEntity implements ISidedInventor
     @Override
     public boolean isUseableByPlayer(EntityPlayer player)
     {
-        return this.worldObj.getTileEntity(this.xCoord, this.yCoord, this.zCoord) != this ? false : player.getDistanceSq((double)this.xCoord + 0.5D, (double)this.yCoord + 0.5D, (double)this.zCoord + 0.5D) <= 64.0D;
+        if (this.worldObj.getTileEntity(this.xCoord, this.yCoord, this.zCoord) == this && player.getDistanceSq((double) this.xCoord + 0.5D, (double) this.yCoord + 0.5D, (double) this.zCoord + 0.5D) <= 64.0D){
+            return true;
+        }
+        else {
+            return false;
+        }
         //如果worldObj的TileEntity不是这个TileEntity则返回false，如果worldObj的TileEntity是这个TileEntity则返回(玩家距离该TileEntity的直线距离小于等于64.0D则返回true，否则返回false)
     }
 
@@ -451,6 +474,16 @@ public class TileEntityMetalFurnace extends TileEntity implements ISidedInventor
     public boolean acceptsEnergyFrom(TileEntity emitter, ForgeDirection direction)
     {
         return true;
+    }
+
+    @Override
+    public void invalidate()
+    {
+        super.invalidate();
+        if (!this.worldObj.isRemote && Loader.isModLoaded("IC2"))
+        {
+            this.onIC2MachineUnloaded();
+        }
     }
 
     @Optional.Method(modid = "IC2")

@@ -2,6 +2,8 @@ package com.github.mrstop.stdemo.inventory;
 
 
 import com.github.mrstop.stdemo.tileentity.TileEntityMetalFurnace;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
@@ -20,6 +22,10 @@ public class ContainerMetalFurnace extends Container {
     public ContainerMetalFurnace(InventoryPlayer inventoryPlayer, TileEntityMetalFurnace tileEntityMetalFurnaceConstruct)
     {
         this.tileEntityMetalFurnace = tileEntityMetalFurnaceConstruct;
+        //inventory = p_i1824_1_;
+        //slotIndex = p_i1824_2_;
+        //xDisplayPosition = p_i1824_3_;
+        // yDisplayPosition = p_i1824_4_;
         this.addSlotToContainer(new Slot(tileEntityMetalFurnaceConstruct, 0, 56, 17));
         this.addSlotToContainer(new Slot(tileEntityMetalFurnaceConstruct, 1, 56, 53));
         this.addSlotToContainer(new SlotFurnace(inventoryPlayer.player, tileEntityMetalFurnaceConstruct, 2, 116, 35));
@@ -41,7 +47,7 @@ public class ContainerMetalFurnace extends Container {
     {
         super.onCraftGuiOpened(iCrafting);
         iCrafting.sendProgressBarUpdate(this, 0, this.tileEntityMetalFurnace.metalFurnaceBurnTime);
-        iCrafting.sendProgressBarUpdate(this, 1, this.tileEntityMetalFurnace.metalFurnaceBurnTime);
+        iCrafting.sendProgressBarUpdate(this, 1, this.tileEntityMetalFurnace.metalFurnaceCookTime);
         iCrafting.sendProgressBarUpdate(this, 2, this.tileEntityMetalFurnace.currentItemBurnTime);
     }
 
@@ -74,6 +80,26 @@ public class ContainerMetalFurnace extends Container {
         this.lastCookTime = this.tileEntityMetalFurnace.metalFurnaceCookTime;
         this.lastBurnTime = this.tileEntityMetalFurnace.metalFurnaceBurnTime;
         this.lastItemBurnTime = this.tileEntityMetalFurnace.currentItemBurnTime;
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Override
+    public void updateProgressBar(int id, int data)
+    {
+        super.updateProgressBar(id, data);
+        switch (id) {
+            case 0:
+                this.tileEntityMetalFurnace.metalFurnaceCookTime = data;
+                break;
+            case 1:
+                this.tileEntityMetalFurnace.metalFurnaceBurnTime = data;
+                break;
+            case 2:
+                this.tileEntityMetalFurnace.currentItemBurnTime = data;
+                break;
+            default:
+                break;
+        }
     }
 
     @Override

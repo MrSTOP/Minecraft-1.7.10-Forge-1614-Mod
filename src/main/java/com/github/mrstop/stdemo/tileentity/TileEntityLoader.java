@@ -9,6 +9,8 @@ public class TileEntityLoader {
     public TileEntityLoader(FMLPreInitializationEvent event)
     {
         registerTileEntity(TileEntityMetalFurnace.class, "MetalFurnace");
+        registerTileEntity(TileEntityRedstoneFluxFurnace.class, "RedstoneFluxFurnace");
+        registerTileEntity(TileEntityWindmill.class, "Windmill");
     }
 
     public void registerTileEntity(Class <? extends TileEntity> tileentityClass, String id)

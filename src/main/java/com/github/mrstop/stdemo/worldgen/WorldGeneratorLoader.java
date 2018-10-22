@@ -57,7 +57,7 @@ public class WorldGeneratorLoader
             int posY = 16 + event.rand.nextInt(16);
             int posZ = event.worldZ + event.rand.nextInt(16);
             worldGenMinable.generate(event.world, event.rand, posX, posY, posZ);
-            Log.Log.info("GENORE");
+//            Log.Log.info("GEN ORE");
         }
 
     }

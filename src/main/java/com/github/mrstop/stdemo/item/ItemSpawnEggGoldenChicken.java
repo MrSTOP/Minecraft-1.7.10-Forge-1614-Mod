@@ -51,7 +51,7 @@ public class ItemSpawnEggGoldenChicken extends ItemMonsterPlacer{
         }
 
         @Override
-        public boolean onItemUse(ItemStack itemStack, EntityPlayer entityPlayer, World world, int blockX, int blockY, int blockZ, int array, float faceY, float faceZ, float par7)
+        public boolean onItemUse(ItemStack itemStack, EntityPlayer entityPlayer, World world, int blockX, int blockY, int blockZ, int array, float faceX, float faceY, float faceZ)
         {
             if (world.isRemote)
             {

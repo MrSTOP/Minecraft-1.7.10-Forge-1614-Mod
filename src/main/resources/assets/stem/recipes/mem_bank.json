@@ -1,0 +1,22 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "ICI",
+        "CCC",
+        "ICI"
+    ],
+    "key": {
+        "I": {
+            "type": "forge:ore_dict",
+            "ore": "stem_ingot_blusteel"
+        },
+        "C": {
+            "type": "forge:ore_dict",
+            "ore": "stem_mem_chip"
+        }
+    },
+    "result": {
+        "item": "stem:basic",
+        "data": 4
+    }
+}
