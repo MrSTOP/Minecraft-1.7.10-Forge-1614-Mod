@@ -11,19 +11,16 @@ import org.lwjgl.opengl.GL11;
 
 @SideOnly(Side.CLIENT)
 public class GuiMetalFurnace extends GuiContainer {
-
     private static final ResourceLocation metalFurnaceGuiTexture = new ResourceLocation("stdemo:textures/gui/container/metalFurnace.png");
     private TileEntityMetalFurnace tileEntityMetalFurnace;
 
-    public GuiMetalFurnace(InventoryPlayer inventoryPlayer, TileEntityMetalFurnace tileEntityMetalFurnaceConstruct)
-    {
+    public GuiMetalFurnace(InventoryPlayer inventoryPlayer, TileEntityMetalFurnace tileEntityMetalFurnaceConstruct) {
         super(new ContainerMetalFurnace(inventoryPlayer, tileEntityMetalFurnaceConstruct));
         this.tileEntityMetalFurnace = tileEntityMetalFurnaceConstruct;
     }
 
     @Override
-    protected void drawGuiContainerBackgroundLayer(float var1, int var2, int var3)
-    {
+    protected void drawGuiContainerBackgroundLayer(float var1, int var2, int var3) {
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
         this.mc.getTextureManager().bindTexture(metalFurnaceGuiTexture);
         int x = (this.width - this.xSize) / 2;
@@ -36,9 +33,8 @@ public class GuiMetalFurnace extends GuiContainer {
         {
             i = this.tileEntityMetalFurnace.getBurnTimeRemainingScaled(12);
             this.drawTexturedModalRect(x + 56, y + 36 + 12 - i, 176, 12 - i, 14, i + 2);
+            i = this.tileEntityMetalFurnace.getCookProgressScaled(24);
+            this.drawTexturedModalRect(x + 79, y + 34, 176, 14, i + 1, 16);
         }
-
-        i = this.tileEntityMetalFurnace.getCookProgressScaled(24);
-        this.drawTexturedModalRect(x + 79, y + 34, 176, 14, i + 1, 16);
     }
 }

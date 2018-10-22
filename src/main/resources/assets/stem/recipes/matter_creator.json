@@ -1,0 +1,33 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        " C ",
+        "EBF",
+        " T "
+    ],
+    "key": {
+        "C": {
+            "type": "forge:ore_dict",
+            "ore": "stem_energy_circuit"
+        },
+        "E": {
+            "type": "forge:ore_dict",
+            "ore": "stem_exciter"
+        },
+        "B": {
+            "type": "forge:ore_dict",
+            "ore": "stem_machine_block"
+        },
+        "F": {
+            "type": "forge:ore_dict",
+            "ore": "stem_former"
+        },
+        "T": {
+            "type": "forge:ore_dict",
+            "ore": "stem_internal_tank"
+        }
+    },
+    "result": {
+        "item": "stem:matter_creator"
+    }
+}

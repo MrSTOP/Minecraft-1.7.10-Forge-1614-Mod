@@ -1,0 +1,17 @@
+item.item_test.name=Test Item
+item.item_pickaxe.name=Item Pickaxe Tuto
+item.item_sword.name=Item Sword Tuto
+item.casqueArmor.name=Casque Armor
+item.plastronArmor.name=Plastron Armor
+item.pantalonArmor.name=Pantalon Armor
+item.bootArmor.name=Boot Armor
+item.multiToolMod.name=Multi Tool
+item.itemFoodTuto.name=Food Tuto
+item.seedTuto.name=Seed Tuto
+
+tile.block_test.name=Test Block
+tile.block_stairs.name=Block Stairs
+tile.block_fence.name=Block Fence
+tile.blockIsbrh.name=Block Isbrh
+
+itemGroup.tabTuto=Tab Tuto

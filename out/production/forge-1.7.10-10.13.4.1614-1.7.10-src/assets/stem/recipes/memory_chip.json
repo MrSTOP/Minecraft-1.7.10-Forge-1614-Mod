@@ -1,0 +1,29 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "IQI",
+        "IDI",
+        "IGI"
+    ],
+    "key": {
+        "I": {
+            "type": "forge:ore_dict",
+            "ore": "stem_ingot_blusteel"
+        },
+        "Q": {
+            "type": "forge:ore_dict",
+            "ore": "gemQuartz"
+        },
+        "D": {
+            "type": "forge:ore_dict",
+            "ore": "gemDiamond"
+        },
+        "G": {
+            "type": "forge:ore_dict",
+            "ore": "ingotGold"
+        }
+    },
+    "result": {
+        "item": "stem:mem_chip"
+    }
+}

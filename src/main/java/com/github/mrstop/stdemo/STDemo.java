@@ -11,6 +11,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 
+
 /**
  * @author 闫坤炜
  */
@@ -24,6 +25,8 @@ public class STDemo {
     public static final float PI = 3.1415923F;
     public static final int GUIIDMetalFurnace = 1;
     public static final int GUIIDDemo = 2;
+    public static final int GUIIDRedstoneFluxFurnace = 3;
+    public static final int GUIIDWindmill = 4;
 
     @Instance(STDemo.MODID)
     public static STDemo instance;

@@ -1,0 +1,34 @@
+{
+    "type": "forge:ore_shaped",
+
+    "pattern": [
+        "ICI",
+        "DPB",
+        "III"
+    ],
+    "key": {
+        "I": {
+            "type": "forge:ore_dict",
+            "ore": "stem_ingot_blusteel"
+        },
+        "C": {
+            "type": "forge:ore_dict",
+            "ore": "stem_energy_circuit"
+        },
+        "P": {
+            "type": "forge:ore_dict",
+            "ore": "stem_machine_processor"
+        },
+        "D": {
+            "type": "forge:ore_dict",
+            "ore": "stem_inf_device"
+        },
+        "B": {
+            "item": "minecraft:bucket"
+        }
+    },
+    "result": {
+        "item": "stem:basic",
+        "data": 11
+    }
+}
