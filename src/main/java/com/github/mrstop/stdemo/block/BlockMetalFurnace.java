@@ -130,7 +130,7 @@ public class BlockMetalFurnace extends BlockContainer
     {
         int metadata = world.getBlockMetadata(blockX, blockY, blockZ);                                                  //获取方块当前Metadata
         TileEntity tileentity = world.getTileEntity(blockX, blockY, blockZ);                                            //临时TileEntity
-        //isBurning = true;                                                                                               //设置燃烧状态为true
+        isBurning = true;                                                                                               //设置燃烧状态为true
         if (isBurningFlag)                                                                                              //判断燃烧状态是否为true
         {
             world.setBlock(blockX, blockY, blockZ, BlockLoader.metalFunaceActive);                                      //将方块设为燃烧状态
@@ -139,7 +139,7 @@ public class BlockMetalFurnace extends BlockContainer
         {
             world.setBlock(blockX, blockY, blockZ, BlockLoader.metalFunaceInactive);                                    //将方块设为未燃烧状态
         }
-        //isBurning = false;                                                                                              //设置燃烧状态为false
+        isBurning = false;                                                                                              //设置燃烧状态为false
         world.setBlockMetadataWithNotify(blockX, blockY, blockZ, metadata, 2);                              //设置方块Metadata
         if (tileentity != null)
         {
@@ -160,19 +160,6 @@ public class BlockMetalFurnace extends BlockContainer
     public void onBlockPlacedBy(World worldIn, int x, int y, int z, EntityLivingBase placer, ItemStack itemIn)
     {
         int sideFlag = MathHelper.floor_double((double)(placer.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
-        /* rotationYaw 0°(360°) South
-        *  rotationYaw 90°      West
-        *  rotationYaw 180°     North
-        *  rotationYaw 270°     East
-        *  MathHelper.floor_double(double d)返回小于等于d的最大整数
-        *  rotationYaw * 4 / 360 ∈ [0, 4)
-        *  placer.rotationYaw * 4 / 360) + 0.5 ∈ [0.5, 4.5) ∈ [0.1, 100.1)
-        *  [0.1, 100.1) & 11 ∈ {00, 01, 10, 11} ∈ {0, 1, 2, 3}
-        *  0 -- South
-        *  1 -- West
-        *  2 -- North
-        *  3 -- East
-        * */
 
         if (sideFlag == 0)
         {

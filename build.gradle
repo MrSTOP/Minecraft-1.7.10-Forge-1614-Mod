@@ -12,19 +12,34 @@ buildscript {
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+        classpath files('fgow-1.1.0.jar')
     }
 }
 
-apply plugin: 'forge'
+apply plugin: 'fgow'
 
-version = "0.1.0.000"
+repositories {
+    flatDir { name = "local"; dirs "/" }
+    mavenCentral()
+    maven {
+        name = "maven"
+        url = "http://maven.oschina.net/content/groups/public/"
+    }
+
+    maven {
+        name = "minecraft"
+        url = "http://bmclapi2.bangbang93.com/libraries"
+    }
+}
+
+version = "1.0.0.000"
 group= "com.github.mrstop.stdemo" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "stdemo"
+archivesBaseName = "stdome"
 
 minecraft {
     version = "1.7.10-10.13.4.1614-1.7.10"
     runDir = "eclipse"
-    mappings = "snapshot_20140925"
+    mappings = "stable_12"
 }
 
 dependencies {

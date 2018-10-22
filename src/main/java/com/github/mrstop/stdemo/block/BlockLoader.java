@@ -13,10 +13,6 @@ public class BlockLoader {
     public static Block colorBlock = new BlockColorCrops();
     public static Block metalFunaceActive = new BlockMetalFurnace(true);
     public static Block metalFunaceInactive = new BlockMetalFurnace(false);
-    public static Block redstoneFluxFurnaceActive = new BlockRedstoneFluxFurnace(true);
-    public static Block getRedstoneFluxFurnaceInactive = new BlockRedstoneFluxFurnace(false);
-    public static Block windmillBlock = new BlockWindmill();
-    public static Block windmillGroundBlock = new BlockWindmillGround();
 
 
     public  BlockLoader(FMLPreInitializationEvent event)//构造方法
@@ -27,10 +23,6 @@ public class BlockLoader {
         register(colorBlock, "color_block");
         register(metalFunaceActive, "metal_furnace_active");
         register(metalFunaceInactive, "metal_furnace_inactive");
-        register(redstoneFluxFurnaceActive, "redstoneflux_furnace_active");
-        register(getRedstoneFluxFurnaceInactive, "redstoneflux_furnace_inactive");
-        register(windmillBlock, "windmill_block");
-        register(windmillGroundBlock, "windmill_ground_block");
     }
 
     private static void register(Block block,String name)//注册方块的方法

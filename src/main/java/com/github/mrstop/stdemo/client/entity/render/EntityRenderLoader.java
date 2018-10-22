@@ -10,6 +10,7 @@ public class EntityRenderLoader {
 
     public EntityRenderLoader()
     {
+
         RenderingRegistry.registerEntityRenderingHandler(EntityExplosionEgg.class, new RenderSnowball(ItemLoader.explosionEgg));
         RenderingRegistry.registerEntityRenderingHandler(EntityGoldenEgg.class, new RenderSnowball(ItemLoader.goldenEgg));
         //EntityLoader.registerRenders();

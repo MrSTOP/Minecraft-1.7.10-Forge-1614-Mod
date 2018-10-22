@@ -1,8 +1,6 @@
 package com.github.mrstop.stdemo.client;
 
-import com.github.mrstop.stdemo.client.block.render.RenderBlockLoader;
 import com.github.mrstop.stdemo.client.entity.render.EntityRenderLoader;
-import com.github.mrstop.stdemo.client.tielentity.render.TileEntityRenderLoader;
 import com.github.mrstop.stdemo.common.CommonProxy;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -16,8 +14,6 @@ public class ClientProxy extends CommonProxy {
     {
         super.preInit(event);
         new EntityRenderLoader();
-        new TileEntityRenderLoader();
-        new RenderBlockLoader();
         //RenderingRegistry.registerEntityRenderingHandler(EntityGoldenChicken.class, new RenderGolderChicken(new Model));
     }
 

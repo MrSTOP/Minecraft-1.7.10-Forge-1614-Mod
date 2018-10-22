@@ -146,60 +146,7 @@ public class ContainerDemo extends Container {
     @Override
     public ItemStack transferStackInSlot(EntityPlayer entityPlayer, int index)
     {
-        /*Slot slot = (Slot)inventorySlots.get(index);
-
-        if (slot == null || !slot.getHasStack())
-        {
-            return null;
-        }
-
-        ItemStack newStack = slot.getStack(), oldStack = newStack.copy();
-
-
-        // TODO
-        boolean isMerged = false;
-
-        if (index == 0 || index == 2)
-        {
-            isMerged = mergeItemStack(newStack, 4, 40, true);
-        }
-        else if (index >= 4 && index < 31)
-        {
-            isMerged = !goldSlot.getHasStack() && newStack.stackSize <= 16 && mergeItemStack(newStack, 0, 1, false)
-                    || !emeraldSlot.getHasStack() && mergeItemStack(newStack, 2, 3, false)
-                    || mergeItemStack(newStack, 31, 40, false);
-        }
-        else if (index >= 31 && index < 40)
-        {
-            isMerged = !goldSlot.getHasStack() && newStack.stackSize <= 16 && mergeItemStack(newStack, 0, 1, false)
-                    || !emeraldSlot.getHasStack() && mergeItemStack(newStack, 2, 3, false)
-                    || mergeItemStack(newStack, 4, 31, false);
-        }
-
-        if (!isMerged)
-        {
-            return null;
-        }
-        //
-        if (!isMerged)
-        {
-            return null;
-        }
-
-        if (newStack.stackSize == 0)
-        {
-            slot.putStack(null);
-        }
-        else
-        {
-            slot.onSlotChanged();
-        }
-
-        slot.onPickupFromSlot(entityPlayer, newStack);
-
-        return oldStack;*/
-
-        /*Slot slot = (Slot)inventorySlots.get(index);
+        Slot slot = (Slot)inventorySlots.get(index);
 
         if (slot == null || !slot.getHasStack())
             //
@@ -221,31 +168,11 @@ public class ContainerDemo extends Container {
             // 该索引介于min索引（含）和max索引（不含）之间。
             // 参数：物品栈，minIndex，maxIndex，negativ 方向。
             // !!Container实现不会检查项目是否对插槽有效!!
-            //
-            //调用Container类的mergeItemStack方法，以试图把物品的部分放入第一个可用的物品槽：
-            //该方法的第一个参数传入想要更改的ItemStack
-            //该方法的第二个参数和第三个参数传入想要放入的物品槽的开始ID（包含）和结束ID（不包含），
-            // 在这里也就是4-39，即玩家背包中的36个物品槽
-            //该方法的最后一个参数传入是正向查找第一个可用物品槽（4-39），还是反向查找（39-4），
-            // 当然如果等放入的物品槽只有一个（后面会遇到）那么这两者是没有区别的
         }
         else if (index >= 4 && index < 31)
         {
-            isMerged = !goldSlot.getHasStack()
-                    && newStack.stackSize <= 16
-                    && mergeItemStack(newStack, 0, 1, false)
-                    || !emeraldSlot.getHasStack() && mergeItemStack(newStack, 2, 3, false)
-                    || mergeItemStack(newStack, 31, 40, false);
+            isMerged = !goldSlot.getHasStack() && newStack.stackSize <= 16 && mergeItemStack(newStack, 0, 1, false)
         }
-        else if (index >= 31 && index < 40)
-        {
-            isMerged = !goldSlot.getHasStack()
-                    && newStack.stackSize <= 16
-                    && mergeItemStack(newStack, 0, 1, false)
-                    || !emeraldSlot.getHasStack()
-                    || mergeItemStack(newStack, 4, 31, false);
-        }
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////
         if(!isMerged)
         {
@@ -262,7 +189,6 @@ public class ContainerDemo extends Container {
 
         slot.onPickupFromSlot(entityPlayer, newStack);
 
-        return oldStack;*/
-        return null;
+        return oldStack;
     }
 }
