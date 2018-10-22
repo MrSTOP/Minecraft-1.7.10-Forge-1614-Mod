@@ -18,9 +18,13 @@
 *.zip
 *.tar.gz
 *.rar
-/out/
+/.gradle/
+/build/
 /eclipse/
+/out/
 /src/main/java/com/mod
 /src/main/java/com/thegrovesyproject
+buildinfo.txt
+INFO.txt
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
