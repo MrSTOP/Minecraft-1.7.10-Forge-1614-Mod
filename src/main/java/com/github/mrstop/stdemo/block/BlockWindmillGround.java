@@ -6,7 +6,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
@@ -116,11 +115,6 @@ public class BlockWindmillGround extends Block {
             default:
                 this.setBlockBounds(0, 0, 0, 1, 0.3F, 1);
         }
-    }
-
-    @Override
-    public AxisAlignedBB getCollisionBoundingBoxFromPool(World worldIn, int x, int y, int z) {
-        return super.getCollisionBoundingBoxFromPool(worldIn, x, y, z);
     }
 
     @Override

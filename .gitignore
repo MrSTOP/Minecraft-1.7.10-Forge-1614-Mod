@@ -24,12 +24,10 @@
 /out/
 /src/main/java/com/mod
 /src/main/java/com/thegrovesyproject
-/src/main/java/com/piepenguin
 /src/main/resources/assets/minecraft
 /src/main/resources/assets/stem
 /src/main/resources/assets/tm
 /src/main/resources/assets/tuto
-/src/main/resources/assets/rfwindmill
 buildinfo.txt
 INFO.txt
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
