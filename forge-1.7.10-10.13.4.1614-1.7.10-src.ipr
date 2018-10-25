@@ -14,6 +14,9 @@
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/common/EventLoader.java" charset="GBK" />
+  </component>
   <component name="GradleUISettings">
     <setting name="root" />
   </component>
@@ -177,7 +180,7 @@
       <module fileurl="file://$PROJECT_DIR$/forge-1.7.10-10.13.4.1614-1.7.10-src.iml" filepath="$PROJECT_DIR$/forge-1.7.10-10.13.4.1614-1.7.10-src.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="SvnBranchConfigurationManager">

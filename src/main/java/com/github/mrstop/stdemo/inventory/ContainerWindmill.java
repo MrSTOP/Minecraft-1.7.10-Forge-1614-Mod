@@ -29,17 +29,17 @@ public class ContainerWindmill extends Container {
     @Override
     public void onCraftGuiOpened(ICrafting iCrafting) {
         super.onCraftGuiOpened(iCrafting);
-        iCrafting.sendProgressBarUpdate(this, 0, (int) this.tileEntityWindmill.getCurrentPower());
+        iCrafting.sendProgressBarUpdate(this, 0, this.tileEntityWindmill.getCurrentPower());
     }
 
     @Override
     public void detectAndSendChanges() {
         super.detectAndSendChanges();
-        float tempCurrentPower = this.tileEntityWindmill.getCurrentPower();
+        int tempCurrentPower = this.tileEntityWindmill.getCurrentPower();
         for (Object crafter : this.crafters) {
             ICrafting iCrafting = (ICrafting) crafter;
             if (this.currentPower != tempCurrentPower) {
-                iCrafting.sendProgressBarUpdate(this, 0, (int) tempCurrentPower);
+                iCrafting.sendProgressBarUpdate(this, 0, tempCurrentPower);
             }
         }
         this.currentPower = tempCurrentPower;
