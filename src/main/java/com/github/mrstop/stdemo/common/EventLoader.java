@@ -106,7 +106,7 @@ public class EventLoader {
     @SubscribeEvent
     public void onPlayerClickGrassBlock(PlayerRightClickGrassBlockEvent event)
     {
-        //Éú³ÉTNT
+        //ç”ŸæˆTNT
         if (!event.world.isRemote)
         {
             int blockX = event.blockX;
@@ -118,7 +118,7 @@ public class EventLoader {
             event.entityPlayer.triggerAchievement(AchievementLoader.explosionFromGrassBlock);
         }
 
-        //Éú³É½ğ¼¦
+        //ç”Ÿæˆé‡‘é¸¡
         if (!event.world.isRemote)
         {
             ItemStack heldItem = event.entityPlayer.getHeldItem();
@@ -304,12 +304,12 @@ public class EventLoader {
         GL11.glEnable(GL11.GL_TEXTURE_2D);
         GL11.glDisable(GL11.GL_BLEND);
     }
-    //TODO ÍêÉÆÑ¡ÖĞ¸ßÁÁ
+    //TODO å®Œå–„é€‰ä¸­é«˜äº®
     private void drawWindmillBlockHighLight(Tessellator tessellator, AxisAlignedBB bounds, int metadata){
         if (metadata < 4){
-            //Êú×ÅµÄËÄÌõ±ß
-            //GL_LINES Ã¿Á½¶Ô¶¥µã±»½âÊÍÎªÒ»ÌõÖ±Ïß£¬Èç¹ûÓĞ¶à¶Ô¶¥µã£¬Ã¿¶Ô¶¥µãÖ®¼ä»¥²»Á¬½Ó
-            //GL_LINE_STRIP Ò»ÏµÁĞµÄÁ¬ĞøÖ±Ïß
+            //ç«–ç€çš„å››æ¡è¾¹
+            //GL_LINES æ¯ä¸¤å¯¹é¡¶ç‚¹è¢«è§£é‡Šä¸ºä¸€æ¡ç›´çº¿ï¼Œå¦‚æœæœ‰å¤šå¯¹é¡¶ç‚¹ï¼Œæ¯å¯¹é¡¶ç‚¹ä¹‹é—´äº’ä¸è¿æ¥
+            //GL_LINE_STRIP ä¸€ç³»åˆ—çš„è¿ç»­ç›´çº¿
             tessellator.startDrawing(GL11.GL_LINES);
             tessellator.addVertex(bounds.minX, bounds.minY - 0 - metadata, bounds.minZ);
             tessellator.addVertex(bounds.minX, bounds.maxY + 3 - metadata, bounds.minZ);
@@ -320,8 +320,8 @@ public class EventLoader {
             tessellator.addVertex(bounds.minX, bounds.minY - 0 - metadata, bounds.maxZ);
             tessellator.addVertex(bounds.minX, bounds.maxY + 3 - metadata, bounds.maxZ);
             tessellator.draw();
-            //ÉÏÃæµÄËÄÌõ±ß
-            //°´Ë³Ê±Õë·½Ïò»æÖÆÁËÒ»¸ö¾ØĞÎ
+            //ä¸Šé¢çš„å››æ¡è¾¹
+            //æŒ‰é¡ºæ—¶é’ˆæ–¹å‘ç»˜åˆ¶äº†ä¸€ä¸ªçŸ©å½¢
             tessellator.startDrawing(GL11.GL_LINE_STRIP);
             tessellator.addVertex(bounds.minX, bounds.maxY + 3 - metadata, bounds.minZ);
             tessellator.addVertex(bounds.maxX, bounds.maxY + 3 - metadata, bounds.minZ);
@@ -329,8 +329,8 @@ public class EventLoader {
             tessellator.addVertex(bounds.minX, bounds.maxY + 3 - metadata, bounds.maxZ);
             tessellator.addVertex(bounds.minX, bounds.maxY + 3 - metadata, bounds.minZ);
             tessellator.draw();
-            //ÏÂÃæËÄÌõ±ß
-            //°´Ë³Ê±Õë·½Ïò»æÖÆÁËÒ»¸ö¾ØĞÎ
+            //ä¸‹é¢å››æ¡è¾¹
+            //æŒ‰é¡ºæ—¶é’ˆæ–¹å‘ç»˜åˆ¶äº†ä¸€ä¸ªçŸ©å½¢
             tessellator.startDrawing(GL11.GL_LINE_STRIP);
             tessellator.addVertex(bounds.minX, bounds.minY - 0 - metadata, bounds.minZ);
             tessellator.addVertex(bounds.maxX, bounds.minY - 0 - metadata, bounds.minZ);
@@ -341,7 +341,7 @@ public class EventLoader {
 
         }
         else {
-            //Êú×ÅµÄËÄÌõ±ß
+            //ç«–ç€çš„å››æ¡è¾¹
             tessellator.startDrawing(GL11.GL_LINES);
             tessellator.addVertex(bounds.minX, bounds.minY, bounds.minZ);
             tessellator.addVertex(bounds.minX, bounds.maxY, bounds.minZ);
@@ -355,8 +355,8 @@ public class EventLoader {
             tessellator.addVertex(bounds.minX, bounds.minY, bounds.maxZ);
             tessellator.addVertex(bounds.minX, bounds.maxY, bounds.maxZ);
             tessellator.draw();
-            //ÉÏÃæµÄËÄÌõ±ß
-            //°´Ë³Ê±Õë·½Ïò»æÖÆÁËÒ»¸ö¾ØĞÎ
+            //ä¸Šé¢çš„å››æ¡è¾¹
+            //æŒ‰é¡ºæ—¶é’ˆæ–¹å‘ç»˜åˆ¶äº†ä¸€ä¸ªçŸ©å½¢
             tessellator.startDrawing(GL11.GL_LINE_STRIP);
             tessellator.addVertex(bounds.minX, bounds.maxY, bounds.minZ);
             tessellator.addVertex(bounds.maxX, bounds.maxY, bounds.minZ);
@@ -364,8 +364,8 @@ public class EventLoader {
             tessellator.addVertex(bounds.minX, bounds.maxY, bounds.maxZ);
             tessellator.addVertex(bounds.minX, bounds.maxY, bounds.minZ);
             tessellator.draw();
-            //ÏÂÃæËÄÌõ±ß
-            //°´Ë³Ê±Õë·½Ïò»æÖÆÁËÒ»¸ö¾ØĞÎ
+            //ä¸‹é¢å››æ¡è¾¹
+            //æŒ‰é¡ºæ—¶é’ˆæ–¹å‘ç»˜åˆ¶äº†ä¸€ä¸ªçŸ©å½¢
             tessellator.startDrawing(GL11.GL_LINE_STRIP);
             tessellator.addVertex(bounds.minX, bounds.minY, bounds.minZ);
             tessellator.addVertex(bounds.maxX, bounds.minY, bounds.minZ);
@@ -378,7 +378,7 @@ public class EventLoader {
     private void drawWindmillGroundBlockHighLight(Tessellator tessellator, AxisAlignedBB bounds, int metadata){
         switch (metadata){
             case 0:
-                //Êú×ÅµÄËÄÌõ±ß
+                //ç«–ç€çš„å››æ¡è¾¹
                 tessellator.startDrawing(GL11.GL_LINES);
                 tessellator.addVertex(bounds.minX, bounds.minY, bounds.minZ);
                 tessellator.addVertex(bounds.minX, bounds.maxY, bounds.minZ);
@@ -392,8 +392,8 @@ public class EventLoader {
                 tessellator.addVertex(bounds.minX, bounds.minY, bounds.maxZ);
                 tessellator.addVertex(bounds.minX, bounds.maxY, bounds.maxZ);
                 tessellator.draw();
-                //ÉÏÃæµÄËÄÌõ±ß
-                //°´Ë³Ê±Õë·½Ïò»æÖÆÁËÒ»¸ö¾ØĞÎ
+                //ä¸Šé¢çš„å››æ¡è¾¹
+                //æŒ‰é¡ºæ—¶é’ˆæ–¹å‘ç»˜åˆ¶äº†ä¸€ä¸ªçŸ©å½¢
                 tessellator.startDrawing(GL11.GL_LINE_STRIP);
                 tessellator.addVertex(bounds.minX, bounds.maxY, bounds.minZ);
                 tessellator.addVertex(bounds.maxX, bounds.maxY, bounds.minZ);
@@ -401,8 +401,8 @@ public class EventLoader {
                 tessellator.addVertex(bounds.minX, bounds.maxY, bounds.maxZ);
                 tessellator.addVertex(bounds.minX, bounds.maxY, bounds.minZ);
                 tessellator.draw();
-                //ÏÂÃæËÄÌõ±ß
-                //°´Ë³Ê±Õë·½Ïò»æÖÆÁËÒ»¸ö¾ØĞÎ
+                //ä¸‹é¢å››æ¡è¾¹
+                //æŒ‰é¡ºæ—¶é’ˆæ–¹å‘ç»˜åˆ¶äº†ä¸€ä¸ªçŸ©å½¢
                 tessellator.startDrawing(GL11.GL_LINE_STRIP);
                 tessellator.addVertex(bounds.minX, bounds.minY, bounds.minZ);
                 tessellator.addVertex(bounds.maxX, bounds.minY, bounds.minZ);
@@ -412,7 +412,7 @@ public class EventLoader {
                 tessellator.draw();
                 break;
             case 1:
-                //Êú×ÅµÄËÄÌõ±ß
+                //ç«–ç€çš„å››æ¡è¾¹
                 tessellator.startDrawing(GL11.GL_LINES);
                 tessellator.addVertex(bounds.minX + 0.0, bounds.minY, bounds.minZ + 0.0);
                 tessellator.addVertex(bounds.minX + 0.0, bounds.maxY, bounds.minZ + 0.0);
@@ -426,7 +426,7 @@ public class EventLoader {
                 tessellator.addVertex(bounds.minX + 0.0, bounds.minY, bounds.maxZ + 1.7);
                 tessellator.addVertex(bounds.minX + 0.0, bounds.maxY, bounds.maxZ + 1.7);
                 tessellator.draw();
-                //ÏÂÃæËÄÌõ±ß
+                //ä¸‹é¢å››æ¡è¾¹
                 tessellator.startDrawing(GL11.GL_LINE_STRIP);
                 tessellator.addVertex(bounds.minX + 0.0, bounds.minY, bounds.minZ + 0.0);
                 tessellator.addVertex(bounds.maxX + 1.7, bounds.minY, bounds.minZ + 0.0);
@@ -434,7 +434,7 @@ public class EventLoader {
                 tessellator.addVertex(bounds.minX + 0.0, bounds.minY, bounds.maxZ + 1.7);
                 tessellator.addVertex(bounds.minX + 0.0, bounds.minY, bounds.minZ + 0.0);
                 tessellator.draw();
-                //ÉÏÃæËÄÌõ±ß
+                //ä¸Šé¢å››æ¡è¾¹
                 tessellator.startDrawing(GL11.GL_LINE_STRIP);
                 tessellator.addVertex(bounds.minX + 0.0, bounds.maxY, bounds.minZ + 0.0);
                 tessellator.addVertex(bounds.maxX + 1.7, bounds.maxY, bounds.minZ + 0.0);

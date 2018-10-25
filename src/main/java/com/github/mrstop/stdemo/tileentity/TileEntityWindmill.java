@@ -1,138 +1,77 @@
 package com.github.mrstop.stdemo.tileentity;
 
-import cofh.api.energy.EnergyStorage;
-import cofh.api.energy.IEnergyHandler;
-import cofh.api.energy.IEnergyProvider;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.network.NetworkManager;
-import net.minecraft.network.Packet;
-import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.MathHelper;
-import net.minecraftforge.common.util.ForgeDirection;
 
-public class TileEntityWindmill extends TileEntity implements ISidedInventory, IEnergyProvider {
-    EnergyStorage energyStorage;
-    private final float maxPower = 500_000.0F;
-    private final int maxOutput = 50;
-    private final int nextRandomCount = 600;
-    private int nextRandom = nextRandomCount;
+public class TileEntityWindmill extends TileEntity implements ISidedInventory {
     private int rotation;
     private int rotationRate;
-    private int rotationRateMin;
-    private int rotationRateMax;
     private boolean hasRotationRate = false;
+    private final int maxPower = 10000;
+    private float currentPower = 0.0F;
+    private float powerPerRotation = 0.0F;
     private ItemStack[] windmillItemStacks = new ItemStack[2];
-    private String windmillCustomName;
+    private String windmillCustomName = "container.windmill";
 
     public TileEntityWindmill() {
         super();
-        this.energyStorage = new EnergyStorage((int) this.maxPower, this.maxOutput);
         this.rotationRate = (int)(Math.random() * 20);
+        this.powerPerRotation = this.rotationRate / 5;
     }
 
-    public int getRotation() {
+    public double getRotation() {
         return this.rotation;
     }
 
-    public int getCurrentPower() {
-        return this.energyStorage.getEnergyStored();
+    public float getCurrentPower() {
+        return currentPower;
     }
 
-    public void setCurrentPower(int currentPower) {
-        this.energyStorage.setEnergyStored(currentPower);
+    public void setCurrentPower(float currentPower) {
+        this.currentPower = currentPower;
     }
 
     public int getPowerScale(int scale){
-        return  (int) (((double) this.energyStorage.getEnergyStored() / this.maxPower) * scale);
+        return (int) ((this.currentPower / this.maxPower) * scale);
     }
 
     @Override
     public void updateEntity() {
         if (!this.worldObj.isRemote) {
             super.updateEntity();
-            if (this.nextRandom == 0){
-                System.out.print("RANDOM\n");
-                this.rotationRate += (Math.random() - 1) * 5;
-                if (this.rotationRate <= 0){
-                    this.rotationRate = 0;
-                }
-                this.hasRotationRate = true;
-                this.nextRandom = nextRandomCount;
-            }
             //产生旋转速度
             if (!this.hasRotationRate) {
-                this.rotationRate = (int) (MathHelper.sin(((this.yCoord - 5) / 100.0F)) * 60 + 5);
-                System.out.print(this.rotationRate + "\n");
-                if (this.rotationRate <= 0){
-                    this.rotationRate = 0;
-                }
-                this.rotationRateMin = this.rotationRate - 10;
-                this.rotationRateMax = this.rotationRate + 10;
-                if (this.rotationRateMin <= 0){
-                    this.rotationRateMin = 0;
-                }
+                this.rotationRate = (int) (Math.log(yCoord / 10) * 8);
+                this.powerPerRotation = this.rotationRate / 5;
                 this.hasRotationRate = true;
             }
-            //产生能量
-            this.energyStorage.modifyEnergyStored(this.rotationRate);
-//            System.out.print(this.energyStorage.getEnergyStored() + "\n");
-            //判断能量是否达到最大值 EnergyStorage已实现此功能
-            //if (this.energyStorage.getEnergyStored() < this.maxPower) {
-            //}
-            //检测是否存在可以接收能量的TileEntity，如果有则尝试发送能量
-            if (this.energyStorage.getMaxEnergyStored() != 0){
-                for (ForgeDirection dir : ForgeDirection.VALID_DIRECTIONS) {
-                    int targetX = this.xCoord + dir.offsetX;
-                    int targetY = this.yCoord + dir.offsetY;
-                    int targetZ = this.zCoord + dir.offsetZ;
-                    TileEntity tileEntity = this.worldObj.getTileEntity(targetX, targetY, targetZ);
-                    if (tileEntity instanceof IEnergyHandler){
-                        int maxAvailable = this.energyStorage.extractEnergy(this.energyStorage.getMaxExtract(), true);
-                        int realExtract = ((IEnergyHandler)tileEntity).receiveEnergy(dir.getOpposite(), maxAvailable, false);
-                        this.energyStorage.extractEnergy(realExtract, false);
-                    }
-                }
+            //判断能量是否达到最大值
+            if (this.currentPower < this.maxPower) {
+                //产生能量
+                this.currentPower += this.powerPerRotation;
             }
-            this.markDirty();
+            //this.markDirty();
         }
         //旋转扇叶
         this.rotation += this.rotationRate;
-//        System.out.print(this.rotationRate + "<<>>" + this.rotation + "\n");
         //判断旋转量大于360则重置
         if (this.rotation >= 360) {
             this.rotation = 0;
         }
     }
 
-    //TODO 作用不明 好像是用来进行 服务器——客户端 数据同步的
-    @Override
-    public Packet getDescriptionPacket() {
-        NBTTagCompound nbtTagCompound = new NBTTagCompound();
-        this.writeToNBT(nbtTagCompound);
-        return new S35PacketUpdateTileEntity(this.xCoord, this.yCoord, this.zCoord, 1, nbtTagCompound);
-    }
-
-    //TODO 作用不明 好像是用来进行 服务器——客户端 数据同步的
-    @Override
-    public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
-        readFromNBT(pkt.getNbtCompound());
-    }
-
     @Override
     public void readFromNBT(NBTTagCompound compound) {
         super.readFromNBT(compound);
-        this.energyStorage.readFromNBT(compound);
         this.rotation = compound.getInteger("rotation");
         this.rotationRate = compound.getInteger("rotationRate");
         this.hasRotationRate = compound.getBoolean("hasRotationRate");
-        this.rotationRateMin = compound.getInteger("rotationRateMin");
-        this.rotationRateMax = compound.getInteger("rotationRateMax");
-        this.nextRandom = compound.getInteger("nextRandom");
+        this.currentPower = compound.getFloat("currentPower");
+        this.powerPerRotation = compound.getFloat("powerPerRotation");
         NBTTagList nbtTagList = compound.getTagList("Items", 10);
         this.windmillItemStacks = new ItemStack[this.getSizeInventory()];
         for (int i = 0; i < nbtTagList.tagCount(); ++i) {
@@ -150,13 +89,11 @@ public class TileEntityWindmill extends TileEntity implements ISidedInventory, I
     @Override
     public void writeToNBT(NBTTagCompound compound) {
         super.writeToNBT(compound);
-        this.energyStorage.writeToNBT(compound);
-        compound.setInteger("rotation", this.rotation);
-        compound.setInteger("rotationRate", this.rotationRate);
-        compound.setBoolean("hasRotationRate", this.hasRotationRate);
-        compound.setInteger("rotationRateMin", this.rotationRateMin);
-        compound.setInteger("rotationRateMax", this.rotationRateMax);
-        compound.setInteger("nextRandom", this.nextRandom);
+        compound.setInteger("rotation", rotation);
+        compound.setInteger("rotationRate", rotationRate);
+        compound.setBoolean("hasRotationRate", hasRotationRate);
+        compound.setFloat("currentPower", currentPower);
+        compound.setFloat("powerPerRotation", powerPerRotation);
         NBTTagList nbtTagList = new NBTTagList();
         for (int i = 0; i < this.windmillItemStacks.length; ++i) {
             if (this.windmillItemStacks[i] != null){
@@ -241,7 +178,7 @@ public class TileEntityWindmill extends TileEntity implements ISidedInventory, I
 
     @Override
     public String getInventoryName() {
-        return this.isCustomInventoryName() ? this.windmillCustomName : "stdemo.container.windmill";
+        return this.isCustomInventoryName() ? this.windmillCustomName : "container.windmill";
     }
 
     public void setInventoryName(String name){
@@ -276,25 +213,5 @@ public class TileEntityWindmill extends TileEntity implements ISidedInventory, I
     @Override
     public boolean isItemValidForSlot(int index, ItemStack stack) {
         return false;
-    }
-
-    @Override
-    public int extractEnergy(ForgeDirection forgeDirection, int energyExtract, boolean isSimulate) {
-        return this.energyStorage.extractEnergy(energyExtract, isSimulate);
-    }
-
-    @Override
-    public int getEnergyStored(ForgeDirection forgeDirection) {
-        return this.energyStorage.getEnergyStored();
-    }
-
-    @Override
-    public int getMaxEnergyStored(ForgeDirection forgeDirection) {
-        return this.energyStorage.getMaxEnergyStored();
-    }
-
-    @Override
-    public boolean canConnectEnergy(ForgeDirection forgeDirection) {
-        return true;
     }
 }

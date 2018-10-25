@@ -8,13 +8,13 @@ public class TileEntityLoader {
 
     public TileEntityLoader(FMLPreInitializationEvent event)
     {
-        registerTileEntity(TileEntityMetalFurnace.class, "STDemo.MetalFurnace");
-        registerTileEntity(TileEntityRedstoneFluxFurnace.class, "STDemo.RedstoneFluxFurnace");
-        registerTileEntity(TileEntityWindmill.class, "SEDemo.Windmill");
+        registerTileEntity(TileEntityMetalFurnace.class, "MetalFurnace");
+        registerTileEntity(TileEntityRedstoneFluxFurnace.class, "RedstoneFluxFurnace");
+        registerTileEntity(TileEntityWindmill.class, "Windmill");
     }
 
-    public void registerTileEntity(Class <? extends TileEntity> tileEntityClass, String id)
+    public void registerTileEntity(Class <? extends TileEntity> tileentityClass, String id)
     {
-        GameRegistry.registerTileEntity(tileEntityClass, id);
+        GameRegistry.registerTileEntity(tileentityClass, id);
     }
 }

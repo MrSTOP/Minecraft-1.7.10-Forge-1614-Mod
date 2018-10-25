@@ -35,12 +35,14 @@ public class ContainerRedstoneFluxFurnace extends Container {
         }
     }
 
-    @Override
+    /*@Override
     public void onCraftGuiOpened(ICrafting iCrafting)
     {
         super.onCraftGuiOpened(iCrafting);
-        iCrafting.sendProgressBarUpdate(this, 0, this.tileEntityRedstoneFluxFurnace.redstoneFluxFurnaceCookTime);
-    }
+        iCrafting.sendProgressBarUpdate(this, 0, this.tileEntityRedstoneFluxFurnace.redstoneFluxFurnaceBurnTime);
+        iCrafting.sendProgressBarUpdate(this, 1, this.tileEntityRedstoneFluxFurnace.redstoneFluxFurnaceCookTime);
+        iCrafting.sendProgressBarUpdate(this, 2, this.tileEntityRedstoneFluxFurnace.currentItemBurnTime);
+    }*/
 
     @Override
     public void detectAndSendChanges()
@@ -55,9 +57,21 @@ public class ContainerRedstoneFluxFurnace extends Container {
             {
                 icrafting.sendProgressBarUpdate(this, 0, this.tileEntityRedstoneFluxFurnace.redstoneFluxFurnaceCookTime);
             }
+
+            /*if (this.lastBurnTime != this.tileEntityRedstoneFluxFurnace.redstoneFluxFurnaceBurnTime)
+            {
+                icrafting.sendProgressBarUpdate(this, 1, this.tileEntityRedstoneFluxFurnace.redstoneFluxFurnaceBurnTime);
+            }*/
+
+            /*if (this.lastItemBurnTime != this.tileEntityRedstoneFluxFurnace.currentItemBurnTime)
+            {
+                icrafting.sendProgressBarUpdate(this, 2, this.tileEntityRedstoneFluxFurnace.currentItemBurnTime);
+            }*/
         }
 
         this.lastCookTime = this.tileEntityRedstoneFluxFurnace.redstoneFluxFurnaceCookTime;
+        //this.lastBurnTime = this.tileEntityRedstoneFluxFurnace.redstoneFluxFurnaceBurnTime;
+        //this.lastItemBurnTime = this.tileEntityRedstoneFluxFurnace.currentItemBurnTime;
     }
 
     @SideOnly(Side.CLIENT)
@@ -69,6 +83,12 @@ public class ContainerRedstoneFluxFurnace extends Container {
             case 0:
                 this.tileEntityRedstoneFluxFurnace.redstoneFluxFurnaceCookTime = data;
                 break;
+            /*case 1:
+                this.tileEntityRedstoneFluxFurnace.redstoneFluxFurnaceBurnTime = data;
+                break;*/
+            /*case 2:
+                this.tileEntityRedstoneFluxFurnace.currentItemBurnTime = data;
+                break;*/
             default:
                 break;
         }
