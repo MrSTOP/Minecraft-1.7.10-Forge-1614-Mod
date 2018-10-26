@@ -11,30 +11,34 @@ public class BlockLoader {
     public static Block chromiteBlock = new BlockChromiteBlock();
     public static Block fluidMercuryBlock = new BlockFluidMercury();
     public static Block colorBlock = new BlockColorCrops();
-    public static Block metalFunaceActive = new BlockMetalFurnace(true);
-    public static Block metalFunaceInactive = new BlockMetalFurnace(false);
+    public static Block metalFurnaceActive = new BlockMetalFurnace(true);
+    public static Block metalFurnaceInactive = new BlockMetalFurnace(false);
     public static Block redstoneFluxFurnaceActive = new BlockRedstoneFluxFurnace(true);
     public static Block getRedstoneFluxFurnaceInactive = new BlockRedstoneFluxFurnace(false);
     public static Block windmillBlock = new BlockWindmill();
     public static Block windmillGroundBlock = new BlockWindmillGround();
+    public static Block quartzFurnaceActive = new BlockQuartzFurnace(true);
+    public static Block quartzFurnaceInactive = new BlockQuartzFurnace(false);
 
 
-    public  BlockLoader(FMLPreInitializationEvent event)//构造方法
-    {
+    public  BlockLoader(FMLPreInitializationEvent event) {
+        //构造方法
         register(grassBlock,"grass_block");//注册草块
         register(chromiteBlock, "chromite_block");
         register(fluidMercuryBlock, "fluidMercury_block");
         register(colorBlock, "color_block");
-        register(metalFunaceActive, "metal_furnace_active");
-        register(metalFunaceInactive, "metal_furnace_inactive");
+        register(metalFurnaceActive, "metal_furnace_active");
+        register(metalFurnaceInactive, "metal_furnace_inactive");
         register(redstoneFluxFurnaceActive, "redstoneflux_furnace_active");
         register(getRedstoneFluxFurnaceInactive, "redstoneflux_furnace_inactive");
         register(windmillBlock, "windmill_block");
         register(windmillGroundBlock, "windmill_ground_block");
+        register(quartzFurnaceActive, "quartz_furnace_active");
+        register(quartzFurnaceInactive, "quartz_furnace_inactive");
     }
 
-    private static void register(Block block,String name)//注册方块的方法
-    {
+    private static void register(Block block,String name) {
+        //注册方块的方法
         GameRegistry.registerBlock(block,name);
     }
 }

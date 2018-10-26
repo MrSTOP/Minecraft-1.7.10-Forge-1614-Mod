@@ -23,7 +23,7 @@ public class TileEntityRenderWindmill extends TileEntitySpecialRenderer {
         GL11.glPushMatrix();
         {
             GL11.glDisable(GL11.GL_LIGHTING);
-            double r = ((TileEntityWindmill)tileEntity).getRotation();
+            int r = ((TileEntityWindmill)tileEntity).getRotation();
             Tessellator tessellator = Tessellator.instance;
             GL11.glTranslatef((float) x, (float) y, (float) z);
             this.bindTexture(textureWindmill);

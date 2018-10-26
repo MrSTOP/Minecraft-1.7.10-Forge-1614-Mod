@@ -9,7 +9,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.dispenser.IBlockSource;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
@@ -37,87 +36,70 @@ public class BlockMetalFurnace extends BlockContainer
     private final boolean isBurningFlag;
     private final Random random = new Random();
 
-    public BlockMetalFurnace(boolean isActive)
-    {
+    public BlockMetalFurnace(boolean isActive) {
         super(Material.iron);
         this.setUnlocalizedName("metalFurnace");
         this.setHardness(2.5F);
         this.setStepSound(Block.soundTypeMetal);
-        if (!isActive)
-        {
-            this.setCreativeTab(CreativeTabsLoader.tabSTDemo);
-        }
         this.isBurningFlag = isActive;
-        if (isActive == true)
-        {
+        if (isActive) {
             this.setLightLevel(1.0F);
         }
+        else  {
+            this.setCreativeTab(CreativeTabsLoader.tabSTDemo);
+        }
     }
 
 
 
     @Override
-    public Item getItemDropped(int meta, Random random, int fortune)
-    {
-        return Item.getItemFromBlock(BlockLoader.metalFunaceInactive);
+    public Item getItemDropped(int meta, Random random, int fortune) {
+        return Item.getItemFromBlock(BlockLoader.metalFurnaceInactive);
     }
 
     @Override
-    @SideOnly(Side.CLIENT)
-    public void onBlockAdded(World worldIn, int x, int y, int z)
-    {
+    public void onBlockAdded(World worldIn, int x, int y, int z) {
         super.onBlockAdded(worldIn, x, y, z);
         this.onMetalFurnaceAdded(worldIn, x, y, z);
     }
     //功能不明
-    private void onMetalFurnaceAdded(World world, int blockX, int blockY, int blockZ)
-    {
-        if (!world.isRemote)                                                                                            //判断是否为客户端
-        {
-            Block block = world.getBlock(blockX, blockY, blockZ - 1);                                      //获得金属熔炉北面的方块
-            Block block1 = world.getBlock(blockX, blockY, blockZ + 1);                                     //获得金属熔炉南面的方块
-            Block block2 = world.getBlock(blockX - 1, blockY, blockZ);                                     //获得金属熔炉西面的方块
-            Block block3 = world.getBlock(blockX + 1, blockY, blockZ);                                     //获得金属熔炉东面的方块
+    private void onMetalFurnaceAdded(World world, int blockX, int blockY, int blockZ) {
+        if (!world.isRemote) {
+            //判断是否为客户端
+            Block blockN = world.getBlock(blockX, blockY, blockZ - 1);
+            //获得金属熔炉北面的方块
+            Block blockS = world.getBlock(blockX, blockY, blockZ + 1);
+            //获得金属熔炉南面的方块
+            Block blockW = world.getBlock(blockX - 1, blockY, blockZ);
+            //获得金属熔炉西面的方块
+            Block blockE = world.getBlock(blockX + 1, blockY, blockZ);
+            //获得金属熔炉东面的方块
             byte byte0 = 3;
-
-            if (block.isFullBlock() && !block1.isFullBlock())
-            {
+            if (blockN.isFullBlock() && !blockS.isFullBlock()) {
                 byte0 = 3;
             }
-
-            if (block1.isFullBlock() && !block.isFullBlock())
-            {
+            if (blockS.isFullBlock() && !blockN.isFullBlock()) {
                 byte0 = 2;
             }
-
-            if (block2.isFullBlock() && !block3.isFullBlock())
-            {
+            if (blockW.isFullBlock() && !blockE.isFullBlock()) {
                 byte0 = 5;
             }
-
-            if (block3.isFullBlock() && !block2.isFullBlock())
-            {
+            if (blockE.isFullBlock() && !blockW.isFullBlock()) {
                 byte0 = 4;
             }
-
             world.setBlockMetadataWithNotify(blockX, blockY, blockZ, byte0, 2);
         }
     }
 
     //在块激活时调用（右键单击该块）。 参数：world，x，y，z，player，side，hitX，hitY，hitZ。 返回：握手(Swing hand)（客户端），终止方块放置（服务器）
     @Override
-    public boolean onBlockActivated(World worldIn, int x, int y, int z, EntityPlayer player, int side, float subX, float subY, float subZ)
-    {
-        if (worldIn.isRemote)
-        {
+    public boolean onBlockActivated(World worldIn, int x, int y, int z, EntityPlayer player, int side, float subX, float subY, float subZ) {
+        if (worldIn.isRemote) {
             return true;
         }
-        else
-        {
+        else {
             TileEntityMetalFurnace tileEntityMetalfurnace = (TileEntityMetalFurnace)worldIn.getTileEntity(x, y, z);
-
-            if (tileEntityMetalfurnace != null)
-            {
+            if (tileEntityMetalfurnace != null) {
                 //System.out.println("OpenGui!!");
                 player.openGui(STDemo.instance, STDemo.GUIIDMetalFurnace, worldIn, x, y, z);
             }
@@ -126,23 +108,25 @@ public class BlockMetalFurnace extends BlockContainer
     }
     //用途未知
     //根据是否燃烧来更新炉子对应的方块
-    public static void updateMentalFurnaceBlockState(boolean isBurningFlag, World world, int blockX, int blockY, int blockZ)
-    {
-        int metadata = world.getBlockMetadata(blockX, blockY, blockZ);                                                  //获取方块当前Metadata
-        TileEntity tileentity = world.getTileEntity(blockX, blockY, blockZ);                                            //临时TileEntity
-        //isBurning = true;                                                                                               //设置燃烧状态为true
-        if (isBurningFlag)                                                                                              //判断燃烧状态是否为true
-        {
-            world.setBlock(blockX, blockY, blockZ, BlockLoader.metalFunaceActive);                                      //将方块设为燃烧状态
+    public static void updateMentalFurnaceBlockState(boolean isBurningFlag, World world, int blockX, int blockY, int blockZ) {
+        int metadata = world.getBlockMetadata(blockX, blockY, blockZ);
+        //获取方块当前Metadata
+        TileEntity tileentity = world.getTileEntity(blockX, blockY, blockZ);
+        //临时TileEntity
+        //isBurning = true;//设置燃烧状态为true
+        if (isBurningFlag) {
+            //判断燃烧状态是否为true
+            world.setBlock(blockX, blockY, blockZ, BlockLoader.metalFurnaceActive);
+            //将方块设为燃烧状态
         }
-        else
-        {
-            world.setBlock(blockX, blockY, blockZ, BlockLoader.metalFunaceInactive);                                    //将方块设为未燃烧状态
+        else {
+            world.setBlock(blockX, blockY, blockZ, BlockLoader.metalFurnaceInactive);
+            //将方块设为未燃烧状态
         }
-        //isBurning = false;                                                                                              //设置燃烧状态为false
-        world.setBlockMetadataWithNotify(blockX, blockY, blockZ, metadata, 2);                              //设置方块Metadata
-        if (tileentity != null)
-        {
+        //isBurning = false;//设置燃烧状态为false
+        world.setBlockMetadataWithNotify(blockX, blockY, blockZ, metadata, 2);
+        //设置方块Metadata
+        if (tileentity != null) {
             tileentity.validate();
             world.setTileEntity(blockX, blockY, blockZ, tileentity);
         }
@@ -150,15 +134,13 @@ public class BlockMetalFurnace extends BlockContainer
 
     //返回方块的TileEntity类的新实例，在放置方块时调用
     @Override
-    public TileEntity createNewTileEntity(World world, int meta)
-    {
+    public TileEntity createNewTileEntity(World world, int meta) {
         return new TileEntityMetalFurnace();
     }
 
     //在方块被放置在世界中时调用。设置方块Metadata
     @Override
-    public void onBlockPlacedBy(World worldIn, int x, int y, int z, EntityLivingBase placer, ItemStack itemIn)
-    {
+    public void onBlockPlacedBy(World worldIn, int x, int y, int z, EntityLivingBase placer, ItemStack itemIn) {
         int sideFlag = MathHelper.floor_double((double)(placer.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
         /* rotationYaw 0°(360°) South
         *  rotationYaw 90°      West
@@ -173,25 +155,23 @@ public class BlockMetalFurnace extends BlockContainer
         *  2 -- North
         *  3 -- East
         * */
-
-        if (sideFlag == 0)
-        {
-            worldIn.setBlockMetadataWithNotify(x, y, z, 2, 2);
+        switch (sideFlag){
+            case 0:
+                worldIn.setBlockMetadataWithNotify(x, y, z, 2, 2);
+                break;
+            case 1:
+                worldIn.setBlockMetadataWithNotify(x, y, z, 5, 2);
+                break;
+            case 2:
+                worldIn.setBlockMetadataWithNotify(x, y, z, 3, 2);
+                break;
+            case 3:
+                worldIn.setBlockMetadataWithNotify(x, y, z, 4, 2);
+                break;
+            default:
+                break;
         }
-        if (sideFlag == 1)
-        {
-            worldIn.setBlockMetadataWithNotify(x, y, z, 5, 2);
-        }
-        if (sideFlag == 2)
-        {
-            worldIn.setBlockMetadataWithNotify(x, y, z, 3, 2);
-        }
-        if (sideFlag == 3)
-        {
-            worldIn.setBlockMetadataWithNotify(x, y, z, 4, 2);
-        }
-        if (itemIn.hasDisplayName())
-        {
+        if (itemIn.hasDisplayName()) {
             ((TileEntityMetalFurnace)worldIn.getTileEntity(x, y, z)).setCustomInventoryName(itemIn.getDisplayName());
         }
     }
@@ -300,9 +280,51 @@ public class BlockMetalFurnace extends BlockContainer
 
     @Override
     @SideOnly(Side.CLIENT)
-    public IIcon getIcon(int side, int meta)
-    {
-        return meta == 0 ? (side == 1 ? this.top : (side == 3 ? this.front : this.blockIcon)) : (side == 1 ? this.top : (side != meta ? this.blockIcon : this.front));
+    public IIcon getIcon(int side, int meta) {
+        if (side == 0 || side == 1){
+            return this.top;
+        }
+        else {
+            if (meta != 0) {
+                if (side == meta){
+                    return this.front;
+                }
+            }
+            else {
+                if (side == 3){
+                    return this.front;
+                }
+            }
+        }
+        return this.blockIcon;
+//        return meta == 0 ? (side == 1 ? this.top : (side == 3 ? this.front : this.blockIcon)) : (side == 1 ? this.top : (side != meta ? this.blockIcon : this.front));
+//         if(meta == 0) {
+//             if(side == 1) {
+//                 return this.top;
+//             }
+//             else {
+//                 if(side == 3) {
+//                     return this.front;
+//                 }
+//                 else {
+//                     return  this.blockIcon;
+//                 }
+//             }
+//         }
+//         else {
+//             if(side == 1) {
+//                 return  this.top;
+//             }
+//             else {
+//                 if(side != meta) {
+//                     return  this.blockIcon;
+//                 }
+//                 else {
+//                     return  this.front;
+//                 }
+//             }
+//         }
+
         //如果meta为0且side为1(顶面)返回top
         //如果meta为0且side为3(南面)返回front
         //如果meta为0且side不等于3(南面)返回blockIcon
@@ -323,8 +345,7 @@ public class BlockMetalFurnace extends BlockContainer
     //创造模式鼠标中键获取物品
     @Override
     @SideOnly(Side.CLIENT)
-    public Item getItem(World worldIn, int x, int y, int z)
-    {
-        return Item.getItemFromBlock(BlockLoader.metalFunaceInactive);
+    public Item getItem(World worldIn, int x, int y, int z) {
+        return Item.getItemFromBlock(BlockLoader.metalFurnaceInactive);
     }
 }

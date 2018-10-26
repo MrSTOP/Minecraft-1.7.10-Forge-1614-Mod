@@ -1,38 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="c090192d-99b3-493f-a38f-46a6febb9378" name="默认" comment="风车GUI，相关操作基本实现。NBT保存与读取已经实现。">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/common/utils/SpecialBlockHighLight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="233240e7-e1fe-44b9-8d24-e9a251b23421" name="默认" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockQuartzFurnace.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityQuartzFurnace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forge-1.7.10-10.13.4.1614-1.7.10-src.iml" beforeDir="false" afterPath="$PROJECT_DIR$/forge-1.7.10-10.13.4.1614-1.7.10-src.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forge-1.7.10-10.13.4.1614-1.7.10-src.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/forge-1.7.10-10.13.4.1614-1.7.10-src.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/forge-1.7.10-10.13.4.1614-1.7.10-src.iws" beforeDir="false" afterPath="$PROJECT_DIR$/forge-1.7.10-10.13.4.1614-1.7.10-src.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockColorCrops.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockColorCrops.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockFluidMercury.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockFluidMercury.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockMetalFurnace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockMetalFurnace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockRedstoneFluxFurnace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockRedstoneFluxFurnace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockWindmill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockWindmill.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockWindmillGround.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockWindmillGround.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/block/render/RenderWindmillGround.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/block/render/RenderWindmillGround.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/gui/GuiMetalFurnace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/gui/GuiMetalFurnace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/gui/GuiRedstoneFluxFurnace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/gui/GuiRedstoneFluxFurnace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/tielentity/render/TileEntityRenderWindmill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/tielentity/render/TileEntityRenderWindmill.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/common/EventLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/common/EventLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/creativetab/CreativeTabsLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/creativetab/CreativeTabsLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/creativetab/CreativeTabsSTDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/creativetab/CreativeTabsSTDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/enchantment/EnchantmentFireBurn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/enchantment/EnchantmentFireBurn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/inventory/ContainerMetalFurnace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/inventory/ContainerMetalFurnace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/inventory/ContainerRedstoneFluxFurnace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/inventory/ContainerRedstoneFluxFurnace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/inventory/ContainerWindmill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/inventory/ContainerWindmill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/item/ItemBestSword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/item/ItemBestSword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/item/ItemBucketMercury.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/item/ItemBucketMercury.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/item/ItemRedstonePickaxe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/item/ItemRedstonePickaxe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityMetalFurnace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityMetalFurnace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityRedstoneFluxFurnace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityRedstoneFluxFurnace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityWindmill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityWindmill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/stdemo/textures/gui/container/metalFurnace.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/stdemo/textures/gui/container/metalFurnace.png" afterDir="false" />
     </list>
-=======
-    <list default="true" id="c090192d-99b3-493f-a38f-46a6febb9378" name="默认" comment="风车GUI，相关操作基本实现。NBT保存与读取已经实现。" />
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
+    <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
-    <ignored path="$PROJECT_DIR$/out/" />
-    <ignored path="eclipse/" />
-    <ignored path="src/main/java/com/mod/" />
-    <ignored path="src/main/java/com/thegrovesyproject/" />
-    <ignored path="src/main/resources/assets/stem/" />
-    <ignored path="src/main/resources/assets/tm/" />
-    <ignored path="src/main/resources/assets/tuto/" />
-    <ignored path="src/main/resources/assets/minecraft/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/forge_1_7_10_10_13_4_1614_1_7_10_src$Minecraft_Client.ic" NAME="Minecraft Client Coverage Results" MODIFIED="1540101995914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-  </component>
-  <component name="CoverageViewManager">
-    <option name="myElementSize" value="271" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -78,567 +88,150 @@
     <session id="1289671963">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <entry key="project.closed" value="45" />
-          <entry key="project.open.time.0" value="2" />
-=======
-          <entry key="project.closed" value="41" />
-          <entry key="project.open.time.0" value="1" />
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
-          <entry key="project.closed" value="42" />
-          <entry key="project.open.time.0" value="1" />
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
-          <entry key="project.open.time.1" value="5" />
-          <entry key="project.open.time.10" value="2" />
-          <entry key="project.open.time.11" value="5" />
-          <entry key="project.open.time.12" value="4" />
-          <entry key="project.open.time.13" value="5" />
-          <entry key="project.open.time.14" value="2" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <entry key="project.open.time.15" value="7" />
-=======
-          <entry key="project.open.time.15" value="5" />
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
-          <entry key="project.open.time.15" value="6" />
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
-          <entry key="project.open.time.16" value="3" />
-          <entry key="project.open.time.17" value="2" />
-          <entry key="project.open.time.19" value="2" />
-          <entry key="project.open.time.2" value="1" />
-          <entry key="project.open.time.21" value="1" />
-          <entry key="project.open.time.28" value="1" />
-          <entry key="project.open.time.29" value="1" />
-          <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.35" value="1" />
-          <entry key="project.open.time.5" value="1" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.open.time.9" value="1" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <entry key="project.opened" value="50" />
-=======
-          <entry key="project.opened" value="45" />
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
-          <entry key="project.opened" value="47" />
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.20" value="1" />
+          <entry key="project.open.time.7" value="2" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <entry key="class" value="17" />
-          <entry key="java" value="610" />
-=======
-          <entry key="class" value="10" />
-          <entry key="java" value="557" />
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
-          <entry key="class" value="10" />
-          <entry key="java" value="569" />
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
-          <entry key="log" value="3" />
-          <entry key="png" value="5" />
-          <entry key="properties" value="2" />
-          <entry key="txt" value="4" />
+          <entry key="class" value="3" />
+          <entry key="java" value="62" />
+          <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="10" />
-          <entry key="Image" value="5" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <entry key="JAVA" value="610" />
-=======
-          <entry key="JAVA" value="569" />
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
-          <entry key="PLAIN_TEXT" value="8" />
-=======
-          <entry key="JAVA" value="557" />
-          <entry key="PLAIN_TEXT" value="7" />
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-          <entry key="Properties" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="dummy" value="25" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <entry key="java" value="30106" />
-=======
-          <entry key="java" value="25452" />
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
-          <entry key="java" value="27930" />
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
-          <entry key="txt" value="54" />
+          <entry key="CLASS" value="3" />
+          <entry key="JAVA" value="62" />
+          <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <entry key="JAVA" value="30106" />
-=======
-          <entry key="JAVA" value="25452" />
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
-          <entry key="JAVA" value="27930" />
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
-          <entry key="PLAIN_TEXT" value="79" />
+          <entry key="JAVA" value="1717" />
         </counts>
       </usages-collector>
-      <usages-collector id="statistics.js.language.service.starts" />
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="1717" />
+        </counts>
+      </usages-collector>
       <usages-collector id="statistics.spring.boot.run.usages" />
       <usages-collector id="statistics.vcs.git.usages" />
+      <usages-collector id="statistics.js.language.service.starts" />
       <usages-collector id="statistics.spring.boot.mvc.usages" />
     </session>
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="forge-1.7.10-10.13.4.1614-1.7.10-src" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityWindmill.java">
-=======
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/tielentity/render/TileEntityRenderWindmill.java">
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockQuartzFurnace.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1980">
-              <caret line="96" column="42" selection-start-line="96" selection-start-column="42" selection-end-line="96" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/common/EventLoader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1518">
-              <caret line="302" column="5" selection-start-line="302" selection-start-column="5" selection-end-line="303" selection-end-column="17" />
+            <state relative-caret-position="440">
+              <caret line="66" column="111" selection-start-line="66" selection-start-column="111" selection-end-line="66" selection-end-column="111" />
               <folding>
-<<<<<<< HEAD
-                <element signature="method#decrStackSize#0;class#TileEntityRedstoneFluxFurnace#0" />
-                <element signature="method#setInventorySlotContents#0;class#TileEntityRedstoneFluxFurnace#0" />
-                <element signature="method#isCustomInventoryName#0;class#TileEntityRedstoneFluxFurnace#0" />
-                <element signature="method#readFromNBT#0;class#TileEntityRedstoneFluxFurnace#0" />
-                <element signature="method#writeToNBT#0;class#TileEntityRedstoneFluxFurnace#0" />
-                <element signature="method#canSmelt#0;class#TileEntityRedstoneFluxFurnace#0" />
-                <element signature="method#smeltItem#0;class#TileEntityRedstoneFluxFurnace#0" />
-                <element signature="method#isUseableByPlayer#0;class#TileEntityRedstoneFluxFurnace#0" />
-                <element signature="method#isItemValidForSlot#0;class#TileEntityRedstoneFluxFurnace#0" />
-                <element signature="method#getSlotsForFace#0;class#TileEntityRedstoneFluxFurnace#0" />
-                <element signature="method#canInsertItem#0;class#TileEntityRedstoneFluxFurnace#0" />
-                <element signature="method#canExtractItem#0;class#TileEntityRedstoneFluxFurnace#0" />
-                <element signature="method#setCustomInventoryName#0;class#TileEntityRedstoneFluxFurnace#0" />
-                <element signature="method#getInventoryName#0;class#TileEntityRedstoneFluxFurnace#0" />
-                <marker date="1540445534412" expanded="true" signature="6190:6227" ph="{...}" />
-=======
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockWindmill.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1166">
-              <caret line="298" column="32" selection-start-line="298" selection-start-column="32" selection-end-line="298" selection-end-column="32" />
-              <folding>
-                <element signature="method#BlockWindmill#0;class#BlockWindmill#0" />
-                <element signature="method#setBlockBoundsBasedOnState#0;class#BlockWindmill#0" />
-                <element signature="method#onBlockPlacedBy#0;class#BlockWindmill#0" />
-                <element signature="method#removedByPlayer#0;class#BlockWindmill#0" />
-                <element signature="method#hasEnoughSpace#0;class#BlockWindmill#0" />
-                <element signature="e#5802#5809#0" />
-                <element signature="e#6061#6068#0" />
-                <element signature="e#6344#6351#0" />
-                <element signature="e#6623#6630#0" />
-                <element signature="method#destroyWindmill#0;class#BlockWindmill#0" />
-                <element signature="method#getIcon#0;class#BlockWindmill#0" />
-                <element signature="e#7634#7655#0" />
-                <element signature="method#updateMultiBlockStructure#0;class#BlockWindmill#0" />
-                <element signature="method#getBlockMatrix#0;class#BlockWindmill#0" />
-                <element signature="e#9118#9180#0" />
-                <element signature="method#constructMultiBLockStructure#0;class#BlockWindmill#0" />
-                <element signature="method#destroyMultiBlockStructure#0;class#BlockWindmill#0" />
-                <element signature="method#onBlockActivated#0;class#BlockWindmill#0" />
-                <element signature="method#registerIcons#0;class#BlockWindmill#0" />
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
-                <element signature="imports" expanded="true" />
-                <element signature="method#onPlayerItemPickup#0;class#EventLoader#0" />
-                <element signature="method#onPlayerInteract#0;class#EventLoader#0" />
-                <element signature="method#test2#0;class#EventLoader#0" />
-                <element signature="method#test1#0;class#EventLoader#0" />
-                <element signature="method#onPlayerClickGrassBlock#0;class#EventLoader#0" />
-                <element signature="method#onEntityInteract#0;class#EventLoader#0" />
-                <element signature="method#onBlockHarvestDrops#0;class#EventLoader#0" />
-                <element signature="method#onLivingDeath#0;class#EventLoader#0" />
-                <element signature="method#onPlayerItemCrafting#0;class#EventLoader#0" />
-                <element signature="method#onKeyInput#0;class#EventLoader#0" />
-                <marker date="1540368421258" expanded="true" signature="12774:14864" ph="{...}" />
-                <marker date="1540368421258" expanded="true" signature="14878:16607" ph="{...}" />
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
+                <element signature="method#BlockQuartzFurnace#0;class#BlockQuartzFurnace#0" />
+                <element signature="method#getIcon#0;class#BlockQuartzFurnace#0" />
+                <element signature="method#getItem#0;class#BlockQuartzFurnace#0" />
+                <element signature="method#registerIcons#0;class#BlockQuartzFurnace#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
-<<<<<<< HEAD
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/crafting/CraftingLoader.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityQuartzFurnace.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
-=======
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockLoader.java">
+            <state relative-caret-position="110">
+              <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraftforge/fluids/BlockFluidBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
+            <state relative-caret-position="264">
+              <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockWindmillGround.java">
+        <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/block/Block.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="122" column="8" selection-start-line="122" selection-start-column="8" selection-end-line="122" selection-end-column="71" />
+            <state relative-caret-position="337">
+              <caret line="1334" column="27" selection-start-line="1334" selection-start-column="27" selection-end-line="1334" selection-end-column="27" />
               <folding>
-                <element signature="e#1230#2419#0" />
-                <element signature="e#2425#2821#0" />
-                <element signature="e#2827#4076#0" />
+                <element signature="e#6930#6931#0" expanded="true" />
+                <element signature="e#6967#6968#0" expanded="true" />
+                <element signature="e#42241#42242#0" expanded="true" />
+                <element signature="e#42265#42266#0" expanded="true" />
+                <element signature="e#64451#64452#0" expanded="true" />
+                <element signature="e#64501#64502#0" expanded="true" />
               </folding>
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/common/EventLoader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="436" column="38" selection-start-line="436" selection-start-column="38" selection-end-line="436" selection-end-column="38" />
-=======
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/tielentity/render/TileEntityRenderWindmill.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1980">
-              <caret line="96" column="42" selection-start-line="96" selection-start-column="42" selection-end-line="96" selection-end-column="42" />
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lwjgl.lwjgl/lwjgl/2.9.1/ccedb5b6f96913c6f78bc10249e747ded90baa51/lwjgl-2.9.1-sources.jar!/org/lwjgl/opengl/GL11.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1144">
-              <caret line="53" column="21" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="21" />
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/gui/GuiMetalFurnace.java">
+        <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/block/BlockRedstoneComparator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-              <folding>
-                <element signature="method#GuiMetalFurnace#0;class#GuiMetalFurnace#0" />
-                <element signature="method#drawGuiContainerBackgroundLayer#0;class#GuiMetalFurnace#0" />
-=======
-        <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/inventory/Container.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1474">
-              <caret line="152" column="21" selection-start-line="152" selection-start-column="21" selection-end-line="152" selection-end-column="21" />
-              <folding>
-                <element signature="docComment;field#inventoryItemStacks#0;class#Container#0" />
-                <element signature="docComment;field#inventorySlots#0;class#Container#0" />
-                <element signature="docComment;field#dragMode#0;class#Container#0" />
-                <element signature="docComment;field#dragEvent#0;class#Container#0" />
-                <element signature="docComment;field#dragSlots#0;class#Container#0" />
-                <element signature="docComment;field#crafters#0;class#Container#0" />
-                <element signature="docComment;method#addSlotToContainer#0;class#Container#0" />
-                <element signature="method#addSlotToContainer#0;class#Container#0" />
-                <element signature="docComment;method#getInventory#0;class#Container#0" />
-                <element signature="method#getInventory#0;class#Container#0" />
-                <element signature="docComment;method#removeCraftingFromCrafters#0;class#Container#0" />
-                <element signature="docComment;method#detectAndSendChanges#0;class#Container#0" />
-                <element signature="method#detectAndSendChanges#0;class#Container#0" />
-                <element signature="docComment;method#enchantItem#0;class#Container#0" />
-                <element signature="method#getSlotFromInventory#0;class#Container#0" />
-                <element signature="docComment;method#transferStackInSlot#0;class#Container#0" />
-                <element signature="method#transferStackInSlot#0;class#Container#0" />
-                <element signature="docComment;method#slotClick#0;class#Container#0" />
-                <element signature="docComment;method#onContainerClosed#0;class#Container#0" />
-                <element signature="method#onContainerClosed#0;class#Container#0" />
-                <element signature="docComment;method#onCraftMatrixChanged#0;class#Container#0" />
-                <element signature="docComment;method#putStackInSlot#0;class#Container#0" />
-                <element signature="docComment;method#putStacksInSlots#0;class#Container#0" />
-                <element signature="method#putStacksInSlots#0;class#Container#0" />
-                <element signature="docComment;method#getNextTransactionID#0;class#Container#0" />
-                <element signature="method#getNextTransactionID#0;class#Container#0" />
-                <element signature="docComment;method#getCanCraft#0;class#Container#0" />
-                <element signature="docComment;method#setCanCraft#0;class#Container#0" />
-                <element signature="method#setCanCraft#0;class#Container#0" />
-                <element signature="docComment;method#mergeItemStack#0;class#Container#0" />
-                <element signature="method#mergeItemStack#0;class#Container#0" />
-                <element signature="docComment;method#extractDragMode#0;class#Container#0" />
-                <element signature="docComment;method#getDragEvent#0;class#Container#0" />
-                <element signature="docComment;method#isValidDragMode#0;class#Container#0" />
-                <element signature="docComment;method#resetDrag#0;class#Container#0" />
-                <element signature="method#resetDrag#0;class#Container#0" />
-                <element signature="docComment;method#canAddItemToSlot#0;class#Container#0" />
-                <element signature="method#canAddItemToSlot#0;class#Container#0" />
-                <element signature="docComment;method#computeStackSize#0;class#Container#0" />
-                <element signature="method#computeStackSize#0;class#Container#0" />
-                <element signature="docComment;method#canDragIntoSlot#0;class#Container#0" />
-                <element signature="method#calcRedstoneFromInventory#0;class#Container#0" />
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-              </folding>
-=======
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/common/utils/SpecialBlockHighLight.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/client/renderer/RenderGlobal.java">
-          <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state relative-caret-position="1430">
-              <caret line="179" selection-start-line="179" selection-end-line="179" />
-              <folding>
-                <element signature="e#2060#3170#0" />
-                <element signature="e#3176#3600#0" />
-                <element signature="e#3298#3356#0" />
-                <element signature="e#3606#3932#0" />
-                <element signature="e#3938#4106#0" />
-                <element signature="e#4112#5224#0" />
-                <element signature="e#5230#6215#0" />
-                <element signature="e#6690#7026#0" />
-                <element signature="e#7136#12257#0" />
-                <element signature="e#12263#13785#0" />
-                <element signature="e#13791#15292#0" />
-                <element signature="e#15298#19691#0" />
-                <element signature="e#19697#19888#0" />
-                <element signature="e#19894#20455#0" />
-                <element signature="e#20554#20850#0" />
-                <element signature="e#20856#21094#0" />
-                <element signature="e#21100#21303#0" />
-                <element signature="e#21309#21572#0" />
-                <element signature="e#21578#21711#0" />
-                <element signature="e#21717#21884#0" />
-                <element signature="e#21889#21984#0" />
-                <element signature="e#22459#22633#0" />
-                <element signature="e#22639#22648#0" />
-                <element signature="e#22806#23011#0" />
-                <element signature="e#23334#23429#0" />
-=======
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/inventory/ContainerWindmill.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
-              <folding>
-                <element signature="method#ContainerWindmill#0;class#ContainerWindmill#0" />
-                <element signature="method#onCraftGuiOpened#0;class#ContainerWindmill#0" />
-                <element signature="method#updateProgressBar#0;class#ContainerWindmill#0" />
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-              </folding>
-=======
-            <state relative-caret-position="38170">
-              <caret line="1818" column="24" selection-start-line="1818" selection-start-column="24" selection-end-line="1818" selection-end-column="24" />
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
+            <state relative-caret-position="1958">
+              <caret line="125" column="65" selection-start-line="125" selection-start-column="63" selection-end-line="125" selection-end-column="65" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/gui/GuiRedstoneFluxFurnace.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockFluidMercury.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="17" column="126" selection-start-line="17" selection-start-column="126" selection-end-line="17" selection-end-column="126" />
-=======
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/inventory/ContainerMetalFurnace.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
-              <folding>
-                <element signature="method#ContainerMetalFurnace#0;class#ContainerMetalFurnace#0" />
-                <element signature="e#912#937#0" />
-                <element signature="method#onCraftGuiOpened#0;class#ContainerMetalFurnace#0" />
-                <element signature="method#detectAndSendChanges#0;class#ContainerMetalFurnace#0" />
-                <element signature="e#3344#3366#0" />
-                <element signature="method#updateProgressBar#0;class#ContainerMetalFurnace#0" />
-                <element signature="method#canInteractWith#0;class#ContainerMetalFurnace#0" />
-              </folding>
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
-        <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/client/renderer/EntityRenderer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20900">
-              <caret line="1012" column="31" selection-start-line="1012" selection-start-column="31" selection-end-line="1012" selection-end-column="31" />
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/inventory/ContainerMetalFurnace.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="50" column="39" selection-start-line="50" selection-start-column="39" selection-end-line="50" selection-end-column="39" />
-              <folding>
-                <element signature="method#ContainerMetalFurnace#0;class#ContainerMetalFurnace#0" />
-                <element signature="method#onCraftGuiOpened#0;class#ContainerMetalFurnace#0" />
-                <element signature="method#detectAndSendChanges#0;class#ContainerMetalFurnace#0" />
-                <element signature="method#updateProgressBar#0;class#ContainerMetalFurnace#0" />
-                <element signature="method#canInteractWith#0;class#ContainerMetalFurnace#0" />
-=======
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityWindmill.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3652">
-              <caret line="199" column="8" selection-start-line="199" selection-start-column="8" selection-end-line="199" selection-end-column="8" />
+            <state relative-caret-position="110">
+              <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#932#933#0" expanded="true" />
-                <element signature="e#968#969#0" expanded="true" />
-                <element signature="e#1006#1007#0" expanded="true" />
-                <element signature="e#1041#1042#0" expanded="true" />
-                <element signature="e#1096#1097#0" expanded="true" />
-                <element signature="e#1144#1145#0" expanded="true" />
-                <element signature="method#decrStackSize#0;class#TileEntityWindmill#0" />
-                <element signature="method#openChest#0;class#TileEntityWindmill#0" />
-                <element signature="method#closeChest#0;class#TileEntityWindmill#0" />
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
               </folding>
-=======
-        <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/client/Minecraft.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19492">
-              <caret line="1067" column="73" selection-start-line="1067" selection-start-column="73" selection-end-line="1067" selection-end-column="73" />
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/inventory/ContainerRedstoneFluxFurnace.java">
+        <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraftforge/fluids/BlockFluidClassic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1364">
-              <caret line="70" column="22" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
-=======
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityLoader.java">
+            <state>
+              <caret column="31" selection-start-column="31" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraftforge/fluids/BlockFluidFinite.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="286">
-              <caret line="15" column="10" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="10" />
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
-        <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/cpw/mods/fml/common/eventhandler/ASMEventHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="56" selection-start-line="56" selection-end-line="56" />
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
+              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <entry file="jar://$PROJECT_DIR$/libs/buildcraft-7.1.23-api.jar!/cofh/api/energy/EnergyStorage.class">
+        <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraftforge/fluids/FluidContainerRegistry.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1914">
-              <caret line="102" selection-start-line="102" selection-end-line="102" />
-=======
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityMetalFurnace.java">
+            <state relative-caret-position="308">
+              <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/item/ItemBucketMercury.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8074">
-              <caret line="401" column="15" selection-start-line="401" selection-start-column="15" selection-end-line="401" selection-end-column="15" />
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
-        <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/client/renderer/Tessellator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1210">
-              <caret line="69" column="23" selection-start-line="69" selection-start-column="23" selection-end-line="69" selection-end-column="23" />
-              <folding>
-                <element signature="e#797#843#0" />
-                <element signature="e#950#1024#0" />
-                <element signature="e#1096#1168#0" />
-                <element signature="e#1246#1318#0" />
-                <element signature="e#1396#1421#0" />
-                <element signature="e#1455#1550#0" />
-                <element signature="e#1584#1639#0" />
-                <element signature="e#1673#1729#0" />
-                <element signature="e#1791#1860#0" />
-                <element signature="e#1888#1965#0" />
-                <element signature="e#2000#2084#0" />
-                <element signature="e#2156#2234#0" />
-                <element signature="e#2271#2337#0" />
-                <element signature="e#2374#2558#0" />
-                <element signature="e#2594#2660#0" />
-                <element signature="e#2702#2763#0" />
-                <element signature="e#2794#2877#0" />
-                <element signature="e#2910#2993#0" />
-                <element signature="e#3026#3109#0" />
-                <element signature="e#3142#3198#0" />
-                <element signature="e#3227#3273#0" />
-                <element signature="e#3351#3409#0" />
-                <element signature="e#3445#3495#0" />
-                <element signature="e#3586#3633#0" />
-                <element signature="e#3639#3671#0" />
-                <element signature="initializer##0;class#Tessellator#0" />
-                <element signature="e#3741#3850#0" />
-                <element signature="e#7062#8096#0" />
-                <element signature="e#8102#8882#0" />
-                <element signature="e#8888#8967#0" />
-                <element signature="e#8888#9132#0" />
-                <element signature="e#9138#9205#0" />
-                <element signature="e#9894#9942#0" />
-                <element signature="e#9894#10125#0" />
-                <element signature="e#10131#10257#0" />
-                <element signature="e#10263#10378#0" />
-                <element signature="e#10263#10590#0" />
-                <element signature="e#10596#10713#0" />
-                <element signature="e#10596#10967#0" />
-                <element signature="e#10973#11051#0" />
-                <element signature="e#10973#11210#0" />
-                <element signature="e#11216#11297#0" />
-                <element signature="e#11216#12426#0" />
-                <element signature="e#12432#12609#0" />
-                <element signature="e#12615#12697#0" />
-                <element signature="e#12615#12947#0" />
-                <element signature="e#14605#14710#0" />
-                <element signature="e#14605#14922#0" />
-                <element signature="e#14928#15027#0" />
-                <element signature="e#14928#15265#0" />
-                <element signature="e#15271#15332#0" />
-                <element signature="e#15418#15479#0" />
-                <element signature="e#15418#15834#0" />
-                <element signature="e#15840#15922#0" />
-                <element signature="e#15840#16127#0" />
-                <element signature="e#16133#16218#0" />
-                <element signature="e#16133#16447#0" />
-              </folding>
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
+            <state relative-caret-position="132">
+              <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -654,100 +247,17 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-      <find>gets</find>
-      <find>set</find>
-      <find>getSizein</find>
-=======
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
-      <find>get</find>
-      <find>hastile</find>
-      <find>decr</find>
-      <find>tileentity</find>
-      <find>settileentity</find>
-      <find>TileEntity</find>
-      <find>settile</find>
-      <find>currentPower</find>
-      <find>FLUID REGISTER</find>
-      <find>omname</find>
-      <find>iscu</find>
-      <find>name</find>
-      <find>setcu</find>
-      <find>setinv</find>
-<<<<<<< HEAD
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
-      <find>getin</find>
-      <find>NBT</find>
-      <find>geti</find>
-      <find>TileEntityWindmill</find>
-      <find>system</find>
-      <find>add</find>
-      <find>tostring</find>
-      <find>update</find>
-      <find>oncr</find>
-      <find>addc</find>
-      <find>create</find>
-      <find>upda</find>
-      <find>TILE</find>
-<<<<<<< HEAD
-      <find>Tessellator</find>
-      <find>p_147590_0_</find>
-      <find>drawsele</find>
-<<<<<<< HEAD
-      <find>getItemDamage()</find>
-      <find>canco</find>
-      <find>writeto</find>
-      <find>geten</find>
-      <find>getdes</find>
-      <find>pack</find>
-      <find>Power&gt;&gt;</find>
-      <find>getma</find>
-      <find>datawatcher</find>
-      <find>DataWatcher</find>
-      <find>powerPerRotation</find>
-      <find>isc</find>
-      <find>iscus</find>
-      <find>[1].stacksize</find>
-=======
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
+      <find>enum</find>
+      <find>Gravity</find>
+      <find>registerIcons</find>
+      <find>getIcon</find>
+      <find>isBlockNormalCube</find>
+      <find>getRenderType</find>
+      <find>getitem</find>
+      <find>onblockadd</find>
+      <find>onblockadds</find>
+      <find>compara</find>
     </findStrings>
-    <replaceStrings>
-      <replace>getMetadata</replace>
-      <replace>centerPoint.x</replace>
-      <replace>centerPoint.y</replace>
-      <replace>2</replace>
-      <replace>[2</replace>
-      <replace>0</replace>
-      <replace>minU</replace>
-      <replace>noRightSide</replace>
-      <replace>maxU</replace>
-      <replace>noLeftSide</replace>
-      <replace>noUpSide</replace>
-      <replace>minV</replace>
-      <replace>maxV</replace>
-      <replace>noDownSide</replace>
-      <replace>0, 0, 0</replace>
-<<<<<<< HEAD
-      <replace>bounds</replace>
-<<<<<<< HEAD
-      <replace>getMetadata()</replace>
-=======
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
-    </replaceStrings>
-    <dirStrings>
-      <dir>C:\Users\MrST\.gradle\caches\minecraft\net\minecraftforge\forge\1.7.10-10.13.4.1614-1.7.10\snapshot\20140925\forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar!\net\minecraft\block</dir>
-      <dir>C:\Users\MrST\.gradle\caches\minecraft\net\minecraftforge\forge\1.7.10-10.13.4.1614-1.7.10\snapshot\20140925\forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar</dir>
-      <dir>D:\McModDev\1.7.10\forge-1.7.10-10.13.4.1614-1.7.10-src\src\main\resources\assets\stdemo\textures\blocks</dir>
-      <dir>D:\McModDev\1.7.10\forge-1.7.10-10.13.4.1614-1.7.10-src</dir>
-    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -755,68 +265,25 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/inventory/ContainerDemo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/common/tool/NumberTool.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/common/tool/MultiBlockStructureNumberTool.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/api/cofh/api/energy/package-info.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/item/ItemRedstonePickaxe.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityWindmill.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityRedstoneFluxFurnace.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/block/render/BlockRenderLoader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/block/render/RenderBlockLoader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/ClientProxy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockMetalFurnace.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockWindmillGround.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/block/render/RenderWindmillGround.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/STDemo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/inventory/ContainerMetalFurnace.java" />
-        <option value="$PROJECT_DIR$/eclipse/logs/fml-client-1.log" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/common/utils/WindmillSync.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/gui/GuiWindmill.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/inventory/GuiElementLoader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/worldgen/WorldGeneratorLoader.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/gui/GuiMetalFurnace.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityLoader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/tielentity/render/TileEntityRenderLoader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/tielentity/render/TileEntityRenderWindmill.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityWindmill.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockWindmill.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityMetalFurnace.java" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/common/utils/SpecialBlockHighLight.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/common/EventLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/creativetab/CreativeTabsSTDemo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/creativetab/CreativeTabsLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/enchantment/EnchantmentFireBurn.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockFluidMercury.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockWindmill.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/item/ItemBestSword.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockColorCrops.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockWindmillGround.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/piepenguin/rfwindmill/tileentities/TileEntityWindmillBlock.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/piepenguin/rfwindmill/blocks/ItemBlockRotorBlock.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/piepenguin/rfwindmill/blocks/WindmillBlock.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/piepenguin/rfwindmill/blocks/RotorBlock.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/piepenguin/rfwindmill/blocks/ItemBlockWindmillBlock.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/piepenguin/rfwindmill/tileentities/TileEntityRotorBlock.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/tielentity/render/TileEntityRenderWindmill.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/inventory/ContainerWindmill.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/gui/GuiWindmill.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/inventory/ContainerRedstoneFluxFurnace.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/gui/GuiRedstoneFluxFurnace.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/inventory/ContainerMetalFurnace.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityWindmill.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityLoader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityRedstoneFluxFurnace.java" />
-=======
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/inventory/ContainerWindmill.java" />
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/inventory/ContainerWindmill.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/common/utils/SpecialBlockHighLight.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/common/EventLoader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockWindmillGround.java" />
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockMetalFurnace.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/item/ItemBucketMercury.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockQuartzFurnace.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityQuartzFurnace.java" />
       </list>
-    </option>
-  </component>
-  <component name="InstancesTracker">
-    <option name="classes">
-      <map>
-        <entry key="com.github.mrstop.stdemo.tileentity.TileEntityWindmill" value="CREATION" />
-      </map>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -829,10 +296,11 @@
     <option name="LAST_EDITED_MODULE_NAME" />
     <option name="LAST_EDITED_TAB_NAME" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="width" value="964" />
-    <option name="height" value="1047" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="127" />
+    <option name="y" value="-18" />
+    <option name="width" value="1363" />
+    <option name="height" value="792" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -848,7 +316,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -859,13 +326,7 @@
             <path>
               <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
               <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="462c0819:PsiDirectoryNode" />
-              <item name="gradle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="462c0819:PsiDirectoryNode" />
-              <item name="gradle" type="462c0819:PsiDirectoryNode" />
-              <item name="wrapper" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
@@ -884,99 +345,33 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-<<<<<<< HEAD
+            </path>
+            <path>
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="stdemo" type="462c0819:PsiDirectoryNode" />
-<<<<<<< HEAD
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-=======
+            </path>
+            <path>
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="stdemo" type="462c0819:PsiDirectoryNode" />
               <item name="block" type="462c0819:PsiDirectoryNode" />
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
-            </path>
-            <path>
-              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-<<<<<<< HEAD
-              <item name="stdemo" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-<<<<<<< HEAD
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-=======
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
-            </path>
-            <path>
-              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-<<<<<<< HEAD
-              <item name="stdemo" type="462c0819:PsiDirectoryNode" />
-<<<<<<< HEAD
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-=======
-              <item name="rfwindmill" type="462c0819:PsiDirectoryNode" />
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
-            </path>
-            <path>
-              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="rfwindmill" type="462c0819:PsiDirectoryNode" />
-              <item name="tileentities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="外部库" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="外部库" type="cb654da1:ExternalLibrariesNode" />
-              <item name="forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="外部库" type="cb654da1:ExternalLibrariesNode" />
-              <item name="forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="外部库" type="cb654da1:ExternalLibrariesNode" />
-              <item name="forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="minecraft" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="外部库" type="cb654da1:ExternalLibrariesNode" />
-              <item name="forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="minecraft" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="外部库" type="cb654da1:ExternalLibrariesNode" />
-              <item name="forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="minecraft" type="462c0819:PsiDirectoryNode" />
-<<<<<<< HEAD
-=======
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="render" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
@@ -986,18 +381,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="stdemo" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="stdemo" type="462c0819:PsiDirectoryNode" />
-              <item name="inventory" type="462c0819:PsiDirectoryNode" />
+              <item name="item" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
@@ -1011,23 +395,54 @@
             </path>
             <path>
               <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="stdemo" type="462c0819:PsiDirectoryNode" />
-              <item name="worldgen" type="462c0819:PsiDirectoryNode" />
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="renderer" type="462c0819:PsiDirectoryNode" />
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
+              <item name="外部库" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="外部库" type="cb654da1:ExternalLibrariesNode" />
+              <item name="forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="外部库" type="cb654da1:ExternalLibrariesNode" />
+              <item name="forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="net" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="外部库" type="cb654da1:ExternalLibrariesNode" />
+              <item name="forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="net" type="462c0819:PsiDirectoryNode" />
+              <item name="minecraft" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="外部库" type="cb654da1:ExternalLibrariesNode" />
+              <item name="forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="net" type="462c0819:PsiDirectoryNode" />
+              <item name="minecraft" type="462c0819:PsiDirectoryNode" />
+              <item name="tileentity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="外部库" type="cb654da1:ExternalLibrariesNode" />
+              <item name="forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="net" type="462c0819:PsiDirectoryNode" />
+              <item name="minecraftforge" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="forge-1.7.10-10.13.4.1614-1.7.10-src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="外部库" type="cb654da1:ExternalLibrariesNode" />
+              <item name="forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="net" type="462c0819:PsiDirectoryNode" />
+              <item name="minecraftforge" type="462c0819:PsiDirectoryNode" />
+              <item name="fluids" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -1040,24 +455,17 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540446704911" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540524137269" />
     <property name="project.structure.last.edited" value="Project" />
-=======
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540207103400" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="模块" />
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540306431342" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="模块" />
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.github.mrstop.stdemo.tileentity" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -1072,14 +480,14 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.Minecraft Client">
-    <configuration default="true" type="Remote" factoryName="Remote">
+    <configuration default="true" factoryName="Remote" type="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-      <method v="2">
-        <option name="BuildArtifacts" enabled="false" />
+      <method>
+        <option enabled="false" name="BuildArtifacts" />
       </method>
     </configuration>
     <configuration default="true" name="&lt;template&gt;" selected="false" type="WebApp">
@@ -1096,13 +504,30 @@
     <configuration name="Minecraft Client" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="GradleStart" />
       <module name="forge-1.7.10-10.13.4.1614-1.7.10-src" />
-      <option name="VM_PARAMETERS" value="-Xincgc -Xmx1536M -Xms1536M" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/eclipse" />
+      <option name="VM_PARAMETERS" value="-Xincgc -Xmx1024M -Xms1024M" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../forge-1.7.10-10.13.4.1614-1.7.10-src\eclipse" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration default="false" factoryName="Application" name="Minecraft Client" type="Application">
+      <extension enabled="false" name="coverage" runner="idea" sample_coverage="true" />
+      <option name="MAIN_CLASS_NAME" value="GradleStart" />
+      <option name="VM_PARAMETERS" value="-Xincgc -Xmx1024M -Xms1024M" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../forge-1.7.10-10.13.4.1614-1.7.10-src\eclipse" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="forge-1.7.10-10.13.4.1614-1.7.10-src" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
     </configuration>
     <configuration name="Minecraft Server" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="GradleStartServer" />
@@ -1114,6 +539,23 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration default="false" factoryName="Application" name="Minecraft Server" type="Application">
+      <extension enabled="false" name="coverage" runner="idea" sample_coverage="true" />
+      <option name="MAIN_CLASS_NAME" value="GradleStartServer" />
+      <option name="VM_PARAMETERS" value="-Xincgc -Dfml.ignoreInvalidMinecraftCertificates=true" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../forge-1.7.10-10.13.4.1614-1.7.10-src\eclipse" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="forge-1.7.10-10.13.4.1614-1.7.10-src" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -1143,215 +585,59 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c090192d-99b3-493f-a38f-46a6febb9378" name="默认" comment="" />
-      <created>1538748310936</created>
+      <changelist id="233240e7-e1fe-44b9-8d24-e9a251b23421" name="默认" comment="" />
+      <created>1540447941491</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1538748310936</updated>
-      <workItem from="1538748315897" duration="5735000" />
-      <workItem from="1538754939834" duration="521000" />
-      <workItem from="1538798288000" duration="9437000" />
-      <workItem from="1538814805050" duration="4192000" />
-      <workItem from="1538839389762" duration="44509000" />
-      <workItem from="1539087463616" duration="36000" />
-      <workItem from="1539087568492" duration="7982000" />
-      <workItem from="1539144578666" duration="12024000" />
-      <workItem from="1539170395045" duration="599000" />
-      <workItem from="1539217306728" duration="9889000" />
-      <workItem from="1539334773175" duration="12800000" />
-      <workItem from="1539358364631" duration="1579000" />
-      <workItem from="1539397133634" duration="39000" />
-      <workItem from="1539397806263" duration="1991000" />
-      <workItem from="1539400521405" duration="168000" />
-      <workItem from="1539403414621" duration="42000" />
-      <workItem from="1539403484717" duration="1046000" />
-      <workItem from="1539405577416" duration="638000" />
-      <workItem from="1539409969693" duration="798000" />
-      <workItem from="1539413505973" duration="10000" />
-      <workItem from="1539414805327" duration="612000" />
-      <workItem from="1539426693662" duration="18000" />
-      <workItem from="1539485014990" duration="1132000" />
-      <workItem from="1539500177952" duration="2613000" />
-      <workItem from="1539520422733" duration="984000" />
-      <workItem from="1539521624173" duration="1370000" />
-      <workItem from="1539525108252" duration="768000" />
-      <workItem from="1539589525492" duration="600000" />
-      <workItem from="1539762146147" duration="16409000" />
-      <workItem from="1539915431693" duration="8685000" />
-      <workItem from="1539931536895" duration="6216000" />
-      <workItem from="1539942625742" duration="4527000" />
-      <workItem from="1539951066786" duration="2900000" />
-      <workItem from="1539956041662" duration="7378000" />
-      <workItem from="1540004613122" duration="20061000" />
-      <workItem from="1540036294954" duration="13068000" />
-      <workItem from="1540095628322" duration="60000" />
-      <workItem from="1540095771213" duration="974000" />
-      <workItem from="1540096778359" duration="9784000" />
-      <workItem from="1540106624247" duration="4205000" />
-      <workItem from="1540111107169" duration="10000" />
-      <workItem from="1540119993956" duration="98000" />
-      <workItem from="1540124210639" duration="35000" />
-      <workItem from="1540130448733" duration="22523000" />
-      <workItem from="1540211151439" duration="27000" />
-<<<<<<< HEAD
-      <workItem from="1540270605310" duration="13867000" />
-<<<<<<< HEAD
-      <workItem from="1540367704701" duration="14298000" />
-      <workItem from="1540386087472" duration="6095000" />
-      <workItem from="1540429589701" duration="2775000" />
-      <workItem from="1540445162423" duration="1534000" />
-=======
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
-      <workItem from="1540367704701" duration="1314000" />
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
+      <updated>1540447941491</updated>
+      <workItem from="1540447944264" duration="25000" />
+      <workItem from="1540448038934" duration="344000" />
+      <workItem from="1540452918030" duration="988000" />
+      <workItem from="1540462465044" duration="14426000" />
+      <workItem from="1540522925549" duration="1592000" />
+      <workItem from="1540524842354" duration="433000" />
     </task>
-    <task id="LOCAL-00001" summary="第一次提交到Git">
-      <created>1540025168455</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1540025168456</updated>
-    </task>
-    <task id="LOCAL-00002" summary="添加风车GUI，相关操作未实现。">
-      <created>1540040276098</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1540040276098</updated>
-    </task>
-    <task id="LOCAL-00003" summary="添加风车GUI，相关操作未实现。">
-      <created>1540040304431</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1540040304431</updated>
-    </task>
-    <task id="LOCAL-00004" summary="添加风车GUI，相关操作未实现。">
-      <created>1540040324548</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1540040324548</updated>
-    </task>
-    <task id="LOCAL-00005" summary="风车GUI，相关操作基本实现。NBT保存与读取已经实现。">
-      <created>1540202998253</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1540202998253</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <option name="totallyTimeSpent" value="277661000" />
-=======
-    <option name="totallyTimeSpent" value="239092000" />
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
-    <option name="totallyTimeSpent" value="254273000" />
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
+    <option name="totallyTimeSpent" value="17808000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info id="Learn" order="0" />
-      <window_info id="UI Designer" order="1" />
-      <window_info id="Favorites" order="2" sideWeight="0.5006859" side_tool="true" weight="0.20469083" />
-      <window_info id="Capture Tool" order="3" />
-      <window_info id="设计器" order="4" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.49931413" visible="true" weight="0.18603411" />
-=======
-      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49931413" visible="true" weight="0.1401919" />
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.49931413" visible="true" weight="0.1433902" />
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
-      <window_info id="Image Layers" order="6" />
-      <window_info id="Structure" order="7" sideWeight="0.5006859" side_tool="true" weight="0.20469083" />
-      <window_info id="Designer" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="0" weight="0.32882413" />
-      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="2" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
-      <window_info anchor="bottom" id="调试" order="4" weight="0.29760665" />
-      <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="Find" order="6" weight="0.32778355" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.24141519" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.32778355" />
-=======
-      <window_info active="true" anchor="bottom" id="Messages" order="9" visible="true" weight="0.33090532" />
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.33090532" />
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
-      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="12" weight="0.32882413" />
-      <window_info anchor="right" id="调色板" order="0" />
-      <window_info anchor="right" id="Maven Projects" order="1" />
-      <window_info anchor="right" id="Database" order="2" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
-      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.32995737" />
-      <window_info anchor="right" id="Palette" order="10" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14925373" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="设计器" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Learn" order="6" />
+      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23517169" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3298647" />
+      <window_info anchor="bottom" id="调试" order="12" weight="0.3298647" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette " order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="调色板" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Learn" order="0" />
-      <window_info id="UI Designer" order="1" />
-      <window_info id="Favorites" order="2" sideWeight="0.5006859" side_tool="true" weight="0.20469083" />
-      <window_info id="Capture Tool" order="3" />
-      <window_info id="设计器" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49931413" visible="true" weight="0.13859275" />
-      <window_info id="Image Layers" order="6" />
-      <window_info id="Structure" order="7" sideWeight="0.5006859" side_tool="true" weight="0.20469083" />
-      <window_info id="Designer" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="0" weight="0.32882413" />
-      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="2" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="调试" order="4" visible="true" weight="0.29760665" />
-      <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="Find" order="6" weight="0.32778355" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.24141519" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.33090532" />
-      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="12" weight="0.32882413" />
-      <window_info anchor="right" id="调色板" order="0" />
-      <window_info anchor="right" id="Maven Projects" order="1" />
-      <window_info anchor="right" id="Database" order="2" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
-      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.32995737" />
-      <window_info anchor="right" id="Palette" order="10" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -1361,879 +647,372 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
-    <MESSAGE value="第一次提交到Git" />
-    <MESSAGE value="添加风车GUI，相关操作未实现。" />
-    <MESSAGE value="风车GUI，相关操作基本实现。NBT保存与读取已经实现。" />
-    <option name="LAST_COMMIT_MESSAGE" value="风车GUI，相关操作基本实现。NBT保存与读取已经实现。" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint type="java-line">
-          <url>jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/client/main/Main.java</url>
-          <line>64</line>
-          <properties />
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.minecraft/launchwrapper/1.12/fd80cad9a1b967ce2ff20529dc54e520d5338d7/launchwrapper-1.12-sources.jar!/net/minecraft/launchwrapper/Launch.java</url>
-          <line>27</line>
-          <properties />
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/server/integrated/IntegratedServer.java</url>
-          <line>268</line>
-          <properties />
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
-      </breakpoints>
-      <breakpoints-dialog>
-        <breakpoints-dialog />
-      </breakpoints-dialog>
-    </breakpoint-manager>
-  </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="breakpointCondition">
-      <expression>
-        <expression-string>x != 1.300000011920929</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>this</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>meta != 0</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>meta !=</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
-    <expressions id="setValue">
-      <expression>
-        <expression-string>{TileEntityWindmill@7351}</expression-string>
-        <language-id>JAVA</language-id>
-        <custom-info>com.github.mrstop.stdemo.tileentity.TileEntityWindmill</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>7351</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>true</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
-    <expressions id="evaluateExpression">
-      <expression>
-        <expression-string>tileEntities</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>(byte) i</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>new TileEntityRenderWindmill()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>this</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>this.xCoord</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>compound.getFloat(&quot;currentPower&quot;)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>isAir(world, x, y + i, z)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>getMaterial() == Material.air</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>getMaterial()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
-  </component>
   <component name="editorHistoryManager">
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/world/ChunkCache.java">
-=======
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/io/WinNTFileSystem.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/item/ItemRedstonePickaxe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="444" column="26" selection-start-line="444" selection-start-column="26" selection-end-line="444" selection-end-column="26" />
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lwjgl.lwjgl/lwjgl/2.9.1/ccedb5b6f96913c6f78bc10249e747ded90baa51/lwjgl-2.9.1-sources.jar!/org/lwjgl/opengl/WindowsContextImplementation.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/inventory/ContainerMetalFurnace.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="76" column="31" selection-start-line="76" selection-start-column="31" selection-end-line="76" selection-end-column="31" />
+        <state relative-caret-position="110">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/fluid/FluidLoader.java">
+    <entry file="jar://$PROJECT_DIR$/libs/industrialcraft-2-2.2.828-experimental-api.jar!/ic2/api/energy/tile/IEnergySink.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/industrialcraft-2-2.2.828-experimental-api.jar!/ic2/api/package-info.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/industrialcraft-2-2.2.828-experimental-api.jar!/ic2/api/util/package-info.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/industrialcraft-2-2.2.828-experimental-api.jar!/ic2/api/util/package-info.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/industrialcraft-2-2.2.828-experimental-api.jar!/ic2/api/package-info.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/industrialcraft-2-2.2.828-experimental-api.jar!/ic2/api/energy/usage.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="775">
+          <caret line="144" selection-end-line="144" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/cpw/mods/fml/common/registry/GameRegistry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="308" column="22" selection-start-line="308" selection-start-column="22" selection-end-line="308" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityRedstoneFluxFurnace.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="245" column="100" selection-start-line="245" selection-start-column="100" selection-end-line="245" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/gui/GuiWindmill.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/gui/GuiMetalFurnace.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="34" column="49" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockGrassBlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/creativetab/CreativeTabsSTDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="8" column="53" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/creativetab/CreativeTabsLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/enchantment/EnchantmentFireBurn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockWindmill.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="208" column="25" selection-start-line="208" selection-start-column="25" selection-end-line="208" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityMetalFurnace.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="267" column="20" selection-start-line="267" selection-start-column="20" selection-end-line="267" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/item/ItemBestSword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/block/BlockFalling.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/block/BlockSand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="57" column="32" lean-forward="true" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/block/material/MapColor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-44">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/block/BlockFurnace.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="90" column="4" lean-forward="true" selection-start-line="90" selection-start-column="4" selection-end-line="90" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockColorCrops.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-330">
+          <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockWindmillGround.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-295">
+          <caret line="17" column="43" lean-forward="true" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/block/BlockCrops.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/block/BlockContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" column="26" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/block/BlockCake.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="44" column="4" selection-start-line="44" selection-start-column="4" selection-end-line="44" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/block/BlockStairs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-330">
+          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraftforge/common/util/ForgeDirection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
-          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+          <caret line="68" column="30" selection-start-line="68" selection-start-column="30" selection-end-line="68" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/jre/lib/rt.jar!/sun/nio/ch/WindowsSelectorImpl.class">
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/block/BlockTorch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="453" column="27" selection-start-line="453" selection-start-column="27" selection-end-line="453" selection-end-column="27" />
+        <state relative-caret-position="264">
+          <caret line="123" column="51" lean-forward="true" selection-start-line="123" selection-start-column="51" selection-end-line="123" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/inventory/IInventory.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraftforge/fluids/IFluidTank.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-264">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        <state relative-caret-position="330">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockMetalFurnace.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
+          <folding>
+            <element signature="method#BlockMetalFurnace#0;class#BlockMetalFurnace#0" />
+            <element signature="method#getItemDropped#0;class#BlockMetalFurnace#0" />
+            <element signature="method#onBlockActivated#0;class#BlockMetalFurnace#0" />
+            <element signature="method#updateMentalFurnaceBlockState#0;class#BlockMetalFurnace#0" />
+            <element signature="e#4355#4369#0" />
+            <element signature="e#5071#5072#0" expanded="true" />
+            <element signature="e#5122#5123#0" expanded="true" />
+            <element signature="method#breakBlock#0;class#BlockMetalFurnace#0" />
+            <element signature="e#9908#9917#0" />
+            <element signature="method#randomDisplayTick#0;class#BlockMetalFurnace#0" />
+            <element signature="e#11097#11098#0" expanded="true" />
+            <element signature="e#11124#11125#0" expanded="true" />
+            <element signature="method#getComparatorInputOverride#0;class#BlockMetalFurnace#0" />
+            <element signature="e#11870#11879#0" />
+            <element signature="method#getIcon#0;class#BlockMetalFurnace#0" />
+            <element signature="e#11510#11678#0" />
+            <element signature="e#12372#12381#0" />
+            <element signature="method#registerIcons#0;class#BlockMetalFurnace#0" />
+            <element signature="e#12772#12781#0" />
+            <element signature="method#getItem#0;class#BlockMetalFurnace#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/inventory/ISidedInventory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
-          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/item/ItemStack.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraftforge/fluids/FluidStack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="176" column="26" selection-start-line="176" selection-start-column="26" selection-end-line="176" selection-end-column="26" />
+        <state relative-caret-position="22">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/common/OreDictionaryLoader.java">
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/common/OreDictionaryLoader.java">
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/tileentity/TileEntityFurnace.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraftforge/event/terraingen/TerrainGen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/worldgen/WorldGeneratorLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="50" column="19" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/ClientProxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-=======
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lwjgl.lwjgl/lwjgl/2.9.1/ccedb5b6f96913c6f78bc10249e747ded90baa51/lwjgl-2.9.1-sources.jar!/org/lwjgl/opengl/GL11.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="1145" column="23" selection-start-line="1145" selection-start-column="23" selection-end-line="1145" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/Thread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="300" column="30" selection-start-line="300" selection-start-column="30" selection-end-line="300" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/client/Minecraft.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="2287" selection-start-line="2287" selection-end-line="2287" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/gui/GuiMetalFurnace.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="22" column="83" selection-start-line="22" selection-start-column="83" selection-end-line="22" selection-end-column="83" />
-          <folding>
-            <element signature="method#GuiMetalFurnace#0;class#GuiMetalFurnace#0" />
-            <element signature="method#drawGuiContainerBackgroundLayer#0;class#GuiMetalFurnace#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="237" column="12" selection-start-line="237" selection-start-column="12" selection-end-line="237" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/Math.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="1335" selection-start-line="1335" selection-end-line="1335" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/Arrays.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="3180" selection-start-line="3180" selection-end-line="3180" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="463" selection-start-line="463" selection-end-line="463" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/nbt/NBTTagCompound.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="83" selection-start-line="83" selection-end-line="83" />
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/Thread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="300" column="30" selection-start-line="300" selection-start-column="30" selection-end-line="300" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/gui/GuiMetalFurnace.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="22" column="83" selection-start-line="22" selection-start-column="83" selection-end-line="22" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="237" column="12" selection-start-line="237" selection-start-column="12" selection-end-line="237" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/Math.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="1335" selection-start-line="1335" selection-end-line="1335" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/Arrays.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="3180" selection-start-line="3180" selection-end-line="3180" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="463" selection-start-line="463" selection-end-line="463" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/nbt/NBTTagCompound.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="83" selection-start-line="83" selection-end-line="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/server/MinecraftServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="373" selection-start-line="373" selection-end-line="373" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/world/gen/ChunkProviderServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="328" selection-start-line="328" selection-end-line="328" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/nbt/NBTTagList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="103" selection-start-line="103" selection-end-line="103" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/server/integrated/IntegratedServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="112" selection-start-line="112" selection-end-line="112" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/inventory/ICrafting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="22" column="7" selection-start-line="18" selection-start-column="4" selection-end-line="22" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/world/WorldServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="862" selection-start-line="862" selection-end-line="862" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/world/World.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="2193" selection-start-line="2193" selection-end-line="2193" />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/gui/GuiWindmill.java">
-=======
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/client/renderer/EntityRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="1299" selection-start-line="1299" selection-end-line="1299" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/client/renderer/RenderGlobal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="92" column="16" selection-start-line="92" selection-start-column="16" selection-end-line="92" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/client/renderer/tileentity/TileEntityRendererDispatcher.java">
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/client/renderer/tileentity/TileEntitySpecialRenderer.java">
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/util/ResourceLocation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/cpw/mods/fml/client/registry/ClientRegistry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/tielentity/render/TileEntityRenderLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/tileentity/TileEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="130" column="31" lean-forward="true" selection-start-line="130" selection-start-column="31" selection-end-line="130" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/world/chunk/storage/AnvilChunkLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <state relative-caret-position="-1474">
-          <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="38" />
-=======
-        <state relative-caret-position="1166">
-          <caret line="298" column="32" selection-start-line="298" selection-start-column="32" selection-end-line="298" selection-end-column="32" />
-          <folding>
-            <element signature="method#BlockWindmill#0;class#BlockWindmill#0" />
-            <element signature="method#setBlockBoundsBasedOnState#0;class#BlockWindmill#0" />
-            <element signature="method#onBlockPlacedBy#0;class#BlockWindmill#0" />
-            <element signature="method#removedByPlayer#0;class#BlockWindmill#0" />
-            <element signature="method#hasEnoughSpace#0;class#BlockWindmill#0" />
-            <element signature="e#5802#5809#0" />
-            <element signature="e#6061#6068#0" />
-            <element signature="e#6344#6351#0" />
-            <element signature="e#6623#6630#0" />
-            <element signature="method#destroyWindmill#0;class#BlockWindmill#0" />
-            <element signature="method#getIcon#0;class#BlockWindmill#0" />
-            <element signature="e#7634#7655#0" />
-            <element signature="method#updateMultiBlockStructure#0;class#BlockWindmill#0" />
-            <element signature="method#getBlockMatrix#0;class#BlockWindmill#0" />
-            <element signature="e#9118#9180#0" />
-            <element signature="method#constructMultiBLockStructure#0;class#BlockWindmill#0" />
-            <element signature="method#destroyMultiBlockStructure#0;class#BlockWindmill#0" />
-            <element signature="method#onBlockActivated#0;class#BlockWindmill#0" />
-            <element signature="method#registerIcons#0;class#BlockWindmill#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/tielentity/render/TileEntityRenderWindmill.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1980">
-          <caret line="96" column="42" selection-start-line="96" selection-start-column="42" selection-end-line="96" selection-end-column="42" />
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
-        <state relative-caret-position="1093">
-          <caret line="524" selection-start-line="524" selection-end-line="524" />
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/block/Block.java">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <state relative-caret-position="-374">
-          <caret line="40" column="48" lean-forward="true" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
-=======
-        <state relative-caret-position="1474">
-          <caret line="152" column="21" selection-start-line="152" selection-start-column="21" selection-end-line="152" selection-end-column="21" />
-          <folding>
-            <element signature="docComment;field#inventoryItemStacks#0;class#Container#0" />
-            <element signature="docComment;field#inventorySlots#0;class#Container#0" />
-            <element signature="docComment;field#dragMode#0;class#Container#0" />
-            <element signature="docComment;field#dragEvent#0;class#Container#0" />
-            <element signature="docComment;field#dragSlots#0;class#Container#0" />
-            <element signature="docComment;field#crafters#0;class#Container#0" />
-            <element signature="docComment;method#addSlotToContainer#0;class#Container#0" />
-            <element signature="method#addSlotToContainer#0;class#Container#0" />
-            <element signature="docComment;method#getInventory#0;class#Container#0" />
-            <element signature="method#getInventory#0;class#Container#0" />
-            <element signature="docComment;method#removeCraftingFromCrafters#0;class#Container#0" />
-            <element signature="docComment;method#detectAndSendChanges#0;class#Container#0" />
-            <element signature="method#detectAndSendChanges#0;class#Container#0" />
-            <element signature="docComment;method#enchantItem#0;class#Container#0" />
-            <element signature="method#getSlotFromInventory#0;class#Container#0" />
-            <element signature="docComment;method#transferStackInSlot#0;class#Container#0" />
-            <element signature="method#transferStackInSlot#0;class#Container#0" />
-            <element signature="docComment;method#slotClick#0;class#Container#0" />
-            <element signature="docComment;method#onContainerClosed#0;class#Container#0" />
-            <element signature="method#onContainerClosed#0;class#Container#0" />
-            <element signature="docComment;method#onCraftMatrixChanged#0;class#Container#0" />
-            <element signature="docComment;method#putStackInSlot#0;class#Container#0" />
-            <element signature="docComment;method#putStacksInSlots#0;class#Container#0" />
-            <element signature="method#putStacksInSlots#0;class#Container#0" />
-            <element signature="docComment;method#getNextTransactionID#0;class#Container#0" />
-            <element signature="method#getNextTransactionID#0;class#Container#0" />
-            <element signature="docComment;method#getCanCraft#0;class#Container#0" />
-            <element signature="docComment;method#setCanCraft#0;class#Container#0" />
-            <element signature="method#setCanCraft#0;class#Container#0" />
-            <element signature="docComment;method#mergeItemStack#0;class#Container#0" />
-            <element signature="method#mergeItemStack#0;class#Container#0" />
-            <element signature="docComment;method#extractDragMode#0;class#Container#0" />
-            <element signature="docComment;method#getDragEvent#0;class#Container#0" />
-            <element signature="docComment;method#isValidDragMode#0;class#Container#0" />
-            <element signature="docComment;method#resetDrag#0;class#Container#0" />
-            <element signature="method#resetDrag#0;class#Container#0" />
-            <element signature="docComment;method#canAddItemToSlot#0;class#Container#0" />
-            <element signature="method#canAddItemToSlot#0;class#Container#0" />
-            <element signature="docComment;method#computeStackSize#0;class#Container#0" />
-            <element signature="method#computeStackSize#0;class#Container#0" />
-            <element signature="docComment;method#canDragIntoSlot#0;class#Container#0" />
-            <element signature="method#calcRedstoneFromInventory#0;class#Container#0" />
-          </folding>
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
-        <state relative-caret-position="478">
-          <caret line="1666" selection-start-line="1666" selection-end-line="1666" />
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/client/renderer/tileentity/TileEntityRendererDispatcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <state relative-caret-position="462">
-          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
-=======
-        <state relative-caret-position="352">
-          <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
-          <folding>
-            <element signature="method#ContainerMetalFurnace#0;class#ContainerMetalFurnace#0" />
-            <element signature="e#912#937#0" />
-            <element signature="method#onCraftGuiOpened#0;class#ContainerMetalFurnace#0" />
-            <element signature="method#detectAndSendChanges#0;class#ContainerMetalFurnace#0" />
-            <element signature="e#3344#3366#0" />
-            <element signature="method#updateProgressBar#0;class#ContainerMetalFurnace#0" />
-            <element signature="method#canInteractWith#0;class#ContainerMetalFurnace#0" />
-          </folding>
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
-        <state relative-caret-position="252">
-          <caret line="125" column="47" selection-start-line="125" selection-start-column="36" selection-end-line="125" selection-end-column="47" />
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/world/chunk/Chunk.java">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <state relative-caret-position="88">
-          <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
-=======
-        <state relative-caret-position="3652">
-          <caret line="199" column="8" selection-start-line="199" selection-start-column="8" selection-end-line="199" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#932#933#0" expanded="true" />
-            <element signature="e#968#969#0" expanded="true" />
-            <element signature="e#1006#1007#0" expanded="true" />
-            <element signature="e#1041#1042#0" expanded="true" />
-            <element signature="e#1096#1097#0" expanded="true" />
-            <element signature="e#1144#1145#0" expanded="true" />
-            <element signature="method#decrStackSize#0;class#TileEntityWindmill#0" />
-            <element signature="method#openChest#0;class#TileEntityWindmill#0" />
-            <element signature="method#closeChest#0;class#TileEntityWindmill#0" />
-          </folding>
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
-        <state relative-caret-position="40">
-          <caret line="933" selection-start-line="933" selection-end-line="933" />
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockMetalFurnace.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="152" column="28" selection-start-line="152" selection-start-column="22" selection-end-line="152" selection-end-column="28" />
-          <folding>
-            <element signature="method#updateMentalFurnaceBlockState#0;class#BlockMetalFurnace#0" />
-            <element signature="method#breakBlock#0;class#BlockMetalFurnace#0" />
-            <element signature="method#randomDisplayTick#0;class#BlockMetalFurnace#0" />
-            <element signature="method#getIcon#0;class#BlockMetalFurnace#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/world/ChunkCache.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="101" selection-start-line="101" selection-end-line="101" />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/entity/EntityAgeable.java">
-=======
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/inventory/GuiElementLoader.java">
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/gui/GuiWindmill.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockWindmill.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1166">
-          <caret line="298" column="32" selection-start-line="298" selection-start-column="32" selection-end-line="298" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/inventory/Container.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1474">
-          <caret line="152" column="21" selection-start-line="152" selection-start-column="21" selection-end-line="152" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/inventory/ContainerMetalFurnace.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+        <state relative-caret-position="198">
+          <caret line="40" column="7" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityWindmill.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3652">
-          <caret line="199" column="8" selection-start-line="199" selection-start-column="8" selection-end-line="199" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="15" column="10" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityMetalFurnace.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8074">
-          <caret line="401" column="15" selection-start-line="401" selection-start-column="15" selection-end-line="401" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/idea64.exe.vmoptions">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/inventory/ContainerWindmill.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="39" column="54" selection-start-line="39" selection-start-column="54" selection-end-line="39" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/cpw/mods/fml/common/eventhandler/EventBus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="31" column="11" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/client/tielentity/render/TileEntityRenderWindmill.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/tileentity/TileEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1980">
-          <caret line="96" column="42" selection-start-line="96" selection-start-column="42" selection-end-line="96" selection-end-column="42" />
+        <state relative-caret-position="1557">
+          <caret line="385" column="51" selection-start-line="385" selection-start-column="51" selection-end-line="385" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lwjgl.lwjgl/lwjgl/2.9.1/ccedb5b6f96913c6f78bc10249e747ded90baa51/lwjgl-2.9.1-sources.jar!/org/lwjgl/opengl/GL11.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockQuartzFurnace.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1144">
-          <caret line="53" column="21" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/common/utils/SpecialBlockHighLight.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/client/renderer/RenderGlobal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38170">
-          <caret line="1818" column="24" selection-start-line="1818" selection-start-column="24" selection-end-line="1818" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/client/renderer/EntityRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20900">
-          <caret line="1012" column="31" selection-start-line="1012" selection-start-column="31" selection-end-line="1012" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/client/Minecraft.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19492">
-          <caret line="1067" column="73" selection-start-line="1067" selection-start-column="73" selection-end-line="1067" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/cpw/mods/fml/common/eventhandler/ASMEventHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/client/renderer/Tessellator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1210">
-          <caret line="69" column="23" selection-start-line="69" selection-start-column="23" selection-end-line="69" selection-end-column="23" />
+        <state relative-caret-position="440">
+          <caret line="66" column="111" selection-start-line="66" selection-start-column="111" selection-end-line="66" selection-end-column="111" />
           <folding>
-            <element signature="e#797#843#0" />
-            <element signature="e#950#1024#0" />
-            <element signature="e#1096#1168#0" />
-            <element signature="e#1246#1318#0" />
-            <element signature="e#1396#1421#0" />
-            <element signature="e#1455#1550#0" />
-            <element signature="e#1584#1639#0" />
-            <element signature="e#1673#1729#0" />
-            <element signature="e#1791#1860#0" />
-            <element signature="e#1888#1965#0" />
-            <element signature="e#2000#2084#0" />
-            <element signature="e#2156#2234#0" />
-            <element signature="e#2271#2337#0" />
-            <element signature="e#2374#2558#0" />
-            <element signature="e#2594#2660#0" />
-            <element signature="e#2702#2763#0" />
-            <element signature="e#2794#2877#0" />
-            <element signature="e#2910#2993#0" />
-            <element signature="e#3026#3109#0" />
-            <element signature="e#3142#3198#0" />
-            <element signature="e#3227#3273#0" />
-            <element signature="e#3351#3409#0" />
-            <element signature="e#3445#3495#0" />
-            <element signature="e#3586#3633#0" />
-            <element signature="e#3639#3671#0" />
-            <element signature="initializer##0;class#Tessellator#0" />
-            <element signature="e#3741#3850#0" />
-            <element signature="e#7062#8096#0" />
-            <element signature="e#8102#8882#0" />
-            <element signature="e#8888#8967#0" />
-            <element signature="e#8888#9132#0" />
-            <element signature="e#9138#9205#0" />
-            <element signature="e#9894#9942#0" />
-            <element signature="e#9894#10125#0" />
-            <element signature="e#10131#10257#0" />
-            <element signature="e#10263#10378#0" />
-            <element signature="e#10263#10590#0" />
-            <element signature="e#10596#10713#0" />
-            <element signature="e#10596#10967#0" />
-            <element signature="e#10973#11051#0" />
-            <element signature="e#10973#11210#0" />
-            <element signature="e#11216#11297#0" />
-            <element signature="e#11216#12426#0" />
-            <element signature="e#12432#12609#0" />
-            <element signature="e#12615#12697#0" />
-            <element signature="e#12615#12947#0" />
-            <element signature="e#14605#14710#0" />
-            <element signature="e#14605#14922#0" />
-            <element signature="e#14928#15027#0" />
-            <element signature="e#14928#15265#0" />
-            <element signature="e#15271#15332#0" />
-            <element signature="e#15418#15479#0" />
-            <element signature="e#15418#15834#0" />
-            <element signature="e#15840#15922#0" />
-            <element signature="e#15840#16127#0" />
-            <element signature="e#16133#16218#0" />
-            <element signature="e#16133#16447#0" />
+            <element signature="method#BlockQuartzFurnace#0;class#BlockQuartzFurnace#0" />
+            <element signature="method#getIcon#0;class#BlockQuartzFurnace#0" />
+            <element signature="method#getItem#0;class#BlockQuartzFurnace#0" />
+            <element signature="method#registerIcons#0;class#BlockQuartzFurnace#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/common/EventLoader.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/tileentity/TileEntityQuartzFurnace.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1518">
-          <caret line="302" column="5" selection-start-line="302" selection-start-column="5" selection-end-line="303" selection-end-column="17" />
+        <state relative-caret-position="110">
+          <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraftforge/fluids/BlockFluidBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/block/BlockRedstoneComparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1958">
+          <caret line="125" column="65" selection-start-line="125" selection-start-column="63" selection-end-line="125" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockFluidMercury.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#onPlayerItemPickup#0;class#EventLoader#0" />
-            <element signature="method#onPlayerInteract#0;class#EventLoader#0" />
-            <element signature="method#test2#0;class#EventLoader#0" />
-            <element signature="method#test1#0;class#EventLoader#0" />
-            <element signature="method#onPlayerClickGrassBlock#0;class#EventLoader#0" />
-            <element signature="method#onEntityInteract#0;class#EventLoader#0" />
-            <element signature="method#onBlockHarvestDrops#0;class#EventLoader#0" />
-            <element signature="method#onLivingDeath#0;class#EventLoader#0" />
-            <element signature="method#onPlayerItemCrafting#0;class#EventLoader#0" />
-            <element signature="method#onKeyInput#0;class#EventLoader#0" />
-            <marker date="1540368421258" expanded="true" signature="12774:14864" ph="{...}" />
-            <marker date="1540368421258" expanded="true" signature="14878:16607" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/block/BlockWindmillGround.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraftforge/fluids/BlockFluidClassic.java">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="273">
-          <caret line="436" column="38" selection-start-line="436" selection-start-column="38" selection-end-line="436" selection-end-column="38" />
-=======
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/inventory/ContainerWindmill.java">
+        <state>
+          <caret column="31" selection-start-column="31" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraftforge/fluids/BlockFluidFinite.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
+        <state relative-caret-position="286">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraftforge/fluids/FluidContainerRegistry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/mrstop/stdemo/item/ItemBucketMercury.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/snapshot/20140925/forgeSrc-1.7.10-10.13.4.1614-1.7.10-sources.jar!/net/minecraft/block/Block.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="1334" column="27" selection-start-line="1334" selection-start-column="27" selection-end-line="1334" selection-end-column="27" />
           <folding>
-            <element signature="method#ContainerWindmill#0;class#ContainerWindmill#0" />
-            <element signature="method#onCraftGuiOpened#0;class#ContainerWindmill#0" />
-            <element signature="method#updateProgressBar#0;class#ContainerWindmill#0" />
+            <element signature="e#6930#6931#0" expanded="true" />
+            <element signature="e#6967#6968#0" expanded="true" />
+            <element signature="e#42241#42242#0" expanded="true" />
+            <element signature="e#42265#42266#0" expanded="true" />
+            <element signature="e#64451#64452#0" expanded="true" />
+            <element signature="e#64501#64502#0" expanded="true" />
           </folding>
->>>>>>> parent of 3634a08... 修改风车选中时的高亮
-=======
-        <state relative-caret-position="212">
-          <caret line="122" column="8" selection-start-line="122" selection-start-column="8" selection-end-line="122" selection-end-column="71" />
-          <folding>
-            <element signature="e#1230#2419#0" />
-            <element signature="e#2425#2821#0" />
-            <element signature="e#2827#4076#0" />
-          </folding>
->>>>>>> parent of 2c2ca22... 为风车添加产生RF能量和输出RF能量的功能
         </state>
       </provider>
     </entry>

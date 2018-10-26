@@ -1,7 +1,6 @@
 package com.github.mrstop.stdemo.item;
 
 import com.github.mrstop.stdemo.creativetab.CreativeTabsLoader;
-import com.sun.org.apache.regexp.internal.RE;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;

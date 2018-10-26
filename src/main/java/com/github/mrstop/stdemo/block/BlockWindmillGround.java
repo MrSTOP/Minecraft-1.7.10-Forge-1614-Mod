@@ -2,10 +2,13 @@ package com.github.mrstop.stdemo.block;
 
 import com.github.mrstop.stdemo.client.block.render.RenderWindmillGround;
 import com.github.mrstop.stdemo.creativetab.CreativeTabsLoader;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
@@ -14,16 +17,7 @@ import net.minecraft.world.World;
 
 public class BlockWindmillGround extends Block {
 
-    private IIcon icon0;
-    private IIcon icon1;
-    private IIcon icon2;
-    private IIcon icon3;
-    private IIcon icon4;
-    private IIcon icon5;
-    private IIcon icon6;
-    private IIcon icon7;
-    private IIcon icon8;
-    private IIcon icon9;
+    @SideOnly(Side.CLIENT)
     private IIcon icon;
 
     public BlockWindmillGround(){
@@ -118,6 +112,11 @@ public class BlockWindmillGround extends Block {
     }
 
     @Override
+    public AxisAlignedBB getCollisionBoundingBoxFromPool(World worldIn, int x, int y, int z) {
+        return super.getCollisionBoundingBoxFromPool(worldIn, x, y, z);
+    }
+
+    @Override
     public boolean renderAsNormalBlock() {
         return false;
     }
@@ -129,53 +128,19 @@ public class BlockWindmillGround extends Block {
 
     @Override
     public int getRenderType() {
-//        return 0;
         return RenderWindmillGround.renderID;
     }
 
     @Override
+    @SideOnly(Side.CLIENT)
     public IIcon getIcon(int side, int meta) {
         return icon;
-//        switch (meta){
-//            case 0:
-//                return icon;
-//            case 1:
-//                return icon1;
-//            case 2:
-//                return icon2;
-//            case 3:
-//                return icon3;
-//            case 4:
-//                return icon4;
-//            case 5:
-//                return icon5;
-//            case 6:
-//                return icon6;
-//            case 7:
-//                return icon7;
-//            case 8:
-//                return icon8;
-//            case 9:
-//                return icon9;
-//            default:
-//                return icon;
-//        }
     }
 
     @Override
+    @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister blockIcon) {
-//        this.blockIcon = blockIcon.registerIcon("stdemo:windmill_ground_block");
         this.icon = blockIcon.registerIcon("stdemo:windmill_ground_block");
-        this.icon0 = blockIcon.registerIcon("stdemo:metadata_0");
-        this.icon1 = blockIcon.registerIcon("stdemo:metadata_1");
-        this.icon2 = blockIcon.registerIcon("stdemo:metadata_2");
-        this.icon3 = blockIcon.registerIcon("stdemo:metadata_3");
-        this.icon4 = blockIcon.registerIcon("stdemo:metadata_4");
-        this.icon5 = blockIcon.registerIcon("stdemo:metadata_5");
-        this.icon6 = blockIcon.registerIcon("stdemo:metadata_6");
-        this.icon7 = blockIcon.registerIcon("stdemo:metadata_7");
-        this.icon8 = blockIcon.registerIcon("stdemo:metadata_8");
-        this.icon9 = blockIcon.registerIcon("stdemo:metadata_9");
     }
 }
 

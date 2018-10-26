@@ -30,8 +30,7 @@ public class BlockWindmill extends BlockContainer {
     private IIcon icon6;
     private IIcon icon7;
 
-    public BlockWindmill()
-    {
+    public BlockWindmill() {
         super(Material.rock);
         this.setUnlocalizedName("windmillBlock");
         this.setHardness(0.8F);
@@ -207,6 +206,7 @@ public class BlockWindmill extends BlockContainer {
     }
 
     @Override
+    @SideOnly(Side.CLIENT)
     public IIcon getIcon(int side, int meta) {
         switch (meta){
 //            case 0:

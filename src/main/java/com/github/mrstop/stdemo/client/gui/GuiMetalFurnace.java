@@ -27,14 +27,14 @@ public class GuiMetalFurnace extends GuiContainer {
         int y = (this.height - this.ySize) / 2;
         this.drawTexturedModalRect(x, y, 0, 0, this.xSize, this.ySize);
 
-        int i;
-
         if (this.tileEntityMetalFurnace.isBurning())
         {
+            int i;
             i = this.tileEntityMetalFurnace.getBurnTimeRemainingScaled(12);
-            this.drawTexturedModalRect(x + 56, y + 36 + 12 - i, 176, 12 - i, 14, i + 2);
+//            this.drawTexturedModalRect(x + 56, y + 36 + 12 - i, 176, 12 - i, 14, i + 2);
             i = this.tileEntityMetalFurnace.getCookProgressScaled(24);
-            this.drawTexturedModalRect(x + 79, y + 34, 176, 14, i + 1, 16);
+            System.out.print(i + "\n");
+            this.drawTexturedModalRect(x + 80, y + 35, 176, 14, 20 + i, 17);
         }
     }
 }

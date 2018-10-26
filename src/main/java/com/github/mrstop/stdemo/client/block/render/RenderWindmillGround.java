@@ -3,6 +3,8 @@ package com.github.mrstop.stdemo.client.block.render;
 import com.github.mrstop.stdemo.block.BlockLoader;
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import cpw.mods.fml.client.registry.RenderingRegistry;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.client.renderer.Tessellator;
@@ -16,6 +18,7 @@ public class RenderWindmillGround implements ISimpleBlockRenderingHandler {
     public static final RenderWindmillGround renderWindmillGround =  new RenderWindmillGround();
 
     @Override
+    @SideOnly(Side.CLIENT)
     public boolean renderWorldBlock(IBlockAccess blockAccess, int posX, int posY, int posZ, Block block, int modelId, RenderBlocks renderer) {
         IIcon iicon = BlockLoader.windmillGroundBlock.getIcon(0, 0);
         float minU = iicon.getMinU();
@@ -274,6 +277,7 @@ public class RenderWindmillGround implements ISimpleBlockRenderingHandler {
     }
 
     @Override
+    @SideOnly(Side.CLIENT)
     public void renderInventoryBlock(Block block, int metadata, int modelId, RenderBlocks renderer) {
         IIcon iicon = BlockLoader.windmillGroundBlock.getIcon(0, 0);
         float minU = iicon.getMinU();

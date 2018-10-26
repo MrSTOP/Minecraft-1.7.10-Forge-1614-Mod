@@ -26,8 +26,7 @@ public class BlockColorCrops extends BlockCrops {
     @SideOnly(Side.CLIENT)
     protected IIcon[] icons = new IIcon[8];
 
-    public BlockColorCrops()
-    {
+    public BlockColorCrops() {
         this.setTickRandomly(true);
         float f = 0.5F;
         this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, 0.25F, 0.5F + f);
@@ -39,13 +38,11 @@ public class BlockColorCrops extends BlockCrops {
     }
 
     @Override
-    protected boolean canPlaceBlockOn(Block ground)
-    {
+    protected boolean canPlaceBlockOn(Block ground) {
         return ground == Blocks.farmland;
     }
 
-    public void incrementGrowStage(World world, Random rand, int X, int Y, int Z)
-    {
+    public void incrementGrowStage(World world, Random rand, int X, int Y, int Z) {
         int growStage = world.getBlockMetadata(X, Y, Z) + MathHelper.getRandomIntegerInRange(rand, 2, 5);
         if (growStage > maxGrowthStage)
         {
@@ -55,8 +52,7 @@ public class BlockColorCrops extends BlockCrops {
     }
 
     @Override
-    public Item getItemDropped(int meta, Random rand, int fortune)
-    {
+    public Item getItemDropped(int meta, Random rand, int fortune) {
         if (meta != 7)
         {
             return Item.getItemFromBlock(this);
@@ -66,82 +62,68 @@ public class BlockColorCrops extends BlockCrops {
     }
 
     @Override
-    public int getRenderType()
-    {
+    public int getRenderType() {
         return 1;
     }
 
     @Override
     @SideOnly(Side.CLIENT)
-    public IIcon getIcon(int side, int growState)
-    {
+    public IIcon getIcon(int side, int growState) {
         return icons[growState];
     }
 
     @Override
-    public boolean canFertilize(World worldIn, int x, int y, int z, boolean isClient)
-    {
+    public boolean canFertilize(World worldIn, int x, int y, int z, boolean isClient) {
         return worldIn.getBlockMetadata(x, y, z) != maxGrowthStage;
     }
 
     @Override
-    public boolean shouldFertilize(World worldIn, Random random, int x, int y, int z)
-    {
+    public boolean shouldFertilize(World worldIn, Random random, int x, int y, int z) {
         return true;
     }
 
     @Override
-    public void  fertilize(World worldIn, Random random, int x, int y, int z)
-    {
+    public void  fertilize(World worldIn, Random random, int x, int y, int z) {
         incrementGrowStage(worldIn, random, x, y, z);
     }
 
     @Override
-    public void updateTick(World world, int x, int y, int z, Random rand)
-    {
+    public void updateTick(World world, int x, int y, int z, Random rand) {
         super.updateTick(world, x, y, z, rand);
         int growStage = world.getBlockMetadata(x, y, z) + 1;
-        if (growStage > 7)
-        {
+        if (growStage > 7) {
             growStage = 7;
         }
         world.setBlockMetadataWithNotify(x, y, z, growStage, 2);
     }
 
     @Override
-    protected Item getSeed()
-    {
+    protected Item getSeed() {
         return ItemLoader.seedsColor;
     }
 
     @Override
-    protected Item getCrop()
-    {
+    protected Item getCrop() {
         return ItemLoader.color;
     }
 
     @Override
-    public ArrayList<ItemStack> getDrops(World world, int x, int y, int z, int metadata, int fortune)
-    {
+    public ArrayList<ItemStack> getDrops(World world, int x, int y, int z, int metadata, int fortune) {
         ArrayList<ItemStack> ret = super.getDrops(world, x, y, z, metadata, fortune);
 
-        if (metadata >= 7)
-        {
-            for (int i = 0; i < 3 + fortune; ++i)
-            {
-                if (world.rand.nextInt(15) <= metadata)
-                {
+        if (metadata >= 7) {
+            for (int i = 0; i < 3 + fortune; ++i) {
+                if (world.rand.nextInt(15) <= metadata) {
                     ret.add(new ItemStack(this.getCrop(), 1, 0));
                 }
             }
         }
-
         return ret;
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister BlockIcon)
-    {
+    public void registerIcons(IIconRegister BlockIcon) {
         this.icons[0] = BlockIcon.registerIcon("stdemo:color_0");
         this.icons[1] = BlockIcon.registerIcon("stdemo:color_1");
         this.icons[2] = BlockIcon.registerIcon("stdemo:color_2");

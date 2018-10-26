@@ -13,8 +13,7 @@ import net.minecraftforge.fluids.FluidContainerRegistry;
 
 public class ItemBucketMercury extends ItemBucket {
 
-    public ItemBucketMercury()
-    {
+    public ItemBucketMercury() {
         super(BlockLoader.fluidMercuryBlock);
         this.setContainerItem(Items.bucket);
         this.setUnlocalizedName("bucketMercury");
@@ -24,8 +23,7 @@ public class ItemBucketMercury extends ItemBucket {
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister par1IconRegister)
-    {
+    public void registerIcons(IIconRegister par1IconRegister) {
         this.itemIcon = par1IconRegister.registerIcon("stdemo:bucket_mercury");
     }
 

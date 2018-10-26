@@ -22,6 +22,7 @@ import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.ForgeDirection;
+import org.lwjgl.Sys;
 
 @Optional.Interface(iface =  "ic2.api.energy.tile.IEnergySink", modid = "IC2")
 public class TileEntityMetalFurnace extends TileEntity implements ISidedInventory, IEnergySink {
@@ -89,7 +90,6 @@ public class TileEntityMetalFurnace extends TileEntity implements ISidedInventor
     @Override
     public void setInventorySlotContents(int index, ItemStack stack) {
         this.metalFurnaceItemStack[index] = stack;
-
         if (stack != null && stack.stackSize > this.getInventoryStackLimit()) {
             stack.stackSize = this.getInventoryStackLimit();
         }
@@ -162,9 +162,8 @@ public class TileEntityMetalFurnace extends TileEntity implements ISidedInventor
 
     //返回一个介于0和传递的值之间的整数值，表示当前物品被完全加工的距离
     @SideOnly(Side.CLIENT)
-    public int getCookProgressScaled(int time)
-    {
-        return this.metalFurnaceCookTime * time / processTime;
+    public int getCookProgressScaled(int scale) {
+        return (this.metalFurnaceCookTime * scale / processTime);
     }
 
     //返回一个介于0和传递的值之间的整数值，表示当前燃料物品剩余燃烧时间，其中0表示该物品已耗尽，并且传递的值表示该项目为新的
@@ -185,70 +184,68 @@ public class TileEntityMetalFurnace extends TileEntity implements ISidedInventor
     }
 
     @Override
-    public void updateEntity()
-    {
-        boolean flag = this.metalFurnaceBurnTime > 0;                                                                                           //判断燃烧时间是否大于0
+    public void updateEntity() {
+        //判断燃烧时间是否大于0
+        boolean flag = this.metalFurnaceBurnTime > 0;
         boolean isDirty = false;
-        if (!this.worldObj.isRemote)                                                                                                            //判断是否为服务器端
-        {
-
-            if (!this.update && Loader.isModLoaded("IC2"))
-            {
+        if (!this.worldObj.isRemote) {
+            //判断是否为服务器端
+            if (!this.update && Loader.isModLoaded("IC2")) {
                 this.onIC2MachineLoaded();
                 this.update = true;
             }
-            if (this.metalFurnaceBurnTime > 0)                                                                                                      //判断燃烧时间是否大于0
-            {
-                --this.metalFurnaceBurnTime;                                                                                                        //减少燃烧时间
+            if (this.metalFurnaceBurnTime > 0) {
+                //判断燃烧时间是否大于0
+                --this.metalFurnaceBurnTime;
+                //减少燃烧时间
             }
-            if (this.metalFurnaceBurnTime != 0 || this.metalFurnaceItemStack[1] != null && this.metalFurnaceItemStack[0] != null)               //燃烧时间不为0或燃料槽不为空且原料槽不为空
-            {
-                if (this.metalFurnaceBurnTime == 0 && this.canSmelt())                                                                          //燃烧时间为空且能熔炼
-                {
-                    this.currentItemBurnTime = this.metalFurnaceBurnTime = getItemBurnTime(this.metalFurnaceItemStack[1]);                      //修改currentItemBurnTime以及metalFurnaceBurnTime为燃料槽物品燃烧时间
-
-                    if (this.metalFurnaceBurnTime > 0)                                                                                          //判断燃烧时间是否大于0
-                    {
-                        isDirty = true;                                                                                                           //将TileEntity标记为脏
-
-                        if (this.metalFurnaceItemStack[1] != null)                                                                              //判断燃料槽是否为空
-                        {
-                            --this.metalFurnaceItemStack[1].stackSize;                                                                          //减少燃料槽物品栈数量
-
-                            if (this.metalFurnaceItemStack[1].stackSize == 0)                                                                   //判断燃料槽物品的物品栈是否为0
-                            {
-                                this.metalFurnaceItemStack[1] = metalFurnaceItemStack[1].getItem().getContainerItem(metalFurnaceItemStack[1]);  //返回容器物品(如岩浆桶燃烧后返回空桶)
+            if (this.metalFurnaceBurnTime != 0 || this.metalFurnaceItemStack[1] != null && this.metalFurnaceItemStack[0] != null) {
+                //燃烧时间不为0或燃料槽不为空且原料槽不为空
+                if (this.metalFurnaceBurnTime == 0 && this.canSmelt()) {
+                    //燃烧时间为空且能熔炼
+                    this.currentItemBurnTime = this.metalFurnaceBurnTime = getItemBurnTime(this.metalFurnaceItemStack[1]);
+                    //修改currentItemBurnTime以及metalFurnaceBurnTime为燃料槽物品燃烧时间
+                    if (this.metalFurnaceBurnTime > 0){
+                        //判断燃烧时间是否大于0
+                        isDirty = true;
+                        //将TileEntity标记为脏
+                        if (this.metalFurnaceItemStack[1] != null) {
+                            //判断燃料槽是否为空{
+                            --this.metalFurnaceItemStack[1].stackSize;
+                            //减少燃料槽物品栈数量
+                            if (this.metalFurnaceItemStack[1].stackSize == 0) {
+                                //判断燃料槽物品的物品栈是否为0
+                                this.metalFurnaceItemStack[1] = metalFurnaceItemStack[1].getItem().getContainerItem(metalFurnaceItemStack[1]);
+                                //返回容器物品(如岩浆桶燃烧后返回空桶)
                             }
                         }
                     }
                 }
-
-                if (this.isBurning() && this.canSmelt())                                                                                        //判断是否正在燃烧且是否能燃烧
-                {
-                    ++this.metalFurnaceCookTime;                                                                                                //增加metalFurnaceCookTime
-
-                    if (this.metalFurnaceCookTime == processTime)                                                                                       //判断metalFurnaceCookTime是否等于200
-                    {
-                        this.metalFurnaceCookTime = 0;                                                                                          //将metalFurnaceCookTime设为0
-                        this.smeltItem();                                                                                                       //熔炼物品
-                        isDirty = true;                                                                                                           //将TileEntity标记为脏
+                if (this.isBurning() && this.canSmelt()) {
+                    //判断是否正在燃烧且是否能燃烧
+                    ++this.metalFurnaceCookTime;
+                    //增加metalFurnaceCookTime
+                    if (this.metalFurnaceCookTime >= processTime) {
+                        //判断metalFurnaceCookTime是否等于200
+                        this.metalFurnaceCookTime = 0;
+                        //将metalFurnaceCookTime设为0
+                        this.smeltItem();
+                        //熔炼物品
+                        isDirty = true;
+                        //将TileEntity标记为脏
                     }
                 }
-                else
-                {
+                else {
                     this.metalFurnaceCookTime = 0;                                                                                              //将metalFurnaceCookTime设为0
                 }
             }
-
-            if (this.metalFurnaceItemStack[1] == null && this.metalFurnaceItemStack[0] != null)               //燃烧时间不为0或燃料槽不为空且原料槽不为空
-            {
+            if (this.metalFurnaceItemStack[1] == null && this.metalFurnaceItemStack[0] != null) {
+                //燃烧时间不为0或燃料槽不为空且原料槽不为空
                 double requireEnergyPerTick = this.getRequiredEnergyPerTick();
-                if (this.receivedEnergyUnit >= requireEnergyPerTick)
-                {
+                if (this.receivedEnergyUnit >= requireEnergyPerTick) {
                     ++this.metalFurnaceCookTime;
                     this.receivedEnergyUnit -= requireEnergyPerTick;
-                    if (++this.metalFurnaceCookTime >= processTime)
-                    {
+                    if (++this.metalFurnaceCookTime >= processTime) {
                         this.metalFurnaceBurnTime = 0;
                         this.smeltItem();
                         this.markDirty();
@@ -256,130 +253,162 @@ public class TileEntityMetalFurnace extends TileEntity implements ISidedInventor
                     }
                 }
             }
-
-            if (flag != this.metalFurnaceBurnTime > 0)
-            {
+            if (flag != this.metalFurnaceBurnTime > 0) {
                 isDirty = true;
                 BlockMetalFurnace.updateMentalFurnaceBlockState(this.metalFurnaceBurnTime > 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord);
             }
         }
-        if (isDirty)
-        {
-            this.markDirty();//对于TileEntity，确保包含TileEntity的方块在稍后保存到磁盘 - 游戏不会认为它没有更改并跳过它。
+        if (isDirty) {
+            this.markDirty();
+            //对于TileEntity，确保包含TileEntity的方块在稍后保存到磁盘 - 游戏不会认为它没有更改并跳过它。
         }
     }
 
     //如果熔炉能够熔炼物品，则返回true，即具有原料物品，产物槽物品栈未满等。
-    private boolean canSmelt()
-    {
-        if (this.metalFurnaceItemStack[0] == null)                                                                      //原料槽为空
-        {
-            return false;                                                                                               //返回false
+    private boolean canSmelt() {
+        if (this.metalFurnaceItemStack[0] == null) {
+            //原料槽为空
+            return false;
+            //返回false
         }
-        else
-        {
-            ItemStack itemstack = MetalFurnaceRecipes.metalFurnaceSmelting().getSmeltingResult(this.metalFurnaceItemStack[0]);           //临时物品栈
-            if (itemstack == null)                                                                                      //临时物品栈为空时返回false
+        else {
+            ItemStack itemstack = MetalFurnaceRecipes.metalFurnaceSmelting().getSmeltingResult(this.metalFurnaceItemStack[0]);
+            //临时物品栈
+            if (itemstack == null)
+                //临时物品栈为空时返回false
                 return false;
-            if (this.metalFurnaceItemStack[2] == null)                                                                  //产物槽为空返回true
+            if (this.metalFurnaceItemStack[2] == null)
+                //产物槽为空返回true
                 return true;
-            if (!this.metalFurnaceItemStack[2].isItemEqual(itemstack))                                                  //将ItemStack参数与实例ItemStack进行比较; 如果两个ItemStacks中的Items都相等，则返回true
-                return false;                                                                                           //产物槽不是原料的产物时返回false
+            if (!this.metalFurnaceItemStack[2].isItemEqual(itemstack))
+                //将ItemStack参数与实例ItemStack进行比较; 如果两个ItemStacks中的Items都相等，则返回true
+                return false;
+            //产物槽不是原料的产物时返回false
             int result = metalFurnaceItemStack[2].stackSize + itemstack.stackSize;
-            return result <= getInventoryStackLimit() && result <= this.metalFurnaceItemStack[2].getMaxStackSize();     //烧练结束时结果小于产物槽最大物品容量且小于产物物品栈最大物品数量
+            return result <= getInventoryStackLimit() && result <= this.metalFurnaceItemStack[2].getMaxStackSize();
+            //烧练结束时结果小于产物槽最大物品容量且小于产物物品栈最大物品数量
             //Forge BugFix: Make it respect stack sizes properly.Forge BugFix：正确地尊重堆栈大小。
         }
     }
 
     //将炉子原料槽原料物品栈中的一个物品放入炉子产物槽中相应的熔炼物品的物品栈中
-    public void smeltItem()
-    {
-        if (this.canSmelt())                                                                                            //判断是否能烧练
-        {
-            ItemStack itemstack = MetalFurnaceRecipes.metalFurnaceSmelting().getSmeltingResult(this.metalFurnaceItemStack[0]);           //临时产物物品栈
-
-            if (this.metalFurnaceItemStack[2] == null)                                                                  //判断产物物品栈是否为空
-            {
-                this.metalFurnaceItemStack[2] = itemstack.copy();                                                       //将获得的烧练合成表产物设为烧练产物
+    public void smeltItem() {
+        if (this.canSmelt()) {
+            //判断是否能烧练
+            ItemStack itemstack = MetalFurnaceRecipes.metalFurnaceSmelting().getSmeltingResult(this.metalFurnaceItemStack[0]);
+            //临时产物物品栈
+            if (this.metalFurnaceItemStack[2] == null) {
+                //判断产物物品栈是否为空
+                this.metalFurnaceItemStack[2] = itemstack.copy();
+                //将获得的烧练合成表产物设为烧练产物
             }
-            else if (this.metalFurnaceItemStack[2].getItem() == itemstack.getItem())                                    //判断产物物品栈是否为烧练合成表产物
-            {
-                this.metalFurnaceItemStack[2].stackSize += itemstack.stackSize;                                         //增加产物物品栈数量
+            else if (this.metalFurnaceItemStack[2].getItem() == itemstack.getItem()) {
+                //判断产物物品栈是否为烧练合成表产物
+                this.metalFurnaceItemStack[2].stackSize += itemstack.stackSize;
+                //增加产物物品栈数量
                 // Forge BugFix: Results may have multiple items Forge BugFix:结果可能有多个物品
             }
-
-            --this.metalFurnaceItemStack[0].stackSize;                                                                  //减少原料物品栈数量
-
-            if (this.metalFurnaceItemStack[0].stackSize <= 0)                                                           //判断原料物品栈是否小于等于0
-            {
-                this.metalFurnaceItemStack[0] = null;                                                                   //将原料物品栈设为null
+            --this.metalFurnaceItemStack[0].stackSize;
+            //减少原料物品栈数量
+            if (this.metalFurnaceItemStack[0].stackSize <= 0) {
+                //判断原料物品栈是否小于等于0
+                this.metalFurnaceItemStack[0] = null;
+                //将原料物品栈设为null
             }
         }
     }
 
     //返回提供的燃料项目保持炉膛燃烧的Tick，如果该项目不是燃料，则返回0
-    public static int getItemBurnTime(ItemStack itemStack)
-    {
-        if (itemStack == null)                                                                                          //判断物品栈是否为空
-        {
-            return 0;                                                                                                   //返回0
+    public static int getItemBurnTime(ItemStack itemStack) {
+        if (itemStack == null) {
+            //判断物品栈是否为空
+            return 0;
+            //返回0
         }
-        else
-        {
-            int moddedBurnTime = net.minecraftforge.event.ForgeEventFactory.getFuelBurnTime(itemStack);                 //获取mod添加燃料的燃烧时间
-            if (moddedBurnTime >= 0)                                                                                    //判断燃烧时间是否大于等于0
-                return moddedBurnTime;                                                                                  //返回燃烧时间
-
-            Item item = itemStack.getItem();                                                                            //临时物品
-
-            if (item instanceof ItemBlock && Block.getBlockFromItem(item) != Blocks.air)                                //判断临时物品是否为ItemBlock的实例且临时物品对应方块是否不是空气
-            {
-                Block block = Block.getBlockFromItem(item);                                                             //临时方块
-
-                if (block == Blocks.wooden_slab)                                                                        //如果方块是木台阶
-                {
-                    return 150;                                                                                         //返回150
+        else {
+            int moddedBurnTime = net.minecraftforge.event.ForgeEventFactory.getFuelBurnTime(itemStack);
+            //获取mod添加燃料的燃烧时间
+            if (moddedBurnTime >= 0) {
+                //判断燃烧时间是否大于等于0
+                return moddedBurnTime;
+                //返回燃烧时间
+            }
+            Item item = itemStack.getItem();
+            //临时物品
+            if (item instanceof ItemBlock && Block.getBlockFromItem(item) != Blocks.air) {
+                //判断临时物品是否为ItemBlock的实例且临时物品对应方块是否不是空气
+                Block block = Block.getBlockFromItem(item);
+                //临时方块
+                if (block == Blocks.wooden_slab) {
+                    //如果方块是木台阶
+                    return 150;
+                    //返回150
                 }
-                if (block.getMaterial() == Material.wood)                                                               //如果方块材质是木制的
-                {
-                    return 300;                                                                                         //返回300
+                if (block.getMaterial() == Material.wood) {
+                    //如果方块材质是木制的
+                    return 300;
+                    //返回300
                 }
-                if (block == Blocks.coal_block)                                                                         //如果是煤炭块
-                {
-                    return 16000;                                                                                       //返回16000
+                if (block == Blocks.coal_block) {
+                    //如果是煤炭块
+                    return 16000;
+                    //返回16000
                 }
             }
-            if (item instanceof ItemTool && ((ItemTool)item).getToolMaterialName().equals("WOOD"))                      //如果物品是工具且材质为木质
-                return 200;                                                                                             //返回200
-            if (item instanceof ItemSword && ((ItemSword)item).getToolMaterialName().equals("WOOD"))                    //如果物品是剑且材质为木质
-                return 200;                                                                                             //返回200
-            if (item instanceof ItemHoe && ((ItemHoe)item).getMaterialName().equals("WOOD"))                            //如果物品是锄且材质为木质
-                return 200;                                                                                             //返回200
-            if (item == Items.stick)                                                                                    //如果物品是木棍
-                return 100;                                                                                             //返回100
-            if (item == Items.coal)                                                                                     //如果物品是煤炭
-                return 1600;                                                                                            //返回1600
-            if (item == Items.lava_bucket)                                                                              //如果物品是岩浆桶
-                return 20000;                                                                                           //返回20000
-            if (item == Item.getItemFromBlock(Blocks.sapling))                                                          //如果物品是树苗
-                return 100;                                                                                             //返回100
-            if (item == Items.blaze_rod)                                                                                //如果物品是烈焰棒
-                return 2400;                                                                                            //返回2400
-            return GameRegistry.getFuelValue(itemStack);                                                                //返回燃料注册的燃料值，getFuelValue()找不到则返回0
+            if (item instanceof ItemTool && ((ItemTool)item).getToolMaterialName().equals("WOOD")) {
+                //如果物品是工具且材质为木质
+                return 200;
+                //返回200
+            }
+            if (item instanceof ItemSword && ((ItemSword)item).getToolMaterialName().equals("WOOD")) {
+                //如果物品是剑且材质为木质
+                return 200;
+                //返回200
+            }
+            if (item instanceof ItemHoe && ((ItemHoe)item).getMaterialName().equals("WOOD")) {
+                //如果物品是锄且材质为木质
+                return 200;
+                //返回200
+            }
+            if (item == Items.stick) {
+                //如果物品是木棍
+                return 100;
+                //返回100
+            }
+            if (item == Items.coal) {
+                //如果物品是煤炭
+                return 1600;
+                //返回1600
+            }
+            if (item == Items.lava_bucket) {
+                //如果物品是岩浆桶
+                return 20000;
+                //返回20000
+            }
+            if (item == Item.getItemFromBlock(Blocks.sapling)) {
+                //如果物品是树苗
+                return 100;
+                //返回100
+            }
+            if (item == Items.blaze_rod) {
+                //如果物品是烈焰棒
+                return 2400;
+                //返回2400
+            }
+            return GameRegistry.getFuelValue(itemStack);
+            //返回燃料注册的燃料值，getFuelValue()找不到则返回0
         }
     }
 
     //判断物品是否为燃料，是返回true，否返回false
-    public static boolean isItemFuel(ItemStack itemStack)
-    {
-        //返回提供的燃料物品保持炉膛燃烧的Tick，如果该项目不是燃料，则返回0
+    public static boolean isItemFuel(ItemStack itemStack) {
         return getItemBurnTime(itemStack) > 0;
+        //返回提供的燃料物品保持炉膛燃烧的Tick，如果该项目不是燃料，则返回0
     }
 
     //不要将该方法命名为canInteractWith，因为它与Container冲突
     @Override
-    public boolean isUseableByPlayer(EntityPlayer player)
-    {
+    public boolean isUseableByPlayer(EntityPlayer player) {
         if (this.worldObj.getTileEntity(this.xCoord, this.yCoord, this.zCoord) == this && player.getDistanceSq((double) this.xCoord + 0.5D, (double) this.yCoord + 0.5D, (double) this.zCoord + 0.5D) <= 64.0D){
             return true;
         }
@@ -397,82 +426,70 @@ public class TileEntityMetalFurnace extends TileEntity implements ISidedInventor
 
     //如果允许自动化将给定堆栈（忽略堆栈大小）插入给定插槽，则返回true。
     @Override
-    public boolean isItemValidForSlot(int index, ItemStack stack)
-    {
+    public boolean isItemValidForSlot(int index, ItemStack stack) {
         return index == 2 ? false : (index == 1 ? isItemFuel(stack) : true);
         //如果为产物槽返回false如果不是产物槽返回(如果是燃料槽返回(判断是否为燃料是返回true，否则返回false)如果不是返回true（即判断结果为原料槽）)
     }
 
     //param side 参数方面
     @Override
-    public int[] getSlotsForFace(int slotsSides)
-    {
+    public int[] getSlotsForFace(int slotsSides) {
         return slotsSides == 0 ? slotBottom : (slotsSides == 1 ? slotTop : slotSide);
         //slotsSides等于0返回slotBottom为1返回slotTop为其他返回slotSide
     }
 
     //如果自动化可以将给定物品插入给定侧的给定槽中，则返回true。 参数：槽，物品，面
     @Override
-    public boolean canInsertItem(int slots, ItemStack itemStack, int sides)
-    {
+    public boolean canInsertItem(int slots, ItemStack itemStack, int sides) {
         return this.isItemValidForSlot(slots, itemStack);
     }
 
     //如果自动化可以从给定面提取给定槽中的给定物品，则返回true。 参数：槽，物品，面
     @Override
-    public boolean canExtractItem(int slots, ItemStack itemStack, int sides)
-    {
+    public boolean canExtractItem(int slots, ItemStack itemStack, int sides) {
         return sides != 0 || slots != 1 || itemStack.getItem() == Items.bucket;
         //如果不是下面或物品槽不是原料槽或物品是桶返回true
     }
 
-    public void setCustomInventoryName(String customInventoryName)
-    {
+    public void setCustomInventoryName(String customInventoryName) {
         this.metalFurnaceCustomName = customInventoryName;
     }
 
     //物品栏名称
     @Override
-    public String getInventoryName()
-    {
+    public String getInventoryName() {
         return this.isCustomInventoryName() ? this.metalFurnaceCustomName : "container.furnace";
     }
     ///////////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////IndustrialCraft///////////////////////////////////////////
 
-    public double getRequiredEnergyPerTick()
-    {
+    public double getRequiredEnergyPerTick() {
         return 4.5;
     }
 
-    public double getEnergyCapacity()
-    {
+    public double getEnergyCapacity() {
         return 4096;
     }
 
     @Override
-    public double getDemandedEnergy()
-    {
+    public double getDemandedEnergy() {
         return Math.max(0, this.getEnergyCapacity() - this.receivedEnergyUnit);
     }
 
     @Override
-    public int getSinkTier()
-    {
+    public int getSinkTier() {
         return 2;
     }
 
     @Override
-    public double injectEnergy(ForgeDirection directionFrom, double amount, double voltage)
-    {
+    public double injectEnergy(ForgeDirection directionFrom, double amount, double voltage) {
         this.receivedEnergyUnit += amount;
         return 0;
     }
 
     @Override
     @Optional.Method(modid = "IC2")
-    public boolean acceptsEnergyFrom(TileEntity emitter, ForgeDirection direction)
-    {
+    public boolean acceptsEnergyFrom(TileEntity emitter, ForgeDirection direction) {
         return true;
     }
 
