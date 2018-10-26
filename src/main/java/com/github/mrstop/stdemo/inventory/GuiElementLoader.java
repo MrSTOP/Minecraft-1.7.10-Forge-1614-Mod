@@ -15,16 +15,13 @@ import net.minecraft.world.World;
 
 public class GuiElementLoader implements IGuiHandler {
 
-    public GuiElementLoader()
-    {
+    public GuiElementLoader() {
         NetworkRegistry.INSTANCE.registerGuiHandler(STDemo.instance, this);
     }
 
     @Override
-    public Object getServerGuiElement(int ID, EntityPlayer entityPlayer, World world, int x, int y, int z)
-    {
-        switch (ID)
-        {
+    public Object getServerGuiElement(int ID, EntityPlayer entityPlayer, World world, int x, int y, int z) {
+        switch (ID) {
             case STDemo.GUIIDMetalFurnace:
                 TileEntityMetalFurnace tileEntityMetalFurnace = (TileEntityMetalFurnace) world.getTileEntity(x, y, z);
                 return new ContainerMetalFurnace(entityPlayer.inventory, tileEntityMetalFurnace);
@@ -42,10 +39,8 @@ public class GuiElementLoader implements IGuiHandler {
     }
 
     @Override
-    public Object getClientGuiElement(int ID, EntityPlayer entityPlayer, World world, int x, int y, int z)
-    {
-        switch (ID)
-        {
+    public Object getClientGuiElement(int ID, EntityPlayer entityPlayer, World world, int x, int y, int z) {
+        switch (ID) {
             case STDemo.GUIIDMetalFurnace:
                 TileEntityMetalFurnace tileEntityMetalFurnace = (TileEntityMetalFurnace) world.getTileEntity(x, y, z);
                 return new GuiMetalFurnace(entityPlayer.inventory, tileEntityMetalFurnace);
