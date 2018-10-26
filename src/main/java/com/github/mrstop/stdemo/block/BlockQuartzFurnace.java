@@ -1,13 +1,16 @@
 package com.github.mrstop.stdemo.block;
 
+import com.github.mrstop.stdemo.STDemo;
 import com.github.mrstop.stdemo.creativetab.CreativeTabsLoader;
 import com.github.mrstop.stdemo.tileentity.TileEntityQuartzFurnace;
+import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -82,6 +85,9 @@ public class BlockQuartzFurnace extends BlockContainer {
             default:
                 break;
         }
+        if (itemIn.hasDisplayName()){
+            ((TileEntityQuartzFurnace) worldIn.getTileEntity(x, y, z)).setQuartzFurnaceCustomName(itemIn.getDisplayName());
+        }
     }
 
     @Override
@@ -96,6 +102,20 @@ public class BlockQuartzFurnace extends BlockContainer {
         this.blockIcon = iconRegister.registerIcon("stdemo:quartz_furnace_side");
         this.topBottom = iconRegister.registerIcon("stdemo:quartz_furnace_top");
         this.front = iconRegister.registerIcon((this.isBurning ? "stdemo:quartz_furnace_front_active" : "stdemo:quartz_furnace_front_inactive"));
+    }
+
+    @Override
+    public boolean onBlockActivated(World worldIn, int x, int y, int z, EntityPlayer player, int side, float subX, float subY, float subZ) {
+        if (worldIn.isRemote){
+            return true;
+        }
+        else {
+            TileEntityQuartzFurnace tileEntityQuartzFurnace = (TileEntityQuartzFurnace) worldIn.getTileEntity(x, y, z);
+            if (tileEntityQuartzFurnace != null){
+                player.openGui(STDemo.instance, STDemo.GUIIDQuartzFurnace, worldIn, x, y, z);
+            }
+            return true;
+        }
     }
 
     @Override

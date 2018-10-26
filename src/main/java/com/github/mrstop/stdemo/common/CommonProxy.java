@@ -19,8 +19,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class CommonProxy {
 
-    public void preInit(FMLPreInitializationEvent event)
-    {
+    public void preInit(FMLPreInitializationEvent event) {
         /*Potion[] potionTypes = null;
         for (Field f : Potion.class.getDeclaredFields())
         {
@@ -55,20 +54,18 @@ public class CommonProxy {
         //new PotionLoader(event);//无法解决
         new EntityLoader();
         new TileEntityLoader(event);
+        new EventLoader();
     }
 
-    public void init(FMLInitializationEvent event)
-    {
+    public void init(FMLInitializationEvent event) {
         new CraftingLoader();
         new EnchantmentLoader();
         new AchievementLoader();
-        new EventLoader();
         new WorldGeneratorLoader();
         new GuiElementLoader();
     }
 
-    public void postInit(FMLPostInitializationEvent event)
-    {
+    public void postInit(FMLPostInitializationEvent event) {
 
     }
 }

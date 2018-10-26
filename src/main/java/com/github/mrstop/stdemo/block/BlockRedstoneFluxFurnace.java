@@ -42,13 +42,11 @@ public class BlockRedstoneFluxFurnace extends BlockContainer {
         this.setStepSound(soundTypeStone);
         this.setHarvestLevel("pickaxe", 1);
         this.isBurningFlag = isActive;
-        if (!isActive)
-        {
-            this.setCreativeTab(CreativeTabsLoader.tabSTDemo) ;
-        }
-        if (isActive)
-        {
+        if (isActive) {
             this.setLightLevel(5.0F);
+        }
+        else {
+            this.setCreativeTab(CreativeTabsLoader.tabSTDemo) ;
         }
     }
 
@@ -63,7 +61,7 @@ public class BlockRedstoneFluxFurnace extends BlockContainer {
         super.onBlockAdded(world, x, y, z);
         this.onRedstoneFluxFurnaceAdded(world, x, y, z);
     }
-
+    //功能不明
     private void onRedstoneFluxFurnaceAdded(World world, int blockX, int blockY, int blockZ) {
         if (!world.isRemote) {
             //判断是否为客户端
@@ -87,7 +85,6 @@ public class BlockRedstoneFluxFurnace extends BlockContainer {
             if (block3.isFullBlock() && !block2.isFullBlock()) {
                 byte0 = 4;
             }
-
             world.setBlockMetadataWithNotify(blockX, blockY, blockZ, byte0, 2);
         }
     }
@@ -99,7 +96,6 @@ public class BlockRedstoneFluxFurnace extends BlockContainer {
         }
         else {
             TileEntityRedstoneFluxFurnace tileEntityRedstoneFluxFurnace = (TileEntityRedstoneFluxFurnace) worldIn.getTileEntity(x, y, z);
-
             if (tileEntityRedstoneFluxFurnace != null) {
                 player.openGui(STDemo.instance, STDemo.GUIIDRedstoneFluxFurnace, worldIn, x, y, z);
             }

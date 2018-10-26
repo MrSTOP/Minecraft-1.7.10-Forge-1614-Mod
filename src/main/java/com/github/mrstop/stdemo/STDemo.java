@@ -27,6 +27,7 @@ public class STDemo {
     public static final int GUIIDDemo = 2;
     public static final int GUIIDRedstoneFluxFurnace = 3;
     public static final int GUIIDWindmill = 4;
+    public static final int GUIIDQuartzFurnace = 5;
 
     @Instance(STDemo.MODID)
     public static STDemo instance;

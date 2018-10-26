@@ -5,6 +5,7 @@ import com.github.mrstop.stdemo.client.entity.render.EntityRenderLoader;
 import com.github.mrstop.stdemo.client.tielentity.render.TileEntityRenderLoader;
 import com.github.mrstop.stdemo.common.CommonProxy;
 
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;

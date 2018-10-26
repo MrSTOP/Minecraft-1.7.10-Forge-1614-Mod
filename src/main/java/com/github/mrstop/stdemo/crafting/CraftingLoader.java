@@ -15,15 +15,14 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 
 public class CraftingLoader
 {
-    public CraftingLoader()
-    {
+    public CraftingLoader() {
         registerRecipe();
         registerSmelting();
         registerFuel();
     }
 
-    private static void registerRecipe()//注册合成表
-    {
+    private static void registerRecipe() {
+        //注册合成表
         //有序合成：金蛋
         GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.goldenEgg, 10), new Object[]
                  {

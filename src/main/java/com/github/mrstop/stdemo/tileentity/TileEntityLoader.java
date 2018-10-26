@@ -10,10 +10,11 @@ public class TileEntityLoader {
     {
         registerTileEntity(TileEntityMetalFurnace.class, "STDemo.MetalFurnace");
         registerTileEntity(TileEntityRedstoneFluxFurnace.class, "STDemo.RedstoneFluxFurnace");
-        registerTileEntity(TileEntityWindmill.class, "SEDemo.Windmill");
+        registerTileEntity(TileEntityWindmill.class, "STDemo.Windmill");
+        registerTileEntity(TileEntityQuartzFurnace.class, "STDemo.QuartzFurnace");
     }
 
-    public void registerTileEntity(Class <? extends TileEntity> tileEntityClass, String id)
+    private void registerTileEntity(Class <? extends TileEntity> tileEntityClass, String id)
     {
         GameRegistry.registerTileEntity(tileEntityClass, id);
     }
