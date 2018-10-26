@@ -28,6 +28,9 @@
 /src/main/resources/assets/stem
 /src/main/resources/assets/tm
 /src/main/resources/assets/tuto
+forge-1.7.10-10.13.4.1614-1.7.10-src.iml
+forge-1.7.10-10.13.4.1614-1.7.10-src.ipr
+forge-1.7.10-10.13.4.1614-1.7.10-src.iws
 buildinfo.txt
 INFO.txt
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
