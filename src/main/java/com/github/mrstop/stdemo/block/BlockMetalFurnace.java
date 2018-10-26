@@ -335,11 +335,10 @@ public class BlockMetalFurnace extends BlockContainer
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister register)
-    {
-        this.blockIcon = register.registerIcon("stdemo:metalFurnace_side");
-        this.front = register.registerIcon(this.isBurningFlag ? "stdemo:metalFurnace_active" : "stdemo:metalFurnace_inactive");
-        this.top = register.registerIcon("stdemo:metalFurnace_top");
+    public void registerIcons(IIconRegister iconRegister) {
+        this.blockIcon = iconRegister.registerIcon("stdemo:metalFurnace_side");
+        this.front = iconRegister.registerIcon(this.isBurningFlag ? "stdemo:metalFurnace_active" : "stdemo:metalFurnace_inactive");
+        this.top = iconRegister.registerIcon("stdemo:metalFurnace_top");
     }
 
     //创造模式鼠标中键获取物品

@@ -6,17 +6,15 @@ import net.minecraft.tileentity.TileEntity;
 
 public class TileEntityLoader {
 
-    public TileEntityLoader(FMLPreInitializationEvent event)
-    {
+    public TileEntityLoader(FMLPreInitializationEvent event) {
         registerTileEntity(TileEntityMetalFurnace.class, "STDemo.MetalFurnace");
         registerTileEntity(TileEntityRedstoneFluxFurnace.class, "STDemo.RedstoneFluxFurnace");
         registerTileEntity(TileEntityWindmill.class, "STDemo.Windmill");
         registerTileEntity(TileEntityQuartzFurnace.class, "STDemo.QuartzFurnace");
-
+        registerTileEntity(TileEntityElectrolyticMachine.class, "STDemo:ElectrolyticMachine");
     }
 
-    private void registerTileEntity(Class <? extends TileEntity> tileEntityClass, String id)
-    {
+    private void registerTileEntity(Class <? extends TileEntity> tileEntityClass, String id) {
         GameRegistry.registerTileEntity(tileEntityClass, id);
     }
 }

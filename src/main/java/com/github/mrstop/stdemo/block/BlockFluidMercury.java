@@ -56,9 +56,9 @@ public class BlockFluidMercury extends BlockFluidClassic {
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister register) {
-        stillIcon = register.registerIcon("stdemo:mercury_still");
-        flowingIcon = register.registerIcon("stdemo:mercury_flow");
+    public void registerIcons(IIconRegister iconRegister) {
+        stillIcon = iconRegister.registerIcon("stdemo:mercury_still");
+        flowingIcon = iconRegister.registerIcon("stdemo:mercury_flow");
         //FluidLoader.fluidMercury.setFlowingIcon(flowingIcon);
         //FluidLoader.fluidMercury.setStillIcon(stillIcon);
     }

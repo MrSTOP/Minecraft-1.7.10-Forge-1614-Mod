@@ -369,16 +369,16 @@ public class BlockWindmill extends BlockContainer {
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister blockIcon){
-        this.blockIcon = blockIcon.registerIcon("stdemo:windmill_block");
-        icon0 = blockIcon.registerIcon("stdemo:metadata_0");
-        icon1 = blockIcon.registerIcon("stdemo:metadata_1");
-        icon2 = blockIcon.registerIcon("stdemo:metadata_2");
-        icon3 = blockIcon.registerIcon("stdemo:metadata_3");
-        icon4 = blockIcon.registerIcon("stdemo:metadata_4");
-        icon5 = blockIcon.registerIcon("stdemo:metadata_5");
-        icon6 = blockIcon.registerIcon("stdemo:metadata_6");
-        icon7 = blockIcon.registerIcon("stdemo:metadata_7");
+    public void registerIcons(IIconRegister iconRegister){
+        this.blockIcon = iconRegister.registerIcon("stdemo:windmill_block");
+        icon0 = iconRegister.registerIcon("stdemo:metadata_0");
+        icon1 = iconRegister.registerIcon("stdemo:metadata_1");
+        icon2 = iconRegister.registerIcon("stdemo:metadata_2");
+        icon3 = iconRegister.registerIcon("stdemo:metadata_3");
+        icon4 = iconRegister.registerIcon("stdemo:metadata_4");
+        icon5 = iconRegister.registerIcon("stdemo:metadata_5");
+        icon6 = iconRegister.registerIcon("stdemo:metadata_6");
+        icon7 = iconRegister.registerIcon("stdemo:metadata_7");
     }
 
 }

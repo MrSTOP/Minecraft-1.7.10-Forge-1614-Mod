@@ -8,8 +8,14 @@ public class TileEntityElectrolyticMachine extends TileEntity implements IFluidH
     private FluidTank fluidTank;
     private final int fluidTankCapaticy = 10_000;
 
+    private String electrolyticMachineCustomName = null;
+
     public TileEntityElectrolyticMachine() {
         this.fluidTank = new FluidTank(this.fluidTankCapaticy);
+    }
+
+    public void setCustomInventoryName(String electrolyticMachineCustomName) {
+        this.electrolyticMachineCustomName = electrolyticMachineCustomName;
     }
 
     @Override
@@ -41,4 +47,5 @@ public class TileEntityElectrolyticMachine extends TileEntity implements IFluidH
     public FluidTankInfo[] getTankInfo(ForgeDirection from) {
         return new FluidTankInfo[0];
     }
+
 }

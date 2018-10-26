@@ -10,8 +10,7 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 public class BlockChromiteBlock extends Block {
 
 
-    public BlockChromiteBlock()
-    {
+    public BlockChromiteBlock() {
         super(Material.rock);
         this.setUnlocalizedName("chromiteOre");
         this.setHardness(0.8F);
@@ -22,8 +21,7 @@ public class BlockChromiteBlock extends Block {
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister BlockIcon)
-    {
-        this.blockIcon = BlockIcon.registerIcon("stdemo:chromite_ore");
+    public void registerIcons(IIconRegister iconRegister) {
+        this.blockIcon = iconRegister.registerIcon("stdemo:chromite_ore");
     }
 }

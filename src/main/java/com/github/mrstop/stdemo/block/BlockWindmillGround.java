@@ -139,8 +139,8 @@ public class BlockWindmillGround extends Block {
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister blockIcon) {
-        this.icon = blockIcon.registerIcon("stdemo:windmill_ground_block");
+    public void registerIcons(IIconRegister iconRegister) {
+        this.icon = iconRegister.registerIcon("stdemo:windmill_ground_block");
     }
 }
 

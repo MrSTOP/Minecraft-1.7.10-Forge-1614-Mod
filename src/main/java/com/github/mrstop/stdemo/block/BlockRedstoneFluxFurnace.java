@@ -215,10 +215,10 @@ public class BlockRedstoneFluxFurnace extends BlockContainer {
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister register) {
-        this.blockIcon = register.registerIcon("stdemo:redstoneFluxFurnace_side");
-        this.front = register.registerIcon(this.isBurningFlag ? "stdemo:redstoneFluxFurnace_active" : "stdemo:RedstoneFluxlFurnace_inactive");
-        this.top = register.registerIcon("stdemo:redstoneFluxFurnace_top");
+    public void registerIcons(IIconRegister iconRegister) {
+        this.blockIcon = iconRegister.registerIcon("stdemo:redstoneflux_furnace_side");
+        this.front = iconRegister.registerIcon(this.isBurningFlag ? "stdemo:redstoneflux_furnace_active" : "stdemo:redstoneflux_furnace_inactive");
+        this.top = iconRegister.registerIcon("stdemo:redstoneflux_furnace_top");
     }
 
     @Override

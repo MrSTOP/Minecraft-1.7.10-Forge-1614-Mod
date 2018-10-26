@@ -123,14 +123,14 @@ public class BlockColorCrops extends BlockCrops {
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister BlockIcon) {
-        this.icons[0] = BlockIcon.registerIcon("stdemo:color_0");
-        this.icons[1] = BlockIcon.registerIcon("stdemo:color_1");
-        this.icons[2] = BlockIcon.registerIcon("stdemo:color_2");
-        this.icons[3] = BlockIcon.registerIcon("stdemo:color_3");
-        this.icons[4] = BlockIcon.registerIcon("stdemo:color_4");
-        this.icons[5] = BlockIcon.registerIcon("stdemo:color_5");
-        this.icons[6] = BlockIcon.registerIcon("stdemo:color_6");
-        this.icons[7] = BlockIcon.registerIcon("stdemo:color_7");
+    public void registerIcons(IIconRegister iconRegister) {
+        this.icons[0] = iconRegister.registerIcon("stdemo:color_0");
+        this.icons[1] = iconRegister.registerIcon("stdemo:color_1");
+        this.icons[2] = iconRegister.registerIcon("stdemo:color_2");
+        this.icons[3] = iconRegister.registerIcon("stdemo:color_3");
+        this.icons[4] = iconRegister.registerIcon("stdemo:color_4");
+        this.icons[5] = iconRegister.registerIcon("stdemo:color_5");
+        this.icons[6] = iconRegister.registerIcon("stdemo:color_6");
+        this.icons[7] = iconRegister.registerIcon("stdemo:color_7");
     }
 }
