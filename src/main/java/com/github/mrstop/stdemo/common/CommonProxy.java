@@ -9,6 +9,7 @@ import com.github.mrstop.stdemo.fluid.FluidLoader;
 import com.github.mrstop.stdemo.inventory.GuiElementLoader;
 import com.github.mrstop.stdemo.item.ItemLoader;
 import com.github.mrstop.stdemo.block.BlockLoader;
+import com.github.mrstop.stdemo.potion.PotionLoader;
 import com.github.mrstop.stdemo.tileentity.TileEntityLoader;
 import com.github.mrstop.stdemo.worldgen.WorldGeneratorLoader;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -45,13 +46,13 @@ public class CommonProxy {
         }*/
 
         new Log(event);
-        new ConfigLoader(event);
+        new ConfigLoader(event);//加载配置文件
         new CreativeTabsLoader(event);//进行创作模式标签注册！！必须先于物品和方块完成！！
         new FluidLoader(event);//进行流体注册
         new ItemLoader(event);//进行物品注册
         new BlockLoader(event);//进行方块注册
         new OreDictionaryLoader(event);//进行矿物词典注册
-        //new PotionLoader(event);//无法解决
+        //new PotionLoader(event);//无法解决（似乎在1.7添加药水效果是很复杂的）
         new EntityLoader();
         new TileEntityLoader(event);
         new EventLoader();

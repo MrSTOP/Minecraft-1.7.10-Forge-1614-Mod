@@ -6,10 +6,8 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Logger;
 
 
-public class ConfigLoader
-{
+public class ConfigLoader {
     private static Configuration config;
-
 
     //配置文件变量开始
     public static int DiamondBurnTime;
@@ -18,17 +16,14 @@ public class ConfigLoader
     public static int PotionFallProtection;
     //配置文件变量结束
 
-
-    public ConfigLoader(FMLPreInitializationEvent event)
-    {
+    public ConfigLoader(FMLPreInitializationEvent event) {
         config = new Configuration(event.getSuggestedConfigurationFile());
 
         config.load();
         load();
     }
 
-    public static void load()
-    {
+    public static void load() {
         Log.Log.info("Start Load STDemo's Config.");
 
         String comment;
@@ -42,10 +37,9 @@ public class ConfigLoader
         EnchantmentFireBurn = config.get(Configuration.CATEGORY_GENERAL, "EnchantmentFireBurn", 36, comment).getInt();
 
         comment = "en_US:\nzh_CN:跌落保护编号";
-        PotionFallProtection = config.get(Configuration.CATEGORY_GENERAL, "potionFallProtection", 50, comment).getInt();
+        PotionFallProtection = config.get(Configuration.CATEGORY_GENERAL, "potionFallProtection", 25, comment).getInt();
 
         config.save();
         Log.Log.info("Finished loading STDemo's Config.");
     }
-
 }

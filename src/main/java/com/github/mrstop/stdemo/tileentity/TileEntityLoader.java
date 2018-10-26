@@ -12,6 +12,7 @@ public class TileEntityLoader {
         registerTileEntity(TileEntityRedstoneFluxFurnace.class, "STDemo.RedstoneFluxFurnace");
         registerTileEntity(TileEntityWindmill.class, "STDemo.Windmill");
         registerTileEntity(TileEntityQuartzFurnace.class, "STDemo.QuartzFurnace");
+
     }
 
     private void registerTileEntity(Class <? extends TileEntity> tileEntityClass, String id)

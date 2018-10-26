@@ -6,7 +6,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class BlockLoader {
 
-
     public static Block grassBlock = new BlockGrassBlock();//实例化方块
     public static Block chromiteBlock = new BlockChromiteBlock();
     public static Block fluidMercuryBlock = new BlockFluidMercury();
@@ -19,7 +18,7 @@ public class BlockLoader {
     public static Block windmillGroundBlock = new BlockWindmillGround();
     public static Block quartzFurnaceActive = new BlockQuartzFurnace(true);
     public static Block quartzFurnaceInactive = new BlockQuartzFurnace(false);
-
+    public static Block electrolyticMachine = new BlockElectrolyticMachine();
 
     public  BlockLoader(FMLPreInitializationEvent event) {
         //构造方法
@@ -35,6 +34,7 @@ public class BlockLoader {
         register(windmillGroundBlock, "windmill_ground_block");
         register(quartzFurnaceActive, "quartz_furnace_active");
         register(quartzFurnaceInactive, "quartz_furnace_inactive");
+        register(electrolyticMachine, "electrolytic_machine");
     }
 
     private static void register(Block block,String name) {
