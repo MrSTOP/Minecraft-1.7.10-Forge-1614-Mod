@@ -10,7 +10,7 @@ import org.lwjgl.opengl.GL11;
 
 public class TileEntityRenderWindmill extends TileEntitySpecialRenderer {
 
-    private final ResourceLocation textureWindmill = new ResourceLocation(STDemo.MODID, "textures/models/windmill.png");
+    private final ResourceLocation textureWindmill = new ResourceLocation(STDemo.MOD_ID, "textures/models/windmill.png");
     private int textureWidth = 64;
     private int textuerHeight = 32;
 

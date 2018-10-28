@@ -16,10 +16,10 @@ import net.minecraft.util.MathHelper;
 import net.minecraftforge.common.util.ForgeDirection;
 
 public class TileEntityWindmill extends TileEntity implements ISidedInventory, IEnergyProvider {
-    EnergyStorage energyStorage;
-    private final float maxPower = 500_000.0F;
-    private final int maxOutput = 50;
-    private final int nextRandomCount = 600;
+    private static final float maxPower = 500_000.0F;
+    private static final int maxOutput = 50;
+    private static final int nextRandomCount = 600;
+
     private int nextRandom = nextRandomCount;
     private int rotation;
     private int rotationRate;
@@ -28,10 +28,10 @@ public class TileEntityWindmill extends TileEntity implements ISidedInventory, I
     private boolean hasRotationRate = false;
     private ItemStack[] windmillItemStacks = new ItemStack[2];
     private String windmillCustomName;
+    EnergyStorage energyStorage = new EnergyStorage((int) this.maxPower, this.maxOutput);
 
     public TileEntityWindmill() {
         super();
-        this.energyStorage = new EnergyStorage((int) this.maxPower, this.maxOutput);
         this.rotationRate = (int)(Math.random() * 20);
     }
 

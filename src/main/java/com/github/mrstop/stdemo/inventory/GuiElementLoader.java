@@ -1,10 +1,8 @@
 package com.github.mrstop.stdemo.inventory;
 
 import com.github.mrstop.stdemo.STDemo;
-import com.github.mrstop.stdemo.client.gui.GuiContainerDemo;
-import com.github.mrstop.stdemo.client.gui.GuiMetalFurnace;
-import com.github.mrstop.stdemo.client.gui.GuiRedstoneFluxFurnace;
-import com.github.mrstop.stdemo.client.gui.GuiWindmill;
+import com.github.mrstop.stdemo.client.gui.*;
+import com.github.mrstop.stdemo.tileentity.TileEntityElectrolyticMachine;
 import com.github.mrstop.stdemo.tileentity.TileEntityMetalFurnace;
 import com.github.mrstop.stdemo.tileentity.TileEntityRedstoneFluxFurnace;
 import com.github.mrstop.stdemo.tileentity.TileEntityWindmill;
@@ -31,6 +29,9 @@ public class GuiElementLoader implements IGuiHandler {
             case STDemo.GUIIDWindmill:
                 TileEntityWindmill tileEntityWindmill = (TileEntityWindmill)world.getTileEntity(x, y, z);
                 return new ContainerWindmill(entityPlayer.inventory, tileEntityWindmill);
+            case STDemo.GUIDElectrolyticMachine:
+                TileEntityElectrolyticMachine tileEntityElectrolyticMachine = (TileEntityElectrolyticMachine)world.getTileEntity(x, y, z);
+                return new ContainerElectrolyticMachine(entityPlayer.inventory, tileEntityElectrolyticMachine);
             case STDemo.GUIIDDemo:
                 return new ContainerDemo(entityPlayer);
             default:
@@ -50,6 +51,9 @@ public class GuiElementLoader implements IGuiHandler {
             case STDemo.GUIIDWindmill:
                 TileEntityWindmill tileEntityWindmill = (TileEntityWindmill)world.getTileEntity(x, y, z);
                 return new GuiWindmill(entityPlayer.inventory, tileEntityWindmill);
+            case STDemo.GUIDElectrolyticMachine:
+                TileEntityElectrolyticMachine tileEntityElectrolyticMachine = (TileEntityElectrolyticMachine)world.getTileEntity(x, y, z);
+                return new GUIElectrolyticMachine(entityPlayer.inventory, tileEntityElectrolyticMachine);
             case STDemo.GUIIDDemo:
                 return new GuiContainerDemo(new ContainerDemo(entityPlayer));
             default:

@@ -11,14 +11,11 @@ public class FluidLoader {
 
     public static final Fluid fluidMercury = new FluidMercury();
 
-    public FluidLoader(FMLPreInitializationEvent event)
-    {
-        if (FluidRegistry.isFluidRegistered(fluidMercury))
-        {
+    public FluidLoader(FMLPreInitializationEvent event) {
+        if (FluidRegistry.isFluidRegistered(fluidMercury)) {
             event.getModLog().info("Found fluid {}, the regidtration is canceled.", fluidMercury.getName());
         }
-        else
-        {
+        else {
             FluidRegistry.registerFluid(fluidMercury);
         }
         Log.Log.info("FLUID REGISTER");

@@ -1,5 +1,6 @@
 package com.github.mrstop.stdemo.block;
 
+import com.github.mrstop.stdemo.STDemo;
 import com.github.mrstop.stdemo.creativetab.CreativeTabsLoader;
 import com.github.mrstop.stdemo.tileentity.TileEntityElectrolyticMachine;
 import cpw.mods.fml.relauncher.Side;
@@ -8,6 +9,7 @@ import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
@@ -53,6 +55,20 @@ public class BlockElectrolyticMachine extends BlockContainer {
         }
         if (itemIn.hasDisplayName()) {
             ((TileEntityElectrolyticMachine) worldIn.getTileEntity(x, y, z)).setCustomInventoryName(itemIn.getDisplayName());
+        }
+    }
+
+    @Override
+    public boolean onBlockActivated(World worldIn, int x, int y, int z, EntityPlayer player, int side, float subX, float subY, float subZ) {
+        if (worldIn.isRemote){
+            return true;
+        }
+        else {
+            TileEntityElectrolyticMachine tileEntityElectrolyticMachine = (TileEntityElectrolyticMachine) worldIn.getTileEntity(x, y, z);
+            if (tileEntityElectrolyticMachine != null){
+                player.openGui(STDemo.instance, STDemo.GUIDElectrolyticMachine, worldIn, x, y, z);
+            }
+            return true;
         }
     }
 
@@ -110,6 +126,9 @@ public class BlockElectrolyticMachine extends BlockContainer {
             else {
                 if (side == 3){
                     return this.front;
+                }
+                if (side == 4){
+                    return this.left;
                 }
             }
             return this.blockIcon;

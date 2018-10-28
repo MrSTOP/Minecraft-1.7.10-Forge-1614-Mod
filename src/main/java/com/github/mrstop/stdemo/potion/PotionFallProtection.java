@@ -12,7 +12,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class PotionFallProtection extends Potion {
 
-    public static final ResourceLocation icon = new ResourceLocation(STDemo.MODID, "/texture/gui/inventory.png".substring(1));;
+    public static final ResourceLocation icon = new ResourceLocation(STDemo.MOD_ID, "/texture/gui/inventory.png".substring(1));;
 
     public PotionFallProtection() {
         super(ConfigLoader.PotionFallProtection, false, 0x66CCFF);

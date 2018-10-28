@@ -19,15 +19,15 @@ import net.minecraftforge.common.util.ForgeDirection;
 public class TileEntityRedstoneFluxFurnace extends TileEntity implements ISidedInventory, IEnergyReceiver {
 
     private static final int processTime = 100;
-
     private static final int[] slotTop = new int[]{0};
     private static final int[] slotSide = new int[]{2, 1};
+    private static int capacity = 1000000;
+    private static int maxReceive = 30;
+
     private ItemStack[] redstoneFluxFurnaceItemStack = new ItemStack[2];
     public int redstoneFluxFurnaceCookTime;
     private String redstoneFluxFurnaceCustomName = null;
 
-    private int capacity = 1000000;
-    private int maxReceive = 30;
     public EnergyStorage energyStorage = new EnergyStorage(capacity, maxReceive);
 
     @Override

@@ -11,7 +11,7 @@ import org.lwjgl.opengl.GL11;
 
 @SideOnly(Side.CLIENT)
 public class GuiMetalFurnace extends GuiContainer {
-    private static final ResourceLocation metalFurnaceGuiTexture = new ResourceLocation("stdemo:textures/gui/container/metalFurnace.png");
+    private static final ResourceLocation metalFurnaceGuiTexture = new ResourceLocation("stdemo:textures/gui/container/gui_metal_furnace.png");
     private TileEntityMetalFurnace tileEntityMetalFurnace;
 
     public GuiMetalFurnace(InventoryPlayer inventoryPlayer, TileEntityMetalFurnace tileEntityMetalFurnaceConstruct) {

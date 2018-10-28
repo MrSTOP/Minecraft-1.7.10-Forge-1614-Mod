@@ -12,7 +12,7 @@ import org.lwjgl.opengl.GL11;
 @SideOnly(Side.CLIENT)
 public class GuiRedstoneFluxFurnace extends GuiContainer {
 
-    private static final ResourceLocation redstoneFluxFurnaceGuiTexture = new ResourceLocation("stdemo:textures/gui/container/redstone_flux_furnace.png");
+    private static final ResourceLocation redstoneFluxFurnaceGuiTexture = new ResourceLocation("stdemo:textures/gui/container/gui_redstone_flux_furnace.png");
     private TileEntityRedstoneFluxFurnace tileEntityRedstoneFluxFurnace;
 
     public GuiRedstoneFluxFurnace(InventoryPlayer inventoryPlayer, TileEntityRedstoneFluxFurnace tileEntityRedstoneFluxFurnace) {

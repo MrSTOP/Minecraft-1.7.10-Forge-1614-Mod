@@ -1,7 +1,6 @@
 package com.github.mrstop.stdemo.item;
 
 import com.github.mrstop.stdemo.STDemo;
-import com.github.mrstop.stdemo.common.Log;
 import com.github.mrstop.stdemo.creativetab.CreativeTabsLoader;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -134,7 +133,7 @@ public class ItemSpawnEggGoldenChicken extends ItemMonsterPlacer{
         {
             if (!world.isRemote)
             {
-                entityToSpawnNameFull = STDemo.MODID + "." + entityToSpawnName;
+                entityToSpawnNameFull = STDemo.MOD_ID + "." + entityToSpawnName;
                 if (EntityList.stringToClassMapping.containsKey(entityToSpawnNameFull))
                 {
                     entityToSpawn = (EntityLiving) EntityList.createEntityByName(entityToSpawnNameFull, world);
@@ -178,8 +177,8 @@ public class ItemSpawnEggGoldenChicken extends ItemMonsterPlacer{
         {
             //Log.Log.info("EGGICON=>iconString>" + this.iconString);
             //super.registerIcons(iIconRegister);
-            itemIcon = iIconRegister.registerIcon(STDemo.MODID + ":" + entityToSpawnName);
-            theIcon = iIconRegister.registerIcon(STDemo.MODID + ":" + entityToSpawnName + "_overlay");
+            itemIcon = iIconRegister.registerIcon(STDemo.MOD_ID + ":" + entityToSpawnName);
+            theIcon = iIconRegister.registerIcon(STDemo.MOD_ID + ":" + entityToSpawnName + "_overlay");
         }
 
         @Override
@@ -206,12 +205,12 @@ public class ItemSpawnEggGoldenChicken extends ItemMonsterPlacer{
         public void setEntityToSpawn(String entityToSpawnName)
         {
             this.entityToSpawnName = entityToSpawnName;
-            this.entityToSpawnNameFull = STDemo.MODID + "." + entityToSpawnName;
+            this.entityToSpawnNameFull = STDemo.MOD_ID + "." + entityToSpawnName;
         }
 
         public void setEntityToSpawnName(String entityToSpawnName)
         {
             this.entityToSpawnName = entityToSpawnName;
-            this.entityToSpawnNameFull = STDemo.MODID + "." + entityToSpawnName;
+            this.entityToSpawnNameFull = STDemo.MOD_ID + "." + entityToSpawnName;
         }
 }

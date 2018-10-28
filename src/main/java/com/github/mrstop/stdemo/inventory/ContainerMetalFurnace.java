@@ -51,26 +51,19 @@ public class ContainerMetalFurnace extends Container {
     public void detectAndSendChanges() {
         super.detectAndSendChanges();
 
-        for (int i = 0; i < this.crafters.size(); ++i)
-        {
+        for (int i = 0; i < this.crafters.size(); ++i) {
             ICrafting icrafting = (ICrafting)this.crafters.get(i);
 
-            if (this.lastCookTime != this.tileEntityMetalFurnace.metalFurnaceCookTime)
-            {
+            if (this.lastCookTime != this.tileEntityMetalFurnace.metalFurnaceCookTime) {
                 icrafting.sendProgressBarUpdate(this, 0, this.tileEntityMetalFurnace.metalFurnaceCookTime);
             }
-
-            if (this.lastBurnTime != this.tileEntityMetalFurnace.metalFurnaceBurnTime)
-            {
+            if (this.lastBurnTime != this.tileEntityMetalFurnace.metalFurnaceBurnTime) {
                 icrafting.sendProgressBarUpdate(this, 1, this.tileEntityMetalFurnace.metalFurnaceBurnTime);
             }
-
-            if (this.lastItemBurnTime != this.tileEntityMetalFurnace.currentItemBurnTime)
-            {
+            if (this.lastItemBurnTime != this.tileEntityMetalFurnace.currentItemBurnTime) {
                 icrafting.sendProgressBarUpdate(this, 2, this.tileEntityMetalFurnace.currentItemBurnTime);
             }
         }
-
         this.lastCookTime = this.tileEntityMetalFurnace.metalFurnaceCookTime;
         this.lastBurnTime = this.tileEntityMetalFurnace.metalFurnaceBurnTime;
         this.lastItemBurnTime = this.tileEntityMetalFurnace.currentItemBurnTime;

@@ -31,7 +31,7 @@ public class RenderGolderChicken extends RenderLiving {
 
     protected void setEntityTexture()
     {
-        golderChickenTexture = new ResourceLocation(STDemo.MODID + "texture/entity/golden_chicken.png");
+        golderChickenTexture = new ResourceLocation(STDemo.MOD_ID + "texture/entity/golden_chicken.png");
     }
 
     @Override

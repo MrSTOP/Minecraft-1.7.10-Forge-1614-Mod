@@ -15,19 +15,16 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
-import java.io.IOException;
-
 @SideOnly(Side.CLIENT)
 public class GuiContainerDemo extends GuiContainer {
 
-    private static final String TEXTURE_PATH = STDemo.MODID + ":textures/gui/container/gui_demo.png";
+    private static final String TEXTURE_PATH = STDemo.MOD_ID + ":textures/gui/container/gui_demo.png";
     private static final ResourceLocation TEXTURE = new ResourceLocation(TEXTURE_PATH);
     private static final int BUTTON_UP = 0;
     private static final int BUTTON_DOWN = 1;
     private Slot ironSlot;
 
-    public GuiContainerDemo(ContainerDemo inventorySlotsIn)
-    {
+    public GuiContainerDemo(ContainerDemo inventorySlotsIn) {
         super(inventorySlotsIn);
         this.xSize = 176;
         this.ySize = 133;
@@ -36,8 +33,7 @@ public class GuiContainerDemo extends GuiContainer {
 
 
     @Override
-    protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY)
-    {
+    protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 
         this.mc.getTextureManager().bindTexture(TEXTURE);
@@ -54,8 +50,7 @@ public class GuiContainerDemo extends GuiContainer {
 
     //drawGuiContainerForegroundLayer方法的坐标原点位于GUI界面的左上角，而不是窗口的左上角。
     @Override
-    protected void drawGuiContainerForegroundLayer(int mouseX, int mousY)
-    {
+    protected void drawGuiContainerForegroundLayer(int mouseX, int mousY) {
         this.drawVerticalLine(30, 19, 36, 0xFF000000);
         this.drawHorizontalLine(8, 167, 43, 0x60FF0000);
 
@@ -68,29 +63,24 @@ public class GuiContainerDemo extends GuiContainer {
     }
 
     @Override
-    public void initGui()
-    {
+    public void initGui() {
         super.initGui();
         int offsetX = (this.width - this.xSize) / 2;
         int offsetY = (this.height - this.ySize) / 2;
         this.buttonList.add(new GuiButton(BUTTON_UP, offsetX + 155, offsetY + 13, 15, 10, "")
         {
             @Override
-            public void drawButton(Minecraft mc, int mouseX, int mouseY)
-            {
-                if (this.visible)
-                {
+            public void drawButton(Minecraft mc, int mouseX, int mouseY) {
+                if (this.visible) {
                     GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 
                     mc.getTextureManager().bindTexture(TEXTURE);
                     int x = mouseX - this.xPosition, y = mouseY - this.yPosition;
 
-                    if (x >= 0 && y >= 0 && x < this.width && y < this.height)
-                    {
+                    if (x >= 0 && y >= 0 && x < this.width && y < this.height) {
                         this.drawTexturedModalRect(this.xPosition, this.yPosition, 1, 146, this.width, this.height);
                     }
-                    else
-                    {
+                    else {
                         this.drawTexturedModalRect(this.xPosition, this.yPosition, 1, 134, this.width, this.height);
                     }
                 }
@@ -99,21 +89,17 @@ public class GuiContainerDemo extends GuiContainer {
         this.buttonList.add(new GuiButton(BUTTON_DOWN, offsetX + 155, offsetY + 31, 15, 10, "")
         {
             @Override
-            public void drawButton(Minecraft mc, int mouseX, int mouseY)
-            {
-                if (this.visible)
-                {
+            public void drawButton(Minecraft mc, int mouseX, int mouseY) {
+                if (this.visible) {
                     GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 
                     mc.getTextureManager().bindTexture(TEXTURE);
                     int x = mouseX - this.xPosition, y = mouseY - this.yPosition;
 
-                    if (x >= 0 && y >= 0 && x < this.width && y < this.height)
-                    {
+                    if (x >= 0 && y >= 0 && x < this.width && y < this.height) {
                         this.drawTexturedModalRect(this.xPosition, this.yPosition, 20, 146, this.width, this.height);
                     }
-                    else
-                    {
+                    else {
                         this.drawTexturedModalRect(this.xPosition, this.yPosition, 20, 134, this.width, this.height);
                     }
                 }
@@ -121,12 +107,10 @@ public class GuiContainerDemo extends GuiContainer {
         });
     }
     @Override
-    protected void actionPerformed(GuiButton guiButton)
-    {
+    protected void actionPerformed(GuiButton guiButton) {
         ItemStack itemStack = this.ironSlot.getStack();
         int amount = itemStack == null ? 0 : itemStack.stackSize;
-        switch (guiButton.id)
-        {
+        switch (guiButton.id) {
             case BUTTON_UP:
                 amount = (amount + 1) % 65;
                 break;

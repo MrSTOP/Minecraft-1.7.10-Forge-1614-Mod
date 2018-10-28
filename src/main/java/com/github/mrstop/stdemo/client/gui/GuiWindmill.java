@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 @SideOnly(Side.CLIENT)
 public class GuiWindmill extends GuiContainer {
-    private static final ResourceLocation windmillGuiTexture = new ResourceLocation("stdemo:textures/gui/container/windmill.png");
+    private static final ResourceLocation windmillGuiTexture = new ResourceLocation("stdemo:textures/gui/container/gui_windmill.png");
     private  TileEntityWindmill tileEntityWindmill;
 
     public GuiWindmill(InventoryPlayer inventoryPlayer, TileEntityWindmill tileEntityWindmill) {
