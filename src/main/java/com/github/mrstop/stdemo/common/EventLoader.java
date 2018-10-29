@@ -436,26 +436,25 @@ public class EventLoader {
         }
     }
 
-
-    /*@SubscribeEvent
-    public void onLivingHurt(LivingHurtEvent event)
-    {
-        if (event.source.getDamageType().equals("fall"))
-        {
-            PotionEffect effect = event.entityLiving.getActivePotionEffect(PotionLoader.potionFallProtection);
-            if (effect != null)
-            {
-                if (effect.getAmplifier() == 0)
-                {
-                    event.ammount /= 2;
-                }
-                else
-                {
-                    event.ammount = 0;
-                }
-            }
-        }
-    }*/
+//    @SubscribeEvent
+//    public void onLivingHurt(LivingHurtEvent event)
+//    {
+//        if (event.source.getDamageType().equals("fall"))
+//        {
+//            PotionEffect effect = event.entityLiving.getActivePotionEffect(PotionLoader.potionFallProtection);
+//            if (effect != null)
+//            {
+//                if (effect.getAmplifier() == 0)
+//                {
+//                    event.ammount /= 2;
+//                }
+//                else
+//                {
+//                    event.ammount = 0;
+//                }
+//            }
+//        }
+//    }
 
     @SubscribeEvent
     public void onLivingDeath(LivingDeathEvent event) {
@@ -498,6 +497,7 @@ public class EventLoader {
         }
     }
 
+    @SideOnly(Side.CLIENT)
     private void drawSpecialBlockHighLight(DrawBlockHighlightEvent event, SpecialBlockHighLight blockEnum){
         event.setCanceled(true);
 

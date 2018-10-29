@@ -9,7 +9,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.CraftingManager;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
 
@@ -102,7 +101,7 @@ public class CraftingLoader
         //烧练：草块——》煤炭
         GameRegistry.addSmelting(BlockLoader.grassBlock, new ItemStack(Items.coal), 0.5F);
         //烧练：铬矿石——》铬锭
-        GameRegistry.addSmelting(BlockLoader.chromiteBlock, new ItemStack(ItemLoader.chromiteIngot), 1F);
+        GameRegistry.addSmelting(BlockLoader.chromiteOre, new ItemStack(ItemLoader.chromiteIngot), 1F);
     }
 
     private static void registerFuel()//注册燃料

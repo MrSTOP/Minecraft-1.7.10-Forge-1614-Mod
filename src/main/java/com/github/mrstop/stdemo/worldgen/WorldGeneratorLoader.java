@@ -1,9 +1,7 @@
 package com.github.mrstop.stdemo.worldgen;
 
 import com.github.mrstop.stdemo.block.BlockLoader;
-import com.github.mrstop.stdemo.common.Log;
 import com.github.mrstop.stdemo.common.ConfigLoader;
-import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.MinecraftForge;
@@ -14,7 +12,7 @@ import net.minecraftforge.event.terraingen.TerrainGen;
 public class WorldGeneratorLoader
 {
 
-    private static WorldGenerator worldGenMinable = new WorldGenMinable(BlockLoader.chromiteBlock, ConfigLoader.ChromiteOreSpawnRate);
+    private static WorldGenerator worldGenMinable = new WorldGenMinable(BlockLoader.chromiteOre, ConfigLoader.ChromiteOreSpawnRate);
 
     public WorldGeneratorLoader()
     {

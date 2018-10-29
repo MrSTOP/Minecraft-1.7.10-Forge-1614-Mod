@@ -7,7 +7,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class BlockLoader {
 
     public static Block grassBlock = new BlockGrassBlock();//实例化方块
-    public static Block chromiteBlock = new BlockChromiteBlock();
+    public static Block chromiteOre = new BlockChromiteOre();
     public static Block fluidMercuryBlock = new BlockFluidMercury();
     public static Block colorBlock = new BlockColorCrops();
     public static Block metalFurnaceActive = new BlockMetalFurnace(true);
@@ -19,11 +19,12 @@ public class BlockLoader {
     public static Block quartzFurnaceActive = new BlockQuartzFurnace(true);
     public static Block quartzFurnaceInactive = new BlockQuartzFurnace(false);
     public static Block electrolyticMachine = new BlockElectrolyticMachine();
+    public static Block Cinnabar
 
     public  BlockLoader(FMLPreInitializationEvent event) {
         //构造方法
         register(grassBlock,"grass_block");//注册草块
-        register(chromiteBlock, "chromite_block");
+        register(chromiteOre, "chromite_block");
         register(fluidMercuryBlock, "fluidMercury_block");
         register(colorBlock, "color_block");
         register(metalFurnaceActive, "metal_furnace_active");

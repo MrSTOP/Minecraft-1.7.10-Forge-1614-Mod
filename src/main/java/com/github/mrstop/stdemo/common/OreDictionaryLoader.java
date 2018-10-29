@@ -25,7 +25,7 @@ public class OreDictionaryLoader {
             OreDictionary.registerOre("dustGlowstone", itemStack);
         }
 
-        OreDictionary.registerOre("oreChromite", BlockLoader.chromiteBlock);
+        OreDictionary.registerOre("oreChromite", BlockLoader.chromiteOre);
 
         OreDictionary.registerOre("ingotCopper", ItemLoader.chromiteIngot);
 

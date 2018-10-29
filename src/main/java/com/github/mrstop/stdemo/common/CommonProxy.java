@@ -15,7 +15,12 @@ import com.github.mrstop.stdemo.worldgen.WorldGeneratorLoader;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
+import scala.Int;
 
+import java.util.Map;
+import java.util.TreeMap;
 
 
 public class CommonProxy {
@@ -68,5 +73,23 @@ public class CommonProxy {
 
     public void postInit(FMLPostInitializationEvent event) {
 
+        Map<String, Fluid> stringFluidMap = FluidRegistry.getRegisteredFluids();
+        Map<Fluid, Integer> fluidIntegerMap = FluidRegistry.getRegisteredFluidIDsByFluid();
+
+        TreeMap<Integer, String> sortMap = new TreeMap<>();
+        for (Map.Entry<String, Fluid> stringFluidEntry : stringFluidMap.entrySet()) {
+            String fluidName = stringFluidEntry.getKey();
+            Fluid fluid = stringFluidEntry.getValue();
+            int fluidID = fluidIntegerMap.get(fluid);
+            sortMap.put(fluidID, fluidName);
+        }
+        System.out.print("===========================================================\n");
+        System.out.print("    ID\tName\n");
+        for (Map.Entry<Integer, String> integerStringEntry : sortMap.entrySet()) {
+            String fluidName = integerStringEntry.getValue();
+            int fluidID = integerStringEntry.getKey();
+            System.out.print("    " + fluidID + "\t" + fluidName + "\n");
+        }
+        System.out.print("===========================================================\n");
     }
 }

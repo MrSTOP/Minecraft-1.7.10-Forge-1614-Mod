@@ -9,6 +9,7 @@ import com.github.mrstop.stdemo.tileentity.TileEntityWindmill;
 import cpw.mods.fml.common.network.IGuiHandler;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
 public class GuiElementLoader implements IGuiHandler {
@@ -19,19 +20,20 @@ public class GuiElementLoader implements IGuiHandler {
 
     @Override
     public Object getServerGuiElement(int ID, EntityPlayer entityPlayer, World world, int x, int y, int z) {
+        TileEntity tileEntity = world.getTileEntity(x, y, z);
         switch (ID) {
             case STDemo.GUIIDMetalFurnace:
-                TileEntityMetalFurnace tileEntityMetalFurnace = (TileEntityMetalFurnace) world.getTileEntity(x, y, z);
-                return new ContainerMetalFurnace(entityPlayer.inventory, tileEntityMetalFurnace);
+                //TileEntityMetalFurnace tileEntityMetalFurnace = (TileEntityMetalFurnace) world.getTileEntity(x, y, z);
+                return new ContainerMetalFurnace(entityPlayer.inventory, (TileEntityMetalFurnace)tileEntity);
             case STDemo.GUIIDRedstoneFluxFurnace:
-                TileEntityRedstoneFluxFurnace tileEntityRedstoneFluxFurnace = (TileEntityRedstoneFluxFurnace) world.getTileEntity(x, y, z);
-                return new ContainerRedstoneFluxFurnace(entityPlayer.inventory, tileEntityRedstoneFluxFurnace);
+                //TileEntityRedstoneFluxFurnace tileEntityRedstoneFluxFurnace = (TileEntityRedstoneFluxFurnace) world.getTileEntity(x, y, z);
+                return new ContainerRedstoneFluxFurnace(entityPlayer.inventory, (TileEntityRedstoneFluxFurnace)tileEntity);
             case STDemo.GUIIDWindmill:
-                TileEntityWindmill tileEntityWindmill = (TileEntityWindmill)world.getTileEntity(x, y, z);
-                return new ContainerWindmill(entityPlayer.inventory, tileEntityWindmill);
+                //TileEntityWindmill tileEntityWindmill = (TileEntityWindmill)world.getTileEntity(x, y, z);
+                return new ContainerWindmill(entityPlayer.inventory, (TileEntityWindmill)tileEntity);
             case STDemo.GUIDElectrolyticMachine:
-                TileEntityElectrolyticMachine tileEntityElectrolyticMachine = (TileEntityElectrolyticMachine)world.getTileEntity(x, y, z);
-                return new ContainerElectrolyticMachine(entityPlayer.inventory, tileEntityElectrolyticMachine);
+                //TileEntityElectrolyticMachine tileEntityElectrolyticMachine = (TileEntityElectrolyticMachine)world.getTileEntity(x, y, z);
+                return new ContainerElectrolyticMachine(entityPlayer.inventory, (TileEntityElectrolyticMachine)tileEntity);
             case STDemo.GUIIDDemo:
                 return new ContainerDemo(entityPlayer);
             default:
@@ -41,19 +43,20 @@ public class GuiElementLoader implements IGuiHandler {
 
     @Override
     public Object getClientGuiElement(int ID, EntityPlayer entityPlayer, World world, int x, int y, int z) {
+        TileEntity tileEntity = world.getTileEntity(x, y, z);
         switch (ID) {
             case STDemo.GUIIDMetalFurnace:
-                TileEntityMetalFurnace tileEntityMetalFurnace = (TileEntityMetalFurnace) world.getTileEntity(x, y, z);
-                return new GuiMetalFurnace(entityPlayer.inventory, tileEntityMetalFurnace);
+//                TileEntityMetalFurnace tileEntityMetalFurnace = (TileEntityMetalFurnace) world.getTileEntity(x, y, z);
+                return new GuiMetalFurnace(entityPlayer.inventory, (TileEntityMetalFurnace)tileEntity);
             case STDemo.GUIIDRedstoneFluxFurnace:
-                TileEntityRedstoneFluxFurnace tileEntityRedstoneFluxFurnace = (TileEntityRedstoneFluxFurnace) world.getTileEntity(x, y, z);
-                return new GuiRedstoneFluxFurnace(entityPlayer.inventory, tileEntityRedstoneFluxFurnace);
+//                TileEntityRedstoneFluxFurnace tileEntityRedstoneFluxFurnace = (TileEntityRedstoneFluxFurnace) world.getTileEntity(x, y, z);
+                return new GuiRedstoneFluxFurnace(entityPlayer.inventory, (TileEntityRedstoneFluxFurnace)tileEntity);
             case STDemo.GUIIDWindmill:
-                TileEntityWindmill tileEntityWindmill = (TileEntityWindmill)world.getTileEntity(x, y, z);
-                return new GuiWindmill(entityPlayer.inventory, tileEntityWindmill);
+//                TileEntityWindmill tileEntityWindmill = (TileEntityWindmill)world.getTileEntity(x, y, z);
+                return new GuiWindmill(entityPlayer.inventory, (TileEntityWindmill)tileEntity);
             case STDemo.GUIDElectrolyticMachine:
-                TileEntityElectrolyticMachine tileEntityElectrolyticMachine = (TileEntityElectrolyticMachine)world.getTileEntity(x, y, z);
-                return new GUIElectrolyticMachine(entityPlayer.inventory, tileEntityElectrolyticMachine);
+//                TileEntityElectrolyticMachine tileEntityElectrolyticMachine = (TileEntityElectrolyticMachine)world.getTileEntity(x, y, z);
+                return new GUIElectrolyticMachine(entityPlayer.inventory, (TileEntityElectrolyticMachine)tileEntity);
             case STDemo.GUIIDDemo:
                 return new GuiContainerDemo(new ContainerDemo(entityPlayer));
             default:

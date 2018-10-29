@@ -5,8 +5,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class CreativeTabsLoader {
     public static CreativeTabs tabSTDemo;
-    public CreativeTabsLoader(FMLPreInitializationEvent event)
-     {
+    public CreativeTabsLoader(FMLPreInitializationEvent event) {
          tabSTDemo = new CreativeTabsSTDemo();
      }
 

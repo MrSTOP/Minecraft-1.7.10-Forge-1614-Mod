@@ -7,10 +7,10 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 
-public class BlockChromiteBlock extends Block {
+public class BlockChromiteOre extends Block {
 
 
-    public BlockChromiteBlock() {
+    public BlockChromiteOre() {
         super(Material.rock);
         this.setUnlocalizedName("chromiteOre");
         this.setHardness(0.8F);
