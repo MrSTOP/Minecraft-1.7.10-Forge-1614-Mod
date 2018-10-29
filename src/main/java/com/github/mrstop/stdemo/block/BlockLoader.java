@@ -19,12 +19,12 @@ public class BlockLoader {
     public static Block quartzFurnaceActive = new BlockQuartzFurnace(true);
     public static Block quartzFurnaceInactive = new BlockQuartzFurnace(false);
     public static Block electrolyticMachine = new BlockElectrolyticMachine();
-    public static Block Cinnabar
+    public static Block cinnabarOre = new BlockCinnabarOre();
 
     public  BlockLoader(FMLPreInitializationEvent event) {
         //构造方法
         register(grassBlock,"grass_block");//注册草块
-        register(chromiteOre, "chromite_block");
+        register(chromiteOre, "chromite_ore");
         register(fluidMercuryBlock, "fluidMercury_block");
         register(colorBlock, "color_block");
         register(metalFurnaceActive, "metal_furnace_active");
@@ -36,6 +36,7 @@ public class BlockLoader {
         register(quartzFurnaceActive, "quartz_furnace_active");
         register(quartzFurnaceInactive, "quartz_furnace_inactive");
         register(electrolyticMachine, "electrolytic_machine");
+        register(cinnabarOre, "cinnabar_ore");
     }
 
     private static void register(Block block,String name) {
