@@ -1,9 +1,7 @@
 package com.github.mrstop.stdemo.tileentity;
 
 import cofh.api.energy.EnergyStorage;
-import cofh.api.energy.IEnergyHandler;
 import cofh.api.energy.IEnergyReceiver;
-import com.github.mrstop.stdemo.block.BlockRedstoneFluxFurnace;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.player.EntityPlayer;
@@ -16,7 +14,7 @@ import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
 
-public class TileEntityRedstoneFluxFurnace extends TileEntity implements ISidedInventory, IEnergyReceiver {
+public class TileEntityMachineRedstoneFluxFurnace extends TileEntity implements ISidedInventory, IEnergyReceiver {
 
     private static final int processTime = 100;
     private static final int[] slotTop = new int[]{0};

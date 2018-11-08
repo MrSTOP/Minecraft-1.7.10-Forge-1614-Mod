@@ -1,6 +1,6 @@
 package com.github.mrstop.stdemo.inventory;
 
-import com.github.mrstop.stdemo.tileentity.TileEntityRedstoneFluxFurnace;
+import com.github.mrstop.stdemo.tileentity.TileEntityMachineRedstoneFluxFurnace;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.player.EntityPlayer;
@@ -12,15 +12,15 @@ import net.minecraft.item.ItemStack;
 
 public class ContainerRedstoneFluxFurnace extends Container {
 
-    private TileEntityRedstoneFluxFurnace tileEntityRedstoneFluxFurnace;
+    private TileEntityMachineRedstoneFluxFurnace tileEntityMachineRedstoneFluxFurnace;
     private int lastCookTime;
     //private int lastBurnTime;
     //private int lastItemBurnTime;
 
-    public ContainerRedstoneFluxFurnace(InventoryPlayer inventoryPlayer, TileEntityRedstoneFluxFurnace tileEntityRedstoneFluxFurnaceConstruct) {
-        this.tileEntityRedstoneFluxFurnace = tileEntityRedstoneFluxFurnaceConstruct;
-        this.addSlotToContainer(new Slot(tileEntityRedstoneFluxFurnaceConstruct, 0, 56, 17));
-        this.addSlotToContainer(new Slot(tileEntityRedstoneFluxFurnaceConstruct, 1, 116, 35));
+    public ContainerRedstoneFluxFurnace(InventoryPlayer inventoryPlayer, TileEntityMachineRedstoneFluxFurnace tileEntityMachineRedstoneFluxFurnaceConstruct) {
+        this.tileEntityMachineRedstoneFluxFurnace = tileEntityMachineRedstoneFluxFurnaceConstruct;
+        this.addSlotToContainer(new Slot(tileEntityMachineRedstoneFluxFurnaceConstruct, 0, 56, 17));
+        this.addSlotToContainer(new Slot(tileEntityMachineRedstoneFluxFurnaceConstruct, 1, 116, 35));
         for (int i = 0; i < 3; ++i) {
             for (int j = 0; j < 9; ++j) {
                 this.addSlotToContainer(new Slot(inventoryPlayer, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
@@ -34,7 +34,7 @@ public class ContainerRedstoneFluxFurnace extends Container {
     @Override
     public void onCraftGuiOpened(ICrafting iCrafting) {
         super.onCraftGuiOpened(iCrafting);
-        iCrafting.sendProgressBarUpdate(this, 0, this.tileEntityRedstoneFluxFurnace.redstoneFluxFurnaceCookTime);
+        iCrafting.sendProgressBarUpdate(this, 0, this.tileEntityMachineRedstoneFluxFurnace.redstoneFluxFurnaceCookTime);
     }
 
     @Override
@@ -43,11 +43,11 @@ public class ContainerRedstoneFluxFurnace extends Container {
 
         for (int i = 0; i < this.crafters.size(); ++i) {
             ICrafting icrafting = (ICrafting)this.crafters.get(i);
-            if (this.lastCookTime != this.tileEntityRedstoneFluxFurnace.redstoneFluxFurnaceCookTime) {
-                icrafting.sendProgressBarUpdate(this, 0, this.tileEntityRedstoneFluxFurnace.redstoneFluxFurnaceCookTime);
+            if (this.lastCookTime != this.tileEntityMachineRedstoneFluxFurnace.redstoneFluxFurnaceCookTime) {
+                icrafting.sendProgressBarUpdate(this, 0, this.tileEntityMachineRedstoneFluxFurnace.redstoneFluxFurnaceCookTime);
             }
         }
-        this.lastCookTime = this.tileEntityRedstoneFluxFurnace.redstoneFluxFurnaceCookTime;
+        this.lastCookTime = this.tileEntityMachineRedstoneFluxFurnace.redstoneFluxFurnaceCookTime;
     }
 
     @SideOnly(Side.CLIENT)
@@ -56,7 +56,7 @@ public class ContainerRedstoneFluxFurnace extends Container {
         super.updateProgressBar(id, data);
         switch (id) {
             case 0:
-                this.tileEntityRedstoneFluxFurnace.redstoneFluxFurnaceCookTime = data;
+                this.tileEntityMachineRedstoneFluxFurnace.redstoneFluxFurnaceCookTime = data;
                 break;
             default:
                 break;
@@ -65,7 +65,7 @@ public class ContainerRedstoneFluxFurnace extends Container {
 
     @Override
     public boolean canInteractWith(EntityPlayer entityPlayer) {
-        return this.tileEntityRedstoneFluxFurnace.isUseableByPlayer(entityPlayer);
+        return this.tileEntityMachineRedstoneFluxFurnace.isUseableByPlayer(entityPlayer);
     }
 
     @Override

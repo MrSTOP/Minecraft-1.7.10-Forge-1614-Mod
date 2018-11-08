@@ -2,9 +2,9 @@ package com.github.mrstop.stdemo.inventory;
 
 import com.github.mrstop.stdemo.STDemo;
 import com.github.mrstop.stdemo.client.gui.*;
-import com.github.mrstop.stdemo.tileentity.TileEntityElectrolyticMachine;
+import com.github.mrstop.stdemo.tileentity.TileEntityMachineElectrolyticMachine;
+import com.github.mrstop.stdemo.tileentity.TileEntityMachineRedstoneFluxFurnace;
 import com.github.mrstop.stdemo.tileentity.TileEntityMetalFurnace;
-import com.github.mrstop.stdemo.tileentity.TileEntityRedstoneFluxFurnace;
 import com.github.mrstop.stdemo.tileentity.TileEntityWindmill;
 import cpw.mods.fml.common.network.IGuiHandler;
 import cpw.mods.fml.common.network.NetworkRegistry;
@@ -26,14 +26,14 @@ public class GuiElementLoader implements IGuiHandler {
                 //TileEntityMetalFurnace tileEntityMetalFurnace = (TileEntityMetalFurnace) world.getTileEntity(x, y, z);
                 return new ContainerMetalFurnace(entityPlayer.inventory, (TileEntityMetalFurnace)tileEntity);
             case STDemo.GUIIDRedstoneFluxFurnace:
-                //TileEntityRedstoneFluxFurnace tileEntityRedstoneFluxFurnace = (TileEntityRedstoneFluxFurnace) world.getTileEntity(x, y, z);
-                return new ContainerRedstoneFluxFurnace(entityPlayer.inventory, (TileEntityRedstoneFluxFurnace)tileEntity);
+                //TileEntityMachineRedstoneFluxFurnace tileEntityRedstoneFluxFurnace = (TileEntityMachineRedstoneFluxFurnace) world.getTileEntity(x, y, z);
+                return new ContainerRedstoneFluxFurnace(entityPlayer.inventory, (TileEntityMachineRedstoneFluxFurnace)tileEntity);
             case STDemo.GUIIDWindmill:
                 //TileEntityWindmill tileEntityWindmill = (TileEntityWindmill)world.getTileEntity(x, y, z);
                 return new ContainerWindmill(entityPlayer.inventory, (TileEntityWindmill)tileEntity);
             case STDemo.GUIDElectrolyticMachine:
-                //TileEntityElectrolyticMachine tileEntityElectrolyticMachine = (TileEntityElectrolyticMachine)world.getTileEntity(x, y, z);
-                return new ContainerElectrolyticMachine(entityPlayer.inventory, (TileEntityElectrolyticMachine)tileEntity);
+                //TileEntityMachineElectrolyticMachine tileEntityElectrolyticMachine = (TileEntityMachineElectrolyticMachine)world.getTileEntity(x, y, z);
+                return new ContainerElectrolyticMachine(entityPlayer.inventory, (TileEntityMachineElectrolyticMachine)tileEntity);
             case STDemo.GUIIDDemo:
                 return new ContainerDemo(entityPlayer);
             default:
@@ -49,14 +49,14 @@ public class GuiElementLoader implements IGuiHandler {
 //                TileEntityMetalFurnace tileEntityMetalFurnace = (TileEntityMetalFurnace) world.getTileEntity(x, y, z);
                 return new GuiMetalFurnace(entityPlayer.inventory, (TileEntityMetalFurnace)tileEntity);
             case STDemo.GUIIDRedstoneFluxFurnace:
-//                TileEntityRedstoneFluxFurnace tileEntityRedstoneFluxFurnace = (TileEntityRedstoneFluxFurnace) world.getTileEntity(x, y, z);
-                return new GuiRedstoneFluxFurnace(entityPlayer.inventory, (TileEntityRedstoneFluxFurnace)tileEntity);
+//                TileEntityMachineRedstoneFluxFurnace tileEntityRedstoneFluxFurnace = (TileEntityMachineRedstoneFluxFurnace) world.getTileEntity(x, y, z);
+                return new GuiRedstoneFluxFurnace(entityPlayer.inventory, (TileEntityMachineRedstoneFluxFurnace)tileEntity);
             case STDemo.GUIIDWindmill:
 //                TileEntityWindmill tileEntityWindmill = (TileEntityWindmill)world.getTileEntity(x, y, z);
                 return new GuiWindmill(entityPlayer.inventory, (TileEntityWindmill)tileEntity);
             case STDemo.GUIDElectrolyticMachine:
-//                TileEntityElectrolyticMachine tileEntityElectrolyticMachine = (TileEntityElectrolyticMachine)world.getTileEntity(x, y, z);
-                return new GUIElectrolyticMachine(entityPlayer.inventory, (TileEntityElectrolyticMachine)tileEntity);
+//                TileEntityMachineElectrolyticMachine tileEntityElectrolyticMachine = (TileEntityMachineElectrolyticMachine)world.getTileEntity(x, y, z);
+                return new GUIElectrolyticMachine(entityPlayer.inventory, (TileEntityMachineElectrolyticMachine)tileEntity);
             case STDemo.GUIIDDemo:
                 return new GuiContainerDemo(new ContainerDemo(entityPlayer));
             default:

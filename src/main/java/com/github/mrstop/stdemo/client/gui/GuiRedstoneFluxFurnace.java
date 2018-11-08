@@ -1,7 +1,7 @@
 package com.github.mrstop.stdemo.client.gui;
 
 import com.github.mrstop.stdemo.inventory.ContainerRedstoneFluxFurnace;
-import com.github.mrstop.stdemo.tileentity.TileEntityRedstoneFluxFurnace;
+import com.github.mrstop.stdemo.tileentity.TileEntityMachineRedstoneFluxFurnace;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -13,11 +13,11 @@ import org.lwjgl.opengl.GL11;
 public class GuiRedstoneFluxFurnace extends GuiContainer {
 
     private static final ResourceLocation redstoneFluxFurnaceGuiTexture = new ResourceLocation("stdemo:textures/gui/container/gui_redstone_flux_furnace.png");
-    private TileEntityRedstoneFluxFurnace tileEntityRedstoneFluxFurnace;
+    private TileEntityMachineRedstoneFluxFurnace tileEntityMachineRedstoneFluxFurnace;
 
-    public GuiRedstoneFluxFurnace(InventoryPlayer inventoryPlayer, TileEntityRedstoneFluxFurnace tileEntityRedstoneFluxFurnace) {
-        super(new ContainerRedstoneFluxFurnace(inventoryPlayer, tileEntityRedstoneFluxFurnace));
-        this.tileEntityRedstoneFluxFurnace = tileEntityRedstoneFluxFurnace;
+    public GuiRedstoneFluxFurnace(InventoryPlayer inventoryPlayer, TileEntityMachineRedstoneFluxFurnace tileEntityMachineRedstoneFluxFurnace) {
+        super(new ContainerRedstoneFluxFurnace(inventoryPlayer, tileEntityMachineRedstoneFluxFurnace));
+        this.tileEntityMachineRedstoneFluxFurnace = tileEntityMachineRedstoneFluxFurnace;
     }
 
     @Override
@@ -28,9 +28,9 @@ public class GuiRedstoneFluxFurnace extends GuiContainer {
         int y = (this.height - this.ySize) / 2;
         this.drawTexturedModalRect(x, y, 0, 0, this.xSize, this.ySize);
 
-        if (this.tileEntityRedstoneFluxFurnace.isCooking())
+        if (this.tileEntityMachineRedstoneFluxFurnace.isCooking())
         {
-            int i = this.tileEntityRedstoneFluxFurnace.getCookProgressScaled(24);
+            int i = this.tileEntityMachineRedstoneFluxFurnace.getCookProgressScaled(24);
             this.drawTexturedModalRect(x + 79, y + 34, 176, 14, i + 1, 16);
         }
     }

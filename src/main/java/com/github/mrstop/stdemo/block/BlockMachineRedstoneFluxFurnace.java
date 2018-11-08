@@ -2,7 +2,7 @@ package com.github.mrstop.stdemo.block;
 
 import com.github.mrstop.stdemo.STDemo;
 import com.github.mrstop.stdemo.creativetab.CreativeTabsLoader;
-import com.github.mrstop.stdemo.tileentity.TileEntityRedstoneFluxFurnace;
+import com.github.mrstop.stdemo.tileentity.TileEntityMachineRedstoneFluxFurnace;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -24,7 +24,7 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class BlockRedstoneFluxFurnace extends BlockContainer {
+public class BlockMachineRedstoneFluxFurnace extends BlockContainer {
 
     @SideOnly(Side.CLIENT)
     private IIcon top;
@@ -35,9 +35,9 @@ public class BlockRedstoneFluxFurnace extends BlockContainer {
     private final boolean isBurningFlag;
     private final Random random = new Random();
 
-    public BlockRedstoneFluxFurnace(boolean isActive) {
+    public BlockMachineRedstoneFluxFurnace(boolean isActive) {
         super(Material.iron);
-        this.setUnlocalizedName("redstoneFluxFurnace");
+        this.setUnlocalizedName("machineRedstoneFluxFurnace");
         this.setHardness(0.8F);
         this.setStepSound(soundTypeStone);
         this.setHarvestLevel("pickaxe", 1);
@@ -52,7 +52,7 @@ public class BlockRedstoneFluxFurnace extends BlockContainer {
 
     @Override
     public Item getItemDropped(int meta, Random random, int fortune) {
-        return Item.getItemFromBlock(BlockLoader.getRedstoneFluxFurnaceInactive);
+        return Item.getItemFromBlock(BlockLoader.blockMachineRedstoneFluxFurnaceInactive);
     }
 
     @Override
@@ -95,8 +95,8 @@ public class BlockRedstoneFluxFurnace extends BlockContainer {
             return true;
         }
         else {
-            TileEntityRedstoneFluxFurnace tileEntityRedstoneFluxFurnace = (TileEntityRedstoneFluxFurnace) worldIn.getTileEntity(x, y, z);
-            if (tileEntityRedstoneFluxFurnace != null) {
+            TileEntityMachineRedstoneFluxFurnace tileEntityMachineRedstoneFluxFurnace = (TileEntityMachineRedstoneFluxFurnace) worldIn.getTileEntity(x, y, z);
+            if (tileEntityMachineRedstoneFluxFurnace != null) {
                 player.openGui(STDemo.instance, STDemo.GUIIDRedstoneFluxFurnace, worldIn, x, y, z);
             }
             return true;
@@ -108,10 +108,10 @@ public class BlockRedstoneFluxFurnace extends BlockContainer {
         TileEntity tileEntity = world.getTileEntity(blockX, blockY, blockZ);
         //isBurning = true;
         if (isBurningFlag) {
-            world.setBlock(blockX, blockY, blockZ, BlockLoader.redstoneFluxFurnaceActive);
+            world.setBlock(blockX, blockY, blockZ, BlockLoader.blockMachineRedstoneFluxFurnaceActive);
         }
         else {
-           world.setBlock(blockX, blockY, blockZ, BlockLoader.getRedstoneFluxFurnaceInactive);
+           world.setBlock(blockX, blockY, blockZ, BlockLoader.blockMachineRedstoneFluxFurnaceInactive);
        }
        //isBurning = false;
         world.setBlockMetadataWithNotify(blockX, blockY, blockZ, metadata, 2);
@@ -123,7 +123,7 @@ public class BlockRedstoneFluxFurnace extends BlockContainer {
 
     @Override
     public TileEntity createNewTileEntity(World world, int meta) {
-        return new TileEntityRedstoneFluxFurnace();
+        return new TileEntityMachineRedstoneFluxFurnace();
     }
 
     @Override
@@ -142,20 +142,20 @@ public class BlockRedstoneFluxFurnace extends BlockContainer {
             worldIn.setBlockMetadataWithNotify(x, y, z, 4, 2);
         }
         if (itemStack.hasDisplayName()) {
-            ((TileEntityRedstoneFluxFurnace) worldIn.getTileEntity(x, y, z)).setCustomInventoryName(itemStack.getDisplayName());
+            ((TileEntityMachineRedstoneFluxFurnace) worldIn.getTileEntity(x, y, z)).setCustomInventoryName(itemStack.getDisplayName());
         }
     }
 
     @Override
     public void breakBlock(World worldIn, int x, int y, int z, Block blockBroken, int meta) {
             if (!isBurning) {
-                TileEntityRedstoneFluxFurnace tileEntityRedstoneFluxFurnace = (TileEntityRedstoneFluxFurnace) worldIn.getTileEntity(x, y, z);    //临时TileEntityMetalFurnace变量
+                TileEntityMachineRedstoneFluxFurnace tileEntityMachineRedstoneFluxFurnace = (TileEntityMachineRedstoneFluxFurnace) worldIn.getTileEntity(x, y, z);    //临时TileEntityMetalFurnace变量
 
-                if (tileEntityRedstoneFluxFurnace != null)                                                                         //判断临时TileEntityMetalFurnace变量是否为空
+                if (tileEntityMachineRedstoneFluxFurnace != null)                                                                         //判断临时TileEntityMetalFurnace变量是否为空
                 {
-                    for (int i1 = 0; i1 < tileEntityRedstoneFluxFurnace.getSizeInventory(); ++i1)                                  //遍历物品槽
+                    for (int i1 = 0; i1 < tileEntityMachineRedstoneFluxFurnace.getSizeInventory(); ++i1)                                  //遍历物品槽
                     {
-                        ItemStack itemstack = tileEntityRedstoneFluxFurnace.getStackInSlot(i1);                                    //临时ItemStack变量
+                        ItemStack itemstack = tileEntityMachineRedstoneFluxFurnace.getStackInSlot(i1);                                    //临时ItemStack变量
 
                         if (itemstack != null)                                                                              //判断临时ItemStack变量是否为空
                         {
@@ -216,14 +216,14 @@ public class BlockRedstoneFluxFurnace extends BlockContainer {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon("stdemo:redstoneflux_furnace_side");
-        this.front = iconRegister.registerIcon(this.isBurningFlag ? "stdemo:redstoneflux_furnace_active" : "stdemo:redstoneflux_furnace_inactive");
-        this.top = iconRegister.registerIcon("stdemo:redstoneflux_furnace_top");
+        this.blockIcon = iconRegister.registerIcon("stdemo:machine_redstoneflux_furnace_side");
+        this.front = iconRegister.registerIcon(this.isBurningFlag ? "stdemo:redstoneflux_furnace_active" : "stdemo:machine_redstoneflux_furnace_inactive");
+        this.top = iconRegister.registerIcon("stdemo:machine_redstoneflux_furnace_top");
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public Item getItem(World worldIn, int x, int y, int z) {
-        return Item.getItemFromBlock(BlockLoader.getRedstoneFluxFurnaceInactive);
+        return Item.getItemFromBlock(BlockLoader.blockMachineRedstoneFluxFurnaceInactive);
     }
 }

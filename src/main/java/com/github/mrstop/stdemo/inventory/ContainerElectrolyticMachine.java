@@ -1,6 +1,6 @@
 package com.github.mrstop.stdemo.inventory;
 
-import com.github.mrstop.stdemo.tileentity.TileEntityElectrolyticMachine;
+import com.github.mrstop.stdemo.tileentity.TileEntityMachineElectrolyticMachine;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.player.EntityPlayer;
@@ -8,20 +8,18 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
-import net.minecraftforge.fluids.Fluid;
-import net.minecraftforge.fluids.FluidStack;
 
 public class ContainerElectrolyticMachine extends Container {
-    private TileEntityElectrolyticMachine tileEntityElectrolyticMachine;
+    private TileEntityMachineElectrolyticMachine tileEntityMachineElectrolyticMachine;
     private int processTime = 0;
     private int fluidID = 0;
     private int fluidAmount = 0;
     private int energyAmount = 0;
 
-    public ContainerElectrolyticMachine(InventoryPlayer inventoryPlayer, TileEntityElectrolyticMachine tileEntityElectrolyticMachine) {
-        this.tileEntityElectrolyticMachine = tileEntityElectrolyticMachine;
-        this.addSlotToContainer(new Slot(tileEntityElectrolyticMachine, 0, 56, 32));
-        this.addSlotToContainer(new Slot(tileEntityElectrolyticMachine, 1, 105, 32));
+    public ContainerElectrolyticMachine(InventoryPlayer inventoryPlayer, TileEntityMachineElectrolyticMachine tileEntityMachineElectrolyticMachine) {
+        this.tileEntityMachineElectrolyticMachine = tileEntityMachineElectrolyticMachine;
+        this.addSlotToContainer(new Slot(tileEntityMachineElectrolyticMachine, 0, 56, 32));
+        this.addSlotToContainer(new Slot(tileEntityMachineElectrolyticMachine, 1, 105, 32));
         for (int i = 0; i < 3; ++i) {
             for (int j = 0; j < 9; ++j) {
                 this.addSlotToContainer(new Slot(inventoryPlayer, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
@@ -35,19 +33,19 @@ public class ContainerElectrolyticMachine extends Container {
     @Override
     public void onCraftGuiOpened(ICrafting iCrafting) {
         super.onCraftGuiOpened(iCrafting);
-        iCrafting.sendProgressBarUpdate(this, 0, this.tileEntityElectrolyticMachine.getProcessTime());
-        iCrafting.sendProgressBarUpdate(this, 1, this.tileEntityElectrolyticMachine.getEnergyAmount());
-        iCrafting.sendProgressBarUpdate(this, 2, this.tileEntityElectrolyticMachine.getFluidAmount(0));
-        iCrafting.sendProgressBarUpdate(this, 3, this.tileEntityElectrolyticMachine.getFluidID(0));
+        iCrafting.sendProgressBarUpdate(this, 0, this.tileEntityMachineElectrolyticMachine.getProcessTime());
+        iCrafting.sendProgressBarUpdate(this, 1, this.tileEntityMachineElectrolyticMachine.getEnergyAmount());
+        iCrafting.sendProgressBarUpdate(this, 2, this.tileEntityMachineElectrolyticMachine.getFluidAmount(0));
+        iCrafting.sendProgressBarUpdate(this, 3, this.tileEntityMachineElectrolyticMachine.getFluidID(0));
     }
 
     @Override
     public void detectAndSendChanges() {
         super.detectAndSendChanges();
-        int tempProcessTime = this.tileEntityElectrolyticMachine.getProcessTime();
-        int tempEnergyAmount = this.tileEntityElectrolyticMachine.getEnergyAmount();
-        int tempFluidAmount = this.tileEntityElectrolyticMachine.getFluidAmount(0);
-        int tempFluidID = this.tileEntityElectrolyticMachine.getFluidID(0);
+        int tempProcessTime = this.tileEntityMachineElectrolyticMachine.getProcessTime();
+        int tempEnergyAmount = this.tileEntityMachineElectrolyticMachine.getEnergyAmount();
+        int tempFluidAmount = this.tileEntityMachineElectrolyticMachine.getFluidAmount(0);
+        int tempFluidID = this.tileEntityMachineElectrolyticMachine.getFluidID(0);
         for (Object crafter: this.crafters) {
             ICrafting iCrafting = (ICrafting) crafter;
             if (this.processTime != tempProcessTime){
@@ -75,16 +73,16 @@ public class ContainerElectrolyticMachine extends Container {
         super.updateProgressBar(ID, data);
         switch (ID){
             case 0:
-                this.tileEntityElectrolyticMachine.GUIProcessTime = data;
+                this.tileEntityMachineElectrolyticMachine.GUIProcessTime = data;
                 break;
             case 1:
-                this.tileEntityElectrolyticMachine.GUIEnergyAmount = data;
+                this.tileEntityMachineElectrolyticMachine.GUIEnergyAmount = data;
                 break;
             case 2:
-                this.tileEntityElectrolyticMachine.GUIFluidAmount = data;
+                this.tileEntityMachineElectrolyticMachine.GUIFluidAmount = data;
                 break;
             case 3:
-                this.tileEntityElectrolyticMachine.GUIFluidID = data;
+                this.tileEntityMachineElectrolyticMachine.GUIFluidID = data;
                 break;
             default:
                 break;
@@ -93,6 +91,6 @@ public class ContainerElectrolyticMachine extends Container {
 
     @Override
     public boolean canInteractWith(EntityPlayer player) {
-        return this.tileEntityElectrolyticMachine.isUsedByPlayer(player);
+        return this.tileEntityMachineElectrolyticMachine.isUsedByPlayer(player);
     }
 }

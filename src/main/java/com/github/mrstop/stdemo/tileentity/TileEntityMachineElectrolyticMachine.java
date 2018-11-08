@@ -16,7 +16,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.*;
 
-public class TileEntityElectrolyticMachine extends TileEntity implements ISidedInventory, IFluidHandler, IEnergyReceiver, IGUIFluid {
+public class TileEntityMachineElectrolyticMachine extends TileEntity implements ISidedInventory, IFluidHandler, IEnergyReceiver, IGUIFluid {
     private static final int fluidTankCapacity = 10_000;
     private static final int totalProcessTime = 100;
     private static final int energyCapacity = 10_000;
@@ -37,7 +37,7 @@ public class TileEntityElectrolyticMachine extends TileEntity implements ISidedI
 
     private String electrolyticMachineCustomName = null;
 
-    public TileEntityElectrolyticMachine() {
+    public TileEntityMachineElectrolyticMachine() {
         this.fluidTank = new FluidTank(this.fluidTankCapacity);
     }
 
@@ -245,7 +245,7 @@ public class TileEntityElectrolyticMachine extends TileEntity implements ISidedI
 
     @Override
     public String getInventoryName() {
-        return null;
+        return this.isCustomInventoryName() ? this.electrolyticMachineCustomName : "stdemo.container.electrolyticMachine";
     }
 
     @Override

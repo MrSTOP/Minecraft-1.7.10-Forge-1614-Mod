@@ -12,31 +12,33 @@ public class BlockLoader {
     public static Block colorBlock = new BlockColorCrops();
     public static Block metalFurnaceActive = new BlockMetalFurnace(true);
     public static Block metalFurnaceInactive = new BlockMetalFurnace(false);
-    public static Block redstoneFluxFurnaceActive = new BlockRedstoneFluxFurnace(true);
-    public static Block getRedstoneFluxFurnaceInactive = new BlockRedstoneFluxFurnace(false);
+    public static Block blockMachineRedstoneFluxFurnaceActive = new BlockMachineRedstoneFluxFurnace(true);
+    public static Block blockMachineRedstoneFluxFurnaceInactive = new BlockMachineRedstoneFluxFurnace(false);
     public static Block windmillBlock = new BlockWindmill();
     public static Block windmillGroundBlock = new BlockWindmillGround();
     public static Block quartzFurnaceActive = new BlockQuartzFurnace(true);
     public static Block quartzFurnaceInactive = new BlockQuartzFurnace(false);
-    public static Block electrolyticMachine = new BlockElectrolyticMachine();
+    public static Block machineElectrolyticMachine = new BlockMachineElectrolyticMachine();
     public static Block cinnabarOre = new BlockCinnabarOre();
+    public static Block machineCalciner = new BlockMachineCalciner();
 
     public  BlockLoader(FMLPreInitializationEvent event) {
         //构造方法
-        register(grassBlock,"grass_block");//注册草块
         register(chromiteOre, "chromite_ore");
+        register(cinnabarOre, "cinnabar_ore");
+        register(grassBlock,"grass_block");//注册草块
         register(fluidMercuryBlock, "fluidMercury_block");
         register(colorBlock, "color_block");
         register(metalFurnaceActive, "metal_furnace_active");
         register(metalFurnaceInactive, "metal_furnace_inactive");
-        register(redstoneFluxFurnaceActive, "redstoneflux_furnace_active");
-        register(getRedstoneFluxFurnaceInactive, "redstoneflux_furnace_inactive");
+        register(blockMachineRedstoneFluxFurnaceActive, "machine_redstoneflux_furnace_active");
+        register(blockMachineRedstoneFluxFurnaceInactive, "machine_redstoneflux_furnace_inactive");
         register(windmillBlock, "windmill_block");
         register(windmillGroundBlock, "windmill_ground_block");
         register(quartzFurnaceActive, "quartz_furnace_active");
         register(quartzFurnaceInactive, "quartz_furnace_inactive");
-        register(electrolyticMachine, "electrolytic_machine");
-        register(cinnabarOre, "cinnabar_ore");
+        register(machineElectrolyticMachine, "machine_electrolytic_machine");
+        register(machineCalciner, "machine_calciner");
     }
 
     private static void register(Block block,String name) {

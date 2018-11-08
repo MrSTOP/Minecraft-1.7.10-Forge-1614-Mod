@@ -2,7 +2,7 @@ package com.github.mrstop.stdemo.block;
 
 import com.github.mrstop.stdemo.STDemo;
 import com.github.mrstop.stdemo.creativetab.CreativeTabsLoader;
-import com.github.mrstop.stdemo.tileentity.TileEntityElectrolyticMachine;
+import com.github.mrstop.stdemo.tileentity.TileEntityMachineElectrolyticMachine;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.BlockContainer;
@@ -16,7 +16,7 @@ import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class BlockElectrolyticMachine extends BlockContainer {
+public class BlockMachineElectrolyticMachine extends BlockContainer {
     @SideOnly(Side.CLIENT)
     private IIcon front;
     @SideOnly(Side.CLIENT)
@@ -24,9 +24,9 @@ public class BlockElectrolyticMachine extends BlockContainer {
     @SideOnly(Side.CLIENT)
     private IIcon right;
 
-    public BlockElectrolyticMachine() {
+    public BlockMachineElectrolyticMachine() {
         super(Material.rock);
-        this.setUnlocalizedName("electrolyticMachine");
+        this.setUnlocalizedName("machineElectrolyticMachine");
         this.setHardness(0.5F);
         this.setStepSound(soundTypeStone);
         this.setHarvestLevel("pickaxe", 1);
@@ -35,7 +35,7 @@ public class BlockElectrolyticMachine extends BlockContainer {
 
     @Override
     public TileEntity createNewTileEntity(World worldIn, int meta) {
-        return new TileEntityElectrolyticMachine();
+        return new TileEntityMachineElectrolyticMachine();
     }
 
     @Override
@@ -54,7 +54,7 @@ public class BlockElectrolyticMachine extends BlockContainer {
             worldIn.setBlockMetadataWithNotify(x, y, z, 4, 2);
         }
         if (itemIn.hasDisplayName()) {
-            ((TileEntityElectrolyticMachine) worldIn.getTileEntity(x, y, z)).setCustomInventoryName(itemIn.getDisplayName());
+            ((TileEntityMachineElectrolyticMachine) worldIn.getTileEntity(x, y, z)).setCustomInventoryName(itemIn.getDisplayName());
         }
     }
 
@@ -64,8 +64,8 @@ public class BlockElectrolyticMachine extends BlockContainer {
             return true;
         }
         else {
-            TileEntityElectrolyticMachine tileEntityElectrolyticMachine = (TileEntityElectrolyticMachine) worldIn.getTileEntity(x, y, z);
-            if (tileEntityElectrolyticMachine != null){
+            TileEntityMachineElectrolyticMachine tileEntityMachineElectrolyticMachine = (TileEntityMachineElectrolyticMachine) worldIn.getTileEntity(x, y, z);
+            if (tileEntityMachineElectrolyticMachine != null){
                 player.openGui(STDemo.instance, STDemo.GUIDElectrolyticMachine, worldIn, x, y, z);
             }
             return true;
@@ -138,9 +138,9 @@ public class BlockElectrolyticMachine extends BlockContainer {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon("stdemo:electrolytic_machine");
-        this.front = iconRegister.registerIcon("stdemo:electrolytic_machine_front");
-        this.left = iconRegister.registerIcon("stdemo:electrolytic_machine_left");
-        this.right = iconRegister.registerIcon("stdemo:electrolytic_machine_right");
+        this.blockIcon = iconRegister.registerIcon("stdemo:machine_electrolytic_machine");
+        this.front = iconRegister.registerIcon("stdemo:machine_electrolytic_machine_front");
+        this.left = iconRegister.registerIcon("stdemo:machine_electrolytic_machine_left");
+        this.right = iconRegister.registerIcon("stdemo:machine_electrolytic_machine_right");
     }
 }

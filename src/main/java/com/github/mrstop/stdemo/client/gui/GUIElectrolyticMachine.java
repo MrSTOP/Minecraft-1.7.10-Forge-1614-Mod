@@ -1,9 +1,8 @@
 package com.github.mrstop.stdemo.client.gui;
 
 import com.github.mrstop.stdemo.inventory.ContainerElectrolyticMachine;
-import com.github.mrstop.stdemo.tileentity.TileEntityElectrolyticMachine;
+import com.github.mrstop.stdemo.tileentity.TileEntityMachineElectrolyticMachine;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiTextField;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.texture.TextureMap;
@@ -14,11 +13,11 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 public class GUIElectrolyticMachine extends GuiContainer {
     private static final ResourceLocation electrolyticMachineGuiTexture = new ResourceLocation("stdemo:textures/gui/container/gui_electrolytic_machine.png");
-    private TileEntityElectrolyticMachine tileEntityElectrolyticMachine;
+    private TileEntityMachineElectrolyticMachine tileEntityMachineElectrolyticMachine;
 
-    public GUIElectrolyticMachine(InventoryPlayer inventoryPlayer, TileEntityElectrolyticMachine tileEntityElectrolyticMachine) {
-        super(new ContainerElectrolyticMachine(inventoryPlayer, tileEntityElectrolyticMachine));
-        this.tileEntityElectrolyticMachine = tileEntityElectrolyticMachine;
+    public GUIElectrolyticMachine(InventoryPlayer inventoryPlayer, TileEntityMachineElectrolyticMachine tileEntityMachineElectrolyticMachine) {
+        super(new ContainerElectrolyticMachine(inventoryPlayer, tileEntityMachineElectrolyticMachine));
+        this.tileEntityMachineElectrolyticMachine = tileEntityMachineElectrolyticMachine;
     }
 
     @Override
@@ -29,16 +28,16 @@ public class GUIElectrolyticMachine extends GuiContainer {
         this.drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize);
 
         //绘制能量条
-        int i = this.tileEntityElectrolyticMachine.getEnergyScale(60);
+        int i = this.tileEntityMachineElectrolyticMachine.getEnergyScale(60);
         this.drawTexturedModalRect(this.guiLeft + 12, this.guiTop + 73 - i, 176, 60 - i, 16, i);
 
         //绘制流体槽*******************************************************************
-        i = this.tileEntityElectrolyticMachine.getFluidScale(60);
+        i = this.tileEntityMachineElectrolyticMachine.getFluidScale(60);
         //获取以及绑定材质
         //*******************************************
         IIcon icon = null;
-        if (FluidRegistry.getFluid(this.tileEntityElectrolyticMachine.GUIFluidID) != null){
-            icon = FluidRegistry.getFluid(this.tileEntityElectrolyticMachine.GUIFluidID).getIcon();
+        if (FluidRegistry.getFluid(this.tileEntityMachineElectrolyticMachine.GUIFluidID) != null){
+            icon = FluidRegistry.getFluid(this.tileEntityMachineElectrolyticMachine.GUIFluidID).getIcon();
         }
         if (icon == null) {
             icon = ((TextureMap) Minecraft.getMinecraft().getTextureManager().getTexture(TextureMap.locationBlocksTexture)).getAtlasSprite("missingno");
