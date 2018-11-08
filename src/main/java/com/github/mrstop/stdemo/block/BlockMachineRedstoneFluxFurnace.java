@@ -204,7 +204,28 @@ public class BlockMachineRedstoneFluxFurnace extends BlockContainer {
     @Override
     @SideOnly(Side.CLIENT)
     public IIcon getIcon(int side, int meta) {
-        return meta == 0 ? (side == 1 ? this.top : (side == 3 ? this.front : this.blockIcon)) : (side == 1 ? this.top : (side != meta ? this.blockIcon : this.front));
+        if (side == 0 || side == 1){
+            return this.top;
+        }
+        else {
+            if (meta != 0){
+                if (side == meta){
+                    return this.front;
+                }
+                else {
+                    return this.blockIcon;
+                }
+            }
+            else {
+                if (side == 3){
+                    return this.front;
+                }
+                if (side == 4){
+                    return this.blockIcon;
+                }
+            }
+            return this.blockIcon;
+        }
         //如果meta为0且side为1(顶面)返回top
         //如果meta为0且side为3(南面)返回front
         //如果meta为0且side不等于3(南面)返回blockIcon
