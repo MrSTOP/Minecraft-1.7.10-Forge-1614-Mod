@@ -5,6 +5,7 @@ import net.minecraftforge.fluids.Fluid;
 
 
 public class FluidMercury extends Fluid {
+    private static final int color = 0xFFCC66;
 
     public FluidMercury() {
         super("mercury");
@@ -14,4 +15,10 @@ public class FluidMercury extends Fluid {
         this.setLuminosity(0);//设置流体亮度
         this.setTemperature(300);//设置流体温度
     }
+
+    @Override
+    public int getColor() {
+        return color;
+    }
+
 }

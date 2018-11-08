@@ -12,22 +12,19 @@ import net.minecraftforge.oredict.OreDictionary;
 
 public class OreDictionaryLoader {
 
-    public OreDictionaryLoader(FMLPreInitializationEvent  event)
-    {
+    public OreDictionaryLoader(FMLPreInitializationEvent  event) {
         List<ItemStack> dustRedstones = OreDictionary.getOres("dustRedstone");
         List<ItemStack> dustGlowstones = OreDictionary.getOres("dustGlowstone");
-        for (ItemStack itemStack : dustGlowstones)
-        {
+        for (ItemStack itemStack : dustGlowstones) {
             OreDictionary.registerOre("dustRedstone", itemStack);
         }
-        for (ItemStack itemStack : dustRedstones)
-        {
+        for (ItemStack itemStack : dustRedstones) {
             OreDictionary.registerOre("dustGlowstone", itemStack);
         }
 
         OreDictionary.registerOre("oreChromite", BlockLoader.chromiteOre);
-
         OreDictionary.registerOre("ingotCopper", ItemLoader.chromiteIngot);
+        OreDictionary.registerOre("oreCinnabar", BlockLoader.cinnabarOre);
 
         /*
         Log.Log.info("Registed Ore:");

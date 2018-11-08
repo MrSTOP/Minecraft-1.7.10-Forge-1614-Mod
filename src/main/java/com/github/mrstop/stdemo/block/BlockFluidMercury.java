@@ -13,7 +13,6 @@ import net.minecraftforge.fluids.BlockFluidClassic;
 
 
 public class BlockFluidMercury extends BlockFluidClassic {
-
     @SideOnly(Side.CLIENT)
     protected IIcon stillIcon;
     @SideOnly(Side.CLIENT)

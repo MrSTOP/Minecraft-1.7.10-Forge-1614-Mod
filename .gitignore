@@ -24,6 +24,7 @@
 /build/
 /eclipse/
 /out/
+/ignore/
 /src/main/java/com/mod
 /src/main/java/com/thegrovesyproject
 /src/main/resources/assets/minecraft
