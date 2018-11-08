@@ -6,7 +6,6 @@ import com.github.mrstop.stdemo.core.IGUIFluid;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -18,7 +17,7 @@ import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.*;
 
 public class TileEntityElectrolyticMachine extends TileEntity implements ISidedInventory, IFluidHandler, IEnergyReceiver, IGUIFluid {
-    private static final int fluidTankCapaticy = 10_000;
+    private static final int fluidTankCapacity = 10_000;
     private static final int totalProcessTime = 100;
     private static final int energyCapacity = 10_000;
     private static final int energyMaxInput = 30;
@@ -39,7 +38,7 @@ public class TileEntityElectrolyticMachine extends TileEntity implements ISidedI
     private String electrolyticMachineCustomName = null;
 
     public TileEntityElectrolyticMachine() {
-        this.fluidTank = new FluidTank(this.fluidTankCapaticy);
+        this.fluidTank = new FluidTank(this.fluidTankCapacity);
     }
 
     public int getProcessTime() {
@@ -70,15 +69,7 @@ public class TileEntityElectrolyticMachine extends TileEntity implements ISidedI
 
     @SideOnly(Side.CLIENT)
     public int getFluidScale(int scale){
-        return (int) (((double) this.GUIFluidAmount / this.fluidTankCapaticy) * scale);
-    }
-
-    public void setFluidTankFluidStack(FluidStack fluidStack){
-        this.fluidTank.setFluid(fluidStack);
-    }
-
-    public void setProcessTime(int processTime) {
-        this.processTime = processTime;
+        return (int) (((double) this.GUIFluidAmount / this.fluidTankCapacity) * scale);
     }
 
     public void setCustomInventoryName(String electrolyticMachineCustomName) {
