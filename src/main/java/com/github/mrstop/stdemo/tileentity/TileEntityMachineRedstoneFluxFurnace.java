@@ -188,7 +188,7 @@ public class TileEntityMachineRedstoneFluxFurnace extends TileEntity implements 
     @Override
     public boolean isUseableByPlayer(EntityPlayer player)
     {
-        return this.worldObj.getTileEntity(this.xCoord, this.yCoord, this.zCoord) != this ? false : player.getDistanceSq((double)this.xCoord + 0.5D, (double)this.yCoord + 0.5D, (double)this.zCoord + 0.5D) <= 64.0D;
+        return this.worldObj.getTileEntity(this.xCoord, this.yCoord, this.zCoord) == this && player.getDistanceSq((double) this.xCoord + 0.5D, (double) this.yCoord + 0.5D, (double) this.zCoord + 0.5D) <= 64.0D;
         //如果worldObj的TileEntity不是这个TileEntity则返回false，如果worldObj的TileEntity是这个TileEntity则返回(玩家距离该TileEntity的直线距离小于等于64.0D则返回true，否则返回false)
     }
 
