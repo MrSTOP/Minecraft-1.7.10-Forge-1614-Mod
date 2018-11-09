@@ -58,7 +58,6 @@ public class GUIElementLoader implements IGuiHandler {
                 return new GUIMachineElectrolyticMachine(entityPlayer.inventory, (TileEntityMachineElectrolyticMachine)tileEntity);
             case STDemo.GUIIDMachineCalciner:
                 return new GUIMachineCalciner(entityPlayer.inventory, (TileEntityMachineCalciner)tileEntity);
-
             case STDemo.GUIIDDemo:
                 return new GUIContainerDemo(new ContainerDemo(entityPlayer));
             default:

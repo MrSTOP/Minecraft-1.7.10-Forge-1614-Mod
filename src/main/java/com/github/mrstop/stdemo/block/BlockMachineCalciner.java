@@ -25,7 +25,7 @@ public class BlockMachineCalciner extends BlockContainer {
         else {
             TileEntityMachineCalciner tileEntityMachineCalciner = (TileEntityMachineCalciner) worldIn.getTileEntity(x, y, z);
             if (tileEntityMachineCalciner != null){
-                player.openGui(STDemo.instance, STDemo.GUIDMachineElectrolyticMachine, worldIn, x, y, z);
+                player.openGui(STDemo.instance, STDemo.GUIIDMachineCalciner, worldIn, x, y, z);
             }
             return true;
         }

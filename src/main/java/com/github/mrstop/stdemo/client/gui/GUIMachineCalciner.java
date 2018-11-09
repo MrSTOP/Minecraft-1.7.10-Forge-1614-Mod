@@ -7,7 +7,7 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 
 public class GUIMachineCalciner extends GuiContainer {
-    private static final ResourceLocation machineCalciner = new ResourceLocation("stdemo:textures/gui/container/gui_machine_calciner.png");
+    private static final ResourceLocation machineCalcinerTexture = new ResourceLocation("stdemo:textures/gui/container/gui_machine_calciner.png");
     private TileEntityMachineCalciner tileEntityMachineCalciner;
 
     public GUIMachineCalciner(InventoryPlayer inventoryPlayer, TileEntityMachineCalciner tileEntityMachineCalciner) {
@@ -17,6 +17,7 @@ public class GUIMachineCalciner extends GuiContainer {
 
     @Override
     protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
+        this.mc.getTextureManager().bindTexture(machineCalcinerTexture);
         this.drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize);
     }
 }
