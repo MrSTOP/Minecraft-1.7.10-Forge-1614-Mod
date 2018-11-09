@@ -14,9 +14,9 @@ public class GUIMetalFurnace extends GuiContainer {
     private static final ResourceLocation metalFurnaceGuiTexture = new ResourceLocation("stdemo:textures/gui/container/gui_metal_furnace.png");
     private TileEntityMetalFurnace tileEntityMetalFurnace;
 
-    public GUIMetalFurnace(InventoryPlayer inventoryPlayer, TileEntityMetalFurnace tileEntityMetalFurnaceConstruct) {
-        super(new ContainerMetalFurnace(inventoryPlayer, tileEntityMetalFurnaceConstruct));
-        this.tileEntityMetalFurnace = tileEntityMetalFurnaceConstruct;
+    public GUIMetalFurnace(InventoryPlayer inventoryPlayer, TileEntityMetalFurnace tileEntityMetalFurnace) {
+        super(new ContainerMetalFurnace(inventoryPlayer, tileEntityMetalFurnace));
+        this.tileEntityMetalFurnace = tileEntityMetalFurnace;
     }
 
     @Override

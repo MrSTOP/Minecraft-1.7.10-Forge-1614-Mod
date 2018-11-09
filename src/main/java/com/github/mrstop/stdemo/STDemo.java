@@ -26,10 +26,11 @@ public class STDemo {
     public static final float PI = 3.1415923F;
     public static final int GUIIDMetalFurnace = 1;
     public static final int GUIIDDemo = 2;
-    public static final int GUIIDRedstoneFluxFurnace = 3;
+    public static final int GUIIDMachineRedstoneFluxFurnace = 3;
     public static final int GUIIDWindmill = 4;
     public static final int GUIIDQuartzFurnace = 5;
-    public static final int GUIDElectrolyticMachine = 6;
+    public static final int GUIDMachineElectrolyticMachine = 6;
+    public static final int GUIIDMachineCalciner = 7;
 
     @Instance(STDemo.MOD_ID)
     public static STDemo instance;

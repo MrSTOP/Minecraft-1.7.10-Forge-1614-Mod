@@ -66,7 +66,7 @@ public class BlockMachineElectrolyticMachine extends BlockContainer {
         else {
             TileEntityMachineElectrolyticMachine tileEntityMachineElectrolyticMachine = (TileEntityMachineElectrolyticMachine) worldIn.getTileEntity(x, y, z);
             if (tileEntityMachineElectrolyticMachine != null){
-                player.openGui(STDemo.instance, STDemo.GUIDElectrolyticMachine, worldIn, x, y, z);
+                player.openGui(STDemo.instance, STDemo.GUIDMachineElectrolyticMachine, worldIn, x, y, z);
             }
             return true;
         }

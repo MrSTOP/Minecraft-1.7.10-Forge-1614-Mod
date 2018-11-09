@@ -97,7 +97,7 @@ public class BlockMachineRedstoneFluxFurnace extends BlockContainer {
         else {
             TileEntityMachineRedstoneFluxFurnace tileEntityMachineRedstoneFluxFurnace = (TileEntityMachineRedstoneFluxFurnace) worldIn.getTileEntity(x, y, z);
             if (tileEntityMachineRedstoneFluxFurnace != null) {
-                player.openGui(STDemo.instance, STDemo.GUIIDRedstoneFluxFurnace, worldIn, x, y, z);
+                player.openGui(STDemo.instance, STDemo.GUIIDMachineRedstoneFluxFurnace, worldIn, x, y, z);
             }
             return true;
         }
