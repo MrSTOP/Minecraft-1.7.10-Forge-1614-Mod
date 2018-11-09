@@ -2,32 +2,33 @@ package com.github.mrstop.stdemo.common;
 
 
 import com.github.mrstop.stdemo.achievement.AchievementLoader;
-import com.github.mrstop.stdemo.block.BlockLoader;
 import com.github.mrstop.stdemo.client.KeyLoader;
-import com.github.mrstop.stdemo.common.utils.SpecialBlockHighLight;
 import com.github.mrstop.stdemo.core.ICustomHighLight;
 import com.github.mrstop.stdemo.enchantment.EnchantmentLoader;
 import com.github.mrstop.stdemo.item.ItemLoader;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.*;
 import cpw.mods.fml.common.gameevent.InputEvent;
+import cpw.mods.fml.common.gameevent.PlayerEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.OpenGlHelper;
-import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.item.EntityTNTPrimed;
 import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.passive.EntityPig;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
-import net.minecraft.util.*;
+import net.minecraft.util.ChatComponentText;
+import net.minecraft.util.ChatComponentTranslation;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.DrawBlockHighlightEvent;
 import net.minecraftforge.common.MinecraftForge;
@@ -37,14 +38,11 @@ import net.minecraftforge.event.entity.living.LivingFallEvent;
 import net.minecraftforge.event.entity.player.EntityInteractEvent;
 import net.minecraftforge.event.entity.player.FillBucketEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraft.entity.player.EntityPlayer;
-import cpw.mods.fml.common.gameevent.PlayerEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
-import org.lwjgl.opengl.GL11;
 
 
 public class EventLoader {
