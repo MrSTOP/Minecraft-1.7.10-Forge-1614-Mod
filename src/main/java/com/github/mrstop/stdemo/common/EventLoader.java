@@ -5,6 +5,7 @@ import com.github.mrstop.stdemo.achievement.AchievementLoader;
 import com.github.mrstop.stdemo.block.BlockLoader;
 import com.github.mrstop.stdemo.client.KeyLoader;
 import com.github.mrstop.stdemo.common.utils.SpecialBlockHighLight;
+import com.github.mrstop.stdemo.core.ICustomHighLight;
 import com.github.mrstop.stdemo.enchantment.EnchantmentLoader;
 import com.github.mrstop.stdemo.item.ItemLoader;
 import cpw.mods.fml.common.FMLCommonHandler;
@@ -488,193 +489,17 @@ public class EventLoader {
     @SubscribeEvent
     public void drawBLockHighLight(DrawBlockHighlightEvent event){
         if (event.target.typeOfHit.equals(MovingObjectPosition.MovingObjectType.BLOCK)){
-            if (event.player.worldObj.getBlock(event.target.blockX, event.target.blockY, event.target.blockZ).isAssociatedBlock(BlockLoader.windmillBlock)){
-                drawSpecialBlockHighLight(event, SpecialBlockHighLight.SPECIAL_BLOCK_WINDMILL);
-            }
-            if (event.player.worldObj.getBlock(event.target.blockX, event.target.blockY, event.target.blockZ).isAssociatedBlock(BlockLoader.windmillGroundBlock)){
-                drawSpecialBlockHighLight(event, SpecialBlockHighLight.SPECIAL_BLOCK_WINDMILL_GROUND);
+            Block block = event.player.worldObj.getBlock(event.target.blockX, event.target.blockY, event.target.blockZ);
+            if (block instanceof ICustomHighLight){
+                drawBlockHighLight((ICustomHighLight) block);
             }
         }
     }
 
-    @SideOnly(Side.CLIENT)
-    private void drawSpecialBlockHighLight(DrawBlockHighlightEvent event, SpecialBlockHighLight blockEnum){
-        event.setCanceled(true);
-
-        double x = event.player.lastTickPosX + (event.player.posX - event.player.lastTickPosX) * event.partialTicks;
-        double y = event.player.lastTickPosY + (event.player.posY - event.player.lastTickPosY) * event.partialTicks;
-        double z = event.player.lastTickPosZ + (event.player.posZ - event.player.lastTickPosZ) * event.partialTicks;
-
-        float expand = 0.002f;
-        //?????????????????????????????????????????????????????????????????????????????????????????????
-        AxisAlignedBB bounds = event.player.worldObj.getBlock(event.target.blockX, event.target.blockY, event.target.blockZ).getSelectedBoundingBoxFromPool(event.player.worldObj, event.target.blockX, event.target.blockY, event.target.blockZ).expand(expand, expand, expand).getOffsetBoundingBox(-x, -y, -z);
-        //?????????????????????????????????????????????????????????????????????????????????????????????
-
-        int metadata = event.player.worldObj.getBlockMetadata(event.target.blockX, event.target.blockY, event.target.blockZ);
-
-
-        Tessellator tessellator = Tessellator.instance;
-
-        GL11.glEnable(GL11.GL_BLEND);
-        OpenGlHelper.glBlendFunc(770, 771, 1, 0);
-        GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.4F);
-        GL11.glLineWidth(2.0F);
-        GL11.glDisable(GL11.GL_TEXTURE_2D);
-        GL11.glDepthMask(false);
-
-        switch (blockEnum){
-            case SPECIAL_BLOCK_WINDMILL:
-                drawWindmillBlockHighLight(tessellator, bounds, metadata);
-                break;
-            case SPECIAL_BLOCK_WINDMILL_GROUND:
-                drawWindmillGroundBlockHighLight(tessellator, bounds, metadata);
-                break;
-        }
-
-        GL11.glDepthMask(true);
-        GL11.glEnable(GL11.GL_TEXTURE_2D);
-        GL11.glDisable(GL11.GL_BLEND);
-    }
     //TODO 完善选中高亮
-    private void drawWindmillBlockHighLight(Tessellator tessellator, AxisAlignedBB bounds, int metadata){
-        if (metadata < 4){
-            //竖着的四条边
-            //GL_LINES 每两对顶点被解释为一条直线，如果有多对顶点，每对顶点之间互不连接
-            //GL_LINE_STRIP 一系列的连续直线
-            tessellator.startDrawing(GL11.GL_LINES);
-            tessellator.addVertex(bounds.minX, bounds.minY - 0 - metadata, bounds.minZ);
-            tessellator.addVertex(bounds.minX, bounds.maxY + 3 - metadata, bounds.minZ);
-            tessellator.addVertex(bounds.maxX, bounds.minY - 0 - metadata, bounds.minZ);
-            tessellator.addVertex(bounds.maxX, bounds.maxY + 3 - metadata, bounds.minZ);
-            tessellator.addVertex(bounds.maxX, bounds.minY - 0 - metadata, bounds.maxZ);
-            tessellator.addVertex(bounds.maxX, bounds.maxY + 3 - metadata, bounds.maxZ);
-            tessellator.addVertex(bounds.minX, bounds.minY - 0 - metadata, bounds.maxZ);
-            tessellator.addVertex(bounds.minX, bounds.maxY + 3 - metadata, bounds.maxZ);
-            tessellator.draw();
-            //上面的四条边
-            //按顺时针方向绘制了一个矩形
-            tessellator.startDrawing(GL11.GL_LINE_STRIP);
-            tessellator.addVertex(bounds.minX, bounds.maxY + 3 - metadata, bounds.minZ);
-            tessellator.addVertex(bounds.maxX, bounds.maxY + 3 - metadata, bounds.minZ);
-            tessellator.addVertex(bounds.maxX, bounds.maxY + 3 - metadata, bounds.maxZ);
-            tessellator.addVertex(bounds.minX, bounds.maxY + 3 - metadata, bounds.maxZ);
-            tessellator.addVertex(bounds.minX, bounds.maxY + 3 - metadata, bounds.minZ);
-            tessellator.draw();
-            //下面四条边
-            //按顺时针方向绘制了一个矩形
-            tessellator.startDrawing(GL11.GL_LINE_STRIP);
-            tessellator.addVertex(bounds.minX, bounds.minY - 0 - metadata, bounds.minZ);
-            tessellator.addVertex(bounds.maxX, bounds.minY - 0 - metadata, bounds.minZ);
-            tessellator.addVertex(bounds.maxX, bounds.minY - 0 - metadata, bounds.maxZ);
-            tessellator.addVertex(bounds.minX, bounds.minY - 0 - metadata, bounds.maxZ);
-            tessellator.addVertex(bounds.minX, bounds.minY - 0 - metadata, bounds.minZ);
-            tessellator.draw();
+    @SideOnly(Side.CLIENT)
+    private void drawBlockHighLight(ICustomHighLight block){
 
-        }
-        else {
-            //竖着的四条边
-            tessellator.startDrawing(GL11.GL_LINES);
-            tessellator.addVertex(bounds.minX, bounds.minY, bounds.minZ);
-            tessellator.addVertex(bounds.minX, bounds.maxY, bounds.minZ);
-
-            tessellator.addVertex(bounds.maxX, bounds.minY, bounds.minZ);
-            tessellator.addVertex(bounds.maxX, bounds.maxY, bounds.minZ);
-
-            tessellator.addVertex(bounds.maxX, bounds.minY, bounds.maxZ);
-            tessellator.addVertex(bounds.maxX, bounds.maxY, bounds.maxZ);
-
-            tessellator.addVertex(bounds.minX, bounds.minY, bounds.maxZ);
-            tessellator.addVertex(bounds.minX, bounds.maxY, bounds.maxZ);
-            tessellator.draw();
-            //上面的四条边
-            //按顺时针方向绘制了一个矩形
-            tessellator.startDrawing(GL11.GL_LINE_STRIP);
-            tessellator.addVertex(bounds.minX, bounds.maxY, bounds.minZ);
-            tessellator.addVertex(bounds.maxX, bounds.maxY, bounds.minZ);
-            tessellator.addVertex(bounds.maxX, bounds.maxY, bounds.maxZ);
-            tessellator.addVertex(bounds.minX, bounds.maxY, bounds.maxZ);
-            tessellator.addVertex(bounds.minX, bounds.maxY, bounds.minZ);
-            tessellator.draw();
-            //下面四条边
-            //按顺时针方向绘制了一个矩形
-            tessellator.startDrawing(GL11.GL_LINE_STRIP);
-            tessellator.addVertex(bounds.minX, bounds.minY, bounds.minZ);
-            tessellator.addVertex(bounds.maxX, bounds.minY, bounds.minZ);
-            tessellator.addVertex(bounds.maxX, bounds.minY, bounds.maxZ);
-            tessellator.addVertex(bounds.minX, bounds.minY, bounds.maxZ);
-            tessellator.addVertex(bounds.minX, bounds.minY, bounds.minZ);
-            tessellator.draw();
-        }
-    }
-
-    private void drawWindmillGroundBlockHighLight(Tessellator tessellator, AxisAlignedBB bounds, int metadata){
-        switch (metadata){
-            case 0:
-                //竖着的四条边
-                tessellator.startDrawing(GL11.GL_LINES);
-                tessellator.addVertex(bounds.minX, bounds.minY, bounds.minZ);
-                tessellator.addVertex(bounds.minX, bounds.maxY, bounds.minZ);
-
-                tessellator.addVertex(bounds.maxX, bounds.minY, bounds.minZ);
-                tessellator.addVertex(bounds.maxX, bounds.maxY, bounds.minZ);
-
-                tessellator.addVertex(bounds.maxX, bounds.minY, bounds.maxZ);
-                tessellator.addVertex(bounds.maxX, bounds.maxY, bounds.maxZ);
-
-                tessellator.addVertex(bounds.minX, bounds.minY, bounds.maxZ);
-                tessellator.addVertex(bounds.minX, bounds.maxY, bounds.maxZ);
-                tessellator.draw();
-                //上面的四条边
-                //按顺时针方向绘制了一个矩形
-                tessellator.startDrawing(GL11.GL_LINE_STRIP);
-                tessellator.addVertex(bounds.minX, bounds.maxY, bounds.minZ);
-                tessellator.addVertex(bounds.maxX, bounds.maxY, bounds.minZ);
-                tessellator.addVertex(bounds.maxX, bounds.maxY, bounds.maxZ);
-                tessellator.addVertex(bounds.minX, bounds.maxY, bounds.maxZ);
-                tessellator.addVertex(bounds.minX, bounds.maxY, bounds.minZ);
-                tessellator.draw();
-                //下面四条边
-                //按顺时针方向绘制了一个矩形
-                tessellator.startDrawing(GL11.GL_LINE_STRIP);
-                tessellator.addVertex(bounds.minX, bounds.minY, bounds.minZ);
-                tessellator.addVertex(bounds.maxX, bounds.minY, bounds.minZ);
-                tessellator.addVertex(bounds.maxX, bounds.minY, bounds.maxZ);
-                tessellator.addVertex(bounds.minX, bounds.minY, bounds.maxZ);
-                tessellator.addVertex(bounds.minX, bounds.minY, bounds.minZ);
-                tessellator.draw();
-                break;
-            case 1:
-                //竖着的四条边
-                tessellator.startDrawing(GL11.GL_LINES);
-                tessellator.addVertex(bounds.minX + 0.0, bounds.minY, bounds.minZ + 0.0);
-                tessellator.addVertex(bounds.minX + 0.0, bounds.maxY, bounds.minZ + 0.0);
-
-                tessellator.addVertex(bounds.maxX + 1.7, bounds.minY, bounds.minZ + 0.0);
-                tessellator.addVertex(bounds.maxX + 1.7, bounds.maxY, bounds.minZ + 0.0);
-
-                tessellator.addVertex(bounds.maxX + 1.7, bounds.minY, bounds.maxZ + 1.7);
-                tessellator.addVertex(bounds.maxX + 1.7, bounds.maxY, bounds.maxZ + 1.7);
-
-                tessellator.addVertex(bounds.minX + 0.0, bounds.minY, bounds.maxZ + 1.7);
-                tessellator.addVertex(bounds.minX + 0.0, bounds.maxY, bounds.maxZ + 1.7);
-                tessellator.draw();
-                //下面四条边
-                tessellator.startDrawing(GL11.GL_LINE_STRIP);
-                tessellator.addVertex(bounds.minX + 0.0, bounds.minY, bounds.minZ + 0.0);
-                tessellator.addVertex(bounds.maxX + 1.7, bounds.minY, bounds.minZ + 0.0);
-                tessellator.addVertex(bounds.maxX + 1.7, bounds.minY, bounds.maxZ + 1.7);
-                tessellator.addVertex(bounds.minX + 0.0, bounds.minY, bounds.maxZ + 1.7);
-                tessellator.addVertex(bounds.minX + 0.0, bounds.minY, bounds.minZ + 0.0);
-                tessellator.draw();
-                //上面四条边
-                tessellator.startDrawing(GL11.GL_LINE_STRIP);
-                tessellator.addVertex(bounds.minX + 0.0, bounds.maxY, bounds.minZ + 0.0);
-                tessellator.addVertex(bounds.maxX + 1.7, bounds.maxY, bounds.minZ + 0.0);
-                tessellator.addVertex(bounds.maxX + 1.7, bounds.maxY, bounds.maxZ + 1.7);
-                tessellator.addVertex(bounds.minX + 0.0, bounds.maxY, bounds.maxZ + 1.7);
-                tessellator.addVertex(bounds.minX + 0.0, bounds.maxY, bounds.minZ + 0.0);
-                tessellator.draw();
-        }
     }
 
     @Cancelable
