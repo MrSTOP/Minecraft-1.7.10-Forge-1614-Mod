@@ -10,11 +10,11 @@ import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
 @SideOnly(Side.CLIENT)
-public class GuiMetalFurnace extends GuiContainer {
+public class GUIMetalFurnace extends GuiContainer {
     private static final ResourceLocation metalFurnaceGuiTexture = new ResourceLocation("stdemo:textures/gui/container/gui_metal_furnace.png");
     private TileEntityMetalFurnace tileEntityMetalFurnace;
 
-    public GuiMetalFurnace(InventoryPlayer inventoryPlayer, TileEntityMetalFurnace tileEntityMetalFurnaceConstruct) {
+    public GUIMetalFurnace(InventoryPlayer inventoryPlayer, TileEntityMetalFurnace tileEntityMetalFurnaceConstruct) {
         super(new ContainerMetalFurnace(inventoryPlayer, tileEntityMetalFurnaceConstruct));
         this.tileEntityMetalFurnace = tileEntityMetalFurnaceConstruct;
     }

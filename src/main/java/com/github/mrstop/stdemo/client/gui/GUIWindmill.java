@@ -9,11 +9,11 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 
 @SideOnly(Side.CLIENT)
-public class GuiWindmill extends GuiContainer {
+public class GUIWindmill extends GuiContainer {
     private static final ResourceLocation windmillGuiTexture = new ResourceLocation("stdemo:textures/gui/container/gui_windmill.png");
     private  TileEntityWindmill tileEntityWindmill;
 
-    public GuiWindmill(InventoryPlayer inventoryPlayer, TileEntityWindmill tileEntityWindmill) {
+    public GUIWindmill(InventoryPlayer inventoryPlayer, TileEntityWindmill tileEntityWindmill) {
         super(new ContainerWindmill(inventoryPlayer, tileEntityWindmill));
         this.tileEntityWindmill = tileEntityWindmill;
     }

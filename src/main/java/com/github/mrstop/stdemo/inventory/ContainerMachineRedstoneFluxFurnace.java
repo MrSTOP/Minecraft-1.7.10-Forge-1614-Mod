@@ -10,14 +10,14 @@ import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 
-public class ContainerRedstoneFluxFurnace extends Container {
+public class ContainerMachineRedstoneFluxFurnace extends Container {
 
     private TileEntityMachineRedstoneFluxFurnace tileEntityMachineRedstoneFluxFurnace;
     private int lastCookTime;
     //private int lastBurnTime;
     //private int lastItemBurnTime;
 
-    public ContainerRedstoneFluxFurnace(InventoryPlayer inventoryPlayer, TileEntityMachineRedstoneFluxFurnace tileEntityMachineRedstoneFluxFurnaceConstruct) {
+    public ContainerMachineRedstoneFluxFurnace(InventoryPlayer inventoryPlayer, TileEntityMachineRedstoneFluxFurnace tileEntityMachineRedstoneFluxFurnaceConstruct) {
         this.tileEntityMachineRedstoneFluxFurnace = tileEntityMachineRedstoneFluxFurnaceConstruct;
         this.addSlotToContainer(new Slot(tileEntityMachineRedstoneFluxFurnaceConstruct, 0, 56, 17));
         this.addSlotToContainer(new Slot(tileEntityMachineRedstoneFluxFurnaceConstruct, 1, 116, 35));

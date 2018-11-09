@@ -9,14 +9,14 @@ import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 
-public class ContainerElectrolyticMachine extends Container {
+public class ContainerMachineElectrolyticMachine extends Container {
     private TileEntityMachineElectrolyticMachine tileEntityMachineElectrolyticMachine;
     private int processTime = 0;
     private int fluidID = 0;
     private int fluidAmount = 0;
     private int energyAmount = 0;
 
-    public ContainerElectrolyticMachine(InventoryPlayer inventoryPlayer, TileEntityMachineElectrolyticMachine tileEntityMachineElectrolyticMachine) {
+    public ContainerMachineElectrolyticMachine(InventoryPlayer inventoryPlayer, TileEntityMachineElectrolyticMachine tileEntityMachineElectrolyticMachine) {
         this.tileEntityMachineElectrolyticMachine = tileEntityMachineElectrolyticMachine;
         this.addSlotToContainer(new Slot(tileEntityMachineElectrolyticMachine, 0, 56, 32));
         this.addSlotToContainer(new Slot(tileEntityMachineElectrolyticMachine, 1, 105, 32));

@@ -6,10 +6,9 @@ import com.github.mrstop.stdemo.creativetab.CreativeTabsLoader;
 import com.github.mrstop.stdemo.enchantment.EnchantmentLoader;
 import com.github.mrstop.stdemo.entity.EntityLoader;
 import com.github.mrstop.stdemo.fluid.FluidLoader;
-import com.github.mrstop.stdemo.inventory.GuiElementLoader;
+import com.github.mrstop.stdemo.inventory.GUIElementLoader;
 import com.github.mrstop.stdemo.item.ItemLoader;
 import com.github.mrstop.stdemo.block.BlockLoader;
-import com.github.mrstop.stdemo.potion.PotionLoader;
 import com.github.mrstop.stdemo.tileentity.TileEntityLoader;
 import com.github.mrstop.stdemo.worldgen.WorldGeneratorLoader;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -17,7 +16,6 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
-import scala.Int;
 
 import java.util.Map;
 import java.util.TreeMap;
@@ -68,7 +66,7 @@ public class CommonProxy {
         new EnchantmentLoader();
         new AchievementLoader();
         new WorldGeneratorLoader();
-        new GuiElementLoader();
+        new GUIElementLoader();
     }
 
     public void postInit(FMLPostInitializationEvent event) {

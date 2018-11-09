@@ -1,6 +1,6 @@
 package com.github.mrstop.stdemo.client.gui;
 
-import com.github.mrstop.stdemo.inventory.ContainerElectrolyticMachine;
+import com.github.mrstop.stdemo.inventory.ContainerMachineElectrolyticMachine;
 import com.github.mrstop.stdemo.tileentity.TileEntityMachineElectrolyticMachine;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -11,12 +11,12 @@ import net.minecraft.util.IIcon;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.FluidRegistry;
 
-public class GUIElectrolyticMachine extends GuiContainer {
+public class GUIMachineElectrolyticMachine extends GuiContainer {
     private static final ResourceLocation electrolyticMachineGuiTexture = new ResourceLocation("stdemo:textures/gui/container/gui_electrolytic_machine.png");
     private TileEntityMachineElectrolyticMachine tileEntityMachineElectrolyticMachine;
 
-    public GUIElectrolyticMachine(InventoryPlayer inventoryPlayer, TileEntityMachineElectrolyticMachine tileEntityMachineElectrolyticMachine) {
-        super(new ContainerElectrolyticMachine(inventoryPlayer, tileEntityMachineElectrolyticMachine));
+    public GUIMachineElectrolyticMachine(InventoryPlayer inventoryPlayer, TileEntityMachineElectrolyticMachine tileEntityMachineElectrolyticMachine) {
+        super(new ContainerMachineElectrolyticMachine(inventoryPlayer, tileEntityMachineElectrolyticMachine));
         this.tileEntityMachineElectrolyticMachine = tileEntityMachineElectrolyticMachine;
     }
 

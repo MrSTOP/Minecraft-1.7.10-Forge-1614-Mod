@@ -1,6 +1,6 @@
 package com.github.mrstop.stdemo.client.gui;
 
-import com.github.mrstop.stdemo.inventory.ContainerRedstoneFluxFurnace;
+import com.github.mrstop.stdemo.inventory.ContainerMachineRedstoneFluxFurnace;
 import com.github.mrstop.stdemo.tileentity.TileEntityMachineRedstoneFluxFurnace;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -10,13 +10,13 @@ import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
 @SideOnly(Side.CLIENT)
-public class GuiRedstoneFluxFurnace extends GuiContainer {
+public class GUIMachineRedstoneFluxFurnace extends GuiContainer {
 
     private static final ResourceLocation redstoneFluxFurnaceGuiTexture = new ResourceLocation("stdemo:textures/gui/container/gui_redstone_flux_furnace.png");
     private TileEntityMachineRedstoneFluxFurnace tileEntityMachineRedstoneFluxFurnace;
 
-    public GuiRedstoneFluxFurnace(InventoryPlayer inventoryPlayer, TileEntityMachineRedstoneFluxFurnace tileEntityMachineRedstoneFluxFurnace) {
-        super(new ContainerRedstoneFluxFurnace(inventoryPlayer, tileEntityMachineRedstoneFluxFurnace));
+    public GUIMachineRedstoneFluxFurnace(InventoryPlayer inventoryPlayer, TileEntityMachineRedstoneFluxFurnace tileEntityMachineRedstoneFluxFurnace) {
+        super(new ContainerMachineRedstoneFluxFurnace(inventoryPlayer, tileEntityMachineRedstoneFluxFurnace));
         this.tileEntityMachineRedstoneFluxFurnace = tileEntityMachineRedstoneFluxFurnace;
     }
 

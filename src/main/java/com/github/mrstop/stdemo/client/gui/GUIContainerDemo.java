@@ -16,7 +16,7 @@ import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
 @SideOnly(Side.CLIENT)
-public class GuiContainerDemo extends GuiContainer {
+public class GUIContainerDemo extends GuiContainer {
 
     private static final String TEXTURE_PATH = STDemo.MOD_ID + ":textures/gui/container/gui_demo.png";
     private static final ResourceLocation TEXTURE = new ResourceLocation(TEXTURE_PATH);
@@ -24,7 +24,7 @@ public class GuiContainerDemo extends GuiContainer {
     private static final int BUTTON_DOWN = 1;
     private Slot ironSlot;
 
-    public GuiContainerDemo(ContainerDemo inventorySlotsIn) {
+    public GUIContainerDemo(ContainerDemo inventorySlotsIn) {
         super(inventorySlotsIn);
         this.xSize = 176;
         this.ySize = 133;
