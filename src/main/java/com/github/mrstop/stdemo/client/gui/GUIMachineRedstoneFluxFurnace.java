@@ -27,7 +27,8 @@ public class GUIMachineRedstoneFluxFurnace extends GuiContainer {
 
     @Override
     protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-        this.fontRendererObj.drawString(machineRedstoneFluxFurnaceCustomName, 85, 5, 0x727272);
+        int x = (this.xSize - this.machineRedstoneFluxFurnaceCustomName.length() * 4) / 2;
+        this.fontRendererObj.drawString(machineRedstoneFluxFurnaceCustomName, x, 5, 0x727272);
     }
 
     @Override
