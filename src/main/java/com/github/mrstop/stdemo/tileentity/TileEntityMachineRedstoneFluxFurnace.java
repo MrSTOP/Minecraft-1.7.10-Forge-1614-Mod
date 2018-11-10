@@ -241,7 +241,7 @@ public class TileEntityMachineRedstoneFluxFurnace extends TileEntity implements 
 
     @Override
     public String getInventoryName() {
-        return this.isCustomInventoryName() ? this.redstoneFluxFurnaceCustomName : "stdemo.container.furnace";
+        return this.isCustomInventoryName() ? this.redstoneFluxFurnaceCustomName : "container.machineRedstoneFluxFurnace.name";
     }
 
     //////////////////////RF////////////////////////////

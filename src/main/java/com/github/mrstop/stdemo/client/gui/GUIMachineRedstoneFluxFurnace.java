@@ -5,6 +5,7 @@ import com.github.mrstop.stdemo.tileentity.TileEntityMachineRedstoneFluxFurnace;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
@@ -14,10 +15,19 @@ public class GUIMachineRedstoneFluxFurnace extends GuiContainer {
 
     private static final ResourceLocation redstoneFluxFurnaceGuiTexture = new ResourceLocation("stdemo:textures/gui/container/gui_redstone_flux_furnace.png");
     private TileEntityMachineRedstoneFluxFurnace tileEntityMachineRedstoneFluxFurnace;
+    private String machineRedstoneFluxFurnaceCustomName;
 
     public GUIMachineRedstoneFluxFurnace(InventoryPlayer inventoryPlayer, TileEntityMachineRedstoneFluxFurnace tileEntityMachineRedstoneFluxFurnace) {
         super(new ContainerMachineRedstoneFluxFurnace(inventoryPlayer, tileEntityMachineRedstoneFluxFurnace));
         this.tileEntityMachineRedstoneFluxFurnace = tileEntityMachineRedstoneFluxFurnace;
+        this.machineRedstoneFluxFurnaceCustomName = this.tileEntityMachineRedstoneFluxFurnace.isCustomInventoryName() ?
+                this.tileEntityMachineRedstoneFluxFurnace.getInventoryName() :
+                I18n.format(this.tileEntityMachineRedstoneFluxFurnace.getInventoryName());
+    }
+
+    @Override
+    protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
+        this.fontRendererObj.drawString(machineRedstoneFluxFurnaceCustomName, 85, 5, 0x727272);
     }
 
     @Override
@@ -28,8 +38,7 @@ public class GUIMachineRedstoneFluxFurnace extends GuiContainer {
         int y = (this.height - this.ySize) / 2;
         this.drawTexturedModalRect(x, y, 0, 0, this.xSize, this.ySize);
 
-        if (this.tileEntityMachineRedstoneFluxFurnace.isCooking())
-        {
+        if (this.tileEntityMachineRedstoneFluxFurnace.isCooking()) {
             int i = this.tileEntityMachineRedstoneFluxFurnace.getCookProgressScaled(24);
             this.drawTexturedModalRect(x + 79, y + 34, 176, 14, i + 1, 16);
         }
