@@ -126,6 +126,7 @@ public class TileEntityMachineElectrolyticMachine extends TileEntity implements 
         super.readFromNBT(compound);
         this.fluidTank.readFromNBT(compound);
         this.energyStorage.readFromNBT(compound);
+        this.fluidTank.readFromNBT(compound);
         this.processTime = compound.getInteger("ProcessTime");
         NBTTagList nbtTagList = compound.getTagList("Items", 10);
         this.machineElectrolyticMachineItemStack = new ItemStack[this.getSizeInventory()];
@@ -133,7 +134,7 @@ public class TileEntityMachineElectrolyticMachine extends TileEntity implements 
             NBTTagCompound tagCompound = nbtTagList.getCompoundTagAt(i);
             byte b = tagCompound.getByte("Slot");
             if (b >= 0 && b < this.machineElectrolyticMachineItemStack.length){
-                this.machineElectrolyticMachineItemStack[b].readFromNBT(tagCompound);
+                this.machineElectrolyticMachineItemStack[b] = ItemStack.loadItemStackFromNBT(tagCompound);
             }
         }
         if (compound.hasKey("CustomName", 8)){
@@ -146,6 +147,7 @@ public class TileEntityMachineElectrolyticMachine extends TileEntity implements 
         super.writeToNBT(compound);
         this.fluidTank.writeToNBT(compound);
         this.energyStorage.writeToNBT(compound);
+        this.fluidTank.writeToNBT(compound);
         compound.setInteger("ProcessTime", this.processTime);
         NBTTagList nbtTagList = new NBTTagList();
         for (int i = 0; i < this.machineElectrolyticMachineItemStack.length; ++i) {
@@ -254,7 +256,7 @@ public class TileEntityMachineElectrolyticMachine extends TileEntity implements 
 
     @Override
     public ItemStack getStackInSlot(int slotIn) {
-        return null;
+        return this.machineElectrolyticMachineItemStack[slotIn];
     }
 
     @Override
