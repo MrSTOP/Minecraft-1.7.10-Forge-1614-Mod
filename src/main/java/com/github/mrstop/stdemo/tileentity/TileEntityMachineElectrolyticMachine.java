@@ -2,7 +2,9 @@ package com.github.mrstop.stdemo.tileentity;
 
 import cofh.api.energy.EnergyStorage;
 import cofh.api.energy.IEnergyReceiver;
+import com.github.mrstop.stdemo.core.IGUIEnergy;
 import com.github.mrstop.stdemo.core.IGUIFluid;
+import com.github.mrstop.stdemo.core.IGUIProcessTime;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.player.EntityPlayer;
@@ -17,7 +19,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.*;
 
-public class TileEntityMachineElectrolyticMachine extends TileEntity implements ISidedInventory, IFluidHandler, IEnergyReceiver, IGUIFluid {
+public class TileEntityMachineElectrolyticMachine extends TileEntity implements ISidedInventory, IFluidHandler, IEnergyReceiver, IGUIProcessTime, IGUIEnergy, IGUIFluid {
     private static final int fluidTankCapacity = 10_000;
     private static final int totalProcessTime = 100;
     private static final int energyCapacity = 10_000;
@@ -43,37 +45,6 @@ public class TileEntityMachineElectrolyticMachine extends TileEntity implements 
 
     public TileEntityMachineElectrolyticMachine() {
         this.fluidTank = new FluidTank(this.fluidTankCapacity);
-    }
-
-    public int getProcessTime() {
-        return processTime;
-    }
-
-    @Override
-    public int getFluidAmount(int tankIndex) {
-        return this.fluidTank.getFluidAmount();
-    }
-
-    @Override
-    public int getFluidID(int tankIndex) {
-        if (this.fluidTank.getFluid() != null){
-            return this.fluidTank.getFluid().getFluidID();
-        }
-        return 0;
-    }
-
-    public int getEnergyAmount(){
-        return this.energyStorage.getEnergyStored();
-    }
-
-    @SideOnly(Side.CLIENT)
-    public int getEnergyScale(int scale){
-        return (int) (((double) this.GUIEnergyAmount / this.energyCapacity) * scale);
-    }
-
-    @SideOnly(Side.CLIENT)
-    public int getFluidScale(int scale){
-        return (int) (((double) this.GUIFluidAmount / this.fluidTankCapacity) * scale);
     }
 
     public void setCustomInventoryName(String electrolyticMachineCustomName) {
@@ -323,5 +294,43 @@ public class TileEntityMachineElectrolyticMachine extends TileEntity implements 
     @Override
     public boolean isItemValidForSlot(int index, ItemStack stack) {
         return index == 1 ? false : true;
+    }
+
+    @Override
+    public int getProcessTime() {
+        return this.processTime;
+    }
+
+    @Override
+    public int getProcessTimeScale(int scale) {
+        return (int)(((double)this.processTime / this.totalProcessTime) * scale);
+    }
+
+    @Override
+    public int getEnergyAmount() {
+        return this.energyStorage.getEnergyStored();
+    }
+
+    @Override
+    public int getEnergyScale(int scale) {
+        return (int) (((double) this.GUIEnergyAmount / this.energyCapacity) * scale);
+    }
+
+    @Override
+    public int getFluidAmount(int tankIndex) {
+        return this.fluidTank.getFluidAmount();
+    }
+
+    @Override
+    public int getFluidID(int tankIndex) {
+        if (this.fluidTank.getFluid() != null){
+            return this.fluidTank.getFluid().getFluidID();
+        }
+        return 0;
+    }
+
+    @Override
+    public int getFluidScale(int tankIndex, int scale) {
+        return (int) (((double) this.GUIFluidAmount / this.fluidTankCapacity) * scale);;
     }
 }
