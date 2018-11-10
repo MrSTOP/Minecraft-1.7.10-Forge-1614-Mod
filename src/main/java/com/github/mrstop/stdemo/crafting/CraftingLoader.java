@@ -9,7 +9,12 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.CraftingManager;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.oredict.ShapedOreRecipe;
+
+import java.util.Iterator;
+import java.util.List;
 
 
 public class CraftingLoader
@@ -18,6 +23,15 @@ public class CraftingLoader
         registerRecipe();
         registerSmelting();
         registerFuel();
+        List recipes = CraftingManager.getInstance().getRecipeList();
+        Iterator<IRecipe> it = recipes.iterator();
+        while (it.hasNext()){
+            ItemStack itemStack = it.next().getRecipeOutput();
+            if (itemStack != null && itemStack.getItem().equals(Items.stick)){
+                System.out.print("Delete Stick Recipe\n");
+                it.remove();
+            }
+        }
     }
 
     private static void registerRecipe() {
