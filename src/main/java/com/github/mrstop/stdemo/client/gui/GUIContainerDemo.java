@@ -55,7 +55,7 @@ public class GUIContainerDemo extends GuiContainer {
         this.drawHorizontalLine(8, 167, 43, 0x60FF0000);
 
         String title = I18n.format("container.stdemo.demo");
-        this.fontRendererObj.drawString(title, (this.xSize -this.fontRendererObj.getStringWidth(title)) / 2, 6, 0x404040);
+        this.fontRendererObj.drawString(title, (this.xSize - this.fontRendererObj.getStringWidth(title)) / 2, 6, 0x404040);
 
         ItemStack itemStack = new ItemStack(ItemLoader.bestSword);
         this.itemRender.renderItemAndEffectIntoGUI(this.fontRendererObj, this.mc.getTextureManager(), itemStack, 8, 20);

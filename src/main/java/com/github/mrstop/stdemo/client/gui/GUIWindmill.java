@@ -1,10 +1,12 @@
 package com.github.mrstop.stdemo.client.gui;
 
+import com.github.mrstop.stdemo.STDemo;
 import com.github.mrstop.stdemo.inventory.ContainerWindmill;
 import com.github.mrstop.stdemo.tileentity.TileEntityWindmill;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 
@@ -12,10 +14,20 @@ import net.minecraft.util.ResourceLocation;
 public class GUIWindmill extends GuiContainer {
     private static final ResourceLocation windmillGuiTexture = new ResourceLocation("stdemo:textures/gui/container/gui_windmill.png");
     private  TileEntityWindmill tileEntityWindmill;
+    private String windmillCustomName;
 
     public GUIWindmill(InventoryPlayer inventoryPlayer, TileEntityWindmill tileEntityWindmill) {
         super(new ContainerWindmill(inventoryPlayer, tileEntityWindmill));
         this.tileEntityWindmill = tileEntityWindmill;
+        this.windmillCustomName = this.tileEntityWindmill.isCustomInventoryName()
+                ? this.tileEntityWindmill.getInventoryName()
+                : I18n.format(this.tileEntityWindmill.getInventoryName());
+    }
+
+    @Override
+    protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
+        int x = (this.xSize - this.fontRendererObj.getStringWidth(this.windmillCustomName)) / 2;
+        this.fontRendererObj.drawString(this.windmillCustomName, x, 5, STDemo.GUICustomNameColor);
     }
 
     @Override

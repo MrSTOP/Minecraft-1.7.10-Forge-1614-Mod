@@ -1,10 +1,12 @@
 package com.github.mrstop.stdemo.client.gui;
 
+import com.github.mrstop.stdemo.STDemo;
 import com.github.mrstop.stdemo.inventory.ContainerMetalFurnace;
 import com.github.mrstop.stdemo.tileentity.TileEntityMetalFurnace;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
@@ -13,10 +15,20 @@ import org.lwjgl.opengl.GL11;
 public class GUIMetalFurnace extends GuiContainer {
     private static final ResourceLocation metalFurnaceGuiTexture = new ResourceLocation("stdemo:textures/gui/container/gui_metal_furnace.png");
     private TileEntityMetalFurnace tileEntityMetalFurnace;
+    private String metalFurnaceCustomName;
 
     public GUIMetalFurnace(InventoryPlayer inventoryPlayer, TileEntityMetalFurnace tileEntityMetalFurnace) {
         super(new ContainerMetalFurnace(inventoryPlayer, tileEntityMetalFurnace));
         this.tileEntityMetalFurnace = tileEntityMetalFurnace;
+        this.metalFurnaceCustomName = this.tileEntityMetalFurnace.isCustomInventoryName()
+                ? this.tileEntityMetalFurnace.getInventoryName()
+                : I18n.format(this.tileEntityMetalFurnace.getInventoryName());
+    }
+
+    @Override
+    protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
+        int x = (this.xSize - this.fontRendererObj.getStringWidth(this.metalFurnaceCustomName)) / 2;
+        this.fontRendererObj.drawString(this.metalFurnaceCustomName, x, 5, STDemo.GUICustomNameColor);
     }
 
     @Override

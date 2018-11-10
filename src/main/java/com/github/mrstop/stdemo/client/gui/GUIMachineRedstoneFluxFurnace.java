@@ -1,5 +1,6 @@
 package com.github.mrstop.stdemo.client.gui;
 
+import com.github.mrstop.stdemo.STDemo;
 import com.github.mrstop.stdemo.inventory.ContainerMachineRedstoneFluxFurnace;
 import com.github.mrstop.stdemo.tileentity.TileEntityMachineRedstoneFluxFurnace;
 import cpw.mods.fml.relauncher.Side;
@@ -20,15 +21,15 @@ public class GUIMachineRedstoneFluxFurnace extends GuiContainer {
     public GUIMachineRedstoneFluxFurnace(InventoryPlayer inventoryPlayer, TileEntityMachineRedstoneFluxFurnace tileEntityMachineRedstoneFluxFurnace) {
         super(new ContainerMachineRedstoneFluxFurnace(inventoryPlayer, tileEntityMachineRedstoneFluxFurnace));
         this.tileEntityMachineRedstoneFluxFurnace = tileEntityMachineRedstoneFluxFurnace;
-        this.machineRedstoneFluxFurnaceCustomName = this.tileEntityMachineRedstoneFluxFurnace.isCustomInventoryName() ?
-                this.tileEntityMachineRedstoneFluxFurnace.getInventoryName() :
-                I18n.format(this.tileEntityMachineRedstoneFluxFurnace.getInventoryName());
+        this.machineRedstoneFluxFurnaceCustomName = this.tileEntityMachineRedstoneFluxFurnace.isCustomInventoryName()
+                ? this.tileEntityMachineRedstoneFluxFurnace.getInventoryName()
+                : I18n.format(this.tileEntityMachineRedstoneFluxFurnace.getInventoryName());
     }
 
     @Override
     protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-        int x = (this.xSize - this.machineRedstoneFluxFurnaceCustomName.length() * 4) / 2;
-        this.fontRendererObj.drawString(machineRedstoneFluxFurnaceCustomName, x, 5, 0x727272);
+        int x = (this.xSize - this.fontRendererObj.getStringWidth(this.machineRedstoneFluxFurnaceCustomName)) / 2;
+        this.fontRendererObj.drawString(machineRedstoneFluxFurnaceCustomName, x, 5, STDemo.GUICustomNameColor);
     }
 
     @Override

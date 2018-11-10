@@ -32,6 +32,8 @@ public class STDemo {
     public static final int GUIDMachineElectrolyticMachine = 6;
     public static final int GUIIDMachineCalciner = 7;
 
+    public static final int GUICustomNameColor = 0x727272;
+
     @Instance(STDemo.MOD_ID)
     public static STDemo instance;
 
