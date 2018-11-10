@@ -19,6 +19,9 @@ import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.*;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.ForgeDirection;
@@ -99,6 +102,17 @@ public class TileEntityMetalFurnace extends TileEntity implements ISidedInventor
     @Override
     public boolean isCustomInventoryName() {
         return this.metalFurnaceCustomName != null && this.metalFurnaceCustomName.length() > 0;
+    }
+    @Override
+    public Packet getDescriptionPacket() {
+        NBTTagCompound nbtTagCompound = new NBTTagCompound();
+        this.writeToNBT(nbtTagCompound);
+        return new S35PacketUpdateTileEntity(this.xCoord, this.yCoord, this.zCoord, 1, nbtTagCompound);
+    }
+
+    @Override
+    public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
+        readFromNBT(pkt.getNbtCompound());
     }
 
     @Override
@@ -453,7 +467,7 @@ public class TileEntityMetalFurnace extends TileEntity implements ISidedInventor
     //物品栏名称
     @Override
     public String getInventoryName() {
-        return this.isCustomInventoryName() ? this.metalFurnaceCustomName : "container.furnace";
+        return this.isCustomInventoryName() ? this.metalFurnaceCustomName : "container.metalFurnace.name";
     }
     ///////////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////IndustrialCraft///////////////////////////////////////////

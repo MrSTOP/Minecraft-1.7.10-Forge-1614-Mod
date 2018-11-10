@@ -11,6 +11,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
 
@@ -80,9 +83,25 @@ public class TileEntityMachineRedstoneFluxFurnace extends TileEntity implements 
         return this.redstoneFluxFurnaceCustomName != null && this.redstoneFluxFurnaceCustomName.length() > 0;
     }
 
+    //好像getDescriptionPacket方法会在服务器端调用，onDataPacket会在客户端调用
+    //这两个方法好像只会在进入游戏世界时针对每个TileEntity调用一次，使数据同步。
+    //反正这两个方法可以让GUI上的CustomName正确显示
+    ///////////////////////////////////////////////////////////////////
     @Override
-    public void readFromNBT(NBTTagCompound compound)
-    {
+    public Packet getDescriptionPacket() {
+        NBTTagCompound nbtTagCompound = new NBTTagCompound();
+        this.writeToNBT(nbtTagCompound);
+        return new S35PacketUpdateTileEntity(this.xCoord, this.yCoord, this.zCoord, 1, nbtTagCompound);
+    }
+
+    @Override
+    public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
+        readFromNBT(pkt.getNbtCompound());
+    }
+    ///////////////////////////////////////////////////////////////////
+
+    @Override
+    public void readFromNBT(NBTTagCompound compound) {
         super.readFromNBT(compound);
         energyStorage.readFromNBT(compound);
         this.redstoneFluxFurnaceItemStack = new ItemStack[this.getSizeInventory()];

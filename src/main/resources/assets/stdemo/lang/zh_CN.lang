@@ -32,6 +32,7 @@ container.machineElectrolyticMachine.name=电解机
 container.machineRedstoneFluxFurnace.name=RF熔炉
 container.metalFurnace.name=金属熔炉
 container.quartzFurnace.name=石英炉
+container.windmill.name=风车
 entity.stdemo.GoldenChicken.name=黄金鸡
 enchantment.fireBurn=火焰灼烧
 potion.fallProtection=摔落保护

@@ -241,7 +241,7 @@ public class TileEntityWindmill extends TileEntity implements ISidedInventory, I
 
     @Override
     public String getInventoryName() {
-        return this.isCustomInventoryName() ? this.windmillCustomName : "stdemo.container.windmill";
+        return this.isCustomInventoryName() ? this.windmillCustomName : "container.windmill.name";
     }
 
     public void setInventoryName(String name){

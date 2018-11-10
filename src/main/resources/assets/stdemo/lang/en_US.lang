@@ -32,6 +32,7 @@ container.machineElectrolyticMachine.name=Electrolytic Machine
 container.machineRedstoneFluxFurnace.name=RF Furnace
 container.metalFurnace.name=Metal Furnace
 container.quartzFurnace.name=Quartz Furnace
+container.windmill.name=Windmill
 entity.stdemo.GoldenChicken.name=Golden Chicken
 enchantment.fireBurn=Fire Burning
 potion.fallProtection=Fall Protection
