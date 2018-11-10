@@ -18,7 +18,7 @@ public class TileEntityMachineRedstoneFluxFurnace extends TileEntity implements 
 
     private static final int processTime = 100;
     private static final int[] slotTop = new int[]{0};
-    private static final int[] slotSide = new int[]{2, 1};
+    private static final int[] slotSide = new int[]{1};
     private static int capacity = 1000000;
     private static int maxReceive = 30;
 
@@ -140,8 +140,8 @@ public class TileEntityMachineRedstoneFluxFurnace extends TileEntity implements 
                     if (this.redstoneFluxFurnaceCookTime >= processTime) {
                         this.redstoneFluxFurnaceCookTime = 0;
                         this.smeltItem();
-                        isDirty = true;
                     }
+                    isDirty = true;
                 }
             }
         }
@@ -199,30 +199,36 @@ public class TileEntityMachineRedstoneFluxFurnace extends TileEntity implements 
     public void closeChest() {}
 
     @Override
-    public boolean isItemValidForSlot(int index, ItemStack stack)
-    {
+    public boolean isItemValidForSlot(int index, ItemStack stack) {
         return index == 1 ? false : true;
-        //如果为产物槽返回false如果不是产物槽返回(如果是燃料槽返回(判断是否为燃料是返回true，否则返回false)如果不是返回true（即判断结果为原料槽）)
     }
 
+    //好像是用来获取ItemStack数组对应的索引数组?
+    //slotTop中对应的数字代表了从顶部可以访问的物品槽（即ItemStack数组的索引(此处即为索引0对应的ItemStack，即原料ItemStack))
+    //slotSide中对应的数字代表了从除顶部以外的面可以访问的物品槽（即ItemStack数组的索引(此处即为索引1对应的ItemStack，即产物ItemStack))
     @Override
-    public int[] getSlotsForFace(int slotsSides)
-    {
-        return slotsSides == 1 ? slotTop : slotSide;
+    public int[] getSlotsForFace(int side) {
+        return side == 1 ? slotTop : slotSide;
         //slotsSides等于0返回slotBottom为1返回slotTop为其他返回slotSide
     }
-
+    //好像BC的物品管道和原版漏斗都会检查要插入的物品槽的ItemStack与原有的ItemStack是否是同一种物品?
+    //为了保险此处检验了这两者是否一致
     @Override
-    public boolean canInsertItem(int slots, ItemStack itemStack, int sides)
-    {
-        return this.isItemValidForSlot(slots, itemStack);
+    public boolean canInsertItem(int slots, ItemStack itemStack, int sides) {
+        //从下面插入物品的情况
+        if (sides == 0){
+            return false;
+        }
+        return this.isItemValidForSlot(slots, itemStack) && this.redstoneFluxFurnaceItemStack[slots].isItemEqual(itemStack);
     }
 
     @Override
-    public boolean canExtractItem(int slots, ItemStack itemStack, int sides)
-    {
-        return sides != 0 || slots != 1 || itemStack.getItem() == Items.bucket;
-        //如果不是下面或物品槽不是原料槽或物品是桶返回true
+    public boolean canExtractItem(int slots, ItemStack itemStack, int sides) {
+        //从上面抽取产物的情况
+        if (sides == 1 && slots == 1){
+            return false;
+        }
+        return true;
     }
 
     public boolean isCooking() {
