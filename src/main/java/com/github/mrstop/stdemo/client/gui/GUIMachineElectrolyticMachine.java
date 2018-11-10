@@ -1,6 +1,7 @@
 package com.github.mrstop.stdemo.client.gui;
 
 import com.github.mrstop.stdemo.STDemo;
+import com.github.mrstop.stdemo.client.utils.GUIHelper;
 import com.github.mrstop.stdemo.inventory.ContainerMachineElectrolyticMachine;
 import com.github.mrstop.stdemo.tileentity.TileEntityMachineElectrolyticMachine;
 import net.minecraft.client.Minecraft;
@@ -40,13 +41,13 @@ public class GUIMachineElectrolyticMachine extends GuiContainer {
         this.drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize);
 
         //绘制能量条
-        int i = this.tileEntityMachineElectrolyticMachine.getEnergyScale(60);
-        this.drawTexturedModalRect(this.guiLeft + 12, this.guiTop + 73 - i, 176, 60 - i, 16, i);
+        int scale = this.tileEntityMachineElectrolyticMachine.getEnergyScale(60);
+        this.drawTexturedModalRect(this.guiLeft + 12, this.guiTop + 73 - scale, 176, 60 - scale, 16, scale);
 
         //绘制流体槽*******************************************************************
-        i = this.tileEntityMachineElectrolyticMachine.getFluidScale(60);
+        scale = this.tileEntityMachineElectrolyticMachine.getFluidScale(60);
         //获取以及绑定材质
-        //*******************************************
+        //++++++++++++++++++++++++++++++++++++++++++
         IIcon icon = null;
         if (FluidRegistry.getFluid(this.tileEntityMachineElectrolyticMachine.GUIFluidID) != null){
             icon = FluidRegistry.getFluid(this.tileEntityMachineElectrolyticMachine.GUIFluidID).getIcon();
@@ -55,32 +56,10 @@ public class GUIMachineElectrolyticMachine extends GuiContainer {
             icon = ((TextureMap) Minecraft.getMinecraft().getTextureManager().getTexture(TextureMap.locationBlocksTexture)).getAtlasSprite("missingno");
         }
         this.mc.renderEngine.bindTexture(TextureMap.locationBlocksTexture);
-        //*******************************************
+        //++++++++++++++++++++++++++++++++++++++++++
 
         //绘制流体材质
-        ///////////////////////////////////////////////////////////////
-        Tessellator tessellator = Tessellator.instance;
-        double minU = icon.getInterpolatedU(0);
-        double maxU = icon.getInterpolatedU(16);
-        double minV = icon.getInterpolatedV(0);
-        double maxV = icon.getInterpolatedV(16);
-        for (int j = 0; j < i / 16; j++) {
-            tessellator.startDrawingQuads();
-            tessellator.addVertexWithUV(this.guiLeft + 149 + 16, this.guiTop + 73 - j * 16, zLevel,maxU, minV);
-            tessellator.addVertexWithUV(this.guiLeft + 149 + 16, this.guiTop + 73 - 16 - j * 16, zLevel, maxU, maxV);
-            tessellator.addVertexWithUV(this.guiLeft + 149 + 00, this.guiTop + 73 - 16 - j * 16, zLevel, minU, maxV);
-            tessellator.addVertexWithUV(this.guiLeft + 149 + 00, this.guiTop + 73 - j * 16, zLevel, minU, minV);
-            tessellator.draw();
-        }
-        if (i % 16 != 0){
-            tessellator.startDrawingQuads();
-            tessellator.addVertexWithUV(this.guiLeft + 149 + 16, this.guiTop + 73 - (i / 16) * 16, zLevel,maxU, minV);
-            tessellator.addVertexWithUV(this.guiLeft + 149 + 16, this.guiTop + 73 - (i / 16) * 16 - (i % 16), zLevel, maxU, icon.getInterpolatedV(i %16));
-            tessellator.addVertexWithUV(this.guiLeft + 149 + 00, this.guiTop + 73 - (i / 16) * 16 - (i % 16), zLevel, minU, icon.getInterpolatedV(i %16));
-            tessellator.addVertexWithUV(this.guiLeft + 149 + 00, this.guiTop + 73 - (i / 16) * 16, zLevel, minU, minV);
-            tessellator.draw();
-        }
-        ///////////////////////////////////////////////////////////////
+        GUIHelper.drawGUIFluid(icon, this.guiLeft, this.guiTop, 149, 73, scale, this.zLevel);
         //绘制流体槽结束***************************************************************
         mc.renderEngine.bindTexture(electrolyticMachineGuiTexture);
         this.drawTexturedModalRect(this.guiLeft + 149, this.guiTop + 13, 192, 0, 16, 60);

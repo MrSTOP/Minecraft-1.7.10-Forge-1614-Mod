@@ -233,18 +233,18 @@ public class TileEntityMachineRedstoneFluxFurnace extends TileEntity implements 
     //好像BC的物品管道和原版漏斗都会检查要插入的物品槽的ItemStack与原有的ItemStack是否是同一种物品?
     //为了保险此处检验了这两者是否一致
     @Override
-    public boolean canInsertItem(int slots, ItemStack itemStack, int sides) {
+    public boolean canInsertItem(int slot, ItemStack itemStack, int side) {
         //从下面插入物品的情况
-        if (sides == 0){
+        if (side == 0){
             return false;
         }
-        return this.isItemValidForSlot(slots, itemStack) && this.redstoneFluxFurnaceItemStack[slots].isItemEqual(itemStack);
+        return this.isItemValidForSlot(slot, itemStack) && this.redstoneFluxFurnaceItemStack[slot].isItemEqual(itemStack);
     }
 
     @Override
-    public boolean canExtractItem(int slots, ItemStack itemStack, int sides) {
+    public boolean canExtractItem(int slot, ItemStack itemStack, int side) {
         //从上面抽取产物的情况
-        if (sides == 1 && slots == 1){
+        if (side == 1 && slot == 1){
             return false;
         }
         return true;

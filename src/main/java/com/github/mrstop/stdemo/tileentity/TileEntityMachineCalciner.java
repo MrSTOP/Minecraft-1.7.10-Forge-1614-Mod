@@ -143,7 +143,7 @@ public class TileEntityMachineCalciner extends TileEntity implements IEnergyRece
 
     @Override
     public String getInventoryName() {
-        return this.isCustomInventoryName() ? this.calcinerCustomName : "stdemo.container.machineCalciner";
+        return this.isCustomInventoryName() ? this.calcinerCustomName : "container.machineCalciner.name";
     }
 
     @Override
@@ -153,7 +153,7 @@ public class TileEntityMachineCalciner extends TileEntity implements IEnergyRece
 
     @Override
     public int getInventoryStackLimit() {
-        return 0;
+        return 64;
     }
 
     @Override

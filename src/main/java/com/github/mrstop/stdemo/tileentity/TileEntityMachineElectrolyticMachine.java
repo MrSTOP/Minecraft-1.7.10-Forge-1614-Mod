@@ -9,6 +9,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
@@ -21,6 +22,8 @@ public class TileEntityMachineElectrolyticMachine extends TileEntity implements 
     private static final int totalProcessTime = 100;
     private static final int energyCapacity = 10_000;
     private static final int energyMaxInput = 30;
+    private static final int[] slotTop = new int[]{0};
+    private static final int[] slotSide = new int[]{1};
 
     @SideOnly(Side.CLIENT)
     public int GUIFluidAmount = 0;
@@ -34,6 +37,7 @@ public class TileEntityMachineElectrolyticMachine extends TileEntity implements 
     private FluidTank fluidTank;
     private EnergyStorage energyStorage = new EnergyStorage(this.energyCapacity, this.energyMaxInput);
     private int processTime = 0;
+    private ItemStack[] machineElectrolyticMachineItemStack = new ItemStack[2];
 
     private String electrolyticMachineCustomName = null;
 
@@ -123,6 +127,15 @@ public class TileEntityMachineElectrolyticMachine extends TileEntity implements 
         this.fluidTank.readFromNBT(compound);
         this.energyStorage.readFromNBT(compound);
         this.processTime = compound.getInteger("ProcessTime");
+        NBTTagList nbtTagList = compound.getTagList("Items", 10);
+        this.machineElectrolyticMachineItemStack = new ItemStack[this.getSizeInventory()];
+        for (int i = 0; i < nbtTagList.tagCount(); ++i) {
+            NBTTagCompound tagCompound = nbtTagList.getCompoundTagAt(i);
+            byte b = tagCompound.getByte("Slot");
+            if (b >= 0 && b < this.machineElectrolyticMachineItemStack.length){
+                this.machineElectrolyticMachineItemStack[b].readFromNBT(tagCompound);
+            }
+        }
         if (compound.hasKey("CustomName", 8)){
             this.electrolyticMachineCustomName = compound.getString("CustomName");
         }
@@ -134,6 +147,16 @@ public class TileEntityMachineElectrolyticMachine extends TileEntity implements 
         this.fluidTank.writeToNBT(compound);
         this.energyStorage.writeToNBT(compound);
         compound.setInteger("ProcessTime", this.processTime);
+        NBTTagList nbtTagList = new NBTTagList();
+        for (int i = 0; i < this.machineElectrolyticMachineItemStack.length; ++i) {
+            if (this.machineElectrolyticMachineItemStack[i] != null){
+                NBTTagCompound tagCompound = new NBTTagCompound();
+                tagCompound.setByte("Slot", (byte) i);
+                this.machineElectrolyticMachineItemStack[i].writeToNBT(tagCompound);
+                nbtTagList.appendTag(tagCompound);
+            }
+        }
+        compound.setTag("Items", nbtTagList);
         if (this.isCustomInventoryName()){
             compound.setString("CustomName", this.electrolyticMachineCustomName);
         }
@@ -204,23 +227,29 @@ public class TileEntityMachineElectrolyticMachine extends TileEntity implements 
     }
 
     @Override
-    public int[] getSlotsForFace(int p_94128_1_) {
-        return new int[0];
+    public int[] getSlotsForFace(int side) {
+        return side == 1 ? slotTop : slotSide;
     }
 
     @Override
-    public boolean canInsertItem(int p_102007_1_, ItemStack p_102007_2_, int p_102007_3_) {
-        return false;
+    public boolean canInsertItem(int slot, ItemStack itemStack, int side) {
+        if (side == 0){
+            return false;
+        }
+        return this.isItemValidForSlot(slot, itemStack) && this.machineElectrolyticMachineItemStack[slot].isItemEqual(itemStack);
     }
 
     @Override
-    public boolean canExtractItem(int p_102008_1_, ItemStack p_102008_2_, int p_102008_3_) {
-        return false;
+    public boolean canExtractItem(int slot, ItemStack itemStack, int side) {
+        if (side == 1 && slot == 1){
+            return false;
+        }
+        return true;
     }
 
     @Override
     public int getSizeInventory() {
-        return 0;
+        return this.machineElectrolyticMachineItemStack.length;
     }
 
     @Override
@@ -230,7 +259,20 @@ public class TileEntityMachineElectrolyticMachine extends TileEntity implements 
 
     @Override
     public ItemStack decrStackSize(int index, int count) {
-        return null;
+        ItemStack itemStack = null;
+        if (this.machineElectrolyticMachineItemStack[index] != null){
+            if (this.machineElectrolyticMachineItemStack[index].stackSize <= count){
+                itemStack = this.machineElectrolyticMachineItemStack[index];
+                this.machineElectrolyticMachineItemStack[index] = null;
+            }
+            else {
+                itemStack = this.machineElectrolyticMachineItemStack[index].splitStack(count);
+                if (this.machineElectrolyticMachineItemStack[index].stackSize == 0){
+                    this.machineElectrolyticMachineItemStack[index] = null;
+                }
+            }
+        }
+        return itemStack;
     }
 
     @Override
@@ -240,12 +282,15 @@ public class TileEntityMachineElectrolyticMachine extends TileEntity implements 
 
     @Override
     public void setInventorySlotContents(int index, ItemStack stack) {
-
+        this.machineElectrolyticMachineItemStack[index] = stack;
+        if (stack != null && stack.stackSize > this.getInventoryStackLimit()) {
+            stack.stackSize = this.getInventoryStackLimit();
+        }
     }
 
     @Override
     public String getInventoryName() {
-        return this.isCustomInventoryName() ? this.electrolyticMachineCustomName : "stdemo.container.electrolyticMachine";
+        return this.isCustomInventoryName() ? this.electrolyticMachineCustomName : "container.machineElectrolyticMachine.name";
     }
 
     @Override
@@ -255,7 +300,7 @@ public class TileEntityMachineElectrolyticMachine extends TileEntity implements 
 
     @Override
     public int getInventoryStackLimit() {
-        return 0;
+        return 64;
     }
 
     @Override
@@ -275,6 +320,6 @@ public class TileEntityMachineElectrolyticMachine extends TileEntity implements 
 
     @Override
     public boolean isItemValidForSlot(int index, ItemStack stack) {
-        return true;
+        return index == 1 ? false : true;
     }
 }
