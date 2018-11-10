@@ -46,22 +46,10 @@ public class GUIMachineElectrolyticMachine extends GuiContainer {
 
         //绘制流体槽*******************************************************************
         scale = this.tileEntityMachineElectrolyticMachine.getFluidScale(60);
-        //获取以及绑定材质
-        //++++++++++++++++++++++++++++++++++++++++++
-        IIcon icon = null;
-        if (FluidRegistry.getFluid(this.tileEntityMachineElectrolyticMachine.GUIFluidID) != null){
-            icon = FluidRegistry.getFluid(this.tileEntityMachineElectrolyticMachine.GUIFluidID).getIcon();
-        }
-        if (icon == null) {
-            icon = ((TextureMap) Minecraft.getMinecraft().getTextureManager().getTexture(TextureMap.locationBlocksTexture)).getAtlasSprite("missingno");
-        }
-        this.mc.renderEngine.bindTexture(TextureMap.locationBlocksTexture);
-        //++++++++++++++++++++++++++++++++++++++++++
-
         //绘制流体材质
-        GUIHelper.drawGUIFluid(icon, this.guiLeft, this.guiTop, 149, 73, scale, this.zLevel);
-        //绘制流体槽结束***************************************************************
+        GUIHelper.drawGUIFluid(this.mc.renderEngine, this.tileEntityMachineElectrolyticMachine.GUIFluidID, this.guiLeft, this.guiTop, 149, 73, scale, this.zLevel);
         mc.renderEngine.bindTexture(electrolyticMachineGuiTexture);
+        //绘制流体槽结束***************************************************************
         this.drawTexturedModalRect(this.guiLeft + 149, this.guiTop + 13, 192, 0, 16, 60);
     }
 }

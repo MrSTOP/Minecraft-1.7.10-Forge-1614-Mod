@@ -1,6 +1,7 @@
 package com.github.mrstop.stdemo.client.gui;
 
 import com.github.mrstop.stdemo.STDemo;
+import com.github.mrstop.stdemo.client.utils.GUIHelper;
 import com.github.mrstop.stdemo.inventory.ContainerMachineCalciner;
 import com.github.mrstop.stdemo.tileentity.TileEntityMachineCalciner;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -30,6 +31,20 @@ public class GUIMachineCalciner extends GuiContainer {
     @Override
     protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
         this.mc.getTextureManager().bindTexture(machineCalcinerTexture);
+        int x = (this.width - this.xSize) / 2;
+        int y = (this.height - this.ySize) / 2;
         this.drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize);
+
+        //绘制能量条
+        int scale = this.tileEntityMachineCalciner.getEnergyScale(60);
+        this.drawTexturedModalRect(this.guiLeft + 12, this.guiTop + 73 - scale, 176, 60 - scale, 16, scale);
+
+        //绘制流体槽*******************************************************************
+        scale = this.tileEntityMachineCalciner.getFluidScale(0, 60);
+        //绘制流体材质
+        GUIHelper.drawGUIFluid(this.mc.renderEngine, this.tileEntityMachineCalciner.GUIFluidID, this.guiLeft, this.guiTop, 149, 73, scale, this.zLevel);
+        mc.renderEngine.bindTexture(machineCalcinerTexture);
+        //绘制流体槽结束***************************************************************
+        this.drawTexturedModalRect(this.guiLeft + 149, this.guiTop + 13, 192, 0, 16, 60);
     }
 }
