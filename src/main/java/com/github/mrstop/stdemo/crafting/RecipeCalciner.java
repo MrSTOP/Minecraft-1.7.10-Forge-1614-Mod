@@ -16,6 +16,11 @@ public class RecipeCalciner {
     private RecipeCalciner() {
         this.addRecipes(Item.getItemFromBlock(BlockLoader.cinnabarOre), null, new FluidStack(FluidLoader.fluidMercury, 100));
     }
+
+    public static RecipeCalciner getInstance(){
+        return recipeCalciner;
+    }
+
     public void addRecipes(Item itemIn, ItemStack itemStackOut, FluidStack fluidStackOut){
         this.addRecipes(new ItemStack(itemIn), itemStackOut, fluidStackOut);
     }
@@ -29,7 +34,23 @@ public class RecipeCalciner {
         this.productionFluidList.put(itemStackIn, fluidStackOut);
     }
 
+    public boolean canCalcine(ItemStack itemStackIn){
+        boolean canCalcine = false;
+        if (itemStackIn == null){
+            return false;
+        }
+        for (ItemStack itemStack : this.productionItemList.keySet()) {
+            if (itemStack.isItemEqual(itemStackIn) && itemStackIn.stackSize >= itemStack.stackSize){
+                canCalcine = true;
+            }
+        }
+        return canCalcine;
+    }
+
     public ItemStack getItemResult(ItemStack itemStackIn){
+        if (itemStackIn == null){
+            return null;
+        }
         for (Map.Entry<ItemStack, ItemStack> entry : this.productionItemList.entrySet()) {
             ItemStack itemStackKey = entry.getKey();
             ItemStack itemStackValue = entry.getValue();
@@ -43,6 +64,9 @@ public class RecipeCalciner {
     }
 
     public FluidStack getFluidResult(ItemStack itemStackIn){
+        if (itemStackIn == null){
+            return null;
+        }
         for (Map.Entry<ItemStack, FluidStack> entry : this.productionFluidList.entrySet()) {
             ItemStack itemStackKey = entry.getKey();
             FluidStack fluidStackValue = entry.getValue();

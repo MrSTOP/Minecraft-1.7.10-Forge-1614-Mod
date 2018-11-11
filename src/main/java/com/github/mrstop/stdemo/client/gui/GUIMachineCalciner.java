@@ -30,17 +30,21 @@ public class GUIMachineCalciner extends GuiContainer {
 
     @Override
     protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
+        int scale = 0;
         this.mc.getTextureManager().bindTexture(machineCalcinerTexture);
         int x = (this.width - this.xSize) / 2;
         int y = (this.height - this.ySize) / 2;
         this.drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize);
 
+        scale = this.tileEntityMachineCalciner.getProcessTimeScale(19);
+        this.drawTexturedModalRect(this.guiLeft + 79, this.guiTop + 34, 176, 60, scale, 12);
+
         //绘制能量条
-        int scale = this.tileEntityMachineCalciner.getEnergyScale(60);
+        scale = this.tileEntityMachineCalciner.getEnergyScale(60);
         this.drawTexturedModalRect(this.guiLeft + 12, this.guiTop + 73 - scale, 176, 60 - scale, 16, scale);
 
         //绘制流体槽*******************************************************************
-        scale = this.tileEntityMachineCalciner.getFluidScale(0, 60);
+        scale = this.tileEntityMachineCalciner.getFluidScale(60);
         //绘制流体材质
         GUIHelper.drawGUIFluid(this.mc.renderEngine, this.tileEntityMachineCalciner.GUIFluidID, this.guiLeft, this.guiTop, 149, 73, scale, this.zLevel);
         mc.renderEngine.bindTexture(machineCalcinerTexture);

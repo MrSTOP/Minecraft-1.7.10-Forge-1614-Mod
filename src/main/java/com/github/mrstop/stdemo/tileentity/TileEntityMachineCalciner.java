@@ -5,12 +5,14 @@ import cofh.api.energy.IEnergyReceiver;
 import com.github.mrstop.stdemo.core.IGUIEnergy;
 import com.github.mrstop.stdemo.core.IGUIFluid;
 import com.github.mrstop.stdemo.core.IGUIProcessTime;
+import com.github.mrstop.stdemo.crafting.RecipeCalciner;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
@@ -36,8 +38,8 @@ public class TileEntityMachineCalciner extends TileEntity implements IEnergyRece
     private FluidTank fluidTank;
     private EnergyStorage energyStorage;
     private int processTime;
-    private String calcinerCustomName = null;
     private ItemStack[] machineCalcinerItemStack;
+    private String machineCalcinerCustomName = null;
 
     public TileEntityMachineCalciner() {
         this.machineCalcinerItemStack = new ItemStack[2];
@@ -47,8 +49,85 @@ public class TileEntityMachineCalciner extends TileEntity implements IEnergyRece
 
     @Override
     public void updateEntity() {
-        super.updateEntity();
+        if (!this.worldObj.isRemote){
+            if (this.energyStorage.getEnergyStored() >= 0 && this.machineCalcinerItemStack[0] != null){
+                if (canCalcine()){
+                    this.energyStorage.modifyEnergyStored(-20);
+                    this.processTime += 20;
+                    if (this.processTime >= totalProcessTime){
+                        calcineItem();
+                        this.processTime = 0;
+                    }
+                    this.markDirty();
+                }
+            }
+        }
     }
+
+    private boolean canCalcine(){
+        boolean canCalcineItem = false;
+        boolean canCalcineFluid = false;
+
+        ItemStack itemStackOut = RecipeCalciner.getInstance().getItemResult(this.machineCalcinerItemStack[0]);
+        FluidStack fluidStackOut = RecipeCalciner.getInstance().getFluidResult(this.machineCalcinerItemStack[0]);
+        if (itemStackOut == null){
+            canCalcineItem = true;
+        }
+        if (fluidStackOut == null){
+            canCalcineFluid = true;
+        }
+
+        if (this.machineCalcinerItemStack[1] == null){
+            canCalcineItem = true;
+        }
+        else if (itemStackOut != null){
+            if (this.machineCalcinerItemStack[1].isItemEqual(itemStackOut)){
+                int stackSize = this.machineCalcinerItemStack[1].stackSize + itemStackOut.stackSize;
+                if (stackSize <= this.getInventoryStackLimit() && stackSize <= this.machineCalcinerItemStack[1].getMaxStackSize()){
+                    canCalcineItem = true;
+                }
+            }
+        }
+
+        if (this.fluidTank.getFluidAmount() == 0){
+            canCalcineFluid = true;
+        }
+        else if (fluidStackOut != null){
+            if (this.fluidTank.getFluid().isFluidEqual(fluidStackOut)){
+                int fluidAmount = this.fluidTank.getFluidAmount() + fluidStackOut.amount;
+                if (fluidAmount <= this.fluidTank.getCapacity()){
+                    canCalcineFluid = true;
+                }
+            }
+        }
+        return canCalcineItem && canCalcineFluid;
+    }
+
+    private void calcineItem(){
+        ItemStack itemStackOut = RecipeCalciner.getInstance().getItemResult(this.machineCalcinerItemStack[0]);
+        FluidStack fluidStackOut = RecipeCalciner.getInstance().getFluidResult(this.machineCalcinerItemStack[0]);
+        if (itemStackOut != null){
+            if (this.machineCalcinerItemStack[1] == null){
+                this.machineCalcinerItemStack[1] = itemStackOut.copy();
+            }
+            else if (this.machineCalcinerItemStack[1].getItem() == itemStackOut.getItem()){
+                this.machineCalcinerItemStack[1].stackSize += itemStackOut.stackSize;
+            }
+        }
+        if (fluidStackOut != null){
+            if (this.fluidTank.getFluidAmount() == 0){
+                this.fluidTank.setFluid(fluidStackOut.copy());
+            }
+            else if (this.fluidTank.getFluid().isFluidEqual(fluidStackOut)){
+                this.fluidTank.fill(fluidStackOut, true);
+            }
+        }
+        --this.machineCalcinerItemStack[0].stackSize;
+        if (this.machineCalcinerItemStack[0].stackSize <= 0){
+            this.machineCalcinerItemStack[0] = null;
+        }
+    }
+
     @Override
     public Packet getDescriptionPacket() {
         NBTTagCompound nbtTagCompound = new NBTTagCompound();
@@ -64,11 +143,41 @@ public class TileEntityMachineCalciner extends TileEntity implements IEnergyRece
     @Override
     public void readFromNBT(NBTTagCompound compound) {
         super.readFromNBT(compound);
+        this.fluidTank.readFromNBT(compound);
+        this.energyStorage.readFromNBT(compound);
+        this.processTime = compound.getInteger("ProcessTime");
+        NBTTagList nbtTagList = compound.getTagList("Items", 0);
+        for (int i = 0; i < nbtTagList.tagCount(); ++i) {
+            NBTTagCompound tagCompound = nbtTagList.getCompoundTagAt(i);
+            byte b = tagCompound.getByte("Slot");
+            if (b >=0 && b < this.machineCalcinerItemStack.length){
+                this.machineCalcinerItemStack[b] = ItemStack.loadItemStackFromNBT(compound);
+            }
+        }
+        if (compound.hasKey("CustomName", 8)){
+            this.machineCalcinerCustomName = compound.getString("CustomName");
+        }
     }
 
     @Override
     public void writeToNBT(NBTTagCompound compound) {
         super.writeToNBT(compound);
+        this.fluidTank.writeToNBT(compound);
+        this.energyStorage.writeToNBT(compound);
+        compound.setInteger("ProcessTime", this.processTime);
+        NBTTagList nbtTagList = new NBTTagList();
+        for (int i = 0; i < this.machineCalcinerItemStack.length; ++i) {
+            if (this.machineCalcinerItemStack[i] != null){
+                NBTTagCompound tagCompound = new NBTTagCompound();
+                tagCompound.setByte("Slot", (byte) i);
+                this.machineCalcinerItemStack[i].writeToNBT(tagCompound);
+                nbtTagList.appendTag(tagCompound);
+            }
+        }
+        compound.setTag("Items", nbtTagList);
+        if (this.isCustomInventoryName()){
+            compound.setString("CustomName", this.machineCalcinerCustomName);
+        }
     }
 
     @Override
@@ -148,12 +257,12 @@ public class TileEntityMachineCalciner extends TileEntity implements IEnergyRece
 
     @Override
     public String getInventoryName() {
-        return this.isCustomInventoryName() ? this.calcinerCustomName : "container.machineCalciner.name";
+        return this.isCustomInventoryName() ? this.machineCalcinerCustomName : "container.machineCalciner.name";
     }
 
     @Override
     public boolean isCustomInventoryName() {
-        return this.calcinerCustomName != null && this.calcinerCustomName.length() > 0;
+        return this.machineCalcinerCustomName != null && this.machineCalcinerCustomName.length() > 0;
     }
 
     @Override
@@ -226,7 +335,7 @@ public class TileEntityMachineCalciner extends TileEntity implements IEnergyRece
 
     @Override
     public int getProcessTimeScale(int scale) {
-        return (int)(((double)this.processTime / this.totalProcessTime) * scale);
+        return (int)(((double)this.GUIProcessTime / this.totalProcessTime) * scale);
     }
 
     @Override
@@ -256,5 +365,4 @@ public class TileEntityMachineCalciner extends TileEntity implements IEnergyRece
     public int getFluidScale(int tankIndex, int scale) {
         return (int) (((double) this.GUIFluidAmount / this.fluidTankCapacity) * scale);
     }
-
 }

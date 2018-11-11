@@ -302,6 +302,7 @@ public class TileEntityMachineElectrolyticMachine extends TileEntity implements 
     }
 
     @Override
+    @SideOnly(Side.CLIENT)
     public int getProcessTimeScale(int scale) {
         return (int)(((double)this.processTime / this.totalProcessTime) * scale);
     }
@@ -312,6 +313,7 @@ public class TileEntityMachineElectrolyticMachine extends TileEntity implements 
     }
 
     @Override
+    @SideOnly(Side.CLIENT)
     public int getEnergyScale(int scale) {
         return (int) (((double) this.GUIEnergyAmount / this.energyCapacity) * scale);
     }
@@ -330,7 +332,8 @@ public class TileEntityMachineElectrolyticMachine extends TileEntity implements 
     }
 
     @Override
+    @SideOnly(Side.CLIENT)
     public int getFluidScale(int tankIndex, int scale) {
-        return (int) (((double) this.GUIFluidAmount / this.fluidTankCapacity) * scale);;
+        return (int) (((double) this.GUIFluidAmount / this.fluidTankCapacity) * scale);
     }
 }
