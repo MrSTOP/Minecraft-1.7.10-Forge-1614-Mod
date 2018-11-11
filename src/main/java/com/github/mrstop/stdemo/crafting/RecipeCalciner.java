@@ -2,8 +2,12 @@ package com.github.mrstop.stdemo.crafting;
 
 import com.github.mrstop.stdemo.block.BlockLoader;
 import com.github.mrstop.stdemo.fluid.FluidLoader;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import java.util.HashMap;
@@ -15,6 +19,9 @@ public class RecipeCalciner {
     private Map<ItemStack, FluidStack> productionFluidList = new HashMap<>();
     private RecipeCalciner() {
         this.addRecipes(Item.getItemFromBlock(BlockLoader.cinnabarOre), null, new FluidStack(FluidLoader.fluidMercury, 100));
+        this.addRecipes(Item.getItemFromBlock(Blocks.stone), new ItemStack(Items.redstone, 5), null);
+        this.addRecipes(Item.getItemFromBlock(Blocks.iron_ore), new ItemStack(Blocks.stone, 5), new FluidStack(FluidLoader.fluidMercury, 500));
+        this.addRecipes(Item.getItemFromBlock(Blocks.iron_ore), new ItemStack(Blocks.diamond_block, 1), new FluidStack(FluidRegistry.getFluid("lava"), 100));
     }
 
     public static RecipeCalciner getInstance(){

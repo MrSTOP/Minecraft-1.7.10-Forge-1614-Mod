@@ -5,7 +5,7 @@ import cofh.api.energy.IEnergyReceiver;
 import com.github.mrstop.stdemo.core.IGUIEnergy;
 import com.github.mrstop.stdemo.core.IGUIFluid;
 import com.github.mrstop.stdemo.core.IGUIProcessTime;
-import com.github.mrstop.stdemo.crafting.RecipeCalciner;
+import com.github.mrstop.stdemo.crafting.CraftingLoader;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.player.EntityPlayer;
@@ -52,7 +52,7 @@ public class TileEntityMachineCalciner extends TileEntity implements IEnergyRece
         if (!this.worldObj.isRemote){
             if (this.energyStorage.getEnergyStored() >= 0 && this.machineCalcinerItemStack[0] != null){
                 if (canCalcine()){
-                    this.energyStorage.modifyEnergyStored(-20);
+                    this.energyStorage.modifyEnergyStored(-30);
                     this.processTime += 20;
                     if (this.processTime >= totalProcessTime){
                         calcineItem();
@@ -68,8 +68,8 @@ public class TileEntityMachineCalciner extends TileEntity implements IEnergyRece
         boolean canCalcineItem = false;
         boolean canCalcineFluid = false;
 
-        ItemStack itemStackOut = RecipeCalciner.getInstance().getItemResult(this.machineCalcinerItemStack[0]);
-        FluidStack fluidStackOut = RecipeCalciner.getInstance().getFluidResult(this.machineCalcinerItemStack[0]);
+        ItemStack itemStackOut = CraftingLoader.recipeCalciner.getItemResult(this.machineCalcinerItemStack[0]);
+        FluidStack fluidStackOut = CraftingLoader.recipeCalciner.getFluidResult(this.machineCalcinerItemStack[0]);
         if (itemStackOut == null){
             canCalcineItem = true;
         }
@@ -104,8 +104,8 @@ public class TileEntityMachineCalciner extends TileEntity implements IEnergyRece
     }
 
     private void calcineItem(){
-        ItemStack itemStackOut = RecipeCalciner.getInstance().getItemResult(this.machineCalcinerItemStack[0]);
-        FluidStack fluidStackOut = RecipeCalciner.getInstance().getFluidResult(this.machineCalcinerItemStack[0]);
+        ItemStack itemStackOut = CraftingLoader.recipeCalciner.getItemResult(this.machineCalcinerItemStack[0]);
+        FluidStack fluidStackOut = CraftingLoader.recipeCalciner.getFluidResult(this.machineCalcinerItemStack[0]);
         if (itemStackOut != null){
             if (this.machineCalcinerItemStack[1] == null){
                 this.machineCalcinerItemStack[1] = itemStackOut.copy();

@@ -17,8 +17,9 @@ import java.util.Iterator;
 import java.util.List;
 
 
-public class CraftingLoader
-{
+public class CraftingLoader {
+    public static RecipeCalciner recipeCalciner = RecipeCalciner.getInstance();
+
     public CraftingLoader() {
         registerRecipe();
         registerSmelting();
