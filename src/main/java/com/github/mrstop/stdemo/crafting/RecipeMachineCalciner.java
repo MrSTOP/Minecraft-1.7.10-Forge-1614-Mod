@@ -14,30 +14,48 @@ import java.util.Map;
 
 public class RecipeMachineCalciner {
     private static final RecipeMachineCalciner RECIPE_MACHINE_CALCINER = new RecipeMachineCalciner();
-    private Map<ItemStack, ItemStack> productionItemList = new HashMap<>();
-    private Map<ItemStack, FluidStack> productionFluidList = new HashMap<>();
+    private Map<ItemStack, ItemStack> productionItem = new HashMap<>();
+    private Map<ItemStack, FluidStack> productionFluid = new HashMap<>();
     private RecipeMachineCalciner() {
-        this.addRecipes(Item.getItemFromBlock(BlockLoader.cinnabarOre), null, new FluidStack(FluidLoader.fluidMercury, 100));
-        this.addRecipes(Item.getItemFromBlock(Blocks.stone), new ItemStack(Items.redstone, 5), null);
-        this.addRecipes(Item.getItemFromBlock(Blocks.iron_ore), new ItemStack(Blocks.stone, 5), new FluidStack(FluidLoader.fluidMercury, 500));
-        this.addRecipes(Item.getItemFromBlock(Blocks.iron_ore), new ItemStack(Blocks.diamond_block, 1), new FluidStack(FluidRegistry.getFluid("lava"), 100));
+        this.addRecipes(Item.getItemFromBlock(Blocks.coal_block), new FluidStack(FluidLoader.fluidMercury, 100));
+        this.addRecipes(Item.getItemFromBlock(Blocks.iron_ore), new ItemStack(Items.iron_ingot, 1), new FluidStack(FluidRegistry.getFluid("lava"), 100));
+        this.addRecipes(Item.getItemFromBlock(Blocks.stone), new ItemStack(Items.redstone, 5));
+        this.addRecipes(Item.getItemFromBlock(BlockLoader.cinnabarOre), new ItemStack(Blocks.stone, 2), new FluidStack(FluidLoader.fluidMercury, 500));
+        this.addRecipes(new ItemStack(Blocks.gold_ore, 5), new ItemStack(Items.gold_ingot, 5));
+        this.addRecipes(new ItemStack(Blocks.snow, 5), new FluidStack(FluidRegistry.getFluid("water"), 5000));
     }
 
     public static RecipeMachineCalciner getInstance(){
         return RECIPE_MACHINE_CALCINER;
     }
 
+    public void addRecipes(Item itemIn, ItemStack itemStackOut){
+        this.addRecipes(new ItemStack(itemIn, 1), itemStackOut, null);
+    }
+
+    public void addRecipes(Item itemIn, FluidStack fluidStackOut){
+        this.addRecipes(new ItemStack(itemIn, 1), null, fluidStackOut);
+    }
+
+    public void addRecipes(ItemStack itemStackIn, ItemStack itemStackOut){
+        this.addRecipes(itemStackIn, itemStackOut, null);
+    }
+
+    public void addRecipes(ItemStack itemStackIn, FluidStack fluidStackOut) {
+        this.addRecipes(itemStackIn, null, fluidStackOut);
+    }
+
     public void addRecipes(Item itemIn, ItemStack itemStackOut, FluidStack fluidStackOut){
-        this.addRecipes(new ItemStack(itemIn), itemStackOut, fluidStackOut);
+        this.addRecipes(new ItemStack(itemIn, 1), itemStackOut, fluidStackOut);
     }
 
     public void addRecipes(ItemStack itemStackIn, ItemStack itemStackOut, FluidStack fluidStackOut){
-        this.putLists(itemStackIn, itemStackOut, fluidStackOut);
+        this.putProduction(itemStackIn, itemStackOut, fluidStackOut);
     }
 
-    public void putLists(ItemStack itemStackIn, ItemStack itemStackOut, FluidStack fluidStackOut){
-        this.productionItemList.put(itemStackIn, itemStackOut);
-        this.productionFluidList.put(itemStackIn, fluidStackOut);
+    private void putProduction(ItemStack itemStackIn, ItemStack itemStackOut, FluidStack fluidStackOut){
+        this.productionItem.put(itemStackIn, itemStackOut);
+        this.productionFluid.put(itemStackIn, fluidStackOut);
     }
 
     public boolean canCalcine(ItemStack itemStackIn, boolean judgeItemNumber){
@@ -45,7 +63,7 @@ public class RecipeMachineCalciner {
         if (itemStackIn == null){
             return false;
         }
-        for (ItemStack itemStack : this.productionItemList.keySet()) {
+        for (ItemStack itemStack : this.productionItem.keySet()) {
             if (itemStack.isItemEqual(itemStackIn)){
                 if (judgeItemNumber){
                     if (itemStackIn.stackSize >= itemStack.stackSize){
@@ -64,7 +82,7 @@ public class RecipeMachineCalciner {
         if (itemStackIn == null){
             return null;
         }
-        for (Map.Entry<ItemStack, ItemStack> entry : this.productionItemList.entrySet()) {
+        for (Map.Entry<ItemStack, ItemStack> entry : this.productionItem.entrySet()) {
             ItemStack itemStackKey = entry.getKey();
             ItemStack itemStackValue = entry.getValue();
             if (itemStackIn.isItemEqual(itemStackKey)){
@@ -80,7 +98,7 @@ public class RecipeMachineCalciner {
         if (itemStackIn == null){
             return null;
         }
-        for (Map.Entry<ItemStack, FluidStack> entry : this.productionFluidList.entrySet()) {
+        for (Map.Entry<ItemStack, FluidStack> entry : this.productionFluid.entrySet()) {
             ItemStack itemStackKey = entry.getKey();
             FluidStack fluidStackValue = entry.getValue();
             if (itemStackIn.isItemEqual(itemStackKey)){
