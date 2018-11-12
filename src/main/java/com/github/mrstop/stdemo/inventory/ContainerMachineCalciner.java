@@ -12,8 +12,8 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 
 public class ContainerMachineCalciner extends Container {
-    public static final int INPUT = 0;
-    public static final int OUTPUT = 1;
+    private static final int INPUT = 0;
+    private static final int OUTPUT = 1;
 
 //    public static final int INPUT_2 = 1;
 //    public static final int FUEL = 2;
@@ -138,7 +138,7 @@ public class ContainerMachineCalciner extends Container {
                 // 通常情况下，如果从非玩家背包的GUI物品槽中试图将物品放入玩家物品槽，那么使用反向查找，
                 // 如果从玩家背包中试图将物品放入玩家背包或非玩家背包物品槽，则使用正向查找。
                 // 返回值用于标识是否成功把物品的部分放入了一个可用的物品槽，如果成功放入了，则返回真，否则返回假。
-                if (!this.mergeItemStack(oldStack, /*OUTPUT*/1+1, /*OUTPUT*/1+36+1, true)) {
+                if (!this.mergeItemStack(oldStack, OUTPUT+1, OUTPUT+36+1, true)) {
                     //遍历玩家所有物品槽，但没有找到可放入的物品槽，所以按照约定返回null
                     return null;
                 }
@@ -152,7 +152,7 @@ public class ContainerMachineCalciner extends Container {
             else if (/*index != FUEL &&*/ index != INPUT /*&& index != INPUT_2*/) {
                 // if it can be smelted, place in the input slots
                 // 如果可以熔炼，尝试放入输入槽中
-                if (CraftingLoader.recipeCalciner.canCalcine(oldStack, false)) {
+                if (CraftingLoader.recipeMachineCalciner.canCalcine(oldStack, false)) {
                     // try to place in either Input slot; add 1 to final input slot because mergeItemStack uses < index
                     // 尝试放入任一输入槽，maxIndex参数为最后一个输入槽的索引+1，因为mergeItemStack使用 < maxIndex
                     // (即遍历给定索引尝试合并ItemStack时不包含最后一个参数)
@@ -184,7 +184,7 @@ public class ContainerMachineCalciner extends Container {
             }
             // In one of the infuser slots; try to place in player inventory / action bar
             //在其中一个输入槽中;尝试放入玩家库存/操作栏
-            else if (!this.mergeItemStack(oldStack, OUTPUT+1, OUTPUT+37, false)) {
+            else if (!this.mergeItemStack(oldStack, OUTPUT+1, OUTPUT+36+1, false)) {
                 return null;
             }
 
