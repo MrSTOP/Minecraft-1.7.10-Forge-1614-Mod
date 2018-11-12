@@ -41,14 +41,21 @@ public class RecipeCalciner {
         this.productionFluidList.put(itemStackIn, fluidStackOut);
     }
 
-    public boolean canCalcine(ItemStack itemStackIn){
+    public boolean canCalcine(ItemStack itemStackIn, boolean judgeItemNumber){
         boolean canCalcine = false;
         if (itemStackIn == null){
             return false;
         }
         for (ItemStack itemStack : this.productionItemList.keySet()) {
-            if (itemStack.isItemEqual(itemStackIn) && itemStackIn.stackSize >= itemStack.stackSize){
-                canCalcine = true;
+            if (itemStack.isItemEqual(itemStackIn)){
+                if (judgeItemNumber){
+                    if (itemStackIn.stackSize >= itemStack.stackSize){
+                        canCalcine = true;
+                    }
+                }
+                else {
+                    canCalcine = true;
+                }
             }
         }
         return canCalcine;
