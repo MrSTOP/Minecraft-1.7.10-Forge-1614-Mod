@@ -24,6 +24,10 @@ archivesBaseName = "stdemo"
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+tasks.withType(JavaCompile) { 
+    options.encoding = "UTF-8" 
+}
+
 minecraft {
     version = "1.7.10-10.13.4.1614-1.7.10"
     runDir = "eclipse"
