@@ -3,6 +3,7 @@ package com.github.mrstop.stdemo.tileentity;
 import cofh.api.energy.EnergyStorage;
 import cofh.api.energy.IEnergyHandler;
 import cofh.api.energy.IEnergyProvider;
+import cofh.api.energy.IEnergyReceiver;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
@@ -91,9 +92,9 @@ public class TileEntityWindmill extends TileEntity implements ISidedInventory, I
                     int targetY = this.yCoord + dir.offsetY;
                     int targetZ = this.zCoord + dir.offsetZ;
                     TileEntity tileEntity = this.worldObj.getTileEntity(targetX, targetY, targetZ);
-                    if (tileEntity instanceof IEnergyHandler){
+                    if (tileEntity instanceof IEnergyReceiver){
                         int maxAvailable = this.energyStorage.extractEnergy(this.energyStorage.getMaxExtract(), true);
-                        int realExtract = ((IEnergyHandler)tileEntity).receiveEnergy(dir.getOpposite(), maxAvailable, false);
+                        int realExtract = ((IEnergyReceiver)tileEntity).receiveEnergy(dir.getOpposite(), maxAvailable, false);
                         this.energyStorage.extractEnergy(realExtract, false);
                     }
                 }
