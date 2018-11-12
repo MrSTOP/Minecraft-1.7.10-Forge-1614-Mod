@@ -50,7 +50,7 @@ public class TileEntityMachineCalciner extends TileEntity implements IEnergyRece
     @Override
     public void updateEntity() {
         if (!this.worldObj.isRemote){
-            if (this.energyStorage.getEnergyStored() >= 0 && this.machineCalcinerItemStack[0] != null){
+            if (this.energyStorage.getEnergyStored() >= 0){
                 if (canCalcine()){
                     this.energyStorage.modifyEnergyStored(-30);
                     this.processTime += 20;
@@ -58,49 +58,49 @@ public class TileEntityMachineCalciner extends TileEntity implements IEnergyRece
                         calcineItem();
                         this.processTime = 0;
                     }
-                    this.markDirty();
                 }
+                else {
+                    this.processTime = 0;
+                }
+                this.markDirty();
             }
         }
     }
 
     private boolean canCalcine(){
-        boolean canCalcineItem = false;
-        boolean canCalcineFluid = false;
+        if (!CraftingLoader.recipeCalciner.canCalcine(this.machineCalcinerItemStack[0], true)){
+            return false;
+        }
 
         ItemStack itemStackOut = CraftingLoader.recipeCalciner.getItemResult(this.machineCalcinerItemStack[0]);
         FluidStack fluidStackOut = CraftingLoader.recipeCalciner.getFluidResult(this.machineCalcinerItemStack[0]);
-        if (itemStackOut == null){
-            canCalcineItem = true;
-        }
-        if (fluidStackOut == null){
-            canCalcineFluid = true;
-        }
+        boolean canCalcineItemProduction = false;
+        boolean canCalcineFluidProduction = false;
 
-        if (this.machineCalcinerItemStack[1] == null){
-            canCalcineItem = true;
+        if (this.machineCalcinerItemStack[1] == null || itemStackOut == null){
+            canCalcineItemProduction = true;
         }
         else if (itemStackOut != null){
             if (this.machineCalcinerItemStack[1].isItemEqual(itemStackOut)){
                 int stackSize = this.machineCalcinerItemStack[1].stackSize + itemStackOut.stackSize;
-                if (stackSize <= this.getInventoryStackLimit() && stackSize <= this.machineCalcinerItemStack[1].getMaxStackSize()){
-                    canCalcineItem = true;
+                if (stackSize <= Math.min(this.getInventoryStackLimit(), this.machineCalcinerItemStack[1].getMaxStackSize())){
+                    canCalcineItemProduction = true;
                 }
             }
         }
 
-        if (this.fluidTank.getFluidAmount() == 0){
-            canCalcineFluid = true;
+        if (this.fluidTank.getFluidAmount() == 0 || fluidStackOut == null){
+            canCalcineFluidProduction = true;
         }
         else if (fluidStackOut != null){
             if (this.fluidTank.getFluid().isFluidEqual(fluidStackOut)){
                 int fluidAmount = this.fluidTank.getFluidAmount() + fluidStackOut.amount;
                 if (fluidAmount <= this.fluidTank.getCapacity()){
-                    canCalcineFluid = true;
+                    canCalcineFluidProduction = true;
                 }
             }
         }
-        return canCalcineItem && canCalcineFluid;
+        return canCalcineItemProduction && canCalcineFluidProduction;
     }
 
     private void calcineItem(){
