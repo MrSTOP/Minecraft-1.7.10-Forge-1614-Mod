@@ -68,12 +68,12 @@ public class TileEntityMachineCalciner extends TileEntity implements IEnergyRece
     }
 
     private boolean canCalcine(){
-        if (!CraftingLoader.recipeCalciner.canCalcine(this.machineCalcinerItemStack[0], true)){
+        if (!CraftingLoader.recipeMachineCalciner.canCalcine(this.machineCalcinerItemStack[0], true)){
             return false;
         }
 
-        ItemStack itemStackOut = CraftingLoader.recipeCalciner.getItemResult(this.machineCalcinerItemStack[0]);
-        FluidStack fluidStackOut = CraftingLoader.recipeCalciner.getFluidResult(this.machineCalcinerItemStack[0]);
+        ItemStack itemStackOut = CraftingLoader.recipeMachineCalciner.getItemResult(this.machineCalcinerItemStack[0]);
+        FluidStack fluidStackOut = CraftingLoader.recipeMachineCalciner.getFluidResult(this.machineCalcinerItemStack[0]);
         boolean canCalcineItemProduction = false;
         boolean canCalcineFluidProduction = false;
 
@@ -104,8 +104,8 @@ public class TileEntityMachineCalciner extends TileEntity implements IEnergyRece
     }
 
     private void calcineItem(){
-        ItemStack itemStackOut = CraftingLoader.recipeCalciner.getItemResult(this.machineCalcinerItemStack[0]);
-        FluidStack fluidStackOut = CraftingLoader.recipeCalciner.getFluidResult(this.machineCalcinerItemStack[0]);
+        ItemStack itemStackOut = CraftingLoader.recipeMachineCalciner.getItemResult(this.machineCalcinerItemStack[0]);
+        FluidStack fluidStackOut = CraftingLoader.recipeMachineCalciner.getFluidResult(this.machineCalcinerItemStack[0]);
         if (itemStackOut != null){
             if (this.machineCalcinerItemStack[1] == null){
                 this.machineCalcinerItemStack[1] = itemStackOut.copy();

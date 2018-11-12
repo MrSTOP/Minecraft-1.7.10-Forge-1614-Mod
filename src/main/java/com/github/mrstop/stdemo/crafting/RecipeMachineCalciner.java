@@ -6,26 +6,25 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class RecipeCalciner {
-    private static final RecipeCalciner recipeCalciner = new RecipeCalciner();
+public class RecipeMachineCalciner {
+    private static final RecipeMachineCalciner RECIPE_MACHINE_CALCINER = new RecipeMachineCalciner();
     private Map<ItemStack, ItemStack> productionItemList = new HashMap<>();
     private Map<ItemStack, FluidStack> productionFluidList = new HashMap<>();
-    private RecipeCalciner() {
+    private RecipeMachineCalciner() {
         this.addRecipes(Item.getItemFromBlock(BlockLoader.cinnabarOre), null, new FluidStack(FluidLoader.fluidMercury, 100));
         this.addRecipes(Item.getItemFromBlock(Blocks.stone), new ItemStack(Items.redstone, 5), null);
         this.addRecipes(Item.getItemFromBlock(Blocks.iron_ore), new ItemStack(Blocks.stone, 5), new FluidStack(FluidLoader.fluidMercury, 500));
         this.addRecipes(Item.getItemFromBlock(Blocks.iron_ore), new ItemStack(Blocks.diamond_block, 1), new FluidStack(FluidRegistry.getFluid("lava"), 100));
     }
 
-    public static RecipeCalciner getInstance(){
-        return recipeCalciner;
+    public static RecipeMachineCalciner getInstance(){
+        return RECIPE_MACHINE_CALCINER;
     }
 
     public void addRecipes(Item itemIn, ItemStack itemStackOut, FluidStack fluidStackOut){
