@@ -57,6 +57,17 @@ public class RecipeMachineCalciner {
         this.productionItem.put(itemStackIn, itemStackOut);
         this.productionFluid.put(itemStackIn, fluidStackOut);
     }
+    public int getRequireIngredientAmount(ItemStack itemStackIn){
+        if (itemStackIn == null){
+            return 0;
+        }
+        for (ItemStack itemStack : this.productionItem.keySet()) {
+            if (itemStack.isItemEqual(itemStackIn)){
+                return itemStack.stackSize;
+            }
+        }
+        return 0;
+    }
 
     public boolean canCalcine(ItemStack itemStackIn, boolean judgeItemNumber){
         boolean canCalcine = false;

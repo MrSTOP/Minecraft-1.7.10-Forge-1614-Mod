@@ -106,6 +106,7 @@ public class TileEntityMachineCalciner extends TileEntity implements IEnergyRece
     private void calcineItem(){
         ItemStack itemStackOut = CraftingLoader.recipeMachineCalciner.getItemResult(this.machineCalcinerItemStack[0]);
         FluidStack fluidStackOut = CraftingLoader.recipeMachineCalciner.getFluidResult(this.machineCalcinerItemStack[0]);
+        int stackSize = CraftingLoader.recipeMachineCalciner.getRequireIngredientAmount(this.machineCalcinerItemStack[0]);
         if (itemStackOut != null){
             if (this.machineCalcinerItemStack[1] == null){
                 this.machineCalcinerItemStack[1] = itemStackOut.copy();
@@ -122,7 +123,7 @@ public class TileEntityMachineCalciner extends TileEntity implements IEnergyRece
                 this.fluidTank.fill(fluidStackOut, true);
             }
         }
-        --this.machineCalcinerItemStack[0].stackSize;
+        this.machineCalcinerItemStack[0].stackSize -= stackSize;
         if (this.machineCalcinerItemStack[0].stackSize <= 0){
             this.machineCalcinerItemStack[0] = null;
         }
