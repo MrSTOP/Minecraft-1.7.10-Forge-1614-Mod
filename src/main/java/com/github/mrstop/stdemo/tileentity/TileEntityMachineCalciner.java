@@ -68,6 +68,9 @@ public class TileEntityMachineCalciner extends TileEntity implements IEnergyRece
     }
 
     private boolean canCalcine(){
+        if (this.machineCalcinerItemStack[0] == null){
+            return false;
+        }
         if (!CraftingLoader.recipeMachineCalciner.canCalcine(this.machineCalcinerItemStack[0], true)){
             return false;
         }
