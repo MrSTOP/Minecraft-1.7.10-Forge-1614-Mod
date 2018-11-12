@@ -1,6 +1,7 @@
 package com.github.mrstop.stdemo.block;
 
 import com.github.mrstop.stdemo.STDemo;
+import com.github.mrstop.stdemo.core.util.InventoryHelper;
 import com.github.mrstop.stdemo.creativetab.CreativeTabsLoader;
 import com.github.mrstop.stdemo.tileentity.TileEntityMachineRedstoneFluxFurnace;
 import cpw.mods.fml.relauncher.Side;
@@ -148,46 +149,52 @@ public class BlockMachineRedstoneFluxFurnace extends BlockContainer {
 
     @Override
     public void breakBlock(World worldIn, int x, int y, int z, Block blockBroken, int meta) {
-            if (!isBurning) {
-                TileEntityMachineRedstoneFluxFurnace tileEntityMachineRedstoneFluxFurnace = (TileEntityMachineRedstoneFluxFurnace) worldIn.getTileEntity(x, y, z);    //临时TileEntityMetalFurnace变量
-
-                if (tileEntityMachineRedstoneFluxFurnace != null)                                                                         //判断临时TileEntityMetalFurnace变量是否为空
-                {
-                    for (int i1 = 0; i1 < tileEntityMachineRedstoneFluxFurnace.getSizeInventory(); ++i1)                                  //遍历物品槽
-                    {
-                        ItemStack itemstack = tileEntityMachineRedstoneFluxFurnace.getStackInSlot(i1);                                    //临时ItemStack变量
-
-                        if (itemstack != null)                                                                              //判断临时ItemStack变量是否为空
-                        {
-                            float fX = this.random.nextFloat() * 0.8F + 0.1F;
-                            float fY = this.random.nextFloat() * 0.8F + 0.1F;
-                            float fZ = this.random.nextFloat() * 0.8F + 0.1F;
-
-                            while (itemstack.stackSize > 0) {
-                                int j1 = this.random.nextInt(21) + 10;
-
-                                if (j1 > itemstack.stackSize) {
-                                    j1 = itemstack.stackSize;
-                                }
-
-                                itemstack.stackSize -= j1;
-                                EntityItem entityitem = new EntityItem(worldIn, (double) ((float) x + fX), (double) ((float) y + fY), (double) ((float) z + fZ), new ItemStack(itemstack.getItem(), j1, itemstack.getMetadata()));
-
-                                if (itemstack.hasTagCompound()) {
-                                    entityitem.getEntityItem().setTagCompound((NBTTagCompound) itemstack.getTagCompound().copy());
-                                }
-
-                                float rand = 0.05F;
-                                entityitem.motionX = (double) ((float) this.random.nextGaussian() * rand);
-                                entityitem.motionY = (double) ((float) this.random.nextGaussian() * rand + 0.2F);
-                                entityitem.motionZ = (double) ((float) this.random.nextGaussian() * rand);
-                                worldIn.spawnEntityInWorld(entityitem);
-                            }
-                        }
-                    }
-                worldIn.updateNeighborsAboutBlockChange(x, y, z, blockBroken);
-            }
+        TileEntityMachineRedstoneFluxFurnace tileEntityMachineRedstoneFluxFurnace = (TileEntityMachineRedstoneFluxFurnace) worldIn.getTileEntity(x, y, z);
+        if (tileEntityMachineRedstoneFluxFurnace == null){
+            super.breakBlock(worldIn, x, y, z, blockBroken, meta);
+            return;
         }
+        InventoryHelper.dropInventoryItems(worldIn, tileEntityMachineRedstoneFluxFurnace, x, y, z);
+        super.breakBlock(worldIn, x, y, z, blockBroken, meta);
+//            if (!isBurning) {
+//                TileEntityMachineRedstoneFluxFurnace tileEntityMachineRedstoneFluxFurnace = (TileEntityMachineRedstoneFluxFurnace) worldIn.getTileEntity(x, y, z);    //临时TileEntityMetalFurnace变量
+//
+//                if (tileEntityMachineRedstoneFluxFurnace != null) {
+//                    for (int i1 = 0; i1 < tileEntityMachineRedstoneFluxFurnace.getSizeInventory(); ++i1)                                  //遍历物品槽
+//                    {
+//                        ItemStack itemstack = tileEntityMachineRedstoneFluxFurnace.getStackInSlot(i1);                                    //临时ItemStack变量
+//
+//                        if (itemstack != null)                                                                              //判断临时ItemStack变量是否为空
+//                        {
+//                            float fX = this.random.nextFloat() * 0.8F + 0.1F;
+//                            float fY = this.random.nextFloat() * 0.8F + 0.1F;
+//                            float fZ = this.random.nextFloat() * 0.8F + 0.1F;
+//
+//                            while (itemstack.stackSize > 0) {
+//                                int j1 = this.random.nextInt(21) + 10;
+//
+//                                if (j1 > itemstack.stackSize) {
+//                                    j1 = itemstack.stackSize;
+//                                }
+//
+//                                itemstack.stackSize -= j1;
+//                                EntityItem entityitem = new EntityItem(worldIn, (double) ((float) x + fX), (double) ((float) y + fY), (double) ((float) z + fZ), new ItemStack(itemstack.getItem(), j1, itemstack.getMetadata()));
+//
+//                                if (itemstack.hasTagCompound()) {
+//                                    entityitem.getEntityItem().setTagCompound((NBTTagCompound) itemstack.getTagCompound().copy());
+//                                }
+//
+//                                float rand = 0.05F;
+//                                entityitem.motionX = (double) ((float) this.random.nextGaussian() * rand);
+//                                entityitem.motionY = (double) ((float) this.random.nextGaussian() * rand + 0.2F);
+//                                entityitem.motionZ = (double) ((float) this.random.nextGaussian() * rand);
+//                                worldIn.spawnEntityInWorld(entityitem);
+//                            }
+//                        }
+//                    }
+//                worldIn.updateNeighborsAboutBlockChange(x, y, z, blockBroken);
+//            }
+//        }
     }
 
     @Override

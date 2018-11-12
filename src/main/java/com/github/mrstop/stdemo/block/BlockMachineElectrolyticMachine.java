@@ -1,10 +1,13 @@
 package com.github.mrstop.stdemo.block;
 
 import com.github.mrstop.stdemo.STDemo;
+import com.github.mrstop.stdemo.core.util.InventoryHelper;
 import com.github.mrstop.stdemo.creativetab.CreativeTabsLoader;
+import com.github.mrstop.stdemo.tileentity.TileEntityMachineCalciner;
 import com.github.mrstop.stdemo.tileentity.TileEntityMachineElectrolyticMachine;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -36,6 +39,17 @@ public class BlockMachineElectrolyticMachine extends BlockContainer {
     @Override
     public TileEntity createNewTileEntity(World worldIn, int meta) {
         return new TileEntityMachineElectrolyticMachine();
+    }
+
+    @Override
+    public void breakBlock(World worldIn, int x, int y, int z, Block blockBroken, int meta) {
+        TileEntityMachineElectrolyticMachine tileEntityMachineElectrolyticMachine = (TileEntityMachineElectrolyticMachine) worldIn.getTileEntity(x, y, z);
+        if (tileEntityMachineElectrolyticMachine == null){
+            super.breakBlock(worldIn, x, y, z, blockBroken, meta);
+            return;
+        }
+        InventoryHelper.dropInventoryItems(worldIn, tileEntityMachineElectrolyticMachine, x, y, z);
+        super.breakBlock(worldIn, x, y, z, blockBroken, meta);
     }
 
     @Override

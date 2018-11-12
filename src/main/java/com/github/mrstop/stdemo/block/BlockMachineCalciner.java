@@ -1,15 +1,18 @@
 package com.github.mrstop.stdemo.block;
 
 import com.github.mrstop.stdemo.STDemo;
+import com.github.mrstop.stdemo.core.util.InventoryHelper;
 import com.github.mrstop.stdemo.creativetab.CreativeTabsLoader;
 import com.github.mrstop.stdemo.tileentity.TileEntityMachineCalciner;
 import com.github.mrstop.stdemo.tileentity.TileEntityMachineElectrolyticMachine;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -60,6 +63,17 @@ public class BlockMachineCalciner extends BlockContainer {
             }
             return true;
         }
+    }
+
+    @Override
+    public void breakBlock(World worldIn, int x, int y, int z, Block blockBroken, int meta) {
+        TileEntityMachineCalciner tileEntityMachineCalciner = (TileEntityMachineCalciner) worldIn.getTileEntity(x, y, z);
+        if (tileEntityMachineCalciner == null){
+            super.breakBlock(worldIn, x, y, z, blockBroken, meta);
+            return;
+        }
+        InventoryHelper.dropInventoryItems(worldIn, tileEntityMachineCalciner, x, y, z);
+        super.breakBlock(worldIn, x, y, z, blockBroken, meta);
     }
 
     @Override
