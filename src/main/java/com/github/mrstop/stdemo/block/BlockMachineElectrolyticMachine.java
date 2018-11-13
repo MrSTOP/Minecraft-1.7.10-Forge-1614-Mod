@@ -3,7 +3,6 @@ package com.github.mrstop.stdemo.block;
 import com.github.mrstop.stdemo.STDemo;
 import com.github.mrstop.stdemo.core.util.InventoryHelper;
 import com.github.mrstop.stdemo.creativetab.CreativeTabsLoader;
-import com.github.mrstop.stdemo.tileentity.TileEntityMachineCalciner;
 import com.github.mrstop.stdemo.tileentity.TileEntityMachineElectrolyticMachine;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

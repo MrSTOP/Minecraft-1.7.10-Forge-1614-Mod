@@ -18,11 +18,13 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class BlockMachineRedstoneFluxFurnace extends BlockContainer {
@@ -155,46 +157,38 @@ public class BlockMachineRedstoneFluxFurnace extends BlockContainer {
             return;
         }
         InventoryHelper.dropInventoryItems(worldIn, tileEntityMachineRedstoneFluxFurnace, x, y, z);
+//        worldIn.updateNeighborsAboutBlockChange(x, y, z, blockBroken);
         super.breakBlock(worldIn, x, y, z, blockBroken, meta);
-//            if (!isBurning) {
-//                TileEntityMachineRedstoneFluxFurnace tileEntityMachineRedstoneFluxFurnace = (TileEntityMachineRedstoneFluxFurnace) worldIn.getTileEntity(x, y, z);    //临时TileEntityMetalFurnace变量
-//
-//                if (tileEntityMachineRedstoneFluxFurnace != null) {
-//                    for (int i1 = 0; i1 < tileEntityMachineRedstoneFluxFurnace.getSizeInventory(); ++i1)                                  //遍历物品槽
-//                    {
-//                        ItemStack itemstack = tileEntityMachineRedstoneFluxFurnace.getStackInSlot(i1);                                    //临时ItemStack变量
-//
-//                        if (itemstack != null)                                                                              //判断临时ItemStack变量是否为空
-//                        {
-//                            float fX = this.random.nextFloat() * 0.8F + 0.1F;
-//                            float fY = this.random.nextFloat() * 0.8F + 0.1F;
-//                            float fZ = this.random.nextFloat() * 0.8F + 0.1F;
-//
-//                            while (itemstack.stackSize > 0) {
-//                                int j1 = this.random.nextInt(21) + 10;
-//
-//                                if (j1 > itemstack.stackSize) {
-//                                    j1 = itemstack.stackSize;
-//                                }
-//
-//                                itemstack.stackSize -= j1;
-//                                EntityItem entityitem = new EntityItem(worldIn, (double) ((float) x + fX), (double) ((float) y + fY), (double) ((float) z + fZ), new ItemStack(itemstack.getItem(), j1, itemstack.getMetadata()));
-//
-//                                if (itemstack.hasTagCompound()) {
-//                                    entityitem.getEntityItem().setTagCompound((NBTTagCompound) itemstack.getTagCompound().copy());
-//                                }
-//
-//                                float rand = 0.05F;
-//                                entityitem.motionX = (double) ((float) this.random.nextGaussian() * rand);
-//                                entityitem.motionY = (double) ((float) this.random.nextGaussian() * rand + 0.2F);
-//                                entityitem.motionZ = (double) ((float) this.random.nextGaussian() * rand);
-//                                worldIn.spawnEntityInWorld(entityitem);
-//                            }
-//                        }
-//                    }
-//                worldIn.updateNeighborsAboutBlockChange(x, y, z, blockBroken);
-//            }
+    }
+
+    @Override
+    public boolean removedByPlayer(World world, EntityPlayer player, int x, int y, int z, boolean willHarvest) {
+//        if (willHarvest){
+//            return true;
 //        }
+        return super.removedByPlayer(world, player, x, y, z, willHarvest);
+    }
+
+    @Override
+    public ArrayList<ItemStack> getDrops(World world, int x, int y, int z, int metadata, int fortune) {
+        return super.getDrops(world, x, y, z, metadata, fortune);
+//        TileEntity tileEntity = world.getTileEntity(x, y, z);
+//        ArrayList<ItemStack> itemStacks = new ArrayList<>();
+//        if (tileEntity instanceof TileEntityMachineRedstoneFluxFurnace){
+//            TileEntityMachineRedstoneFluxFurnace tileEntityMachineRedstoneFluxFurnace = (TileEntityMachineRedstoneFluxFurnace)tileEntity;
+//            NBTTagCompound compound = new NBTTagCompound();
+//            tileEntityMachineRedstoneFluxFurnace.writeToNBT(compound);
+//            ItemStack itemStack = new ItemStack(world.getBlock(x, y, z), 1, metadata);
+//            itemStack.setTagCompound(compound);
+//            itemStacks.add(itemStack);
+//        }
+//        return itemStacks;
+    }
+
+    @Override
+    public void harvestBlock(World worldIn, EntityPlayer player, int x, int y, int z, int meta) {
+        super.harvestBlock(worldIn, player, x, y, z, meta);
+        worldIn.setBlockToAir(x, y, z);
     }
 
     @Override
