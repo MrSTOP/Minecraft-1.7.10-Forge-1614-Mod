@@ -1,4 +1,4 @@
-package com.github.mrstop.stdemo.client.block.render;
+package com.github.mrstop.stdemo.client.render.block;
 
 import com.github.mrstop.stdemo.block.BlockLoader;
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
@@ -16,6 +16,9 @@ public class RenderWindmillGround implements ISimpleBlockRenderingHandler {
     public static final int renderID = RenderingRegistry.getNextAvailableRenderId();
     private final Tessellator tessellator = Tessellator.instance;
     public static final RenderWindmillGround renderWindmillGround =  new RenderWindmillGround();
+
+    private RenderWindmillGround() {
+    }
 
     @Override
     @SideOnly(Side.CLIENT)

@@ -1,4 +1,4 @@
-package com.github.mrstop.stdemo.client.tielentity.render;
+package com.github.mrstop.stdemo.client.render.tielentity;
 
 import com.github.mrstop.stdemo.tileentity.TileEntityWindmill;
 import cpw.mods.fml.client.registry.ClientRegistry;

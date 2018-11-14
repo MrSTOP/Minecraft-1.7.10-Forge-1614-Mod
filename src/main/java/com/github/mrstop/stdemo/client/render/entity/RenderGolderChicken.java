@@ -1,4 +1,4 @@
-package com.github.mrstop.stdemo.client.entity.render;
+package com.github.mrstop.stdemo.client.render.entity;
 
 import com.github.mrstop.stdemo.STDemo;
 import com.github.mrstop.stdemo.entity.EntityGoldenChicken;

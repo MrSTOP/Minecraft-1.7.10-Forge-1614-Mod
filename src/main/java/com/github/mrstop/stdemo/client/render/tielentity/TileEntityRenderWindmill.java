@@ -1,4 +1,4 @@
-package com.github.mrstop.stdemo.client.tielentity.render;
+package com.github.mrstop.stdemo.client.render.tielentity;
 
 import com.github.mrstop.stdemo.STDemo;
 import com.github.mrstop.stdemo.tileentity.TileEntityWindmill;

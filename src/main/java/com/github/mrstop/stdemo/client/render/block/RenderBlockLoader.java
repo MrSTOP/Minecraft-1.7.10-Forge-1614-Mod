@@ -1,4 +1,4 @@
-package com.github.mrstop.stdemo.client.block.render;
+package com.github.mrstop.stdemo.client.render.block;
 
 import cpw.mods.fml.client.registry.RenderingRegistry;
 

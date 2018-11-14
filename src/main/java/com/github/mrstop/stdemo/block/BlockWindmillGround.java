@@ -1,17 +1,14 @@
 package com.github.mrstop.stdemo.block;
 
-import com.github.mrstop.stdemo.client.block.render.RenderWindmillGround;
+import com.github.mrstop.stdemo.client.render.block.RenderWindmillGround;
 import com.github.mrstop.stdemo.creativetab.CreativeTabsLoader;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.IIcon;
-import net.minecraft.util.MovingObjectPosition;
-import net.minecraft.util.Vec3;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
