@@ -8,20 +8,20 @@ import com.github.mrstop.stdemo.core.util.ColorRGBA;
 
 public interface ICustomHighLight {
 
-    //»ñÈ¡äÖÈ¾¸ßÁÁËùĞèµÄAABBºĞ
+    //è·å–æ¸²æŸ“é«˜äº®æ‰€éœ€çš„AABBç›’
     AxisAlignedBB[] getBlockBoxs(World world, int x, int y, int z, EntityPlayer player);
 
-    //»ñÈ¡äÖÈ¾¸ßÁÁËùĞèµÄÀ©ÕÅÖµ
+    //è·å–æ¸²æŸ“é«˜äº®æ‰€éœ€çš„æ‰©å¼ å€¼
     default double getExpantion(){
         return 0.002;
     }
 
-    //»ñÈ¡äÖÈ¾¸ßÁÁËùĞèµÄÏßÌõ¿í¶È
+    //è·å–æ¸²æŸ“é«˜äº®æ‰€éœ€çš„çº¿æ¡å®½åº¦
     default float getLineWidth(){
         return 2.0F;
     }
 
-    //»ñÈ¡äÖÈ¾¸ßÁÁËùĞèµÄÏßÌõÑÕÉ«
+    //è·å–æ¸²æŸ“é«˜äº®æ‰€éœ€çš„çº¿æ¡é¢œè‰²
     default ColorRGBA getLineColor(){
         return new ColorRGBA();
     };
