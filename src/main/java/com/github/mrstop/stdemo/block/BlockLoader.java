@@ -10,6 +10,7 @@ public class BlockLoader {
     public static Block chromiteOre = new BlockChromiteOre();
     public static Block fluidMercuryBlock = new BlockFluidMercury();
     public static Block colorBlock = new BlockColorCrops();
+    public static Block colorBlockBlack = new BlockColorCropsBlack();
     public static Block metalFurnaceActive = new BlockMetalFurnace(true);
     public static Block metalFurnaceInactive = new BlockMetalFurnace(false);
     public static Block blockMachineRedstoneFluxFurnaceActive = new BlockMachineRedstoneFluxFurnace(true);
@@ -22,13 +23,14 @@ public class BlockLoader {
     public static Block cinnabarOre = new BlockCinnabarOre();
     public static Block machineCalciner = new BlockMachineCalciner();
 
-    public  BlockLoader(FMLPreInitializationEvent event) {
-        //构造方法
+    //构造方法
+    public BlockLoader(FMLPreInitializationEvent event) {
         register(chromiteOre, "chromite_ore");
         register(cinnabarOre, "cinnabar_ore");
         register(grassBlock,"grass_block");//注册草块
         register(fluidMercuryBlock, "fluidMercury_block");
         register(colorBlock, "color_block");
+        register(colorBlockBlack, "color_block_black");
         register(metalFurnaceActive, "metal_furnace_active");
         register(metalFurnaceInactive, "metal_furnace_inactive");
         register(blockMachineRedstoneFluxFurnaceActive, "machine_redstoneflux_furnace_active");
