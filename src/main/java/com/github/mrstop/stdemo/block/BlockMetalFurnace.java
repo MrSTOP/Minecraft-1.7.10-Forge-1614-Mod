@@ -35,7 +35,6 @@ public class BlockMetalFurnace extends BlockContainer
 
     private static boolean isBurning;
     private final boolean isBurningFlag;
-    private final Random random = new Random();
 
     public BlockMetalFurnace(boolean isActive) {
         super(Material.iron);

@@ -36,7 +36,6 @@ public class BlockMachineRedstoneFluxFurnace extends BlockContainer {
 
     private static boolean isBurning;
     private final boolean isBurningFlag;
-    private final Random random = new Random();
 
     public BlockMachineRedstoneFluxFurnace(boolean isActive) {
         super(Material.iron);
