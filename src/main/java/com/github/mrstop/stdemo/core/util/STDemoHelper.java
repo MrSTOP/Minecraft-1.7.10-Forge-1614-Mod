@@ -18,9 +18,14 @@ public class STDemoHelper {
         world.spawnEntityInWorld(entityItem);
     }
 
-    public static void registerIconArray(IIconRegister iconRegister, IIcon[] icons, String name) {
-        for (int i = 0; i < icons.length; i++) {
+    //[start, end)
+    public static void registerIconArray(IIconRegister iconRegister, IIcon[] icons, String name, int start, int end) {
+        for (int i = start; i < end; i++) {
             icons[i] = iconRegister.registerIcon(STDemo.MOD_DOMAIN + name + i);
         }
+    }
+
+    public static void registerIconArray(IIconRegister iconRegister, IIcon[] icons, String name) {
+        registerIconArray(iconRegister, icons, name, 0, icons.length);
     }
 }
