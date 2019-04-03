@@ -10,8 +10,7 @@ import net.minecraft.item.ItemSeeds;
 
 public class ItemSeedsColor extends ItemSeeds {
 
-        public ItemSeedsColor()
-        {
+        public ItemSeedsColor() {
             super(BlockLoader.colorBlock, Blocks.farmland);
             this.setUnlocalizedName("seedsColor");
             this.setCreativeTab(CreativeTabsLoader.tabSTDemo);
@@ -19,8 +18,7 @@ public class ItemSeedsColor extends ItemSeeds {
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister iIconRegister)
-    {
+    public void registerIcons(IIconRegister iIconRegister) {
         this.itemIcon = iIconRegister.registerIcon("stdemo:seeds_color");
     }
 }

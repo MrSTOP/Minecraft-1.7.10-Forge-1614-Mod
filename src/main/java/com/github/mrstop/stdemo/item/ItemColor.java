@@ -8,8 +8,7 @@ import net.minecraft.item.Item;
 
 public class ItemColor extends Item {
 
-    public ItemColor()
-    {
+    public ItemColor() {
         super();
         this.setUnlocalizedName("Color");
         this.setCreativeTab(CreativeTabsLoader.tabSTDemo);
@@ -17,8 +16,7 @@ public class ItemColor extends Item {
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister par1IconRegister)
-    {
+    public void registerIcons(IIconRegister par1IconRegister) {
         this.itemIcon = par1IconRegister.registerIcon("stdemo:color");
     }
 }
