@@ -22,13 +22,15 @@ public class ItemLoader//加载物品
     public static Item redstoneBoots = new ItemArmorRedstoneBoots();
     public static Item bucketMercury = new ItemBucketMercury();
     public static Item color = new ItemColor();
+    public static Item colorBlack = new ItemColorBlack();
     public static Item diracWand = new ItemDiracWand();
     public static Item spawnEggGoldenChickenEgg = new ItemSpawnEggGoldenChicken("GoldenChicken", 0xFF0000, 0x0000FF);
     public static Item seedsColor = new ItemSeedsColor();
+    public static Item seedsColorBlack = new ItemSeedsColorBlack();
     public static Item explosionEgg = new ItemExplosionEgg();
 
-    public ItemLoader(FMLPreInitializationEvent event)//构造方法
-    {
+    //构造方法
+    public ItemLoader(FMLPreInitializationEvent event) {
         register(goldenEgg, "golden_egg");                                              //注册金蛋
         register(bestSword, "best_sword");                                              //注册最好的剑
         register(chromiteIngot,"chromite_ingot");                                       //注册铬锭
@@ -41,20 +43,21 @@ public class ItemLoader//加载物品
         register(redstoneBoots, "redstone_boots");                                      //注册红石靴子
         register(bucketMercury, "bucket_mercury");                                      //注册水银桶
         register(color, "color");
+        register(colorBlack, "color_black");
         register(diracWand, "dirac_wand");
         register(spawnEggGoldenChickenEgg, "spawnegg_goldenchicken");
         register(seedsColor, "seeds_color");
+        register(seedsColorBlack, "seeds_color_black");
         register(explosionEgg, "explosion_egg");
     }
 
-    private static void register(Item item, String name)//注册物品的方法
-    {
+    //注册物品的方法
+    private static void register(Item item, String name) {
         GameRegistry.registerItem(item,name);
     }
 
     @SideOnly(Side.CLIENT)
-    private static void registerRender(Item item, int meta, String name)
-    {
+    private static void registerRender(Item item, int meta, String name) {
 
     }
 
