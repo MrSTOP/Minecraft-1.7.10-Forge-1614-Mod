@@ -22,7 +22,6 @@ public class ItemLoader//加载物品
     public static Item redstoneBoots = new ItemArmorRedstoneBoots();
     public static Item bucketMercury = new ItemBucketMercury();
     public static Item color = new ItemColor();
-    public static Item colorBlack = new ItemColorBlack();
     public static Item diracWand = new ItemDiracWand();
     public static Item spawnEggGoldenChickenEgg = new ItemSpawnEggGoldenChicken("GoldenChicken", 0xFF0000, 0x0000FF);
     public static Item seedsColor = new ItemSeedsColor();
@@ -43,7 +42,6 @@ public class ItemLoader//加载物品
         register(redstoneBoots, "redstone_boots");                                      //注册红石靴子
         register(bucketMercury, "bucket_mercury");                                      //注册水银桶
         register(color, "color");
-        register(colorBlack, "color_black");
         register(diracWand, "dirac_wand");
         register(spawnEggGoldenChickenEgg, "spawnegg_goldenchicken");
         register(seedsColor, "seeds_color");
