@@ -23,8 +23,10 @@ public class OreDictionaryLoader {
         }
 
         OreDictionary.registerOre("oreChromite", BlockLoader.chromiteOre);
-        OreDictionary.registerOre("ingotCopper", ItemLoader.chromiteIngot);
         OreDictionary.registerOre("oreCinnabar", BlockLoader.cinnabarOre);
+        OreDictionary.registerOre("ingotCopper", ItemLoader.chromiteIngot);
+        OreDictionary.registerOre("dyeBlack", ItemLoader.seedsColorBlack);
+        OreDictionary.registerOre("dye", ItemLoader.seedsColorBlack);
 
         /*
         Log.Log.info("Registed Ore:");
