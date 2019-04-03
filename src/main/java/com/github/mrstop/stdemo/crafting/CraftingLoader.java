@@ -18,12 +18,13 @@ import java.util.List;
 
 
 public class CraftingLoader {
-    public static RecipeMachineCalciner recipeMachineCalciner = RecipeMachineCalciner.getInstance();
+    public static final RecipeMachineCalciner recipeMachineCalciner = RecipeMachineCalciner.getInstance();
+    public static final RecipeMachineElectrolyticMachine recipeMachineElectrolyticMachine  = RecipeMachineElectrolyticMachine.getInstant();
 
     public CraftingLoader() {
-        registerRecipe();
-        registerSmelting();
-        registerFuel();
+        this.registerRecipe();
+        this.registerSmelting();
+        this.registerFuel();
         List recipes = CraftingManager.getInstance().getRecipeList();
         Iterator<IRecipe> it = recipes.iterator();
         while (it.hasNext()){
@@ -35,7 +36,7 @@ public class CraftingLoader {
         }
     }
 
-    private static void registerRecipe() {
+    private void registerRecipe() {
         //注册合成表
         //有序合成：金蛋
         GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.goldenEgg, 10), new Object[]
@@ -111,16 +112,16 @@ public class CraftingLoader {
 
     }
 
-    private static void registerSmelting()//注册烧练
-    {
+    //注册烧练
+    private void registerSmelting() {
         //烧练：草块——》煤炭
         GameRegistry.addSmelting(BlockLoader.grassBlock, new ItemStack(Items.coal), 0.5F);
         //烧练：铬矿石——》铬锭
         GameRegistry.addSmelting(BlockLoader.chromiteOre, new ItemStack(ItemLoader.chromiteIngot), 1F);
     }
 
-    private static void registerFuel()//注册燃料
-    {
+    //注册燃料
+    private void registerFuel() {
         //燃料：钻石
         GameRegistry.registerFuelHandler(new IFuelHandler() {
             @Override
@@ -128,14 +129,14 @@ public class CraftingLoader {
                 return Items.diamond != fuel.getItem() ? 0 : Math.max(0, ConfigLoader.DiamondBurnTime);
             }
         });
-        /*
-        *这里的烧炼时间为gametick，一秒为20个gametick，下面列出一些常见的烧炼时间数据：
-        *树苗　　100
-        *木板　　200
-        *煤炭　　1600
-        *烈焰棒　2400
-        *煤炭块　16000
-        *岩浆桶　20000
-         */
+        /** 这里的烧炼时间为gametick，一秒为20个gametick，
+        * 一些常见的烧炼时间数据：
+        * 树苗　　100
+        * 木板　　200
+        * 煤炭　　1600
+        * 烈焰棒　2400
+        * 煤炭块　16000
+        * 岩浆桶　20000
+        **/
     }
 }
