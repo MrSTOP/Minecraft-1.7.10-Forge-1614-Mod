@@ -1,29 +1,32 @@
 package com.github.mrstop.stdemo.block;
 
+import com.github.mrstop.stdemo.STDemo;
+import com.github.mrstop.stdemo.core.util.STDemoHelper;
 import com.github.mrstop.stdemo.creativetab.CreativeTabsLoader;
 import com.github.mrstop.stdemo.item.ItemLoader;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockBush;
 import net.minecraft.block.BlockCrops;
-import net.minecraft.block.IGrowable;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.ArrayList;
 import java.util.Random;
 
 public class BlockColorCrops extends BlockCrops {
 
-    protected int maxGrowthStage = 7;
+    protected static final int maxGrowthStage = 7;
 
-    @SideOnly(Side.CLIENT)
+//    @SideOnly(Side.CLIENT)
     protected IIcon[] icons = new IIcon[8];
 
     public BlockColorCrops() {
@@ -44,21 +47,37 @@ public class BlockColorCrops extends BlockCrops {
 
     public void incrementGrowStage(World world, Random rand, int X, int Y, int Z) {
         int growStage = world.getBlockMetadata(X, Y, Z) + MathHelper.getRandomIntegerInRange(rand, 2, 5);
-        if (growStage > maxGrowthStage)
-        {
+        if (growStage > maxGrowthStage) {
             growStage = maxGrowthStage;
         }
         world.setBlockMetadataWithNotify(X, Y, Z,growStage, 2);
     }
 
     @Override
-    public Item getItemDropped(int meta, Random rand, int fortune) {
-        if (meta != 7)
-        {
-            return Item.getItemFromBlock(this);
+    public boolean onBlockActivated(World worldIn, int x, int y, int z, EntityPlayer player, int side, float subX, float subY, float subZ) {
+        if (worldIn.isRemote){
+            return true;
         }
-        return ItemLoader.color;
+        else {
+            for (int i : OreDictionary.getOreIDs(player.getHeldItem())) {
+                if (OreDictionary.getOreID("dyeBlack") == i) {
+                    if (Math.random() <= 0.2) {
+                        player.addChatMessage(new ChatComponentText("Black!"));
+                        worldIn.setBlock(x, y, z, BlockLoader.colorBlockBlack);
+                    }
+                }
+            }
+            return true;
+        }
+    }
 
+    @Override
+    public Item getItemDropped(int meta, Random rand, int fortune) {
+        if (meta != 7) {
+            return Item.getItemFromBlock(this);
+        } else {
+            return ItemLoader.color;
+        }
     }
 
     @Override
@@ -91,10 +110,11 @@ public class BlockColorCrops extends BlockCrops {
     public void updateTick(World world, int x, int y, int z, Random rand) {
         super.updateTick(world, x, y, z, rand);
         int growStage = world.getBlockMetadata(x, y, z) + 1;
-        if (growStage > 7) {
-            growStage = 7;
+        if (growStage > maxGrowthStage) {
+            growStage = maxGrowthStage;
         }
         world.setBlockMetadataWithNotify(x, y, z, growStage, 2);
+
     }
 
     @Override
@@ -110,7 +130,6 @@ public class BlockColorCrops extends BlockCrops {
     @Override
     public ArrayList<ItemStack> getDrops(World world, int x, int y, int z, int metadata, int fortune) {
         ArrayList<ItemStack> ret = super.getDrops(world, x, y, z, metadata, fortune);
-
         if (metadata >= 7) {
             for (int i = 0; i < 3 + fortune; ++i) {
                 if (world.rand.nextInt(15) <= metadata) {
@@ -124,13 +143,6 @@ public class BlockColorCrops extends BlockCrops {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister iconRegister) {
-        this.icons[0] = iconRegister.registerIcon("stdemo:color_0");
-        this.icons[1] = iconRegister.registerIcon("stdemo:color_1");
-        this.icons[2] = iconRegister.registerIcon("stdemo:color_2");
-        this.icons[3] = iconRegister.registerIcon("stdemo:color_3");
-        this.icons[4] = iconRegister.registerIcon("stdemo:color_4");
-        this.icons[5] = iconRegister.registerIcon("stdemo:color_5");
-        this.icons[6] = iconRegister.registerIcon("stdemo:color_6");
-        this.icons[7] = iconRegister.registerIcon("stdemo:color_7");
+        STDemoHelper.registerIconArray(iconRegister, icons, "color_");
     }
 }
