@@ -139,6 +139,7 @@ public abstract class BlockColorCrops extends BlockBush implements IGrowable {
         return icons[growState];
     }
 
+    //创造模式中键获取物品
     @Override
     @SideOnly(Side.CLIENT)
     public Item getItem(World worldIn, int x, int y, int z) {
