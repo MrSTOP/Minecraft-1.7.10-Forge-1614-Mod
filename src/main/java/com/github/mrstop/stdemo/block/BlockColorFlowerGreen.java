@@ -7,7 +7,7 @@ import net.minecraft.item.Item;
 
 public class BlockColorFlowerGreen extends BlockColorFlower {
     public BlockColorFlowerGreen() {
-        super("colorFlowerBlackBlock");
+        super("colorFlowerGreenBlock");
     }
 
     @Override
