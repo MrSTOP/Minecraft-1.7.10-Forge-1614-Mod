@@ -27,7 +27,7 @@
 /ignore/
 /src/main/java/com/mod
 /src/main/java/com/thegrovesyproject
-/src/main/resources/assets/minecraft
+#/src/main/resources/assets/minecraft
 /src/main/resources/assets/stem
 /src/main/resources/assets/tm
 /src/main/resources/assets/tuto
