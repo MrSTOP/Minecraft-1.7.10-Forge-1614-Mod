@@ -14,6 +14,7 @@ public class BlockLoader {
     public static Block blockColorFlowerRed = new BlockColorFlowerRed();
     public static Block blockColorFlowerGreen = new BlockColorFlowerGreen();
     public static Block blockColorFlowerYellow = new BlockColorFlowerYellow();
+    public static Block blockColorFlowerBlue = new BlockColorFlowerBlue();
     public static Block metalFurnaceActive = new BlockMetalFurnace(true);
     public static Block metalFurnaceInactive = new BlockMetalFurnace(false);
     public static Block blockMachineRedstoneFluxFurnaceActive = new BlockMachineRedstoneFluxFurnace(true);
@@ -37,6 +38,7 @@ public class BlockLoader {
         register(blockColorFlowerRed, "color_flower_red_block");
         register(blockColorFlowerGreen, "color_flower_green_block");
         register(blockColorFlowerYellow, "color_flower_yellow_block");
+        register(blockColorFlowerBlue, "color_flower_blue_block");
         register(metalFurnaceActive, "metal_furnace_active");
         register(metalFurnaceInactive, "metal_furnace_inactive");
         register(blockMachineRedstoneFluxFurnaceActive, "machine_redstoneflux_furnace_active");
