@@ -1,14 +1,17 @@
 package com.github.mrstop.stdemo.block;
 
-import com.github.mrstop.stdemo.STDemo;
 import com.github.mrstop.stdemo.core.util.STDemoHelper;
 import com.github.mrstop.stdemo.creativetab.CreativeTabsLoader;
 import com.github.mrstop.stdemo.item.ItemLoader;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockBush;
 import net.minecraft.block.BlockCrops;
+import net.minecraft.block.IGrowable;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -25,21 +28,29 @@ import net.minecraftforge.oredict.OreDictionary;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class BlockColorCrops extends BlockCrops {
+public abstract class BlockColorCrops extends BlockBush implements IGrowable {
 
-    protected static final int maxGrowthStage = 7;
+    protected static final int MAX_GROWTH_STAGE = 7;
 
-    protected IIcon[] icons = new IIcon[maxGrowthStage + 1];
+    protected IIcon[] icons = new IIcon[MAX_GROWTH_STAGE + 1];
 
-    public BlockColorCrops() {
+    public BlockColorCrops(String unlocalizedName) {
+        this(unlocalizedName, CreativeTabsLoader.tabSTDemo);
+    }
+
+    public BlockColorCrops(String unlocalizedName, CreativeTabs creativeTabs) {
+        this(unlocalizedName, creativeTabs, Material.plants);
+    }
+    public BlockColorCrops(String unlocalizedName, CreativeTabs creativeTabs, Material material) {
+        super(material);
         this.setTickRandomly(true);
+        this.disableStats();
         float f = 0.5F;
         this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, 0.25F, 0.5F + f);
-        this.setCreativeTab(CreativeTabsLoader.tabSTDemo);
-        this.setUnlocalizedName("colorBlock");
+        this.setCreativeTab(creativeTabs);
+        this.setUnlocalizedName(unlocalizedName);
         this.setHardness(0.0F);
         this.setStepSound(soundTypeGrass);
-        this.disableStats();
     }
 
     ////BlockCrops
@@ -54,16 +65,17 @@ public class BlockColorCrops extends BlockCrops {
     }
 
     @Override
-    public void onNeighborBlockChange(World worldIn, int x, int y, int z, Block neighbor) {
-        super.onNeighborBlockChange(worldIn, x, y, z, neighbor);
-    }
-
-    @Override
     public void updateTick(World world, int x, int y, int z, Random rand) {
         super.updateTick(world, x, y, z, rand);
-        int growStage = world.getBlockMetadata(x, y, z) + 1;
-        if (growStage > maxGrowthStage) {
-            growStage = maxGrowthStage;
+        int growStageAdd = 0;
+        if (world.rand.nextFloat() <= 50) {
+            growStageAdd = 1;
+        } else {
+            growStageAdd = 0;
+        }
+        int growStage = world.getBlockMetadata(x, y, z) + growStageAdd;
+        if (growStage > MAX_GROWTH_STAGE) {
+            growStage = MAX_GROWTH_STAGE;
         }
         world.setBlockMetadataWithNotify(x, y, z, growStage, 2);
 
@@ -82,18 +94,17 @@ public class BlockColorCrops extends BlockCrops {
 
     @Override
     public AxisAlignedBB getCollisionBoundingBoxFromPool(World worldIn, int x, int y, int z) {
-        return super.getCollisionBoundingBoxFromPool(worldIn, x, y, z);
+        return null;
     }
 
     @Override
     public boolean isOpaqueCube() {
-//        return true;
-        return super.isOpaqueCube();
+        return false;
     }
 
     @Override
     public boolean renderAsNormalBlock() {
-        return super.renderAsNormalBlock();
+        return false;
     }
 
     @Override
@@ -103,87 +114,48 @@ public class BlockColorCrops extends BlockCrops {
     ////BlockCrops
 
     public void incrementGrowStage(World world, Random rand, int X, int Y, int Z) {
-        int growStage = world.getBlockMetadata(X, Y, Z) + MathHelper.getRandomIntegerInRange(rand, 2, 5);
-        if (growStage > maxGrowthStage) {
-            growStage = maxGrowthStage;
+        int growStageAdd = 0;
+        float percentage = rand.nextFloat();
+        if (percentage <= 0.3) {
+            growStageAdd = 1;
+        } else if (percentage >= 0.9) {
+            growStageAdd = 2;
+        } else {
+            growStageAdd = 0;
+        }
+        int growStage = world.getBlockMetadata(X, Y, Z) + growStageAdd;
+        if (growStage > MAX_GROWTH_STAGE) {
+            growStage = MAX_GROWTH_STAGE;
         }
         world.setBlockMetadataWithNotify(X, Y, Z,growStage, 2);
     }
 
     @Override
-    public boolean onBlockActivated(World worldIn, int x, int y, int z, EntityPlayer player, int side, float subX, float subY, float subZ) {
-        if (worldIn.isRemote){
-            return true;
-        }
-        else {
-            if (Math.random() <= 0.2) {
-                for (int i : OreDictionary.getOreIDs(player.getHeldItem())) {
-                    if (OreDictionary.getOreID("dyeBlack") == i) {
-                        player.addChatMessage(new ChatComponentText("Black!"));
-                        worldIn.setBlock(x, y, z, BlockLoader.colorBlockBlack);
-                    }
-                }
-            }
-            for (String str : OreDictionary.getOreNames()) {
-                if (str.contains("dye")) {
-                    player.addChatMessage(new ChatComponentText(str));
-                }
-            }
-            return true;
-        }
-    }
-
-
-
-    @Override
-    public Item getItemDropped(int meta, Random rand, int fortune) {
-        return meta == maxGrowthStage ? this.getCrop() : getSeed();
-    }
-
-    @Override
-    public int quantityDropped(Random random) {
-        return super.quantityDropped(random);
-    }
-
-
-    @Override
     @SideOnly(Side.CLIENT)
     public IIcon getIcon(int side, int growState) {
-        if (growState < 0 || growState > maxGrowthStage) {
+        if (growState < 0 || growState > MAX_GROWTH_STAGE) {
             return icons[0];
         }
         return icons[growState];
     }
 
     @Override
-    public void dropBlockAsItemWithChance(World worldIn, int x, int y, int z, int meta, float chance, int fortune) {
-        super.dropBlockAsItemWithChance(worldIn, x, y, z, meta, chance, fortune);
-    }
-
-    @Override
     @SideOnly(Side.CLIENT)
     public Item getItem(World worldIn, int x, int y, int z) {
-        return super.getItem(worldIn, x, y, z);
+        return this.getSeed();
     }
 
 
-    @Override
-    protected Item getSeed() {
-        return ItemLoader.seedsColor;
-    }
-
-    @Override
-    protected Item getCrop() {
-        return ItemLoader.color;
-    }
+    abstract protected Item getSeed();
 
     @Override
     public ArrayList<ItemStack> getDrops(World world, int x, int y, int z, int metadata, int fortune) {
-        ArrayList<ItemStack> drops = super.getDrops(world, x, y, z, metadata, fortune);
-        if (metadata >= 7) {
-            for (int i = 0; i < 3 + fortune; ++i) {
-                if (world.rand.nextInt(15) <= metadata) {
-                    drops.add(new ItemStack(this.getCrop(), 1, 0));
+        ArrayList<ItemStack> drops = new ArrayList<>();
+        drops.add(new ItemStack(this.getSeed(), 1));
+        if (metadata >= MAX_GROWTH_STAGE) {
+            for (int i = 0; i < 3 + fortune; i++) {
+                if (world.rand.nextFloat() < 0.3) {
+                    drops.add(new ItemStack(this.getSeed(), world.rand.nextInt(4)));
                 }
             }
         }
@@ -193,7 +165,7 @@ public class BlockColorCrops extends BlockCrops {
     ////IGrowable
     @Override
     public boolean canFertilize(World worldIn, int x, int y, int z, boolean isClient) {
-        return worldIn.getBlockMetadata(x, y, z) != maxGrowthStage;
+        return worldIn.getBlockMetadata(x, y, z) != MAX_GROWTH_STAGE;
     }
 
     @Override
@@ -227,7 +199,10 @@ public class BlockColorCrops extends BlockCrops {
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister iconRegister) {
-        STDemoHelper.registerIconArray(iconRegister, icons, "color_");
+    public void registerIcons(IIconRegister iIconRegister){
+        STDemoHelper.registerIconArray(iIconRegister, icons, "color_crop_", 0, 7);
+        this.registerLastIcons(iIconRegister);
     }
+
+    abstract protected void registerLastIcons(IIconRegister iIconRegister);
 }
