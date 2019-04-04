@@ -28,5 +28,4 @@ public abstract class ItemSeedsColor extends ItemSeeds {
     @Override
     @SideOnly(Side.CLIENT)
     abstract public void registerIcons(IIconRegister iIconRegister);
-//        this.itemIcon = iIconRegister.registerIcon("stdemo:seeds_color");
 }
