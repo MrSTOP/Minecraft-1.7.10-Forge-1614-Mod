@@ -24,6 +24,7 @@ public class ItemLoader//加载物品
     public static Item color = new ItemColor();
     public static Item diracWand = new ItemDiracWand();
     public static Item spawnEggGoldenChickenEgg = new ItemSpawnEggGoldenChicken("GoldenChicken", 0xFF0000, 0x0000FF);
+    public static Item seedsColorOrigin = new ItemSeedsColorOrigin();
     public static Item seedsColorBlack = new ItemSeedsColorBlack();
     public static Item seedsColorWhite = new ItemSeedsColorWhite();
     public static Item seedsColorRed = new ItemSeedsColorRed();
@@ -49,6 +50,7 @@ public class ItemLoader//加载物品
         register(color, "color");
         register(diracWand, "dirac_wand");
         register(spawnEggGoldenChickenEgg, "spawnegg_goldenchicken");
+        register(seedsColorOrigin, "seeds_color_origin");
         register(seedsColorBlack, "seeds_color_black");
         register(seedsColorWhite, "seeds_color_white");
         register(seedsColorRed, "seeds_color_red");

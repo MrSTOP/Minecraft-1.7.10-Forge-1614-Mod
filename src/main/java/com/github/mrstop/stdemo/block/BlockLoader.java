@@ -9,6 +9,7 @@ public class BlockLoader {
     public static Block grassBlock = new BlockGrassBlock();//实例化方块
     public static Block chromiteOre = new BlockChromiteOre();
     public static Block fluidMercuryBlock = new BlockFluidMercury();
+    public static Block blockColorFlowerOrigin = new BlockColorFlowerOrigin();
     public static Block blockColorFlowerBlack = new BlockColorFlowerBlack();
     public static Block blockColorFlowerWhite = new BlockColorFlowerWhite();
     public static Block blockColorFlowerRed = new BlockColorFlowerRed();
@@ -34,6 +35,7 @@ public class BlockLoader {
         register(cinnabarOre, "cinnabar_ore");
         register(grassBlock,"grass_block");//注册草块
         register(fluidMercuryBlock, "fluidMercury_block");
+        register(blockColorFlowerOrigin, "color_flower_origin_block");
         register(blockColorFlowerBlack, "color_flower_black_block");
         register(blockColorFlowerWhite, "color_flower_white_block");
         register(blockColorFlowerRed, "color_flower_red_block");
