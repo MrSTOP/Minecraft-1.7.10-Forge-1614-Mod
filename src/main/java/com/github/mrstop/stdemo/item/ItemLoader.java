@@ -27,6 +27,7 @@ public class ItemLoader//加载物品
     public static Item seedsColorBlack = new ItemSeedsColorBlack();
     public static Item seedsColorWhite = new ItemSeedsColorWhite();
     public static Item seedsColorRed = new ItemSeedsColorRed();
+    public static Item seedsColorGreen = new ItemSeedsColorGreen();
     public static Item explosionEgg = new ItemExplosionEgg();
 
     //构造方法
@@ -48,6 +49,7 @@ public class ItemLoader//加载物品
         register(seedsColorBlack, "seeds_color_black");
         register(seedsColorWhite, "seeds_color_white");
         register(seedsColorRed, "seeds_color_red");
+        register(seedsColorGreen, "seeds_color_green");
         register(explosionEgg, "explosion_egg");
     }
 
