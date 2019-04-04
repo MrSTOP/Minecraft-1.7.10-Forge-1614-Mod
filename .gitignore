@@ -21,7 +21,7 @@
 
 *.psd
 /.gradle/
-/.setting/
+/.settings/
 /build/
 /eclipse/
 /out/
