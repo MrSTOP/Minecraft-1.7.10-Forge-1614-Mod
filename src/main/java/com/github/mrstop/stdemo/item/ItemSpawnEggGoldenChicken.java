@@ -50,7 +50,7 @@ public class ItemSpawnEggGoldenChicken extends ItemMonsterPlacer{
         }
 
         @Override
-        public boolean onItemUse(ItemStack itemStack, EntityPlayer entityPlayer, World world, int blockX, int blockY, int blockZ, int array, float faceX, float faceY, float faceZ)
+        public boolean onItemUse(ItemStack itemStack, EntityPlayer entityPlayer, World world, int blockX, int blockY, int blockZ, int side, float faceX, float faceY, float faceZ)
         {
             if (world.isRemote)
             {
@@ -59,11 +59,11 @@ public class ItemSpawnEggGoldenChicken extends ItemMonsterPlacer{
             else
             {
                 Block block = world.getBlock(blockX, blockY, blockZ);
-                blockX += Facing.offsetsXForSide[array];
-                blockY += Facing.offsetsYForSide[array];
-                blockZ += Facing.offsetsZForSide[array];
+                blockX += Facing.offsetsXForSide[side];
+                blockY += Facing.offsetsYForSide[side];
+                blockZ += Facing.offsetsZForSide[side];
                 double d0 = 0.0D;
-                if (array == 1 &&block.getRenderType() == 11)
+                if (side == 1 &&block.getRenderType() == 11)
                 {
                     d0 = 0.5D;
                 }
