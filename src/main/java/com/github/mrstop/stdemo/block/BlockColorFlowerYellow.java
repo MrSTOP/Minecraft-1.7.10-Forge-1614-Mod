@@ -1,4 +1,23 @@
 package com.github.mrstop.stdemo.block;
 
-public class BlockColorFlowerYellow {
+import com.github.mrstop.stdemo.STDemo;
+import com.github.mrstop.stdemo.item.ItemLoader;
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.item.Item;
+
+public class BlockColorFlowerYellow extends BlockColorFlower {
+
+    public BlockColorFlowerYellow() {
+        super("colorFlowerYellowBlock");
+    }
+
+    @Override
+    protected Item getSeed() {
+        return ItemLoader.seedsColorYellow;
+    }
+
+    @Override
+    protected void registerLastIcons(IIconRegister iIconRegister, int index) {
+        this.icons[index] = iIconRegister.registerIcon(STDemo.MOD_DOMAIN + "color_flower_yellow");
+    }
 }
