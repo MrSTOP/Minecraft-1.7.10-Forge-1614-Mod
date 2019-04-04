@@ -4,10 +4,10 @@ import com.github.mrstop.stdemo.item.ItemLoader;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 
-public class BlockColorCropsBlack extends BlockColorFlower {
+public class BlockColorFlowerBlack extends BlockColorFlower {
 
-    public BlockColorCropsBlack() {
-        super("colorBlackBlock");
+    public BlockColorFlowerBlack() {
+        super("colorFlowerBlackBlock");
     }
 
     @Override
@@ -17,6 +17,6 @@ public class BlockColorCropsBlack extends BlockColorFlower {
 
     @Override
     protected void registerLastIcons(IIconRegister iIconRegister, int index) {
-        this.icons[index] = iIconRegister.registerIcon("color_crop_black");
+        this.icons[index] = iIconRegister.registerIcon("color_flower_black");
     }
 }

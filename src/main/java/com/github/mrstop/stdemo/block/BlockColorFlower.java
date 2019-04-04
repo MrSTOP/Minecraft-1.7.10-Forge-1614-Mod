@@ -195,7 +195,7 @@ public abstract class BlockColorFlower extends BlockBush implements IGrowable {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister iIconRegister){
-        STDemoHelper.registerIconArray(iIconRegister, icons, "color_crop_", 0, 7);
+        STDemoHelper.registerIconArray(iIconRegister, icons, "color_flower_", 0, 7);
         this.registerLastIcons(iIconRegister, MAX_GROWTH_STAGE);
     }
 
