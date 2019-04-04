@@ -10,6 +10,7 @@ public class BlockLoader {
     public static Block chromiteOre = new BlockChromiteOre();
     public static Block fluidMercuryBlock = new BlockFluidMercury();
     public static Block blockColorFlowerBlack = new BlockColorFlowerBlack();
+    public static Block blockColorFlowerWhite = new BlockColorFlowerWhite();
     public static Block metalFurnaceActive = new BlockMetalFurnace(true);
     public static Block metalFurnaceInactive = new BlockMetalFurnace(false);
     public static Block blockMachineRedstoneFluxFurnaceActive = new BlockMachineRedstoneFluxFurnace(true);
@@ -29,6 +30,7 @@ public class BlockLoader {
         register(grassBlock,"grass_block");//注册草块
         register(fluidMercuryBlock, "fluidMercury_block");
         register(blockColorFlowerBlack, "color_flower_black_block");
+        register(blockColorFlowerWhite, "color_flower_white_block");
         register(metalFurnaceActive, "metal_furnace_active");
         register(metalFurnaceInactive, "metal_furnace_inactive");
         register(blockMachineRedstoneFluxFurnaceActive, "machine_redstoneflux_furnace_active");
