@@ -4,7 +4,7 @@ import com.github.mrstop.stdemo.item.ItemLoader;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 
-public class BlockColorCropsBlack extends BlockColorCrops {
+public class BlockColorCropsBlack extends BlockColorFlower {
 
     public BlockColorCropsBlack() {
         super("colorBlackBlock");

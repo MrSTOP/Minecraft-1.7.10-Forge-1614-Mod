@@ -9,7 +9,7 @@ public class BlockLoader {
     public static Block grassBlock = new BlockGrassBlock();//实例化方块
     public static Block chromiteOre = new BlockChromiteOre();
     public static Block fluidMercuryBlock = new BlockFluidMercury();
-    public static Block colorBlock = new BlockColorCrops();
+    public static Block colorBlock = new BlockColorFlower();
     public static Block colorBlockBlack = new BlockColorCropsBlack();
     public static Block metalFurnaceActive = new BlockMetalFurnace(true);
     public static Block metalFurnaceInactive = new BlockMetalFurnace(false);

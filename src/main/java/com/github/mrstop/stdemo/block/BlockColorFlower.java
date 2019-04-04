@@ -2,46 +2,40 @@ package com.github.mrstop.stdemo.block;
 
 import com.github.mrstop.stdemo.core.util.STDemoHelper;
 import com.github.mrstop.stdemo.creativetab.CreativeTabsLoader;
-import com.github.mrstop.stdemo.item.ItemLoader;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
-import net.minecraft.block.BlockCrops;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.IIcon;
-import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
-import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-public abstract class BlockColorCrops extends BlockBush implements IGrowable {
+public abstract class BlockColorFlower extends BlockBush implements IGrowable {
 
     protected static final int MAX_GROWTH_STAGE = 7;
 
     protected IIcon[] icons = new IIcon[MAX_GROWTH_STAGE + 1];
 
-    public BlockColorCrops(String unlocalizedName) {
+    public BlockColorFlower(String unlocalizedName) {
         this(unlocalizedName, CreativeTabsLoader.tabSTDemo);
     }
 
-    public BlockColorCrops(String unlocalizedName, CreativeTabs creativeTabs) {
+    public BlockColorFlower(String unlocalizedName, CreativeTabs creativeTabs) {
         this(unlocalizedName, creativeTabs, Material.plants);
     }
-    public BlockColorCrops(String unlocalizedName, CreativeTabs creativeTabs, Material material) {
+    public BlockColorFlower(String unlocalizedName, CreativeTabs creativeTabs, Material material) {
         super(material);
         this.setTickRandomly(true);
         this.disableStats();
