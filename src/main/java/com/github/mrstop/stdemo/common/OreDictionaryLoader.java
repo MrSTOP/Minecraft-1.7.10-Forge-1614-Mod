@@ -26,22 +26,19 @@ public class OreDictionaryLoader {
         OreDictionary.registerOre("oreCinnabar", BlockLoader.cinnabarOre);
         OreDictionary.registerOre("ingotCopper", ItemLoader.chromiteIngot);
         OreDictionary.registerOre("dye", ItemLoader.seedsColorBlack);
-//        OreDictionary.registerOre("dyeBlack", ItemLoader.seedsColorBlack);
-//        OreDictionary.registerOre("dyeRed", ItemLoader.seedsColorBlack);
-//        OreDictionary.registerOre("dyeGreen", ItemLoader.seedsColorBlack);
-//        OreDictionary.registerOre("dyeBrown", ItemLoader.seedsColorBlack);
-//        OreDictionary.registerOre("dyeBlue", ItemLoader.seedsColorBlack);
-//        OreDictionary.registerOre("dyePurple", ItemLoader.seedsColorBlack);
-//        OreDictionary.registerOre("dyeCyan", ItemLoader.seedsColorBlack);
-//        OreDictionary.registerOre("dyeLightGray", ItemLoader.seedsColorBlack);
-//        OreDictionary.registerOre("dyeGray", ItemLoader.seedsColorBlack);
-//        OreDictionary.registerOre("dyePink", ItemLoader.seedsColorBlack);
-//        OreDictionary.registerOre("dyeLime", ItemLoader.seedsColorBlack);
-//        OreDictionary.registerOre("dyeYellow", ItemLoader.seedsColorBlack);
-//        OreDictionary.registerOre("dyeLightBlue", ItemLoader.seedsColorBlack);
-//        OreDictionary.registerOre("dyeMagenta", ItemLoader.seedsColorBlack);
-//        OreDictionary.registerOre("dyeOrange", ItemLoader.seedsColorBlack);
-//        OreDictionary.registerOre("dyeWhite", ItemLoader.seedsColorBlack);
+        OreDictionary.registerOre("dye", ItemLoader.seedsColorRed);
+        OreDictionary.registerOre("dye", ItemLoader.seedsColorGreen);
+        OreDictionary.registerOre("dye", ItemLoader.seedsColorBrown);
+        OreDictionary.registerOre("dye", ItemLoader.seedsColorBlue);
+        OreDictionary.registerOre("dye", ItemLoader.seedsColorYellow);
+        OreDictionary.registerOre("dye", ItemLoader.seedsColorWhite);
+        OreDictionary.registerOre("dyeBlack", ItemLoader.seedsColorBlack);
+        OreDictionary.registerOre("dyeRed", ItemLoader.seedsColorRed);
+        OreDictionary.registerOre("dyeGreen", ItemLoader.seedsColorGreen);
+        OreDictionary.registerOre("dyeBrown", ItemLoader.seedsColorBrown);
+        OreDictionary.registerOre("dyeBlue", ItemLoader.seedsColorBlue);
+        OreDictionary.registerOre("dyeYellow", ItemLoader.seedsColorYellow);
+        OreDictionary.registerOre("dyeWhite", ItemLoader.seedsColorWhite);
 
         /*
         Log.Log.info("Registed Ore:");
