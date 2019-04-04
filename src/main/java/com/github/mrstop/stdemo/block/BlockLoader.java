@@ -9,7 +9,6 @@ public class BlockLoader {
     public static Block grassBlock = new BlockGrassBlock();//实例化方块
     public static Block chromiteOre = new BlockChromiteOre();
     public static Block fluidMercuryBlock = new BlockFluidMercury();
-    public static Block colorBlock = new BlockColorFlower();
     public static Block colorBlockBlack = new BlockColorCropsBlack();
     public static Block metalFurnaceActive = new BlockMetalFurnace(true);
     public static Block metalFurnaceInactive = new BlockMetalFurnace(false);
@@ -29,7 +28,6 @@ public class BlockLoader {
         register(cinnabarOre, "cinnabar_ore");
         register(grassBlock,"grass_block");//注册草块
         register(fluidMercuryBlock, "fluidMercury_block");
-        register(colorBlock, "color_block");
         register(colorBlockBlack, "color_block_black");
         register(metalFurnaceActive, "metal_furnace_active");
         register(metalFurnaceInactive, "metal_furnace_inactive");
