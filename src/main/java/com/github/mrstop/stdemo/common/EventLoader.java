@@ -4,6 +4,7 @@ package com.github.mrstop.stdemo.common;
 import com.github.mrstop.stdemo.achievement.AchievementLoader;
 import com.github.mrstop.stdemo.client.KeyLoader;
 import com.github.mrstop.stdemo.core.ICustomHighLight;
+import com.github.mrstop.stdemo.core.util.STDemoHelper;
 import com.github.mrstop.stdemo.enchantment.EnchantmentLoader;
 import com.github.mrstop.stdemo.item.ItemLoader;
 import cpw.mods.fml.common.FMLCommonHandler;
@@ -13,6 +14,7 @@ import cpw.mods.fml.common.gameevent.PlayerEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockFlower;
 import net.minecraft.client.Minecraft;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
@@ -54,7 +56,7 @@ public class EventLoader {
 
     public EventLoader() {
 
-        //´ó¸ÅForgeµÄËùÓĞµÄÊÂ¼ş¶¼ÔÚÕâÏÂÃæÁË°É?
+        //å¤§æ¦‚Forgeçš„æ‰€æœ‰çš„äº‹ä»¶éƒ½åœ¨è¿™ä¸‹é¢äº†å§?
         //P \net
         //P  |-\minecraftforge
         //P  |---\client
@@ -261,9 +263,9 @@ public class EventLoader {
         //C  |        WorldEvent.Unload
         MinecraftForge.EVENT_BUS.register(this);
 
-        //°´¼ü°ó¶¨ºÍºÏ³ÉÊÂ¼şÔÚ×¢²áµ½FMLÖĞ²ÅÓĞĞ§?
-        //»òĞíÊÇÏÂÃæÕâĞ©ÊÂ¼ş¶¼ÊÇ×¢²áµ½FMLµÄÊÂ¼ş×ÜÏß²ÅÓĞĞ§?
-        //´ó¸ÅFMLµÄËùÓĞµÄÊÂ¼ş¶¼ÔÚÕâÏÂÃæÁË°É?
+        //æŒ‰é”®ç»‘å®šå’Œåˆæˆäº‹ä»¶åœ¨æ³¨å†Œåˆ°FMLä¸­æ‰æœ‰æ•ˆ?
+        //æˆ–è®¸æ˜¯ä¸‹é¢è¿™äº›äº‹ä»¶éƒ½æ˜¯æ³¨å†Œåˆ°FMLçš„äº‹ä»¶æ€»çº¿æ‰æœ‰æ•ˆ?
+        //å¤§æ¦‚FMLçš„æ‰€æœ‰çš„äº‹ä»¶éƒ½åœ¨è¿™ä¸‹é¢äº†å§?
         //P  \cpw
         //P  |-\mods
         //P  |----\fml
@@ -322,8 +324,7 @@ public class EventLoader {
 
     @SubscribeEvent
     public void onPlayerItemPickup(PlayerEvent.ItemPickupEvent event) {
-        //if (!event.player.isServerWorld())
-        {
+        if (!event.player.isServerWorld()){
             String info = String.format("%s picks up: %s", event.player.getGameProfile().getName(), event.pickedUp.getEntityItem().getUnlocalizedName());
             Log.Log.info(info);
             Log.Log.info("ONPLAYERITEMPICKUP");
@@ -358,7 +359,7 @@ public class EventLoader {
 
     @SubscribeEvent
     public void onPlayerClickGrassBlock(PlayerRightClickGrassBlockEvent event) {
-        //Éú³ÉTNT
+        //ç”ŸæˆTNT
         if (!event.world.isRemote) {
             int blockX = event.blockX;
             int blockY = event.blockY;
@@ -369,7 +370,7 @@ public class EventLoader {
             event.entityPlayer.triggerAchievement(AchievementLoader.explosionFromGrassBlock);
         }
 
-        //Éú³É½ğ¼¦
+        //ç”Ÿæˆé‡‘é¸¡
         if (!event.world.isRemote) {
             ItemStack heldItem = event.entityPlayer.getHeldItem();
             if (heldItem == null) {
@@ -416,12 +417,10 @@ public class EventLoader {
                         newStack = newStack.copy();
                         newStack.stackSize = stack.stackSize;
                         event.drops.set(i, newStack);
-                    }
-                    else if (stack != null) {
+                    } else if (stack != null) {
                         Block block = Block.getBlockFromItem(stack.getItem());
                         boolean b = (block == null);
-                        if (!b &&
-                                (block.isFlammable(event.world, event.x, event.y, event.z, ForgeDirection.DOWN))
+                        if (!b && (block.isFlammable(event.world, event.x, event.y, event.z, ForgeDirection.DOWN))
                                 || (block.isFlammable(event.world, event.x, event.y, event.z, ForgeDirection.EAST))
                                 || (block.isFlammable(event.world, event.x, event.y, event.z, ForgeDirection.NORTH))
                                 || (block.isFlammable(event.world, event.x, event.y, event.z, ForgeDirection.SOUTH))
@@ -431,6 +430,17 @@ public class EventLoader {
                         }
                     }
                 }
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public void onBlockBreak(BlockEvent.BreakEvent event) {
+        EntityPlayer entityPlayer = event.getPlayer();
+        if (entityPlayer instanceof EntityPlayerMP) {
+            event.getPlayer().addChatMessage(new ChatComponentText(event.block.toString()));
+            if (event.block instanceof BlockFlower) {
+                STDemoHelper.dropItemStackInWorld(event.world, new ItemStack(event.block, 4), event.x, event.y, event.z, 50);
             }
         }
     }
@@ -494,7 +504,7 @@ public class EventLoader {
         }
     }
 
-    //TODO ÍêÉÆÑ¡ÖĞ¸ßÁÁ
+    //TODO å®Œå–„é€‰ä¸­é«˜äº®
     @SideOnly(Side.CLIENT)
     private void drawBlockHighLight(ICustomHighLight block){
 
