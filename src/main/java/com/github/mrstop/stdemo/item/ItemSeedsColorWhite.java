@@ -7,7 +7,7 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 
 public class ItemSeedsColorWhite extends ItemSeedsColor {
     public ItemSeedsColorWhite() {
-        super(BlockLoader.blockColorFlowerWhite, "seedsColorBlack");
+        super(BlockLoader.blockColorFlowerWhite, "seedsColorWhite");
     }
 
     @Override

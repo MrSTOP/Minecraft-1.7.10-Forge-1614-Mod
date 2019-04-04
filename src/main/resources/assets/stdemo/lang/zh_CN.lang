@@ -1,3 +1,11 @@
+item.seedsColorOrigin.name=原始花种子
+item.seedsColorBlack.name=黑色花种子
+item.seedsColorWhite.name=白色花种子
+item.seedsColorRed.name=红色花种子
+item.seedsColorGreen.name=绿色花种子
+item.seedsColorBlue.name=蓝色花种子
+item.seedsColorYellow.name=黄色花种子
+item.seedsColorBrown.name=棕色花种子
 item.goldenEgg.name=金蛋
 item.explosionEgg.name=爆炸蛋
 item.redstoneApple.name=红石苹果

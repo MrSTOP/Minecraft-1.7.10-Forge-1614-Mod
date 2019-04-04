@@ -1,3 +1,11 @@
+item.seedsColorOrigin.name=Origin Flower Seeds
+item.seedsColorBlack.name=Black Flower Seeds
+item.seedsColorWhite.name=White Flower Seeds
+item.seedsColorRed.name=Red Flower Seeds
+item.seedsColorGreen.name=Green Flower Seeds
+item.seedsColorBlue.name=Blue Flower Seeds
+item.seedsColorYellow.name=Yellow Flower Seeds
+item.seedsColorBrown.name=Brown Flower Seeds
 item.goldenEgg.name=Golden Egg
 item.explosionEgg.name=Explosion Egg
 item.redstoneApple.name=Redstone Apple
