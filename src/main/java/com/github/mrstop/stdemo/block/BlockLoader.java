@@ -40,7 +40,7 @@ public class BlockLoader {
         register(blockColorFlowerGreen, "color_flower_green_block");
         register(blockColorFlowerYellow, "color_flower_yellow_block");
         register(blockColorFlowerBlue, "color_flower_blue_block");
-        register(blockColorFlowerBrown, "color_flower_blue_block");
+        register(blockColorFlowerBrown, "color_flower_brown_block");
         register(metalFurnaceActive, "metal_furnace_active");
         register(metalFurnaceInactive, "metal_furnace_inactive");
         register(blockMachineRedstoneFluxFurnaceActive, "machine_redstoneflux_furnace_active");
