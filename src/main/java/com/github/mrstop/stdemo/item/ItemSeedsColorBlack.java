@@ -1,5 +1,6 @@
 package com.github.mrstop.stdemo.item;
 
+import com.github.mrstop.stdemo.STDemo;
 import com.github.mrstop.stdemo.block.BlockLoader;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -13,6 +14,6 @@ public class ItemSeedsColorBlack extends ItemSeedsColor {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister iIconRegister) {
-        this.itemIcon = iIconRegister.registerIcon("seeds_color_black");
+        this.itemIcon = iIconRegister.registerIcon(STDemo.MOD_DOMAIN + "seeds_color_black");
     }
 }
