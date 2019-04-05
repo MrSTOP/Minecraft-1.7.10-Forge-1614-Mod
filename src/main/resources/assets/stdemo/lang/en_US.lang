@@ -22,6 +22,7 @@ item.Color.name=Color
 item.seedsColor.name=Color Seeds
 item.diracWand.name=Dirac Wand
 item.GoldenChicken.name=Spawn Golden Chicken
+item.debugItem.name=Debug Item
 container.stdemo.demo=FMLTutor GUI Demo
 tile.grassBlock.name=Grass Block
 tile.chromiteOre.name=Chromite Ore

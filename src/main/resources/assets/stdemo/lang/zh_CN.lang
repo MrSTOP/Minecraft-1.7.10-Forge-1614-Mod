@@ -22,6 +22,7 @@ item.Color.name=彩色
 item.seedsColor.name=彩色种子
 item.diracWand.name=圣剑
 item.GoldenChicken.name=生成 金鸡
+item.debugItem.name=调试物品
 container.stdemo.demo=FML教程示例GUI
 tile.grassBlock.name=草块
 tile.chromiteOre.name=铬矿石

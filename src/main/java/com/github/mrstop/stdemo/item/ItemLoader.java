@@ -33,6 +33,7 @@ public class ItemLoader//加载物品
     public static Item seedsColorBlue = new ItemSeedsColorBlue();
     public static Item seedsColorBrown = new ItemSeedsColorBrown();
     public static Item explosionEgg = new ItemExplosionEgg();
+    public static Item debugItem = new ItemDebug();
 
     //构造方法
     public ItemLoader(FMLPreInitializationEvent event) {
@@ -59,6 +60,7 @@ public class ItemLoader//加载物品
         register(seedsColorBlue, "seeds_color_blue");
         register(seedsColorBrown, "seeds_color_brown");
         register(explosionEgg, "explosion_egg");
+        register(debugItem, "item_debug");
     }
 
     //注册物品的方法
