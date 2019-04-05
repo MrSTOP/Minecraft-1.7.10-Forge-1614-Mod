@@ -5,6 +5,7 @@ import com.github.mrstop.stdemo.item.ItemLoader;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
@@ -32,7 +33,11 @@ public class BlockColorFlowerOrigin extends BlockColorFlower {
             if (worldIn.getBlockMetadata(x, y, z) != MAX_GROWTH_STAGE) {
                 cancelBlockPlace = false;
             } else {
-                for (int i: OreDictionary.getOreIDs(player.getHeldItem())) {
+                ItemStack itemStack = player.getHeldItem();
+                for (int i: OreDictionary.getOreIDs(itemStack)) {
+                    if (i == OreDictionary.getOreID("dye") && itemStack != null) {
+                        itemStack.stackSize--;
+                    }
                     if (worldIn.rand.nextFloat() < rate) {
                         cancelBlockPlace = true;
                         if (i == OreDictionary.getOreID("dyeBlack")) {
