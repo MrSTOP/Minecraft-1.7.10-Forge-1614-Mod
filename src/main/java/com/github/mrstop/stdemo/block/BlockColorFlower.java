@@ -84,7 +84,7 @@ public abstract class BlockColorFlower extends BlockBush implements IGrowable {
 
     @Override
     public boolean canBlockStay(World worldIn, int x, int y, int z) {
-        return super.canBlockStay(worldIn, x, y, z);
+        return worldIn.getBlock(x, y - 1, z) == Blocks.farmland;
     }
 
     @Override
