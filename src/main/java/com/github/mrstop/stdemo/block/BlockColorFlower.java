@@ -62,7 +62,7 @@ public abstract class BlockColorFlower extends BlockBush implements IGrowable {
     public void updateTick(World world, int x, int y, int z, Random rand) {
         super.updateTick(world, x, y, z, rand);
         int growStageAdd = 0;
-        if (world.getBlockLightValue(x, y + 1, z) >= 9) {
+        if (world.getBlockLightValue(x, y + 1, z) >= 9 && world.getBlockMetadata(x, y - 1, z) != 0) {
             if (world.rand.nextFloat() <= 0.2) {
                 growStageAdd = 1;
             } else {
