@@ -62,17 +62,18 @@ public abstract class BlockColorFlower extends BlockBush implements IGrowable {
     public void updateTick(World world, int x, int y, int z, Random rand) {
         super.updateTick(world, x, y, z, rand);
         int growStageAdd = 0;
-        if (world.rand.nextFloat() <= 0.2) {
-            growStageAdd = 1;
-        } else {
-            growStageAdd = 0;
+        if (world.getBlockLightValue(x, y + 1, z) >= 9) {
+            if (world.rand.nextFloat() <= 0.2) {
+                growStageAdd = 1;
+            } else {
+                growStageAdd = 0;
+            }
+            int growStage = world.getBlockMetadata(x, y, z) + growStageAdd;
+            if (growStage > MAX_GROWTH_STAGE) {
+                growStage = MAX_GROWTH_STAGE;
+            }
+            world.setBlockMetadataWithNotify(x, y, z, growStage, 2);
         }
-        int growStage = world.getBlockMetadata(x, y, z) + growStageAdd;
-        if (growStage > MAX_GROWTH_STAGE) {
-            growStage = MAX_GROWTH_STAGE;
-        }
-        world.setBlockMetadataWithNotify(x, y, z, growStage, 2);
-
     }
 
     //检测方块是否能继续存在，不能则以物品形式掉落
