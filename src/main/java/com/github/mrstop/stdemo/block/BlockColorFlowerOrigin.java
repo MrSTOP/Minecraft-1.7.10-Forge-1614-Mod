@@ -29,31 +29,35 @@ public class BlockColorFlowerOrigin extends BlockColorFlower {
         if (worldIn.isRemote) {
             cancelBlockPlace = true;
         } else {
-            for (int i: OreDictionary.getOreIDs(player.getHeldItem())) {
-                if (worldIn.rand.nextFloat() < rate) {
-                    cancelBlockPlace = true;
-                    if (i == OreDictionary.getOreID("dyeBlack")) {
-                        worldIn.setBlock(x, y, z, BlockLoader.blockColorFlowerBlack);
-                    } else if (i == OreDictionary.getOreID("dyeWhite")) {
-                        worldIn.setBlock(x, y, z, BlockLoader.blockColorFlowerWhite);
-                    } else if (i == OreDictionary.getOreID("dyeRed")) {
-                        worldIn.setBlock(x, y, z, BlockLoader.blockColorFlowerRed);
-                    } else if (i == OreDictionary.getOreID("dyeGreen")) {
-                        worldIn.setBlock(x, y, z, BlockLoader.blockColorFlowerGreen);
-                    } else if (i == OreDictionary.getOreID("dyeBlue")) {
-                        worldIn.setBlock(x, y, z, BlockLoader.blockColorFlowerBlue);
-                    } else if (i == OreDictionary.getOreID("dyeYellow")) {
-                        worldIn.setBlock(x, y, z, BlockLoader.blockColorFlowerYellow);
-                    } else if (i == OreDictionary.getOreID("dyeBrown")) {
-                        worldIn.setBlock(x, y, z, BlockLoader.blockColorFlowerBrown);
+            if (worldIn.getBlockMetadata(x, y, z) != MAX_GROWTH_STAGE) {
+                cancelBlockPlace = false;
+            } else {
+                for (int i: OreDictionary.getOreIDs(player.getHeldItem())) {
+                    if (worldIn.rand.nextFloat() < rate) {
+                        cancelBlockPlace = true;
+                        if (i == OreDictionary.getOreID("dyeBlack")) {
+                            worldIn.setBlock(x, y, z, BlockLoader.blockColorFlowerBlack);
+                        } else if (i == OreDictionary.getOreID("dyeWhite")) {
+                            worldIn.setBlock(x, y, z, BlockLoader.blockColorFlowerWhite);
+                        } else if (i == OreDictionary.getOreID("dyeRed")) {
+                            worldIn.setBlock(x, y, z, BlockLoader.blockColorFlowerRed);
+                        } else if (i == OreDictionary.getOreID("dyeGreen")) {
+                            worldIn.setBlock(x, y, z, BlockLoader.blockColorFlowerGreen);
+                        } else if (i == OreDictionary.getOreID("dyeBlue")) {
+                            worldIn.setBlock(x, y, z, BlockLoader.blockColorFlowerBlue);
+                        } else if (i == OreDictionary.getOreID("dyeYellow")) {
+                            worldIn.setBlock(x, y, z, BlockLoader.blockColorFlowerYellow);
+                        } else if (i == OreDictionary.getOreID("dyeBrown")) {
+                            worldIn.setBlock(x, y, z, BlockLoader.blockColorFlowerBrown);
+                        } else {
+                            cancelBlockPlace = false;
+                        }
+                        if (cancelBlockPlace) {
+                            worldIn.playAuxSFX(2006, x, y, z, 0);
+                        }
                     } else {
                         cancelBlockPlace = false;
                     }
-                    if (cancelBlockPlace) {
-                        worldIn.playAuxSFX(2006, x, y, z, 0);
-                    }
-                } else {
-                    cancelBlockPlace = false;
                 }
             }
         }
