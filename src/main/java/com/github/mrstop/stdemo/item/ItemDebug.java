@@ -23,7 +23,9 @@ public class ItemDebug extends Item {
         if (world.isRemote) {
             return false;
         }
-        entityPlayer.addChatMessage(new ChatComponentText("ItemStack: " + itemStack + " EntityPlayer: " + entityPlayer + " World: " + world + " X: " + x + " Y: " + y + " Z: " + z + " HitX: " + hitX + " HitY: " + hitY + " HitZ: " + hitZ));
+//        entityPlayer.addChatMessage(new ChatComponentText("ItemStack: " + itemStack + " EntityPlayer: " + entityPlayer + " World: " + world + " X: " + x + " Y: " + y + " Z: " + z + " HitX: " + hitX + " HitY: " + hitY + " HitZ: " + hitZ));
+        entityPlayer.addChatMessage(new ChatComponentText("MetaData: " + world.getBlockMetadata(x, y, z)));
+        world.setBlockMetadataWithNotify(x, y, z, 0, 2);
         return false;
     }
 
