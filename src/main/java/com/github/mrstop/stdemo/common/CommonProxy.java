@@ -1,6 +1,7 @@
 package com.github.mrstop.stdemo.common;
 
 import com.github.mrstop.stdemo.achievement.AchievementLoader;
+import com.github.mrstop.stdemo.command.CommandLoader;
 import com.github.mrstop.stdemo.crafting.CraftingLoader;
 import com.github.mrstop.stdemo.creativetab.CreativeTabsLoader;
 import com.github.mrstop.stdemo.enchantment.EnchantmentLoader;
@@ -14,6 +15,7 @@ import com.github.mrstop.stdemo.worldgen.WorldGeneratorLoader;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.FMLServerStartedEvent;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 
@@ -89,5 +91,8 @@ public class CommonProxy {
             System.out.print("    " + fluidID + "\t" + fluidName + "\n");
         }
         System.out.print("===========================================================\n");
+    }
+    public void serverStarting(FMLServerStartedEvent event) {
+        new CommandLoader(event);
     }
 }
