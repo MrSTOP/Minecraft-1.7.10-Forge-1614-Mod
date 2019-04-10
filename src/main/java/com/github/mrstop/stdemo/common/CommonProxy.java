@@ -12,10 +12,7 @@ import com.github.mrstop.stdemo.item.ItemLoader;
 import com.github.mrstop.stdemo.block.BlockLoader;
 import com.github.mrstop.stdemo.tileentity.TileEntityLoader;
 import com.github.mrstop.stdemo.worldgen.WorldGeneratorLoader;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.event.FMLServerStartedEvent;
+import cpw.mods.fml.common.event.*;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 
@@ -92,7 +89,7 @@ public class CommonProxy {
         }
         System.out.print("===========================================================\n");
     }
-    public void serverStarting(FMLServerStartedEvent event) {
+    public void serverStarting(FMLServerStartingEvent event) {
         new CommandLoader(event);
     }
 }
