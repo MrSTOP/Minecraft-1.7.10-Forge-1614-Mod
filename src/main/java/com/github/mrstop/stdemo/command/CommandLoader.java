@@ -4,8 +4,7 @@ import cpw.mods.fml.common.event.FMLServerStartedEvent;
 
 public class CommandLoader {
 
-    public CommandLoader(FMLServerStartedEvent event)
-    {
+    public CommandLoader(FMLServerStartedEvent event) {
         //event.
     }
 }
