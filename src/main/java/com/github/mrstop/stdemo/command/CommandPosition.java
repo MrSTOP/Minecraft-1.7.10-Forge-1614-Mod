@@ -6,18 +6,22 @@ import net.minecraft.command.ICommandSender;
 import net.minecraft.command.WrongUsageException;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.ChatComponentTranslation;
-import net.minecraft.util.Vec3;
 
 public class CommandPosition extends STDemoCommandBase {
+    private static final String COMMAND_SUCCESS = "commands.position.success";
+
+    public CommandPosition() {
+        super("commands.position.usage", "position");
+    }
 
     @Override
     public String getCommandName() {
-        return "position";
+        return COMMAND_NAME;
     }
 
     @Override
     public String getCommandUsage(ICommandSender sender) {
-        return "command.position.usage";
+        return COMMAND_USAGE;
     }
 
     @Override
@@ -30,11 +34,11 @@ public class CommandPosition extends STDemoCommandBase {
         System.out.println("++++++++++++++++");
 
         if (args.length > 1) {
-            throw new WrongUsageException("commands.position.usage");
+            throw new WrongUsageException(COMMAND_USAGE);
         } else {
             EntityPlayerMP entityPlayerMP = args.length > 0 ? CommandBase.getPlayer(sender, args[0])
                     : CommandBase.getCommandSenderAsPlayer(sender);
-            sender.addChatMessage(new ChatComponentTranslation("commands.position.success", entityPlayerMP.posX, entityPlayerMP.posY, entityPlayerMP.posZ, entityPlayerMP.worldObj.provider.getDimensionName()));
+            sender.addChatMessage(new ChatComponentTranslation(COMMAND_SUCCESS, entityPlayerMP.getDisplayName(), entityPlayerMP.worldObj.provider.getDimensionName(), entityPlayerMP.posX, entityPlayerMP.posY, entityPlayerMP.posZ));
         }
     }
 
