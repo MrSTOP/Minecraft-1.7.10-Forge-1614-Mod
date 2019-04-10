@@ -8,7 +8,7 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.Vec3;
 
-public class CommandPosition extends CommandBase {
+public class CommandPosition extends STDemoCommandBase {
 
     @Override
     public String getCommandName() {
@@ -40,6 +40,6 @@ public class CommandPosition extends CommandBase {
 
     @Override
     public int getRequiredPermissionLevel() {
-        return 2;
+        return COMMAND_LEVEL_COMMAND_BLOCK;
     }
 }
