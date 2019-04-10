@@ -89,6 +89,7 @@ public class CommonProxy {
         }
         System.out.print("===========================================================\n");
     }
+
     public void serverStarting(FMLServerStartingEvent event) {
         new CommandLoader(event);
     }

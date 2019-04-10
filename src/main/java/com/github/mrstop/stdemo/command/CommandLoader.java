@@ -7,5 +7,6 @@ public class CommandLoader {
 
     public CommandLoader(FMLServerStartingEvent event) {
         //event.
+        event.registerServerCommand(new CommandPosition());
     }
 }
