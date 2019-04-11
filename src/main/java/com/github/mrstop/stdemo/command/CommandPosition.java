@@ -1,5 +1,6 @@
 package com.github.mrstop.stdemo.command;
 
+import com.github.mrstop.stdemo.STDemo;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
@@ -47,6 +48,7 @@ public class CommandPosition extends STDemoCommandBase {
                                                                String.format("%.2f", entityPlayerMP.posY),
                                                                String.format("%.2f", entityPlayerMP.posZ),
                                                                entityPlayerMP.worldObj.provider.getDimensionName()));
+            entityPlayerMP.worldObj.playSoundAtEntity(entityPlayerMP, "stdemo:stdemo.test", 1.0F, 1.0F);
         }
     }
 
